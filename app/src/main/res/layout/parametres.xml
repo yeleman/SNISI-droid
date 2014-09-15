@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <PreferenceCategory android:title="@string/app_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <EditTextPreference
+            android:title="@string/pref_server_num"
+            android:summary="@string/pref_server_num_summary"
+            android:key="serverPhoneNumber"
+            android:defaultValue="70062552"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </PreferenceCategory>
+</PreferenceScreen>

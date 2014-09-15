@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_version">Version</string>
+    <string name="pref_server_num">Numéro Serveur</string>
+    <string name="app_name">SNISI</string>
+    <string name="description">Le SNISI est un système d\'information du Ministère de la Santé, né de la fusion du système de collecte PNLP et d\'autres systèmes similaires.</string>
+    <string name="action_settings">Paramètres</string>
+    <string name="pref_server_num_summary">Numéro flotte du serveur SNISI</string>
+    <string name="menu_settings">Paramètres</string>
+    <string name="go_to">Aller sur SNISI</string>
+    <string name="news">Ressource</string>
+    <string name="webview" />
+    <string name="versioni">1.0</string>
+</resources>
