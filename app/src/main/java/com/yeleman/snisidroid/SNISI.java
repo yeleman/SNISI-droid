@@ -1,4 +1,4 @@
-package com.yeleman.projetsnisi;
+package com.yeleman.snisidroid;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -10,6 +10,9 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+
+
+import static java.lang.String.format;
 
 
 public class SNISI extends ActionBarActivity {
@@ -40,14 +43,15 @@ public class SNISI extends ActionBarActivity {
     protected void displayVersionPopup() {
         AlertDialog.Builder helpBuilder = new AlertDialog.Builder(this);
         helpBuilder.setTitle(getString(R.string.app_name));
-        helpBuilder.setMessage("Version''': " +  R.string.app_name + "\n\nEn cas de problème contactez ANTIM.");
+        String msg_version = format("Version %s \n\nEn cas de problème contactez ANTIM.", R.string.version);
+        helpBuilder.setMessage(msg_version);
         helpBuilder.setIcon(R.drawable.ic_launcher);
         helpBuilder.setPositiveButton("OK",
-        new DialogInterface.OnClickListener() {
-            public void onClick(DialogInterface dialog, int which) {
-             // Do nothing but close the dialog
-            }
-           });
+            new DialogInterface.OnClickListener() {
+                public void onClick(DialogInterface dialog, int which) {
+                 // Do nothing but close the dialog
+                }
+        });
 
          // Remember, create doesn't show the dialog
          AlertDialog helpDialog = helpBuilder.create();
@@ -70,9 +74,10 @@ public class SNISI extends ActionBarActivity {
         }
 
         if (id == R.id.news) {
-            String url = "http://snisi.sante.gov.ml/";
-      //      Intent intent = new Intent(this, Resource.class, Uri.parse(url) );
-       //     startActivity(intent);
+            //String url = "http://snisi.sante.gov.ml/";
+           // Intent intent = new Intent(this, Resource.class, Uri.parse(url) );
+            Intent intent = new Intent(this, Resource.class );
+            startActivity(intent);
         }
         return super.onOptionsItemSelected(item);
     }

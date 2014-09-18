@@ -9,7 +9,7 @@
     <string name="pref_server_num_summary">Numéro flotte du serveur SNISI</string>
     <string name="menu_settings">Paramètres</string>
     <string name="go_to">Aller sur SNISI</string>
-    <string name="news">Ressource</string>
-    <string name="webview" />
-    <string name="versioni">1.0</string>
+    <string name="news">Ressources</string>
+    <string name="version">1.0</string>
+    <string name="str_image">Image</string>
 </resources>

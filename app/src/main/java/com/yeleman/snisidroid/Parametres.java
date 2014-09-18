@@ -1,7 +1,8 @@
-package com.yeleman.projetsnisi;
+package com.yeleman.snisidroid;
 
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
+
 
 public class Parametres extends PreferenceActivity {
 
