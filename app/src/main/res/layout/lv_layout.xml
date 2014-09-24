@@ -3,27 +3,35 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
+    <ImageView
+        android:id="@+id/icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="5dp"
+        android:contentDescription="@string/str_image"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true" />
+
     <TextView
         android:id="@+id/title_resource"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
-        android:textSize="20dp"
-        android:textStyle="bold" />
-<!-- 
-    <ImageView
-        android:id="@+id/image"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/title_resource"
-        android:layout_centerVertical="true"
-        android:padding="5dp"
-        android:contentDescription="@string/str_image" />
- -->
+        android:textSize="25dp"
+        android:textStyle="bold"
+        android:layout_marginTop="10px"
+        android:layout_marginBottom="10px"
+        android:textColor="#7B0000"
+        android:phoneNumber="false" />
+
     <TextView
         android:id="@+id/resource_details"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/title_resource"  />
+        android:layout_below="@id/title_resource"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:paddingBottom="15px" />
 
 </RelativeLayout>

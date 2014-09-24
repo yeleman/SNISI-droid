@@ -54,29 +54,27 @@ public class ResourcesJSONParser {
     private HashMap<String, Object> getResource(JSONObject jResource){
 
         HashMap<String, Object> resource = new HashMap<String, Object>();
-        String link = "";
-        String projectName = "";
-        String icon = "";
+        String uri = "";
+        String name = "";
+        String icon_url = "";
         String date = "";
-        String description;
+        String description = "";
  
         try {
-            link = jResource.getString("link");
-            projectName = jResource.getString("project_name");
+            uri = jResource.getString("uri");
+            name = jResource.getString("name");
             description = jResource.getString("description");
-            
-            icon = jResource.getString("image");
-            date = jResource.getString("date");
+            icon_url = jResource.getString("icon_url");
+            date = jResource.getString("modified_on");
             String details = format("%s \nLe %s ", description, date);
-            resource.put("resource", projectName);
-            resource.put("image_path", icon);
-            resource.put("link", link);
+            resource.put("name", name);
+            resource.put("icon_url", icon_url);
+            resource.put("uri", uri);
             resource.put("details", details);
  
         } catch (JSONException e) {
             e.printStackTrace();
         }
-        //Log.i("RESOURCE", String.valueOf(resource));
         return resource;
     }
 }

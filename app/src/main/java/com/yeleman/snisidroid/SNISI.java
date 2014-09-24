@@ -41,22 +41,24 @@ public class SNISI extends ActionBarActivity {
         return true;
     }
     protected void displayVersionPopup() {
-        AlertDialog.Builder helpBuilder = new AlertDialog.Builder(this);
-        helpBuilder.setTitle(getString(R.string.app_name));
-        String msg_version = format("Version %s \n\nEn cas de problème contactez ANTIM.", R.string.version);
-        helpBuilder.setMessage(msg_version);
-        helpBuilder.setIcon(R.drawable.ic_launcher);
-        helpBuilder.setPositiveButton("OK",
+        AlertDialog.Builder versionBuilder = new AlertDialog.Builder(this);
+        versionBuilder.setTitle(getString(R.string.app_name));
+        String versionName = BuildConfig.VERSION_NAME;
+        //String msg_version = format("Version %s \n\nEn cas de problème contactez ANTIM.", R.string.version);
+        String msg_version = format("Version %s \n\nEn cas de problème contactez ANTIM.", versionName);
+        versionBuilder.setMessage(msg_version);
+        versionBuilder.setIcon(R.drawable.ic_launcher);
+        versionBuilder.setPositiveButton("OK",
             new DialogInterface.OnClickListener() {
                 public void onClick(DialogInterface dialog, int which) {
                  // Do nothing but close the dialog
                 }
         });
-
          // Remember, create doesn't show the dialog
-         AlertDialog helpDialog = helpBuilder.create();
+         AlertDialog helpDialog = versionBuilder.create();
          helpDialog.show();
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
