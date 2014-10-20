@@ -59,7 +59,7 @@ public class ResourcesJSONParser {
         String icon_url = "";
         String date = "";
         String description = "";
- 
+
         try {
             uri = jResource.getString("uri");
             name = jResource.getString("name");
@@ -71,7 +71,7 @@ public class ResourcesJSONParser {
             resource.put("icon_url", icon_url);
             resource.put("uri", uri);
             resource.put("details", details);
- 
+
         } catch (JSONException e) {
             e.printStackTrace();
         }

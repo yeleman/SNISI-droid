@@ -19,4 +19,10 @@
         android:showAsAction="never"
         android:title="@string/news"
         android:icon="@android:drawable/ic_menu_preferences"/>
+    <item
+        android:id="@+id/change_password"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/change_password"
+        android:icon="@android:drawable/ic_menu_preferences"/>
 </menu>

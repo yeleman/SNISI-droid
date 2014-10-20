@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -22,7 +23,10 @@ public class SNISI extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_snisi);
 
-        Button btndisplaySNISI = (Button) findViewById(R.id.button);
+        Button btndisplaySNISI = (Button) findViewById(R.id.site_id);
+        Button btnSMIR = (Button) findViewById(R.id.smir_id);
+        Button btnnutrition = (Button) findViewById(R.id.nut_id);
+
         btndisplaySNISI.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -30,6 +34,18 @@ public class SNISI extends ActionBarActivity {
                 String url = "http://snisi.sante.gov.ml/";
                 Intent intent = new Intent( Intent.ACTION_VIEW, Uri.parse(url) );
                 startActivity(intent);
+            }
+        });
+        btnnutrition.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Log.i("SNISI", "Nut");
+            }
+        });
+        btnSMIR.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Log.i("SNISI", "SMIR");
             }
         });
     }

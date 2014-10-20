@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <string name="KEYWORD">snisi</string>;
+    <string name="SPACER">" "</string>;
+
     <string name="app_version">Version</string>
     <string name="pref_server_num">Numéro Serveur</string>
     <string name="app_name">SNISI</string>
@@ -10,6 +13,12 @@
     <string name="menu_settings">Paramètres</string>
     <string name="go_to">Aller sur SNISI</string>
     <string name="news">Ressources</string>
-    <string name="version">1.0</string>
     <string name="str_image">Image</string>
+    <string name="change_password">Changement de mot de passe</string>
+    <string name="sendBtt">Envoyer</string>
+    <string name="oldpassword">Ancien mot de passe</string>
+    <string name="newpassword">Nouveau mot de passe</string>
+    <string name="notif_sms_sent">Rapport envoyé par SMS. Une réponse vous parviendra bientôt.</string>
+    <string name="label_nut">Nutrition</string>
+    <string name="label_smir">SMIR</string>
 </resources>
