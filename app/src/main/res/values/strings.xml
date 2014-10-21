@@ -21,4 +21,17 @@
     <string name="notif_sms_sent">Rapport envoyé par SMS. Une réponse vous parviendra bientôt.</string>
     <string name="label_nut">Nutrition</string>
     <string name="label_smir">SMIR</string>
+    <string name="title_activity_nutrition">Nutrition</string>
+    <!-- SMIR -->
+    <string name="notif_sms_failed">Échec de l\'envoi du rapport par SMS. Veuillez réessayer dans quelques minutes.</string>
+    <string name="pref_username">Identifiant</string>
+    <string name="pref_username_summary">Identifiant SNISI</string>
+    <string name="menu_alert">Alerte</string>
+    <string name="disease">Maladie</string>
+    <string name="labelcas">Cas suspect</string>
+    <string name="labelconfirmed">Cas confirmé</string>
+    <string name="labeldeath">Cas Décès</string>
+    <string name="sendbtt">Envoyer</string>
+    <string name="disease_prompt">les maladies</string>
+    <string name="label_password">Mot de passe</string>
 </resources>

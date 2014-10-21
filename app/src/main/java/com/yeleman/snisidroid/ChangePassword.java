@@ -17,16 +17,11 @@ public class ChangePassword extends Activity {
 
     private Button btnSubmit;
 
-    //private EditText usernameField;
-    //private EditText oldpasswordField;
-    //private EditText newpasswordField;
-
-
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.changepassword);
+        setContentView(R.layout.snisi_change_password);
 
         btnSubmit = (Button) findViewById(R.id.nut_id);
         addListenerOnButton();
@@ -56,7 +51,6 @@ public class ChangePassword extends Activity {
 		if (!SharedChecks.is_empty(username)){
 		  return false;
 		}
-
 		if (!SharedChecks.is_empty(oldpassword)){
 		  return false;
 		}

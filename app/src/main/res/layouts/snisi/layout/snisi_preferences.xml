@@ -12,5 +12,9 @@
             android:defaultValue="70062552"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
+      <EditTextPreference
+            android:title="@string/pref_username"
+            android:summary="@string/pref_username_summary"
+            android:key="username"/>
     </PreferenceCategory>
 </PreferenceScreen>

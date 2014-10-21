@@ -42,7 +42,7 @@ public class Resource extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.resource);
+        setContentView(R.layout.snisi_resource);
 
         // URL to the JSON data
         //String strUrl = "http://192.168.5.55:8000/android.json";
@@ -190,7 +190,7 @@ public class Resource extends Activity {
             int[] to = {R.id.title_resource,R.id.icon,R.id.resource_details};
             // Instantiating an adapter to store each items
             // R.layout.listview_layout defines the layout of each item
-            SimpleAdapter adapter = new SimpleAdapter(getBaseContext(), resources, R.layout.lv_layout, from, to);
+            SimpleAdapter adapter = new SimpleAdapter(getBaseContext(), resources, R.layout.snisi_lv_resource, from, to);
 
             return adapter;
         }
