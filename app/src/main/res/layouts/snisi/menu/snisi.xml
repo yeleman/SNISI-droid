@@ -2,19 +2,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".SNISI" >
-    <item android:id="@+id/action_settings"
-        android:title="@string/action_settings"
+    <item android:id="@+id/menu_settings"
+        android:title="@string/menu_settings"
         android:orderInCategory="100"
         app:showAsAction="never" />
-
     <item
-        android:id="@+id/app_version"
-        android:orderInCategory="100"
-        android:showAsAction="never"
-        android:title="@string/app_version"
-        android:icon="@android:drawable/ic_menu_preferences"/>
-    <item
-        android:id="@+id/news"
+        android:id="@+id/resources"
         android:orderInCategory="100"
         android:showAsAction="never"
         android:title="@string/news"
@@ -23,6 +16,14 @@
         android:id="@+id/change_password"
         android:orderInCategory="100"
         android:showAsAction="never"
-        android:title="@string/change_password"
+        android:title="@string/menu_change_password"
         android:icon="@android:drawable/ic_menu_preferences"/>
+    <item
+        android:id="@+id/about"
+        android:orderInCategory="100"
+        android:showAsAction="never"
+        android:title="@string/menu_about"
+        android:icon="@android:drawable/ic_menu_preferences"/>
+
+
 </menu>

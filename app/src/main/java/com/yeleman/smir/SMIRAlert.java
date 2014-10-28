@@ -25,7 +25,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 
 
-public class AlertActivity extends Activity {
+public class SMIRAlert extends Activity {
 
    private Spinner spinner;
    private Button btnSubmit;

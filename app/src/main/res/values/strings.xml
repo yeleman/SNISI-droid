@@ -1,31 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="KEYWORD">snisi</string>;
-    <string name="SPACER">" "</string>;
+	<string name="app_name">SNISI</string>
+	<string name="app_market_url">market://details?id=com.yeleman.snisidroid</string>
+	<string name="notif_sms_sent">Rapport envoyé par SMS. Une réponse vous parviendra bientôt.</string>
+	<string name="notif_sms_failed">Échec de l\'envoi du rapport par SMS. Veuillez réessayer dans quelques minutes.</string>
+	<string name="version_button_default_label">Vérifier mises à jour</string>
+	<string name="version_button_label">Version %1$s (vérifier mises à jour)</string>
+	
+	<!-- Common Strings -->
+	<string name="standard_dialog_ok">OK</string>
+	
+	<string name="sms_timeout_dialog_title">Pas de réponse du serveur</string>
+	<string name="sms_timeout_dialog_body">L\'application SNISI n\'a pas reçu de réponse du serveur.\nLa réponse peut parfois prendre du temps avant d\'arriver.\nVérifier vos SMS pendant 5mn puis appelez la Hotline.</string>
+	
+	<string name="resume_report_title">Continuer le rapport ?</string>
+	<string name="resume_report_body">Voulez-vous continuer avec les données du rapport %1$s déjà renseignées ?</string>
+	<string name="resume_report_ok_label">Continuer rapport</string>
+	<string name="resume_report_cancel_label">Reprendre à zéro</string>
 
-    <string name="app_version">Version</string>
-    <string name="pref_server_num">Numéro Serveur</string>
-    <string name="app_name">SNISI</string>
-    <string name="description">Le SNISI est un système d\'information du Ministère de la Santé, né de la fusion du système de collecte PNLP et d\'autres systèmes similaires.</string>
-    <string name="action_settings">Paramètres</string>
-    <string name="pref_server_num_summary">Numéro flotte du serveur SNISI</string>
-    <string name="menu_settings">Paramètres</string>
-    <string name="go_to">Aller sur SNISI</string>
-    <string name="news">Ressources</string>
-    <string name="str_image">Image</string>
-    <string name="change_password">Changement de mot de passe</string>
-    <string name="sendBtt">Envoyer</string>
+	<string name="server_sms_received_title">Réponse du serveur</string>
+
+	<string name="sending_sms_report_title">Envoi en cours</string>
+	<string name="sending_sms_report_body">Votre demande a été envoyée par SMS.\nVeuillez attendre la réponse du serveur pour vérifier qu\'il a bien été enregistré.\nVous recevrez alors un numéro de reçu.</string>
+
+	<string name="required_connexion_title">Connexion requise</string>
+	<string name="required_connexion_body">Cette action nécessite une connexion à Internet. Activez les données ou le WiFi puis réessayez.</string>
+	<string name="required_connexion_cancel">Annuler</string>
+	<string name="required_connexion_retry">Réessayer</string>
+
+	<string name="go_to_preferences">Aller aux paramètres</string>
+
+	<!-- Home -->
+	<string name="app_name_long">Système Numérique d\'Information Sanitaire Intégré</string>
+	<string name="website_goto_label">Aller sur SNISI</string>
+
+	<!-- Change Password -->
     <string name="oldpassword">Ancien mot de passe</string>
     <string name="newpassword">Nouveau mot de passe</string>
-    <string name="notif_sms_sent">Rapport envoyé par SMS. Une réponse vous parviendra bientôt.</string>
-    <string name="label_nut">Nutrition</string>
-    <string name="label_smir">SMIR</string>
-    <string name="title_activity_nutrition">Nutrition</string>
-    <!-- SMIR -->
-    <string name="notif_sms_failed">Échec de l\'envoi du rapport par SMS. Veuillez réessayer dans quelques minutes.</string>
+    <string name="changePasswordButtonText">Envoyer la demande</string>
+
+    <!-- Preferences -->
+    <string name="pref_server_num">Numéro Serveur</string>
+    <string name="pref_server_num_summary">Numéro flotte du serveur SNISI</string>
     <string name="pref_username">Identifiant</string>
     <string name="pref_username_summary">Identifiant SNISI</string>
+    <string name="pref_is_urenam">URENAM ?</string>
+    <string name="pref_is_urenam_summary">L\'unité sanitaire fait la PEC URENAM</string>
+    <string name="pref_is_urenas">URENAS ?</string>
+    <string name="pref_is_urenas_summary">L\'unité sanitaire fait la PEC URENAS</string>
+    <string name="pref_is_ureni">URENI ?</string>
+    <string name="pref_is_ureni_summary">L\'unité sanitaire fait la PEC URENI</string>
+    
+    <!-- About -->
+    <string name="about_long_description">Le SNISI est un outil numérique du Ministère de la Santé (MSHP) du Mali.\nSes principales composantes sont une Flotte Mobile, des formulaires et applications de collecte de données au niveau primaire (CSCom, CSRéf), des procedures standardisées de suivi et de validation, un système d\'agrégation et de désagrégation et un site web de consultation des donées brutes, indicateurs et visualisations cartographique.\n\nLa gestion opérationnelle du système est opérée par l\'ANTIM.\n\nLe système est ouvert à toutes les données de routine et à tous les projets.</string>
+    
+    <!-- Resources -->
+    <string name="str_image">Image</string>   
+
+    <!-- menu items -->
+    <string name="app_version">Version</string>
+    <string name="menu_settings">Paramètres</string>
+    <string name="news">Ressources</string>
+    <string name="menu_about">À propos</string>
+    <string name="menu_change_password">Changer mot de passe</string>
+
+    <!-- Standard Errors -->
+    <string name="error_dialog_title">Erreur !</string>
+    <string name="error_dialog_button_text">Fermer et corriger</string>
+    <string name="error_field_empty">Champs requis</string>
+    <string name="error_field_min_chars">%s caractères minimum</string>
+    <string name="error_field_positive_integer">Entier positif requis</string>
+    <string name="error_must_be_inferior" formatted="false">%s (%d) ne peut être supérieur ou égal à %s (%d)</string>
+    <string name="error_must_be_inferior_or_equal" formatted="false">%s (%d) ne peut être supérieur à %s (%d)</string>
+    <string name="error_sms_not_sent_title">Erreur d\'envoi du SMS</string>
+    <string name="error_sms_not_sent_body">Le SMS n\'a pa pu être envoyé correctement. Vérifiez que vous avez du réseau et du crédit puis réessayez.\n%1$s</string>
+
+    <!-- Nutrition -->
+    <string name="nutrition_app_label">Nutrition</string>
+    <string name="nutrition_monthly_report_label">Rapport Mensuel</string>
+    <string name="nutrition_weekly_report_label">Rapport Hebdomadaire</string>
+    <string name="nutrition_website_label">Consulter mes données</string>
+    <string name="nutrition_weekly_screening">Dépistage</string>
+    <string name="nutrition_weekly_cases">Cas PEC</string>
+    <string name="nutrition_weekly_deaths">Décès PEC</string>
+    <string name="nutrition_weekly_urenam">URENAM</string>
+    <string name="nutrition_weekly_urenas">URENAS</string>
+    <string name="nutrition_weekly_ureni">URENI</string>
+    <string name="nutrition_weekly_save_submit">Enregister et transmettre</string>
+    <string name="nutrition_level_missing_title">Unité nutrition manquante</string>
+	<string name="nutrition_level_missing_body">Votre profil n\'indique aucune unité de nutrition pour votre unité sanitaire.\nAllez remplir les niveaux d\'UREN pour lesquelles vous faîtes la PEC dans les paramètres.</string>
+
+    <!-- SMIR -->
+    <string name="smir_app_label">SMIR</string>
     <string name="menu_alert">Alerte</string>
     <string name="disease">Maladie</string>
     <string name="labelcas">Cas suspect</string>

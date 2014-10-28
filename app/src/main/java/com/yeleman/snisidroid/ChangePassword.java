@@ -1,109 +1,80 @@
 package com.yeleman.snisidroid;
 
-import android.app.Activity;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
-import android.telephony.SmsManager;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
+import com.orm.SugarRecord;
 
-public class ChangePassword extends Activity {
+import junit.framework.Test;
 
-    private Button btnSubmit;
+public class ChangePassword extends CheckedFormActivity {
+
+    private final static String TAG = Constants.getLogTag("ChangePassword");
+
+    private EditText usernameText;
+    private EditText oldPasswordText;
+    private EditText newPasswordText;
+    private Button changePasswordButton;
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
+        Log.d(TAG, "onCreate ChangePassword");
         super.onCreate(savedInstanceState);
-
         setContentView(R.layout.snisi_change_password);
-
-        btnSubmit = (Button) findViewById(R.id.nut_id);
-        addListenerOnButton();
+        setupSMSReceiver();
+        setupUI();
     }
 
-    public void addListenerOnButton() {
-        btnSubmit.setOnClickListener(new View.OnClickListener() {
-          	@Override
-          	public void onClick(View v) {
-              	if (checkAllDataOK()) {
-               	    String sms_str = getSMSString();
-               	    Log.i("SMIR SMS-OUT", sms_str);
-               	    boolean succeeded = submitText(sms_str);
-                if (succeeded) {
-                    finish();
-                }
-              }
-          }
-      });
+    protected void setupInvalidInputChecks() {
+		setAssertNotEmpty(usernameText);
+        setAssertAtLeastThisLong(oldPasswordText, Constants.MIN_CHARS_PASSWORD);
+        setAssertAtLeastThisLong(newPasswordText, Constants.MIN_CHARS_PASSWORD);
     }
 
-   	protected boolean checkAllDataOK() {
-   		final EditText username = (EditText) findViewById(R.id.usernameField);
-        final EditText oldpassword = (EditText) findViewById(R.id.oldpasswordField);
-        final EditText newpassword = (EditText) findViewById(R.id.newpasswordField);
-	      
-		if (!SharedChecks.is_empty(username)){
-		  return false;
-		}
-		if (!SharedChecks.is_empty(oldpassword)){
-		  return false;
-		}
-		if (!SharedChecks.is_empty(newpassword)){
-		  return false;
-		}
-		return true;
-   }
+    protected boolean ensureDataCoherence() {
+    	return true;
 
-   protected boolean submitText(String message) {
-        // preferences
-      SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-      String phoneNumber = sharedPrefs.getString("serverPhoneNumber", null);
-      try {
-         SmsManager sms = SmsManager.getDefault();
-         sms.sendTextMessage(phoneNumber, null, message, null, null);
-          Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.notif_sms_sent), Toast.LENGTH_LONG);
-          toast.setGravity(Gravity.CENTER, 0, 0);
-          toast.show();
-      } catch (Exception e) {
-         Toast.makeText(getApplicationContext(), getString(R.string.notif_sms_sent), Toast.LENGTH_LONG).show();
-         e.printStackTrace();
-         return false;
-      }
-      return true;
     }
 
-    
-   protected String getSMSString() {
-      //SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-      //String username = sharedPrefs.getString("username", null);
+    private void setupUI() {
+        // Instantiate all UI elements
+        usernameText = (EditText) findViewById(R.id.usernameField);
+        oldPasswordText = (EditText) findViewById(R.id.oldPasswordField);
+        newPasswordText = (EditText) findViewById(R.id.newPasswordField);
+        changePasswordButton = (Button) findViewById(R.id.changePasswordButton);
 
-      final EditText username = (EditText) findViewById(R.id.usernameField);
-      final EditText oldpassword = (EditText) findViewById(R.id.oldpasswordField);
-      final EditText newpassword = (EditText) findViewById(R.id.newpasswordField);
+        // Add Input Validation Checks
+        setupInvalidInputChecks();
+        
+        // Prefill username from Preferences
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        String username = sharedPrefs.getString("username", null);
+        if (username != null) {
+            usernameText.setText(username);
+            oldPasswordText.requestFocus();
+        }
 
-      // snisi passwd username oldpassword newpasswoRD
-      String sms_text = Constants.KEYWORD;
-      sms_text += Constants.SPACER;
+        // register onclick
+        changePasswordButton.setOnClickListener(new View.OnClickListener() {
 
-      sms_text += "passwd";
-      sms_text += Constants.SPACER;
-
-      sms_text += username.getText().toString();
-      sms_text += Constants.SPACER;
-
-      sms_text += oldpassword.getText().toString();
-      sms_text += Constants.SPACER;
-
-      sms_text += newpassword.getText().toString();
-      sms_text += Constants.SPACER;
-
-      return sms_text.trim();
+            @Override
+            public void onClick(View v) {
+                checkAndSubmitSMSAction();
+            }
+        });
+    }
+   
+	protected String buildSMSText() {
+		// snisi passwd username oldpassword newpassword
+		return String.format(Constants.SMS_CHANGE_PASSWRD,
+							 stringFromField(usernameText),
+							 stringFromField(oldPasswordText),
+							 stringFromField(newPasswordText));
    }
 
 }

@@ -17,4 +17,20 @@
             android:summary="@string/pref_username_summary"
             android:key="username"/>
     </PreferenceCategory>
+    <PreferenceCategory android:title="@string/nutrition_app_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <CheckBoxPreference
+            android:title="@string/pref_is_urenam"
+            android:summary="@string/pref_is_urenam_summary"
+            android:key="hc_is_urenam"/>
+        <CheckBoxPreference
+            android:title="@string/pref_is_urenas"
+            android:summary="@string/pref_is_urenas_summary"
+            android:key="hc_is_urenas"/>
+        <CheckBoxPreference
+            android:title="@string/pref_is_ureni"
+            android:summary="@string/pref_is_ureni_summary"
+            android:key="hc_is_ureni"/>
+    </PreferenceCategory>
 </PreferenceScreen>

@@ -1,0 +1,2274 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"cre",
+				"create_task  (function)"
+			],
+			[
+				"cr",
+				"create_group  (function)"
+			],
+			[
+				"con",
+				"contact"
+			],
+			[
+				"Ta",
+				"TaskItem  (class)"
+			],
+			[
+				"dis",
+				"disease_name  (function)"
+			],
+			[
+				"dat",
+				"datetime  (class)"
+			],
+			[
+				"find",
+				"find_create_by_date  (function)"
+			],
+			[
+				"Pro",
+				"Providers  (module)"
+			],
+			[
+				"snis",
+				"snisi_core  (module)"
+			],
+			[
+				"data",
+				"data_fields  (function)"
+			],
+			[
+				"cap",
+				"cap_value"
+			],
+			[
+				"PF",
+				"PFActivities  (module)"
+			],
+			[
+				"logg",
+				"logged_out  (variable)"
+			],
+			[
+				"def",
+				"default_tiles_url_tmpl"
+			],
+			[
+				"an",
+				"an_obj"
+			],
+			[
+				"Ph",
+				"PhoneNumberType  (class)"
+			],
+			[
+				"Expected",
+				"ExpectedValidation"
+			],
+			[
+				"marker",
+				"marker_url_tmpl"
+			],
+			[
+				"remo",
+				"removeLayer  (function)"
+			],
+			[
+				"getTi",
+				"getTileUrl  (function)"
+			],
+			[
+				"sni",
+				"snisi_core  (module)"
+			],
+			[
+				"dono",
+				"donors_url"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app/src/main/java/com/yeleman/snisidroid/ChangePassword.java",
+			"settings":
+			{
+				"buffer_size": 3450,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/src/main/java/com/yeleman/snisidroid/CheckedFormActivity.java",
+			"settings":
+			{
+				"buffer_size": 8814,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/src/main/java/com/yeleman/nutrition/NutritionWeeklyReport.java",
+			"settings":
+			{
+				"buffer_size": 5626,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/src/main/res/values/strings.xml",
+			"settings":
+			{
+				"buffer_size": 4204,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/build/intermediates/res/debug/layout/snisi_home.xml",
+			"settings":
+			{
+				"buffer_size": 1863,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "protected EditText mamScreeningField;\nprotected EditText samScreeningField;\nprotected EditText samcScreeningField;\n\nprotected EditText mamCasesField;\nprotected EditText mamDeathsField;\n\nprotected EditText samCasesField;\nprotected EditText samDeathsField;\n\nprotected EditText samcCasesField;\nprotected EditText samcDeathsField;\n",
+			"settings":
+			{
+				"buffer_size": 327,
+				"line_ending": "Unix",
+				"name": "protected EditText mamScreeningField;"
+			}
+		},
+		{
+			"file": "app/src/main/res/layouts/nutrition/layout/nutrition_home.xml",
+			"settings":
+			{
+				"buffer_size": 1135,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/src/main/res/layouts/snisi/layout/snisi_change_password.xml",
+			"settings":
+			{
+				"buffer_size": 2063,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "app/src/main/res/layouts/snisi/layout/nutrition_weekly_report.xml",
+			"settings":
+			{
+				"buffer_size": 1299,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "protected Method getMethodFor(String methodName, Class[] parameterTypes) {\n		Class[] nparameterTypes = new Class[parameterTypes.length + 1];\n		nparameterTypes[0] = EditText.class;\n		for (int i = 0 ; i < parameterTypes.length ; i++ ) {\n			nparameterTypes[i + 1] = parameterTypes[i];\n		}\n        Method method = null;\n        Class<?> c = getClass();\n\n        try {\n            method = c.getMethod(methodName, nparameterTypes);\n        } catch (NoSuchMethodException e) {\n            e.printStackTrace();\n            return null;\n        }\n        return method;\n	}\n\n	protected void addValidityControl(final EditText editText, String methodName,\n									  Class[] parameterTypes,\n									  Object[] params) {\n\n		final Method method = getMethodFor(methodName, parameterTypes);\n		if (method == null) {\n			Log.e(TAG, \"Method not found.\");\n			return;\n		}\n		final Object[] mparams = new Object[params.length + 1];\n		mparams[0] = editText;\n		for (int i = 0 ; i < params.length ; i++ ) {\n			mparams[i + 1] = params[i];\n		}\n\n		editText.addTextChangedListener(new TextWatcher() {\n            public void afterTextChanged(Editable s) {\n            	Log.i(TAG, \"afterTextChanged\");\n                Class<?> c = getClass();\n                try {\n                    Object ret = method.invoke(c.newInstance(), mparams);\n                } catch (IllegalAccessException e) {\n                	Log.i(TAG, \"IllegalAccessException\");\n                    e.printStackTrace();\n                } catch (InvocationTargetException e) {\n                	Log.i(TAG, \"InvocationTargetException\");\n                    e.printStackTrace();\n                } catch (InstantiationException e) {\n                    e.printStackTrace();\n                }\n                Log.i(TAG, \"afterTextChanged: method called\");\n            }\n\n            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}\n            public void onTextChanged(CharSequence s, int start, int before, int count) {}\n        });\n\n	}",
+			"settings":
+			{
+				"buffer_size": 2003,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 602.0
+	},
+	"console":
+	{
+		"height": 127.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/reg/src/SNISI-droid",
+		"/Users/reg/src/SNISI-droid/app",
+		"/Users/reg/src/SNISI-droid/app/src",
+		"/Users/reg/src/SNISI-droid/app/src/main",
+		"/Users/reg/src/SNISI-droid/app/src/main/java",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/smir",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid",
+		"/Users/reg/src/SNISI-droid/app/src/main/res",
+		"/Users/reg/src/SNISI-droid/app/src/main/res/layouts",
+		"/Users/reg/src/SNISI-droid/app/src/main/res/layouts/snisi",
+		"/Users/reg/src/SNISI-droid/app/src/main/res/layouts/snisi/layout",
+		"/Users/reg/src/SNISI-droid/app/src/main/res/values"
+	],
+	"file_history":
+	[
+		"/Users/reg/src/SNISI-droid/app/src/main/res/layouts/snisi/menu/nutrition_weekly_report.xml",
+		"/Users/reg/src/SNISI-droid/app/src/main/res/layouts/snisi/layout/nutrition_weekly_report.xml",
+		"/Users/reg/src/SNISI-droid/app/build/intermediates/res/debug/menu/nutrition_weekly_report.xml",
+		"/Users/reg/src/SNISI-droid/app/build/intermediates/res/debug/layout/nutrition_weekly_report.xml",
+		"/Users/reg/src/SNISI-droid/app/build/intermediates/res/debug/layout/nutrition_home.xml",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid/Constants.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/nutrition/NutritionHome.java",
+		"/Users/reg/src/SNISI-droid/app/build/intermediates/res/debug/layout/snisi_change_password.xml",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid/CheckedFormActivity.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/AndroidManifest.xml",
+		"/Users/reg/src/SNISI-droid/.idea/workspace.xml",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid/ChangePassword.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid/SNISIHome.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/smir/SMIRHome.java",
+		"/Users/reg/src/SNISI-droid/app/build/intermediates/res/debug/layout/snisi_home.xml",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid/SNISIAbout.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/res/layouts/nutrition/layout/nutrition_home.xml",
+		"/Users/reg/src/SNISI-droid/app/build/intermediates/res/debug/menu/nutrition.xml",
+		"/Users/reg/src/SNISI-droid/app/src/main/res/menu/nutrition.xml",
+		"/Users/reg/src/SNISI-droid/.idea/misc.xml",
+		"/Users/reg/src/SNISI-droid/app/app.iml",
+		"/Users/reg/src/SNISI-droid/app/src/main/res/layouts/snisi/layout/snisi_about.xml",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid/Popups.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid/Preferences.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid/Resource.java",
+		"/Users/reg/src/SNISI-droid/app/build/intermediates/symbols/debug/R.txt",
+		"/Users/reg/src/SNISI-droid/app/build/intermediates/res/debug/layout/abc_action_menu_layout.xml",
+		"/Users/reg/src/SNISI-droid/app/build/intermediates/incremental/mergeAssets/debug/merger.xml",
+		"/Users/reg/src/SNISI-droid/app/build/intermediates/res/debug/layout/snisi_about.xml",
+		"/Users/reg/src/SNISI-droid/app/build/intermediates/res/debug/layout/abc_action_bar_decor_overlay.xml",
+		"/Users/reg/src/SNISI-droid/app/build/intermediates/res/debug/layout/abc_action_bar_decor.xml",
+		"/Users/reg/src/SNISI-droid/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/anim/abc_slide_out_bottom.xml",
+		"/Users/reg/src/SNISI-droid/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/anim/abc_fade_out.xml",
+		"/Users/reg/src/SNISI-droid/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/20.0.0/res/anim/abc_slide_out_top.xml",
+		"/Users/reg/src/SNISI-droid/app/build/intermediates/res/debug/anim/abc_slide_out_bottom.xml",
+		"/Users/reg/src/SNISI-droid/app/build/intermediates/res/debug/anim/abc_fade_out.xml",
+		"/Users/reg/src/SNISI-droid/app/build/intermediates/res/debug/anim/abc_slide_out_top.xml",
+		"/Users/reg/src/SNISI-droid/app/proguard-rules.pro",
+		"/Users/reg/src/SNISI-droid/ProjetSNISI.iml",
+		"/Users/reg/src/SNISI-droid/SNISI-droid.iml",
+		"/Users/reg/src/SNISI-droid/app/src/main/res/values/strings.xml",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid/SNISI.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid/Commons.java",
+		"/Users/reg/src/SNISI-droid/app/build/intermediates/res/debug/layout/smir_home.xml",
+		"/Users/reg/src/SNISI-droid/.gradle/1.12/taskArtifacts/fileHashes.bin",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/smir/Constants.java",
+		"/Users/reg/src/SNISI-droid/.idea/compiler.xml",
+		"/Users/reg/src/SNISI-droid/dist_stable/SNISI.apk",
+		"/Users/reg/src/SNISI-droid/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/aidl/android/support/v4/app/INotificationSideChannel.aidl",
+		"/Users/reg/src/SNISI-droid/app/build/intermediates/res/debug/drawable/abc_ic_clear_holo_light.xml",
+		"/Users/reg/src/SNISI-droid/app/src/main/res/layouts/snisi/layout/snisi_change_password.xml",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid/CommonValidations.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/smir/SMIR.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/smir/AlertActivity.java",
+		"/Users/reg/src/SNISI-droid/app/build/intermediates/res/debug/anim/abc_slide_in_top.xml",
+		"/Users/reg/src/SNISI-droid/settings.gradle",
+		"/Users/reg/src/SNISI-droid/app/src/main/res/layout/parametres.xml",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid/Parametres.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/res/menu/snisi.xml",
+		"/Users/reg/src/SNISI-droid/app/src/main/res/layout/resource.xml",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid/ResourcesJSONParser.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/res/layout/lv_layout.xml",
+		"/Users/reg/src/lakalici/lakalici/settings.py",
+		"/Users/reg/src/lakalici/manager/models.py",
+		"/Users/reg/src/lakalici/manager/numbers.py",
+		"/Users/reg/src/lakalici/manager/static/jquery-1.11.min.js",
+		"/Users/reg/src/lakalici/manager/static/bootstrap.min.css",
+		"/Users/reg/src/lakalici/manager/templates/contacts.html",
+		"/Users/reg/src/lakalici/manager/templates/base.html",
+		"/Users/reg/src/lakalici/LICENSE",
+		"/Users/reg/src/lakalici/manager/templatetags/lklc.py",
+		"/Users/reg/src/lakalici/manager/templates/groups.html",
+		"/Users/reg/src/lakalici/.gitignore",
+		"/Users/reg/src/lakalici/manager/templates/about.html",
+		"/Users/reg/src/lakalici/manager/templates/account.html",
+		"/Users/reg/src/lakalici/manager/templates/group.html",
+		"/Users/reg/src/lakalici/manager/processors.py",
+		"/Users/reg/src/lakalici/manager/static/ci.css",
+		"/Users/reg/src/lakalici/manager/templates/login.html",
+		"/Users/reg/src/lakalici/manager/admin.py",
+		"/Users/reg/src/lakalici/lakalici/urls.py",
+		"/Users/reg/src/lakalici/manager/templates/tasks.html",
+		"/Users/reg/src/lakalici/manager/templates/import_contacts.html",
+		"/Users/reg/src/lakalici/manager/templates/add_single_contact.html",
+		"/Users/reg/src/lakalici/manage.py",
+		"/Users/reg/src/lakalici/manager/static/pure.min.css",
+		"/Users/reg/src/ZerinDroid/app/src/main/AndroidManifest.xml",
+		"/Users/reg/src/douentza/douentza/static/js_factory/node_modules/grunt/test/fixtures/files/dist/built-a.js",
+		"/Users/reg/src/douentza/douentza/templates/base.html",
+		"/Users/reg/src/douentza/douentza/static/js_factory/node_modules/grunt-contrib-clean/docs/overview.md",
+		"/Users/reg/src/douentza/douentza/views/events.py",
+		"/Users/reg/src/douentza/douentza/views/__init__.py",
+		"/Users/reg/src/douentza/douentza/static/js_factory/less/variables.less",
+		"/Users/reg/src/snisi/requirements.pip",
+		"/Users/reg/src/snisi/snisi_core/models/Projects.py",
+		"/Users/reg/src/snisi/snisi_malaria/aggregations.py",
+		"/Users/reg/src/snisi/snisi_tools/auth.py",
+		"/Users/reg/src/snisi/snisi_web/templates/parts/indicator_graph.html",
+		"/Users/reg/src/snisi/snisi_malaria/templates/malaria/indicator_browser.html",
+		"/Users/reg/src/snisi/snisi_web/views/indicators_api.py",
+		"/Users/reg/src/snisi/snisi_epidemiology/templates/epidemiology/indicators.html",
+		"/Users/reg/src/snisi/snisi_malaria/views/indicators.py",
+		"/Users/reg/src/snisi/snisi_vacc/indicators.py",
+		"/Users/reg/src/snisi/snisi_trachoma/indicators.py",
+		"/Users/reg/src/snisi/snisi_reprohealth/indicators.py",
+		"/Users/reg/src/snisi/snisi_core/indicators.py",
+		"/Users/reg/src/snisi/snisi_malaria/indicators/map.py",
+		"/Users/reg/src/snisi/snisi_epidemiology/__init__.py",
+		"/Users/reg/src/snisi/snisi_malaria/templates/report/edit_malaria_monthly_routine.html",
+		"/Users/reg/src/snisi/snisi_nutrition/templates/report/nutrition_monthly_routine_aggregated.html",
+		"/Users/reg/src/snisi/snisi_malaria/templates/report/malaria_monthly_routine_aggregated.html",
+		"/Users/reg/src/snisi/snisi_malaria/templates/report/malaria_monthly_routine.html",
+		"/Users/reg/src/snisi/snisi_epidemiology/cache/epidemiology_routine_members.json",
+		"/Users/reg/src/snisi/snisi_epidemiology/cache/epidemiology_routine_sms_members.json",
+		"/Users/reg/src/snisi/snisi_malaria/cache/malaria_monthly_routine_members.json",
+		"/Users/reg/src/snisi/snisi_reprohealth/cache/msi_reprohealth_routine_members.json",
+		"/Users/reg/src/snisi/snisi_vacc/cache/vacc_coverage_routine_members.json",
+		"/Users/reg/src/snisi/snisi_epidemiology/xls_export.py",
+		"/Users/reg/src/snisi/snisi_epidemiology/fixtures/Domain.xml",
+		"/Users/reg/src/snisi/snisi_epidemiology/templates/epidemiology/dashboard.html",
+		"/Users/reg/src/snisi/snisi_core/xls_import.py",
+		"/Users/reg/src/snisi/snisi_core/xls_export.py",
+		"/Users/reg/src/snisi/snisi_bednets/xls_import.py",
+		"/Users/reg/src/snisi/snisi_bednets/xls_export.py",
+		"/Users/reg/src/snisi/snisi_web/templates/parts/report_header_occasional_multiple.html",
+		"/Users/reg/src/snisi/snisi_epidemiology/fixtures/template-hebdo-MADO.xls",
+		"/Users/reg/src/snisi/snisi_malaria/templates/malaria/epidemio.html",
+		"/Users/reg/src/snisi/snisi_epidemiology/urls.py"
+	],
+	"find":
+	{
+		"height": 37.0
+	},
+	"find_in_files":
+	{
+		"height": 95.0,
+		"where_history":
+		[
+			"<open folders>,*.java",
+			"<open folders>,*.py",
+			"<open folders>,*.po",
+			"<open folders>,*.py",
+			"<open folders>,*.js",
+			"<open folders>,*.html",
+			"<open folders>,*.py",
+			"<open folders>,*.html",
+			"<open folders>,*.py",
+			"<open folders>,*.html",
+			"<open folders>,*.py",
+			"<open folders>,*.less",
+			"<open folders>,*.py",
+			"<open folders>,*.html",
+			"<open folders>,*.py",
+			"<open folders>,*.html",
+			"<open folders>,*.po",
+			"<open folders>,*.py"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"mustBeInferior",
+			"_",
+			";",
+			"private",
+			" = -1;",
+			"pref_is_urenam",
+			"nam",
+			"URENAM ",
+			";",
+			"null",
+			" = ",
+			"title",
+			"layout",
+			"weekly",
+			"Popups",
+			"click",
+			"'",
+			"action_settings",
+			"str_image",
+			"RESULT_SETTINGS",
+			"btnSMIR",
+			"btnnutrition",
+			"btndisplaySNISI",
+			"label_smir",
+			"smsDeliveredReceiver",
+			"final",
+			"SMS_SENT_INTENT",
+			"private",
+			"INTENT",
+			"Log.d(\"",
+			"text_text",
+			"phoneNumber",
+			"PhoneNumber",
+			"phoneNumber",
+			"sms_message",
+			"submitButton",
+			"nut_id",
+			"newpasswordField",
+			"oldpasswordField",
+			"submit_btn",
+			"new_password_text",
+			"old_password_text",
+			"username_text",
+			"checkForInvalidInputs",
+			"checkAllData",
+			"setupInvalidInputListeners",
+			"abstract",
+			"public",
+			"HashMap",
+			"helpDialog",
+			"helpBuilder",
+			"assertAtLeastThisLong",
+			"Common",
+			"filed",
+			"field",
+			"Field",
+			"field",
+			"Field",
+			"field",
+			"validation",
+			"Validation",
+			"etEmailAddrss",
+			"R.string",
+			"getString(",
+			"getString(  ",
+			"getString",
+			"R.string",
+			"displayVersionPopup",
+			"from",
+			"lv_",
+			"listView",
+			"DownloadTask",
+			"JSON",
+			"downloadUrl",
+			"random",
+			"gen_uuid",
+			"task",
+			"créee",
+			"is_selected",
+			"checked",
+			"cadded",
+			"cupdated",
+			"ccreated",
+			"AddGroupForm",
+			" a:hover",
+			",",
+			"uuid",
+			"settings",
+			"PhoneNumber",
+			"identity",
+			"name",
+			"legend",
+			"pure-menu-heading",
+			"contacts",
+			"page",
+			".sidebar .pure-menu ",
+			"group",
+			"groups",
+			"tasks_list",
+			"tasks",
+			"tasks_list",
+			"task",
+			"@login_required\ndef tasks_list(request, **kwargs):\n    context = {}\n    return render(request,\n                  kwargs.get('template_name', 'tasks_list.html'),\n                  context)",
+			"pure-menu-selected",
+			"#nav",
+			"500",
+			"')\n",
+			"print",
+			"duration",
+			"duration =",
+			"get_event_responses_counts",
+			"graph_event_response_counts",
+			"\\",
+			"unicodedata",
+			"NKFD",
+			"Routine Hebdomadire MADO",
+			"_(\"",
+			"EpidemiologyR",
+			"week",
+			"period",
+			"months",
+			"weeks_data",
+			"start(",
+			"expected_arr",
+			"middle().",
+			"logger.debug",
+			"find_create_with",
+			"print"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			",",
+			"\\t",
+			"http://casden.mybookforge.com/epub/",
+			"\n"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app/src/main/java/com/yeleman/snisidroid/ChangePassword.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3450,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								454,
+								382
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"history_list_is_closing": true,
+							"sublime_auto_complete": true,
+							"syntax": "Packages/Java/Java.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "app/src/main/java/com/yeleman/snisidroid/CheckedFormActivity.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8814,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3182,
+								3182
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/Java/Java.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1011.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "app/src/main/java/com/yeleman/nutrition/NutritionWeeklyReport.java",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5626,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Java/Java.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 3,
+					"file": "app/src/main/res/values/strings.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4204,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2956,
+								2984
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"history_list_is_closing": true,
+							"sublime_auto_complete": true,
+							"syntax": "Packages/XML/XML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 431.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "app/build/intermediates/res/debug/layout/snisi_home.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1863,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								869,
+								811
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"history_list_is_closing": true,
+							"sublime_auto_complete": true,
+							"syntax": "Packages/XML/XML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 327,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								327,
+								327
+							]
+						],
+						"settings":
+						{
+							"auto_name": "protected EditText mamScreeningField;",
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "app/src/main/res/layouts/nutrition/layout/nutrition_home.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1135,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								190,
+								190
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"history_list_is_closing": true,
+							"sublime_auto_complete": true,
+							"syntax": "Packages/XML/XML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "app/src/main/res/layouts/snisi/layout/snisi_change_password.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2063,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								638,
+								1192
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/XML/XML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "app/src/main/res/layouts/snisi/layout/nutrition_weekly_report.xml",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1299,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								594,
+								594
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"history_list_is_closing": true,
+							"sublime_auto_complete": true,
+							"syntax": "Packages/XML/XML.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2003,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								564,
+								564
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/Java/Java.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 32.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "SNISI-droid.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"nutritionreport",
+				"app/src/main/java/com/yeleman/nutrition/NutritionWeeklyReport.java"
+			],
+			[
+				"change",
+				"app/src/main/res/layouts/snisi/layout/snisi_change_password.xml"
+			],
+			[
+				"week",
+				"app/src/main/res/layouts/snisi/layout/nutrition_weekly_report.xml"
+			],
+			[
+				"weekl",
+				"app/src/main/res/layouts/snisi/menu/nutrition_weekly_report.xml"
+			],
+			[
+				"homejava",
+				"app/src/main/java/com/yeleman/snisidroid/SNISIHome.java"
+			],
+			[
+				"nutritionhom",
+				"app/src/main/java/com/yeleman/nutrition/NutritionHome.java"
+			],
+			[
+				"nutritionhomexml",
+				"app/src/main/res/layouts/nutrition/layout/nutrition_home.xml"
+			],
+			[
+				"nutrition",
+				"app/build/intermediates/res/debug/layout/nutrition_home.xml"
+			],
+			[
+				"manifes",
+				"app/src/main/AndroidManifest.xml"
+			],
+			[
+				"pop",
+				"app/src/main/java/com/yeleman/snisidroid/Popups.java"
+			],
+			[
+				"string",
+				"app/src/main/res/values/strings.xml"
+			],
+			[
+				"resource",
+				"app/src/main/java/com/yeleman/snisidroid/Resource.java"
+			],
+			[
+				"passwordxm",
+				"app/build/intermediates/res/debug/layout/snisi_change_password.xml"
+			],
+			[
+				"aboutxml",
+				"app/src/main/res/layouts/snisi/layout/snisi_about.xml"
+			],
+			[
+				"home.xm",
+				"app/build/intermediates/res/debug/layout/snisi_home.xml"
+			],
+			[
+				"about",
+				"app/src/main/java/com/yeleman/snisidroid/SNISIAbout.java"
+			],
+			[
+				"prefe",
+				"app/src/main/java/com/yeleman/snisidroid/Preferences.java"
+			],
+			[
+				"snisih",
+				"app/src/main/java/com/yeleman/snisidroid/SNISIHome.java"
+			],
+			[
+				"home.xml",
+				"app/build/intermediates/res/debug/layout/snisi_home.xml"
+			],
+			[
+				"cons",
+				"app/src/main/java/com/yeleman/snisidroid/Constants.java"
+			],
+			[
+				"consa",
+				"app/src/main/java/com/yeleman/smir/Constants.java"
+			],
+			[
+				"snisi.j",
+				"app/src/main/java/com/yeleman/snisidroid/SNISI.java"
+			],
+			[
+				"strings",
+				"app/src/main/res/values/strings.xml"
+			],
+			[
+				"strin",
+				"app/src/main/res/values/strings.xml"
+			],
+			[
+				"str",
+				"app/src/main/res/values/strings.xml"
+			],
+			[
+				"proce",
+				"manager/processors.py"
+			],
+			[
+				"lklc",
+				"manager/templatetags/lklc.py"
+			],
+			[
+				"tasks",
+				"manager/templates/tasks.html"
+			],
+			[
+				"number",
+				"manager/numbers.py"
+			],
+			[
+				"import",
+				"manager/templates/import_contacts.html"
+			],
+			[
+				"base",
+				"manager/templates/base.html"
+			],
+			[
+				"ci",
+				"manager/static/ci.css"
+			],
+			[
+				"ci.",
+				"manager/static/ci.css"
+			],
+			[
+				"ci.c",
+				"manager/static/ci.css"
+			],
+			[
+				"sett",
+				"lakalici/settings.py"
+			],
+			[
+				"impo",
+				"manager/templates/import_contacts.html"
+			],
+			[
+				"num",
+				"manager/numbers.py"
+			],
+			[
+				"settin",
+				"lakalici/settings.py"
+			],
+			[
+				"groups",
+				"manager/templates/groups.html"
+			],
+			[
+				"form",
+				"manager/forms.py"
+			],
+			[
+				"contacts",
+				"manager/templates/contacts.html"
+			],
+			[
+				"model",
+				"manager/models.py"
+			],
+			[
+				"se",
+				"lakalici/settings.py"
+			],
+			[
+				"views",
+				"douentza/views/statistics.py"
+			],
+			[
+				"url",
+				"douentza/urls.py"
+			],
+			[
+				"reportc",
+				"snisi_epidemiology/fixtures/ReportClass.xml"
+			],
+			[
+				"integr",
+				"snisi_epidemiology/integrity.py"
+			],
+			[
+				"period",
+				"snisi_core/models/Periods.py"
+			],
+			[
+				"aggrega",
+				"snisi_epidemiology/aggregations.py"
+			],
+			[
+				"routinehtml",
+				"snisi_reprohealth/templates/report/msi_pf_monthly_routine.html"
+			],
+			[
+				"domain",
+				"snisi_epidemiology/fixtures/Domain.xml"
+			],
+			[
+				"xls_",
+				"snisi_epidemiology/xls_export.py"
+			],
+			[
+				"reporting",
+				"snisi_core/models/Reporting.py"
+			],
+			[
+				"inte",
+				"snisi_core/integrity.py"
+			],
+			[
+				"integ",
+				"snisi_epidemiology/integrity.py"
+			],
+			[
+				"periods",
+				"snisi_core/models/Periods.py"
+			],
+			[
+				"reportcl",
+				"snisi_epidemiology/fixtures/ReportClass.xml"
+			],
+			[
+				"expec",
+				"snisi_epidemiology/expected.py"
+			],
+			[
+				"sms_",
+				"snisi_epidemiology/sms_handlers.py"
+			],
+			[
+				"dashbo",
+				"snisi_epidemiology/templates/epidemiology/dashboard.html"
+			],
+			[
+				"chart",
+				"snisi_web/templates/assets/highcharts.html"
+			],
+			[
+				"map",
+				"snisi_web/templates/assets/mapbox.html"
+			],
+			[
+				"map.html",
+				"snisi_malaria/templates/malaria/map.html"
+			],
+			[
+				"layout",
+				"snisi_web/static/src/less/layout.less"
+			],
+			[
+				"effe",
+				"snisi_web/static/src/less/effects.less"
+			],
+			[
+				"files.less",
+				"snisi_web/static/src/less/files.less"
+			],
+			[
+				"files",
+				"static/src/less/files.less"
+			],
+			[
+				"bootstr",
+				"static/assets/bootstrap.less"
+			],
+			[
+				"mapp",
+				"snisi_web/static/src/js/mapping.js"
+			],
+			[
+				"mapping.js",
+				"static/src/js/mapping.js"
+			],
+			[
+				"snisi.less",
+				"snisi_web/static/src/less/snisi.less"
+			],
+			[
+				"grunt",
+				"snisi_web/static/Gruntfile.js"
+			],
+			[
+				"font",
+				"static/src/less/fonts.less"
+			],
+			[
+				"trachodash",
+				"snisi_trachoma/templates/trachoma/dashboard.html"
+			],
+			[
+				"trachomaind",
+				"snisi_trachoma/indicators.py"
+			],
+			[
+				"repromodel",
+				"snisi_reprohealth/models/PFActivities.py"
+			],
+			[
+				"cluster",
+				"snisi_reprohealth/fixtures/Cluster.xml"
+			],
+			[
+				"trachomaview",
+				"snisi_trachoma/views.py"
+			],
+			[
+				"trachomaurl",
+				"snisi_trachoma/urls.py"
+			],
+			[
+				"malariaurls",
+				"snisi_malaria/urls.py"
+			],
+			[
+				"reprourl",
+				"snisi_reprohealth/urls.py"
+			],
+			[
+				"reprovie",
+				"snisi_reprohealth/views.py"
+			],
+			[
+				"misc",
+				"snisi_tools/misc.py"
+			],
+			[
+				"projects",
+				"snisi_core/models/Projects.py"
+			],
+			[
+				"gruntfi",
+				"static/Gruntfile.js"
+			],
+			[
+				"gitign",
+				".gitignore"
+			],
+			[
+				"epidemiourls",
+				"snisi_epidemiology/urls.py"
+			],
+			[
+				"map.",
+				"snisi_malaria/templates/malaria/map.html"
+			],
+			[
+				"webviews",
+				"snisi_web/views/mapping.py"
+			],
+			[
+				"malariaviews",
+				"snisi_malaria/views/mapping.py"
+			],
+			[
+				"settings",
+				"snisi/settings.py"
+			],
+			[
+				"malriaurls",
+				"snisi_malaria/urls.py"
+			],
+			[
+				"setting",
+				"snisi/settings.py"
+			],
+			[
+				"weburl",
+				"snisi_web/urls.py"
+			],
+			[
+				"clus",
+				"snisi_reprohealth/fixtures/Cluster.xml"
+			],
+			[
+				"nutcach",
+				"snisi_nutrition/caching.py"
+			],
+			[
+				"repromodels",
+				"snisi_reprohealth/models/Commodities.py"
+			],
+			[
+				"nutmode",
+				"snisi_nutrition/models.py"
+			],
+			[
+				"rhco",
+				"unfpa_core/models/ChildrenMortalityReport.py"
+			],
+			[
+				"configur",
+				"configure.ac"
+			],
+			[
+				"makefile",
+				"Makefile.am"
+			],
+			[
+				"bui",
+				"build_dev"
+			],
+			[
+				"read",
+				"README"
+			],
+			[
+				"provider",
+				"snisi_core/models/Providers.py"
+			],
+			[
+				"auth",
+				"snisi_tools/auth.py"
+			],
+			[
+				"csv",
+				"snisi_maint/management/commands/add_to_cluster_from_csv.py"
+			],
+			[
+				"require",
+				"requirements.pip"
+			],
+			[
+				"malariama",
+				"snisi_web/static/src/js/malaria_mapping.js"
+			],
+			[
+				"vaccmap",
+				"snisi_vacc/templates/vaccination/map.html"
+			],
+			[
+				"malariamapp",
+				"snisi_web/static/src/js/malaria_mapping.js"
+			],
+			[
+				"ba",
+				"snisi_web/templates/base.html"
+			],
+			[
+				".less",
+				"snisi_web/static/src/less/reporting.less"
+			],
+			[
+				"trachomamodel",
+				"snisi_trachoma/models.py"
+			],
+			[
+				"epidemiomode",
+				"snisi_epidemiology/models.py"
+			],
+			[
+				"mission",
+				"snisi_trachoma/templates/trachoma/mission_detail.html"
+			],
+			[
+				"templatesepi",
+				"snisi_epidemiology/templates/epidemiology/dashboard.html"
+			],
+			[
+				"snisi",
+				"snisi_web/templatetags/snisi.py"
+			],
+			[
+				"reproagg",
+				"snisi_reprohealth/aggregations.py"
+			],
+			[
+				"vaccmodel",
+				"snisi_vacc/models.py"
+			],
+			[
+				"malariamode",
+				"snisi_malaria/models.py"
+			],
+			[
+				"reprodai",
+				"snisi_reprohealth/management/commands/snisi_reprohealth_daily.py"
+			],
+			[
+				"reportin",
+				"snisi_core/models/Reporting.py"
+			],
+			[
+				"edit",
+				"snisi_web/templates/validation_edit.html"
+			],
+			[
+				"reproxls",
+				"snisi_reprohealth/xls_export.py"
+			],
+			[
+				"malariaxls",
+				"snisi_malaria/xls_export.py"
+			],
+			[
+				"valida",
+				"snisi_web/views/validation.py"
+			],
+			[
+				"upload",
+				"snisi_web/views/upload.py"
+			],
+			[
+				"reprointeg",
+				"snisi_reprohealth/integrity.py"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 237.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

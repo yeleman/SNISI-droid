@@ -88,7 +88,6 @@ public class SharedChecks {
         editText.setError(null);
         // length 0 means there is no text
         if (text.isEmpty()) {
-            editText.setError("Champs requis");
             return false;
         }
         return true;

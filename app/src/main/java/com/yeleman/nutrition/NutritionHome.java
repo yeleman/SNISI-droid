@@ -1,0 +1,125 @@
+package com.yeleman.nutrition;
+
+import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
+import android.content.Intent;
+import android.content.SharedPreferences;
+import android.net.Uri;
+import android.preference.PreferenceManager;
+import android.support.v7.app.ActionBarActivity;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+
+import com.yeleman.smir.SMIRHome;
+import com.yeleman.snisidroid.Constants;
+import com.yeleman.snisidroid.Popups;
+import com.yeleman.snisidroid.Preferences;
+import com.yeleman.snisidroid.R;
+
+
+public class NutritionHome extends ActionBarActivity {
+
+    private final static String TAG = Constants.getLogTag("NutritionHome");
+
+	private Button weeklyReportButton;
+	private Button monthlyReportButton;
+    private Button webSiteButton;
+    private boolean is_urenam, is_urenas, is_ureni;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.nutrition_home);
+        Log.d(TAG, "onCreate NutritionHome");
+
+        SharedPreferences sharedPrefs =
+        	PreferenceManager.getDefaultSharedPreferences(this);
+        is_urenam = sharedPrefs.getBoolean("hc_is_urenam", false);
+        is_urenas = sharedPrefs.getBoolean("hc_is_urenas", false);
+        is_ureni = sharedPrefs.getBoolean("hc_is_ureni", false);
+
+        if (!is_urenam && !is_urenas && !is_ureni) {
+            AlertDialog.Builder prefCheckBuilder = new AlertDialog.Builder(this);
+            prefCheckBuilder.setCancelable(false);
+            prefCheckBuilder.setTitle(
+                    getString(R.string.nutrition_level_missing_title));
+            prefCheckBuilder.setMessage(
+                    getString(R.string.nutrition_level_missing_body));
+            prefCheckBuilder.setIcon(R.drawable.ic_launcher);
+            prefCheckBuilder.setPositiveButton(R.string.go_to_preferences,
+                    new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
+                            // close the dialog (auto)
+                            // close the nutrition activity
+                            finish();
+                            // go to preferences
+                            Intent intent = new Intent(
+                                    getApplicationContext(),
+                                    Preferences.class);
+                            startActivity(intent);
+                        }
+                    });
+            AlertDialog prefCheckDialog = prefCheckBuilder.create();
+            prefCheckDialog.show();
+        } else {
+            setupUI();
+        }
+    }
+
+    protected void setupUI() {
+        Log.d(TAG, "setupUI NutritionHome");
+    	weeklyReportButton = (Button) findViewById(R.id.weeklyReportButton);
+    	monthlyReportButton = (Button) findViewById(R.id.monthlyReportButton);
+        webSiteButton = (Button) findViewById(R.id.webSiteButton);
+
+        final Activity activity = this;
+
+    	weeklyReportButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(
+                        getApplicationContext(),
+                        NutritionWeeklyReport.class);
+                startActivity(intent);
+            }
+        });
+
+        webSiteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String nutritionDataUrl = String.format("%1$s/nutrition/dashboard/", Constants.server_url);
+                Intent intent = new Intent(
+                        Intent.ACTION_VIEW,
+                        Uri.parse(nutritionDataUrl));
+                Popups.startIntentIfOnline(activity, intent);
+            }
+        });
+
+
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the menu; this adds items to the action bar if it is present.
+        getMenuInflater().inflate(R.menu.nutrition, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle action bar item clicks here. The action bar will
+        // automatically handle clicks on the Home/Up button, so long
+        // as you specify a parent activity in AndroidManifest.xml.
+        int id = item.getItemId();
+        if (id == R.id.action_settings) {
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
+    }
+}

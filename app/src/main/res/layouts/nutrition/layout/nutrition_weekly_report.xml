@@ -5,45 +5,41 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    tools:context=".SNISI" >
-
+    tools:context=".NutritionHome" >
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/scrollView"
+        android:id="@+id/linearLayout"
         android:orientation="vertical">
 
-       <TextView
-            android:text="@string/app_name_long"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/appLongNameLabel"
-            android:linksClickable="false"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_margin="10dp"
-           android:gravity="center|center_vertical" />
+            android:id="@+id/linearLayoutURENAM"
+            android:orientation="vertical">
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayoutURENAS"
+            android:orientation="vertical">
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayoutURENI"
+            android:orientation="vertical">
+        </LinearLayout>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/nutrition_app_label"
-            android:id="@+id/nutritionButton"
-            android:layout_margin="10dp" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/smir_app_label"
-            android:id="@+id/smirButton"
-            android:layout_margin="10dp" />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/website_goto_label"
-            android:id="@+id/webSiteButton"
+            android:text="@string/nutrition_weekly_save_submit"
+            android:id="@+id/saveAndSubmitButton"
             android:layout_margin="10dp" />
 
     </LinearLayout>
-
 </ScrollView>

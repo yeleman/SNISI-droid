@@ -4,7 +4,6 @@ import java.util.Vector;
 import java.util.Hashtable;
 
 import android.app.Activity;
-import android.app.AlertDialog;
 import android.os.Bundle;
 import android.telephony.SmsManager;
 import android.text.Html;
@@ -21,14 +20,11 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.graphics.Color;
 import android.preference.PreferenceManager;
 import android.widget.ScrollView;
 
-import com.yeleman.snisidroid.BuildConfig;
 import com.yeleman.snisidroid.Popups;
 import com.yeleman.snisidroid.Preferences;
 import com.yeleman.snisidroid.R;
@@ -36,7 +32,7 @@ import com.yeleman.snisidroid.R;
 import static java.lang.String.format;
 
 
-public class SMIR extends Activity {
+public class SMIRHome extends Activity {
 
     protected TextView label_disease;
     protected TextView label_cas;
@@ -288,17 +284,12 @@ public class SMIR extends Activity {
 		// Android HW button for settings
 		switch (item.getItemId()) {
             case R.id.menu_alert:
-                Intent a = new Intent(SMIR.this, AlertActivity.class);
+                Intent a = new Intent(SMIRHome.this, SMIRAlert.class);
                 startActivity(a);
                 break;
             case R.id.menu_settings:
                 Intent i = new Intent(this, Preferences.class);
                 startActivityForResult(i, Constants.RESULT_SETTINGS);
-                break;
-            case R.id.app_version:
-                // Toast.makeText(getApplicationContext(), getString(R.string.app_version_num), Toast.LENGTH_LONG).show();
-               // displayVersionPopup();
-
                 break;
 		}
 		return true;
