@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -17,7 +15,6 @@ import android.widget.TextView;
 import com.yeleman.snisidroid.CheckedFormActivity;
 import com.yeleman.snisidroid.Constants;
 import com.yeleman.snisidroid.R;
-import static com.orm.SugarRecord.save;
 
 public class NutritionWeeklyReport extends CheckedFormActivity {
 
@@ -51,7 +48,6 @@ public class NutritionWeeklyReport extends CheckedFormActivity {
 
         setupSMSReceiver();
         setupUI();
-
     }
 
     protected void setupUI() {
@@ -64,7 +60,7 @@ public class NutritionWeeklyReport extends CheckedFormActivity {
         LayoutInflater inflater = (LayoutInflater) getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         if (is_urenam) {
             ViewGroup urenam_parent = (ViewGroup) findViewById(R.id.linearLayoutURENAM);
-            View inflated_urenam = inflater.inflate(R.layout.nutrition_weekly_urenam, urenam_parent);
+            View inflated_urenam = inflater.inflate(R.layout.nutrition_weekly_unit, urenam_parent);
             urenamLabel = (TextView) inflated_urenam.findViewById(R.id.levelLabel);
             urenamLabel.setText(getString(R.string.nutrition_weekly_urenam));
             mamScreeningField = (EditText) inflated_urenam.findViewById(R.id.screeningField);
@@ -74,7 +70,7 @@ public class NutritionWeeklyReport extends CheckedFormActivity {
 
         if (is_urenas) {
             ViewGroup urenas_parent = (ViewGroup) findViewById(R.id.linearLayoutURENAS);
-            View inflated_urenas = inflater.inflate(R.layout.nutrition_weekly_urenam, urenas_parent);
+            View inflated_urenas = inflater.inflate(R.layout.nutrition_weekly_unit, urenas_parent);
             urenasLabel = (TextView) inflated_urenas.findViewById(R.id.levelLabel);
             urenasLabel.setText(getString(R.string.nutrition_weekly_urenas));
             samScreeningField = (EditText) inflated_urenas.findViewById(R.id.screeningField);
@@ -84,7 +80,7 @@ public class NutritionWeeklyReport extends CheckedFormActivity {
 
         if (is_ureni) {
             ViewGroup ureni_parent = (ViewGroup) findViewById(R.id.linearLayoutURENI);
-            View inflated_ureni = inflater.inflate(R.layout.nutrition_weekly_urenam, ureni_parent);
+            View inflated_ureni = inflater.inflate(R.layout.nutrition_weekly_unit, ureni_parent);
             ureniLabel = (TextView) inflated_ureni.findViewById(R.id.levelLabel);
             ureniLabel.setText(getString(R.string.nutrition_weekly_ureni));
             samcScreeningField = (EditText) inflated_ureni.findViewById(R.id.screeningField);
@@ -161,26 +157,6 @@ public class NutritionWeeklyReport extends CheckedFormActivity {
     		setTextOnField(samcCasesField, report.samc_cases);
     		setTextOnField(samcDeathsField, report.samc_deaths);
     	}
-    }
-
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.nutrition_weekly_report, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-        if (id == R.id.action_settings) {
-            return true;
-        }
-        return super.onOptionsItemSelected(item);
     }
 
     protected void setupInvalidInputChecks() {
