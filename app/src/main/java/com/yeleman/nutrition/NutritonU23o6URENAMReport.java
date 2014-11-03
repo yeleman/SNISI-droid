@@ -15,9 +15,6 @@ import com.yeleman.snisidroid.R;
 
 import java.lang.reflect.Field;
 
-/**
- * Created by fad on 30/10/14.
- */
 public class NutritonU23o6URENAMReport extends CheckedFormActivity {
     private final static String TAG = Constants.getLogTag("NutritonU23o6URENAMReport");
 
@@ -67,7 +64,7 @@ public class NutritonU23o6URENAMReport extends CheckedFormActivity {
         totalAdmFField = (EditText) findViewById(R.id.totalAdmFField);
 
         LinearLayout transferred_parent = (LinearLayout) findViewById(R.id.linearLayoutReferred);
-        transferred_parent.setVisibility(LinearLayout.GONE);
+        transferred_parent.setVisibility(View.GONE);
 
         //transferredLabel = (TextView) findViewById(R.id.totalTransferredLabel);
         // transferredLabel.setVisibility(View.GONE);
@@ -115,6 +112,17 @@ public class NutritonU23o6URENAMReport extends CheckedFormActivity {
         Log.d(TAG, "storeReportData");
         NutritonURENAMReportData report = NutritonURENAMReportData.get();
         report.updateMetaData();
+
+        report.u23o6_total_start_m = integerFromField(totalStarMField);
+        
+        report.save();
+        Log.d(TAG, "storeReportData -- end");
+
+    }
+
+    protected void restoreReportData() {
+        Log.d(TAG, "restoreReportData");
+        NutritonURENAMReportData report = NutritonURENAMReportData.get();
 
         setTextOnField(totalStarMField, report.u23o6_total_start_m);
         setTextOnField(totalStarFField, report.u23o6_total_start_f);
