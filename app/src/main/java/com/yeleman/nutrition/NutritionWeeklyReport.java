@@ -44,6 +44,8 @@ public class NutritionWeeklyReport extends CheckedFormActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nutrition_weekly_report);
+        setTitle(String.format(getString(R.string.sub_app_name_nut),
+                               getString(R.string.nutrition_weekly_report_label)));
         Log.d(TAG, "onCreate NutritionWeeklyReport");
 
         setupSMSReceiver();

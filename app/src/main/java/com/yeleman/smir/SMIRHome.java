@@ -34,7 +34,7 @@ import static java.lang.String.format;
 
 public class SMIRHome extends Activity {
 
-    protected TextView label_disease;
+    //protected TextView label_disease;
     protected TextView label_cas;
     protected EditText input_cas;
     protected TextView label_deces;
@@ -58,6 +58,7 @@ public class SMIRHome extends Activity {
     private Hashtable<String, String> disease_list;
 	private Hashtable<String, Hashtable<String, EditText>> cap_fields;
     private Hashtable<String, EditText> indiv_fields;
+
     @Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -68,7 +69,6 @@ public class SMIRHome extends Activity {
         layout.setOrientation(LinearLayout.VERTICAL);
         scrollv.addView(layout);
         setContentView(scrollv);
-
 
         disease_list = new Hashtable<String, String>();
         disease_list.put(Constants.ebola, "EBOLA");
@@ -287,11 +287,7 @@ public class SMIRHome extends Activity {
                 Intent a = new Intent(SMIRHome.this, SMIRAlert.class);
                 startActivity(a);
                 break;
-            case R.id.menu_settings:
-                Intent i = new Intent(this, Preferences.class);
-                startActivityForResult(i, Constants.RESULT_SETTINGS);
-                break;
-		}
+        }
 		return true;
 	}
 }

@@ -25,7 +25,6 @@ import com.yeleman.snisidroid.R;
 public class NutritionHome extends ActionBarActivity {
 
     private final static String TAG = Constants.getLogTag("NutritionHome");
-
 	private Button weeklyReportButton;
 	private Button monthlyReportButton;
     private Button webSiteButton;
@@ -34,8 +33,9 @@ public class NutritionHome extends ActionBarActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.nutrition_home);
         Log.d(TAG, "onCreate NutritionHome");
+        setContentView(R.layout.nutrition_home);
+        setTitle(String.format(getString(R.string.sub_app_name_nut), "Menu"));
 
         SharedPreferences sharedPrefs =
         	PreferenceManager.getDefaultSharedPreferences(this);
@@ -85,6 +85,16 @@ public class NutritionHome extends ActionBarActivity {
                 Intent intent = new Intent(
                         getApplicationContext(),
                         NutritionWeeklyReport.class);
+                startActivity(intent);
+            }
+        });
+
+        monthlyReportButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(
+                        getApplicationContext(),
+                        NutritionMonthlyHome.class);
                 startActivity(intent);
             }
         });

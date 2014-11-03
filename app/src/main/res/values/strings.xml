@@ -77,6 +77,7 @@
     <string name="error_sms_not_sent_body">Le SMS n\'a pa pu être envoyé correctement. Vérifiez que vous avez du réseau et du crédit puis réessayez.\n%1$s</string>
 
     <!-- Nutrition -->
+    <string name="sub_app_name_nut">Nutrition %1$s</string>
     <string name="nutrition_app_label">Nutrition</string>
     <string name="nutrition_monthly_report_label">Rapport Mensuel</string>
     <string name="nutrition_weekly_report_label">Rapport Hebdomadaire</string>
@@ -90,7 +91,41 @@
     <string name="nutrition_weekly_save_submit">Enregister et transmettre</string>
     <string name="nutrition_level_missing_title">Unité nutrition manquante</string>
 	<string name="nutrition_level_missing_body">Votre profil n\'indique aucune unité de nutrition pour votre unité sanitaire.\nAllez remplir les niveaux d\'UREN pour lesquelles vous faîtes la PEC dans les paramètres.</string>
+    <string name="nutrition_fillout_urenam_report">Rapport URENAM [%1$s]</string>
+    <string name="nutrition_fillout_urenas_report">Rapport URENAS [%1$s]</string>
+    <string name="nutrition_fillout_ureni_report">Rapport URENI [%1$s]</string>
+    <string name="nutrition_fillout_inputs_report">Rapport Intrants [%1$s]</string>
 
+    <string name="u6">0-6m</string>
+    <string name="u23o6">6-23m</string>
+    <string name="u59o23">23-59m</string>
+    <string name="u59o6">6-59m</string>
+    <string name="o59">59m+</string>
+    <string name="pw">FE/FA</string>
+    <string name="exsam">ExMAS</string>
+
+    <string name="nutrition_total_start">Total début du mois</string>
+    <string name="nutrition_total_end">Total fin du mois</string>
+    <string name="nutrition_admission">Admissions</string>
+    <string name="nutrition_total_adm">Total Admissions</string>
+    <string name="nutrition_out">Sorties</string>
+    <string name="nutrition_all_out">Toutes Sorties</string>
+    <string name="nutrition_total_out">Total Sorties</string>
+    <string name="nutrition_m">Homme</string>
+    <string name="nutrition_f">femme</string>
+
+    <string name="nutrition_new_cases">Nouveau cas</string>
+    <string name="nutrition_returned">Readmisson</string>
+    <string name="nutrition_transferred">Transf. [%1$s]</string>
+    <string name="nutrition_healed">Guéris</string>
+    <string name="nutrition_deceased">Décès</string>
+    <string name="nutrition_abandon">Abandons</string>
+    <string name="nutrition_not_responding">Non Repond</string>
+    <string name="nutrition_referred">Réf. %1$s</string>
+    <!-- Menu -->
+    <string name="nutrition_fillout_report">Rapport %1$s [%2$s]</string>
+    <string name="nutrition_monthly_save">Enregister</string>
+    <string name="nutrition_monthly_complete">Marquer complet</string>
     <!-- SMIR -->
     <string name="smir_app_label">SMIR</string>
     <string name="menu_alert">Alerte</string>

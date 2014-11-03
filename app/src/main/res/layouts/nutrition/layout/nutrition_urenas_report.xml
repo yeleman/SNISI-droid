@@ -16,24 +16,21 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/nutrition_weekly_report_label"
-            android:id="@+id/weeklyReportButton"
+            android:text="@string/nutrition_fillout_report"
+            android:id="@+id/u59URENASButton"
             android:layout_margin="10dp" />
-
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/nutrition_monthly_report_label"
-            android:id="@+id/monthlyReportButton"
+            android:text="@string/nutrition_fillout_report"
+            android:id="@+id/o59URENASButton"
             android:layout_margin="10dp" />
-
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/nutrition_website_label"
-            android:id="@+id/webSiteButton"
+            android:text="@string/nutrition_monthly_complete"
+            android:id="@+id/monthlyCompleteButton"
             android:layout_margin="10dp" />
-
     </LinearLayout>
 
 </ScrollView>
