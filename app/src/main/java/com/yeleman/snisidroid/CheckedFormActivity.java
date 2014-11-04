@@ -257,7 +257,15 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
     }
 
     protected void setTextOnField(EditText editText, Object value) {
-        editText.setText(String.valueOf(value));
+        String default_str = "";
+        String value_str;
+        try {
+            value_str = String.valueOf(value);
+        } catch (Exception e) {
+            value_str = default_str;
+        }
+        Log.d(TAG, value_str);
+        editText.setText(value_str);
     }
 
     /* SMS Submission Code */

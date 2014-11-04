@@ -65,8 +65,10 @@ public class SMIRHome extends Activity {
 
 		//setContentView(R.layout.activity_main);
 		ScrollView scrollv = new ScrollView(this);
-		LinearLayout layout = new LinearLayout(this);
+        LinearLayout layout = new LinearLayout(this);
         layout.setOrientation(LinearLayout.VERTICAL);
+        layout.setPadding(20, 0, 20, 0);
+
         scrollv.addView(layout);
         setContentView(scrollv);
 

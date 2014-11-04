@@ -27,6 +27,7 @@ public class NutritonURENAMReportData extends ReportData {
     int u23o6_referred = -1;
     int u23o6_total_end_m = -1;
     int u23o6_total_end_f = -1;
+    boolean u23o6_is_complete = false;
     // 23-59 months
     int u59o23_total_start_m = -1;
     int u59o23_total_start_f = -1;
@@ -43,6 +44,7 @@ public class NutritonURENAMReportData extends ReportData {
     int u59o23_referred = -1;
     int u59o23_total_end_m = -1;
     int u59o23_total_end_f = -1;
+    boolean u59o23_is_complete = false;
     // 59+ months
     int o59_total_start_m = -1;
     int o59_total_start_f = -1;
@@ -59,6 +61,7 @@ public class NutritonURENAMReportData extends ReportData {
     int o59_referred = -1;
     int o59_total_end_m = -1;
     int o59_total_end_f = -1;
+    boolean o59_is_complete = false;
     // Pregnant & Breast Feeding Women
     int pw_total_start_m = -1;
     int pw_total_start_f = -1;
@@ -75,14 +78,14 @@ public class NutritonURENAMReportData extends ReportData {
     int pw_referred = -1;
     int pw_total_end_m = -1;
     int pw_total_end_f = -1;
+    boolean pw_is_complete = false;
     // Former SAM
     int exsam_total_start_m = -1;
     int exsam_total_start_f = -1;
-    int exsam_total_out_m = -1;
-    int exsam_total_out_f = -1;
     int exsam_referred = -1;
     int exsam_total_end_m = -1;
     int exsam_total_end_f = -1;
+    boolean exsam_is_complete = false;
 
     public NutritonURENAMReportData() {}
 

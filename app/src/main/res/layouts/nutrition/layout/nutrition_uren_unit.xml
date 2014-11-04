@@ -9,261 +9,270 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/scrollView"
-        android:orientation="vertical">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/totalStartLabel"
-            android:linksClickable="false"
-            android:text="@string/nutrition_total_start"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_margin="10dp" />
+        android:orientation="vertical"
+        android:padding="5dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/scrollView1"
-            android:orientation="horizontal"
-            android:weightSum="1">
-            <EditText
-                android:layout_width="wrap_content"
+            android:id="@+id/startLinearLayout"
+            android:orientation="vertical"
+            android:weightSum="1"
+            android:layout_margin="10dp">
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:id="@+id/totalStarMField"
-                android:imeOptions="actionNext"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:hint="@string/nutrition_m"
-                android:singleLine="false"
-                android:editable="true"
-                android:layout_weight="0.50"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp" />
-            <EditText
-                android:layout_width="wrap_content"
+                android:id="@+id/totalStartLabel"
+                android:linksClickable="false"
+                android:text="@string/nutrition_total_start"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:id="@+id/totalStarFField"
-                android:imeOptions="actionNext"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:hint="@string/nutrition_f"
-                android:singleLine="false"
-                android:layout_weight="0.50"
-                android:layout_marginRight="10dp" />
+                android:id="@+id/scrollView1"
+                android:orientation="horizontal"
+                android:weightSum="1">
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:id="@+id/totalStarMField"
+                    android:imeOptions="actionNext"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:hint="@string/nutrition_m"
+                    android:singleLine="false"
+                    android:editable="true"
+                    android:layout_weight="0.50" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:id="@+id/totalStarFField"
+                    android:imeOptions="actionNext"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:hint="@string/nutrition_f"
+                    android:singleLine="false"
+                    android:layout_weight="0.50" />
+            </LinearLayout>
         </LinearLayout>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/admissionLabel"
-            android:linksClickable="false"
-            android:text="@string/nutrition_admission"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_margin="10dp" />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:id="@+id/newCasesField"
-            android:imeOptions="actionNext"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:hint="@string/nutrition_new_cases"
-            android:singleLine="false"
-            android:focusable="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp" />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/returnedField"
-            android:imeOptions="actionNext"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:hint="@string/nutrition_returned"
-            android:singleLine="false"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/totalAdmLabel"
-            android:linksClickable="false"
-            android:text="@string/nutrition_total_adm"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_margin="10dp" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/scrollView2"
-            android:orientation="horizontal"
-            android:weightSum="1">
+            android:id="@+id/inLinearLayout"
+            android:orientation="vertical"
+            android:weightSum="1"
+            android:layout_margin="10dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/admissionLabel"
+                android:linksClickable="false"
+                android:text="@string/nutrition_admission"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:id="@+id/totalAdmMField"
+                android:id="@+id/newCasesField"
                 android:imeOptions="actionNext"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:hint="@string/nutrition_m"
+                android:hint="@string/nutrition_new_cases"
                 android:singleLine="false"
-                android:editable="true"
-                android:layout_weight="0.50"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp" />
+                android:focusable="true" />
             <EditText
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:inputType="number"
-                android:id="@+id/totalAdmFField"
+                android:ems="10"
+                android:id="@+id/returnedField"
                 android:imeOptions="actionNext"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
-                android:hint="@string/nutrition_f"
-                android:singleLine="false"
-                android:layout_weight="0.50"
-                android:layout_marginRight="10dp" />
-        </LinearLayout>
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/totalTransferredLabel"
-            android:linksClickable="false"
-            android:text="@string/nutrition_transferred"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_margin="10dp" />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/transferredField"
-            android:imeOptions="actionNext"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:hint="@string/nutrition_transferred"
-            android:singleLine="false"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/OutsLabel"
-            android:linksClickable="false"
-            android:text="@string/nutrition_out"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_margin="10dp" />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/healedField"
-            android:imeOptions="actionNext"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:hint="@string/nutrition_healed"
-            android:singleLine="false"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp" />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/deceasedField"
-            android:imeOptions="actionNext"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:hint="@string/nutrition_deceased"
-            android:singleLine="false"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp" />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/abandonField"
-            android:imeOptions="actionNext"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:hint="@string/nutrition_abandon"
-            android:singleLine="false"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp" />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/respondingField"
-            android:imeOptions="actionNext"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:hint="@string/nutrition_not_responding"
-            android:singleLine="false"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/totalOutsLabel"
-            android:linksClickable="false"
-            android:text="@string/nutrition_total_out"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_margin="10dp" />
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/scrollView3"
-            android:orientation="horizontal"
-            android:weightSum="1">
-            <EditText
-                android:layout_width="wrap_content"
+                android:hint="@string/nutrition_returned"
+                android:singleLine="false" />
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:id="@+id/totalOutsMField"
-                android:imeOptions="actionNext"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:hint="@string/nutrition_m"
-                android:singleLine="false"
-                android:editable="true"
-                android:layout_weight="0.50"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp" />
-            <EditText
-                android:layout_width="wrap_content"
+                android:id="@+id/totalInLabel"
+                android:linksClickable="false"
+                android:text="@string/nutrition_total_adm"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:id="@+id/totalOutsFField"
-                android:imeOptions="actionNext"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:hint="@string/nutrition_f"
-                android:singleLine="false"
-                android:layout_weight="0.50"
-                android:layout_marginRight="10dp" />
+                android:id="@+id/allInLinearLayout"
+                android:orientation="horizontal"
+                android:weightSum="1">
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:id="@+id/totalInMField"
+                    android:imeOptions="actionNext"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:hint="@string/nutrition_m"
+                    android:singleLine="false"
+                    android:editable="true"
+                    android:layout_weight="0.50" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:id="@+id/totalInFField"
+                    android:imeOptions="actionNext"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:hint="@string/nutrition_f"
+                    android:singleLine="false"
+                    android:layout_weight="0.50" />
+            </LinearLayout>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/linearLayoutReferred"
-            android:orientation="vertical">
+            android:id="@+id/TransferredLinearLayout"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/totalTransferredLabel"
+                android:linksClickable="false"
+                android:text="@string/nutrition_transferred"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/transferredField"
+                android:imeOptions="actionNext"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:hint="@string/nutrition_transferred"
+                android:singleLine="false" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/outLinearLayout"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/OutLabel"
+                android:linksClickable="false"
+                android:text="@string/nutrition_out"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/healedField"
+                android:imeOptions="actionNext"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:hint="@string/nutrition_healed"
+                android:singleLine="false" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/deceasedField"
+                android:imeOptions="actionNext"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:hint="@string/nutrition_deceased"
+                android:singleLine="false" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/abandonField"
+                android:imeOptions="actionNext"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:hint="@string/nutrition_abandon"
+                android:singleLine="false" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/respondingField"
+                android:imeOptions="actionNext"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:hint="@string/nutrition_not_responding"
+                android:singleLine="false" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/outsTotalsLinearLayout"
+                android:orientation="vertical"
+                android:weightSum="1">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/totalOutLabel"
+                    android:linksClickable="false"
+                    android:text="@string/nutrition_total_out"
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/outTotalLinearLayout"
+                    android:orientation="horizontal"
+                    android:weightSum="1">
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:id="@+id/totalOutMField"
+                        android:imeOptions="actionNext"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:hint="@string/nutrition_m"
+                        android:singleLine="false"
+                        android:editable="true"
+                        android:layout_weight="0.50" />
+                    <EditText
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:inputType="number"
+                        android:id="@+id/totalOutFField"
+                        android:imeOptions="actionNext"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:hint="@string/nutrition_f"
+                        android:singleLine="false"
+                        android:layout_weight="0.50" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/referredlinearLayout"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:id="@+id/referredLabel"
                 android:linksClickable="false"
                 android:text="@string/nutrition_referred"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_margin="10dp" />
+                android:textAppearance="?android:attr/textAppearanceLarge" />
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -274,73 +283,51 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:hint=""
-                android:singleLine="false"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp" />
+                android:singleLine="false" />
         </LinearLayout>
-<!-- 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/allOutsLabel"
-            android:linksClickable="false"
-            android:text="@string/nutrition_all_out"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_margin="10dp" />
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="number"
-            android:ems="10"
-            android:id="@+id/allOutsField"
-            android:imeOptions="actionNext"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:hint="@string/nutrition_all_out"
-            android:singleLine="false"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp" />
- -->
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/totalEndLabel"
-            android:linksClickable="false"
-            android:text="@string/nutrition_total_end"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:layout_margin="10dp" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/scrollView4"
-            android:orientation="horizontal"
-            android:weightSum="1">
-            <EditText
-                android:layout_width="wrap_content"
+            android:id="@+id/endlinearLayout"
+            android:orientation="vertical"
+            android:layout_margin="10dp">
+            <TextView
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:id="@+id/totalEndMField"
-                android:imeOptions="actionNext"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:hint="@string/nutrition_m"
-                android:singleLine="false"
-                android:editable="true"
-                android:layout_weight="0.50"
-                android:layout_marginRight="10dp"
-                android:layout_marginLeft="10dp" />
-            <EditText
-                android:layout_width="wrap_content"
+                android:id="@+id/totalEndLabel"
+                android:linksClickable="false"
+                android:text="@string/nutrition_total_end"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+            <LinearLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:inputType="number"
-                android:id="@+id/totalEndFField"
-                android:imeOptions="actionNext"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:hint="@string/nutrition_f"
-                android:singleLine="false"
-                android:layout_weight="0.50"
-                android:layout_marginRight="10dp" />
+                android:id="@+id/scrollView4"
+                android:orientation="horizontal"
+                android:weightSum="1">
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:id="@+id/totalEndMField"
+                    android:imeOptions="actionNext"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:hint="@string/nutrition_m"
+                    android:singleLine="false"
+                    android:editable="true"
+                    android:layout_weight="0.50" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:id="@+id/totalEndFField"
+                    android:imeOptions="actionDone"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:hint="@string/nutrition_f"
+                    android:singleLine="false"
+                    android:layout_weight="0.50" />
+            </LinearLayout>
         </LinearLayout>
         <Button
             android:layout_width="match_parent"

@@ -89,12 +89,12 @@
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.yeleman.nutrition.NutritonU23o6URENAMReport"
+            android:name="com.yeleman.nutrition.NutritonU23O6URENAMReport"
             android:label="@string/nutrition_app_label"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.yeleman.nutrition.NutritionU59o23URENAMReport"
+            android:name="com.yeleman.nutrition.NutritionU59O23URENAMReport"
             android:label="@string/nutrition_app_label"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation" />

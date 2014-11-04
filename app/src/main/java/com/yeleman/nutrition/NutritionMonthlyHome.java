@@ -13,15 +13,18 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 
+import com.yeleman.snisidroid.CheckedFormActivity;
 import com.yeleman.snisidroid.Constants;
 import com.yeleman.snisidroid.Popups;
 import com.yeleman.snisidroid.Preferences;
 import com.yeleman.snisidroid.R;
 
+import static com.yeleman.snisidroid.Constants.getCompleteStatus;
+
 /**
  * Created by fad on 29/10/14.
  */
-public class NutritionMonthlyHome extends ActionBarActivity implements View.OnClickListener {
+public class NutritionMonthlyHome extends CheckedFormActivity implements View.OnClickListener {
 
     private final static String TAG = Constants.getLogTag("NutritionMonthlyHome");
 
@@ -31,6 +34,7 @@ public class NutritionMonthlyHome extends ActionBarActivity implements View.OnCl
     private Button inputsReportButton;
 
     private boolean is_urenam, is_urenas, is_ureni;
+    boolean restoreReport = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,12 +74,17 @@ public class NutritionMonthlyHome extends ActionBarActivity implements View.OnCl
             AlertDialog prefCheckDialog = prefCheckBuilder.create();
             prefCheckDialog.show();
         } else {
+
+            Log.d(TAG, "requestForResumeReport NutritonURENAMReportData");
+            requestForResumeReport(this, NutritonURENAMReportData.get());
             setupUI();
         }
     }
 
     protected void setupUI() {
         Log.d(TAG, "setupUI NutritionMonthlyHome");
+
+        NutritonURENAMReportData report = NutritonURENAMReportData.get();
         String status = "  ";
 
         urenamReportButton = (Button) findViewById(R.id.monthlyURENAMButton);
@@ -83,7 +92,12 @@ public class NutritionMonthlyHome extends ActionBarActivity implements View.OnCl
         ureniReportButton = (Button) findViewById(R.id.monthlyURENIButton);
 
         if (is_urenam) {
-            urenamReportButton.setText(String.format(getString(R.string.nutrition_fillout_urenam_report), status));
+            urenamReportButton.setText(String.format(getString(R.string.nutrition_fillout_urenam_report),
+              getCompleteStatus(report.pw_is_complete &&
+                                report.o59_is_complete &&
+                                report.u23o6_is_complete &&
+                                report.u59o23_is_complete &&
+                                report.exsam_is_complete)));
             urenamReportButton.setOnClickListener(this);
         } else {
             urenamReportButton.setVisibility(View.GONE);
@@ -106,8 +120,14 @@ public class NutritionMonthlyHome extends ActionBarActivity implements View.OnCl
         inputsReportButton.setOnClickListener(this);
     }
 
+    protected void restoreReportData() {
+        restoreReport = true;
+
+    }
+
     public void onClick(View view) {
         Object activity = null;
+
         switch (view.getId()) {
             case R.id.monthlyURENAMButton:
                 activity = NutritionURENAMReport.class;
@@ -128,6 +148,7 @@ public class NutritionMonthlyHome extends ActionBarActivity implements View.OnCl
         Intent intent = new Intent(
                 getApplicationContext(),
                 (Class<?>) activity);
+        intent.putExtra( "restoreReport", String.valueOf(restoreReport) );
         startActivity(intent);
     }
 }

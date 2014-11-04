@@ -3,6 +3,7 @@ package com.yeleman.nutrition;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -12,14 +13,13 @@ import com.yeleman.snisidroid.CheckedFormActivity;
 import com.yeleman.snisidroid.Constants;
 import com.yeleman.snisidroid.R;
 
-/**
- * Created by fad on 31/10/14.
- */
-public class NutritionPWURENAMReport extends CheckedFormActivity {
-    private final static String TAG = Constants.getLogTag("NutritionPWURENAMReport");
+import java.lang.reflect.Field;
+
+public class NutritonU23O6URENAMReport extends CheckedFormActivity {
+    private final static String TAG = Constants.getLogTag("NutritonU23O6URENAMReport");
 
     protected TextView referredLabel;
-
+    
     protected EditText totalStarMField;
     protected EditText totalStarFField;
     protected EditText newCasesField;
@@ -44,16 +44,15 @@ public class NutritionPWURENAMReport extends CheckedFormActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nutrition_uren_unit);
         setTitle(String.format(getString(R.string.nutrition_fillout_urenam_report),
-                getString(R.string.pw)));
-        Log.d(TAG, "onCreate NutritionPWURENAMReport");
-
+                getString(R.string.u23o6)));
+        Log.d(TAG, "onCreate NutritonU23O6URENAMReport");
         setupSMSReceiver();
         setupUI();
     }
 
     protected void setupUI() {
-        Log.d(TAG, "setupUI NutritionPWURENAMReport");
-
+        Log.d(TAG, "setupUI NutritonU23O6URENAMReport");
+        
         totalStarMField = (EditText) findViewById(R.id.totalStarMField);
         totalStarFField = (EditText) findViewById(R.id.totalStarFField);
         newCasesField = (EditText) findViewById(R.id.newCasesField);
@@ -96,6 +95,7 @@ public class NutritionPWURENAMReport extends CheckedFormActivity {
                 finish();
             }
         });
+
     }
 
     protected void storeReportData() {
@@ -103,22 +103,23 @@ public class NutritionPWURENAMReport extends CheckedFormActivity {
         NutritonURENAMReportData report = NutritonURENAMReportData.get();
         report.updateMetaData();
 
-        report.pw_total_start_m = integerFromField(totalStarMField);
-        report.pw_total_start_f = integerFromField(totalStarFField);
-        report.pw_new_cases = integerFromField(newCasesField);
-        report.pw_returned = integerFromField(returnedField);
-        report.pw_total_in_m = integerFromField(totalInMField);
-        report.pw_total_in_f = integerFromField(totalInFField);
-        report.pw_healed = integerFromField(healedField);
-        report.pw_deceased = integerFromField(deceasedField);
-        report.pw_abandon = integerFromField(abandonField);
-        report.pw_not_responding = integerFromField(respondingField);
-        report.pw_total_out_m = integerFromField(totalOutMField);
-        report.pw_total_out_f = integerFromField(totalOutFField);
-        report.pw_referred = integerFromField(referredField);
-        report.pw_total_end_m = integerFromField(totalEndMField);
-        report.pw_total_end_f = integerFromField(totalEndFField);
-        report.pw_is_complete = true;
+        report.u23o6_total_start_m = integerFromField(totalStarMField);
+        report.u23o6_total_start_f = integerFromField(totalStarFField);
+        report.u23o6_new_cases = integerFromField(newCasesField);
+        report.u23o6_returned = integerFromField(returnedField);
+        report.u23o6_total_in_m = integerFromField(totalInMField);
+        report.u23o6_total_in_f = integerFromField(totalInFField);
+        report.u23o6_healed = integerFromField(healedField);
+        report.u23o6_deceased = integerFromField(deceasedField);
+        report.u23o6_abandon = integerFromField(abandonField);
+        report.u23o6_not_responding = integerFromField(respondingField);
+        report.u23o6_total_out_m = integerFromField(totalOutMField);
+        report.u23o6_total_out_f = integerFromField(totalOutFField);
+        report.u23o6_referred = integerFromField(referredField);
+        report.u23o6_total_end_m = integerFromField(totalEndMField);
+        report.u23o6_total_end_f = integerFromField(totalEndFField);
+        report.u23o6_is_complete = true;
+
         report.save();
         Log.d(TAG, "storeReportData -- end");
 
@@ -127,23 +128,22 @@ public class NutritionPWURENAMReport extends CheckedFormActivity {
     protected void restoreReportData() {
         Log.d(TAG, "restoreReportData");
         NutritonURENAMReportData report = NutritonURENAMReportData.get();
-
-        if (report.pw_total_start_m != -1){
-            setTextOnField(totalStarMField, report.pw_total_start_m);
-            setTextOnField(totalStarFField, report.pw_total_start_f);
-            setTextOnField(newCasesField, report.pw_new_cases);
-            setTextOnField(returnedField, report.pw_returned);
-            setTextOnField(totalInMField, report.pw_total_in_m);
-            setTextOnField(totalInFField, report.pw_total_in_f);
-            setTextOnField(healedField, report.pw_healed);
-            setTextOnField(deceasedField, report.pw_deceased);
-            setTextOnField(abandonField, report.pw_abandon);
-            setTextOnField(respondingField, report.pw_not_responding);
-            setTextOnField(totalOutMField, report.pw_total_out_m);
-            setTextOnField(totalOutFField, report.pw_total_out_f);
-            setTextOnField(referredField, report.pw_referred);
-            setTextOnField(totalEndMField, report.pw_total_end_m);
-            setTextOnField(totalEndFField, report.pw_total_end_f);
+        if(report.u23o6_total_end_m != -1){
+            setTextOnField(totalStarMField, report.u23o6_total_start_m);
+            setTextOnField(totalStarFField, report.u23o6_total_start_f);
+            setTextOnField(newCasesField, report.u23o6_new_cases);
+            setTextOnField(returnedField, report.u23o6_returned);
+            setTextOnField(totalInMField, report.u23o6_total_in_m);
+            setTextOnField(totalInFField, report.u23o6_total_in_f);
+            setTextOnField(healedField, report.u23o6_healed);
+            setTextOnField(deceasedField, report.u23o6_deceased);
+            setTextOnField(abandonField, report.u23o6_abandon);
+            setTextOnField(respondingField, report.u23o6_not_responding);
+            setTextOnField(totalOutMField, report.u23o6_total_out_m);
+            setTextOnField(totalOutFField, report.u23o6_total_out_f);
+            setTextOnField(referredField, report.u23o6_referred);
+            setTextOnField(totalEndMField, report.u23o6_total_end_m);
+            setTextOnField(totalEndFField, report.u23o6_total_end_f);
         }
     }
 
@@ -165,6 +165,7 @@ public class NutritionPWURENAMReport extends CheckedFormActivity {
         setAssertPositiveInteger(totalEndMField);
         setAssertPositiveInteger(totalEndFField);
     }
-
+    
     protected boolean ensureDataCoherence() { return true;}
+
 }

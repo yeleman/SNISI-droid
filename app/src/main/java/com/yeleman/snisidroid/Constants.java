@@ -72,4 +72,8 @@ public class Constants {
                 return -1;
         }
     }
+   public static String getCompleteStatus(Boolean status) {
+       if (status) return "X";
+       else return "  ";
+       };
 }

@@ -5,6 +5,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.yeleman.snisidroid.CheckedFormActivity;
@@ -17,22 +18,10 @@ import com.yeleman.snisidroid.R;
 public class NutritionExsamURENAMReport extends CheckedFormActivity {
     private final static String TAG = Constants.getLogTag("NutritionExsamURENAMReport");
 
-    protected TextView transferredLabel;
     protected TextView referredLabel;
 
     protected EditText totalStarMField;
     protected EditText totalStarFField;
-    protected EditText newCasesField;
-    protected EditText returnedField;
-    protected EditText totalAdmMField;
-    protected EditText totalAdmFField;
-    protected EditText transferredField;
-    protected EditText healedField;
-    protected EditText deceasedField;
-    protected EditText abandonField;
-    protected EditText respondingField;
-    protected EditText totalOutsMField;
-    protected EditText totalOutsFField;
     protected EditText referredField;
     protected EditText totalEndMField;
     protected EditText totalEndFField;
@@ -45,7 +34,7 @@ public class NutritionExsamURENAMReport extends CheckedFormActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nutrition_uren_unit);
         setTitle(String.format(getString(R.string.nutrition_fillout_urenam_report),
-                getString(R.string.o59)));
+                getString(R.string.exsam)));
         Log.d(TAG, "onCreate NutritionO59URENAMReport");
 
         setupSMSReceiver();
@@ -55,38 +44,26 @@ public class NutritionExsamURENAMReport extends CheckedFormActivity {
     protected void setupUI() {
         Log.d(TAG, "setupUI NutritionO59URENAMReport");
 
-        newCasesField = (EditText) findViewById(R.id.newCasesField);
-        newCasesField.setVisibility(View.GONE);
-        returnedField = (EditText) findViewById(R.id.returnedField);
-        returnedField.setVisibility(View.GONE);
-        totalAdmMField = (EditText) findViewById(R.id.totalAdmMField);
-        totalAdmMField.setVisibility(View.GONE);
-        totalAdmFField = (EditText) findViewById(R.id.totalAdmFField);
-        totalAdmFField.setVisibility(View.GONE);
-        transferredLabel = (TextView) findViewById(R.id.totalTransferredLabel);
-        transferredLabel.setVisibility(View.GONE);
-        transferredField = (EditText) findViewById(R.id.transferredField);
-        transferredField.setVisibility(View.GONE);
-        healedField = (EditText) findViewById(R.id.healedField);
-        healedField.setVisibility(View.GONE);
-        deceasedField = (EditText) findViewById(R.id.deceasedField);
-        deceasedField.setVisibility(View.GONE);
-        abandonField = (EditText) findViewById(R.id.abandonField);
-        abandonField.setVisibility(View.GONE);
-        respondingField = (EditText) findViewById(R.id.respondingField);
-        respondingField.setVisibility(View.GONE);
+        LinearLayout transferred_parent = (LinearLayout) findViewById(R.id.TransferredLinearLayout);
+        transferred_parent.setVisibility(View.GONE);
+        LinearLayout in_parent = (LinearLayout) findViewById(R.id.inLinearLayout);
+        in_parent.setVisibility(View.GONE);
+        LinearLayout out_parent = (LinearLayout) findViewById(R.id.outLinearLayout);
+        out_parent.setVisibility(View.GONE);
 
         totalStarMField = (EditText) findViewById(R.id.totalStarMField);
         totalStarFField = (EditText) findViewById(R.id.totalStarFField);
-        totalOutsMField = (EditText) findViewById(R.id.totalOutsMField);
-        totalOutsFField = (EditText) findViewById(R.id.totalOutsFField);
         referredLabel = (TextView) findViewById(R.id.referredLabel);
         referredLabel.setText(String.format(getString(R.string.nutrition_referred), "NUT"));
         referredField = (EditText) findViewById(R.id.referredField);
         totalEndMField = (EditText) findViewById(R.id.totalEndMField);
         totalEndFField = (EditText) findViewById(R.id.totalEndFField);
 
-
+        Bundle extras = getIntent().getExtras();
+        Boolean restoreReport = Boolean.valueOf(extras.getString("restoreReport"));
+        if (restoreReport){
+            restoreReportData();
+        }
         // setup invalid inputs checks
         setupInvalidInputChecks();
 
@@ -104,9 +81,6 @@ public class NutritionExsamURENAMReport extends CheckedFormActivity {
                 finish();
             }
         });
-
-        Log.d(TAG, "requestForResumeReport NutritionO59URENAMReport");
-        requestForResumeReport(this, NutritonURENAMReportData.get());
     }
 
     protected void storeReportData() {
@@ -114,26 +88,39 @@ public class NutritionExsamURENAMReport extends CheckedFormActivity {
         NutritonURENAMReportData report = NutritonURENAMReportData.get();
         report.updateMetaData();
 
-        setTextOnField(totalStarMField, report.exsam_total_start_m);
-        setTextOnField(totalStarFField, report.exsam_total_start_f);
-        setTextOnField(totalOutsMField, report.exsam_total_out_m);
-        setTextOnField(totalOutsFField, report.exsam_total_out_f);
-        setTextOnField(referredField, report.exsam_referred);
-        setTextOnField(totalEndMField, report.exsam_total_end_m);
-        setTextOnField(totalEndFField, report.exsam_total_end_f);
+        report.exsam_total_start_m = integerFromField(totalStarMField);
+        report.exsam_total_start_f = integerFromField(totalStarFField);
+        report.exsam_referred = integerFromField(referredField);
+        report.exsam_total_end_m = integerFromField(totalEndMField);
+        report.exsam_total_end_f = integerFromField(totalEndFField);
+        report.exsam_is_complete = true;
+        
+        report.save();
+        Log.d(TAG, "storeReportData -- end");
 
+    }
+
+    protected void restoreReportData() {
+        Log.d(TAG, "restoreReportData");
+        NutritonURENAMReportData report = NutritonURENAMReportData.get();
+        if(report.exsam_total_start_m != -1){
+            setTextOnField(totalStarMField, report.exsam_total_start_m);
+            setTextOnField(totalStarFField, report.exsam_total_start_f);
+            setTextOnField(referredField, report.exsam_referred);
+            setTextOnField(totalEndMField, report.exsam_total_end_m);
+            setTextOnField(totalEndFField, report.exsam_total_end_f);
+        }
     }
 
     protected void setupInvalidInputChecks() {
 
         setAssertPositiveInteger(totalStarMField);
         setAssertPositiveInteger(totalStarFField);
-        setAssertPositiveInteger(totalOutsMField);
-        setAssertPositiveInteger(totalOutsFField);
         setAssertPositiveInteger(referredField);
         setAssertPositiveInteger(totalEndMField);
         setAssertPositiveInteger(totalEndFField);
     }
-
+    
     protected boolean ensureDataCoherence() { return true;}
+
 }
