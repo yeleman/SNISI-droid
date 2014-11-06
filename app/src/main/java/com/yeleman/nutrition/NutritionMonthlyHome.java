@@ -73,6 +73,8 @@ public class NutritionMonthlyHome extends CheckedFormActivity implements View.On
             AlertDialog prefCheckDialog = prefCheckBuilder.create();
             prefCheckDialog.show();
         } else {
+            //TODO Add check URENI URENAS and Inputs for requestForResumeReport
+
             NutritonURENAMReportData report = NutritonURENAMReportData.get();
             Log.d(TAG, "requestForResumeReport NutritonURENAMReportData");  
             if (report.pw_is_complete || report.exsam_is_complete ||
@@ -99,24 +101,27 @@ public class NutritionMonthlyHome extends CheckedFormActivity implements View.On
 
         if (is_urenam) {
             NutritonURENAMReportData urenamReport = NutritonURENAMReportData.get();
-            urenamReportButton.setText(String.format(getString(R.string.nutrition_fillout_urenam_report),
-                                       getCompleteStatus(urenamReport.isComplete())));
+            urenamReportButton.setText(String.format(getString(R.string.nutrition_fillout_report),
+                                                     getString(R.string.urenam)));
+            Constants.updateButtonCompletion(urenamReportButton, urenamReport.isComplete());
             urenamReportButton.setOnClickListener(this);
         } else {
             urenamReportButton.setVisibility(View.GONE);
         }
         if (is_urenas) {
             NutritonURENASReportData urenasReport = NutritonURENASReportData.get();
-            urenasReportButton.setText(String.format(getString(R.string.nutrition_fillout_urenas_report), 
-                                       getCompleteStatus(urenasReport.isComplete())));
+            urenasReportButton.setText(String.format(getString(R.string.nutrition_fillout_report),
+                                                     getString(R.string.urenas)));
+            Constants.updateButtonCompletion(urenasReportButton, urenasReport.isComplete());
             urenasReportButton.setOnClickListener(this);
         } else {
             urenasReportButton.setVisibility(View.GONE);
         }
         if (is_ureni) {
             NutritonURENIReportData ureniReport = NutritonURENIReportData.get();
-            ureniReportButton.setText(String.format(getString(R.string.nutrition_fillout_ureni_report), 
-                                       getCompleteStatus(ureniReport.isComplete())));
+            ureniReportButton.setText(String.format(getString(R.string.nutrition_fillout_report),
+                                                     getString(R.string.ureni)));
+            Constants.updateButtonCompletion(ureniReportButton, ureniReport.isComplete());
             ureniReportButton.setOnClickListener(this);
         } else{
             ureniReportButton.setVisibility(View.GONE);
@@ -124,8 +129,9 @@ public class NutritionMonthlyHome extends CheckedFormActivity implements View.On
 
         NutritonInputsReportData inputsReport = NutritonInputsReportData.get();
         inputsReportButton = (Button) findViewById(R.id.monthlyInputsButton);
-        inputsReportButton.setText(String.format(getString(R.string.nutrition_fillout_inputs_report), 
-                                   getCompleteStatus(inputsReport.isComplete())));
+        inputsReportButton.setText(String.format(getString(R.string.nutrition_fillout_report),
+                                                     getString(R.string.inputs)));
+        Constants.updateButtonCompletion(inputsReportButton, inputsReport.isComplete());
         inputsReportButton.setOnClickListener(this);
     }
 

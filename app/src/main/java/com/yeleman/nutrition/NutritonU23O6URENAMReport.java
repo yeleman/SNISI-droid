@@ -44,7 +44,7 @@ public class NutritonU23O6URENAMReport extends CheckedFormActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nutrition_uren_unit);
-        setTitle(String.format(getString(R.string.nutrition_fillout_urenam_report),
+        setTitle(String.format(getString(R.string.nutrition_fillout_section),
                 getString(R.string.u23o6)));
         Log.d(TAG, "onCreate NutritonU23O6URENAMReport");
         setupSMSReceiver();

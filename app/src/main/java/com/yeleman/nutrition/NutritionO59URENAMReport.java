@@ -44,7 +44,7 @@ public class NutritionO59URENAMReport extends CheckedFormActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nutrition_uren_unit);
-        setTitle(String.format(getString(R.string.nutrition_fillout_urenam_report),
+        setTitle(String.format(getString(R.string.nutrition_fillout_section),
                 getString(R.string.o59)));
         Log.d(TAG, "onCreate NutritionO59URENAMReport");
 
@@ -77,13 +77,13 @@ public class NutritionO59URENAMReport extends CheckedFormActivity {
         totalEndMField = (EditText) findViewById(R.id.totalEndMField);
         totalEndFField = (EditText) findViewById(R.id.totalEndFField);
 
+        // setup invalid inputs checks
+        setupInvalidInputChecks();
+
         NutritonURENAMReportData report = NutritonURENAMReportData.get();
         if (report.o59_is_complete){
             restoreReportData();
         }
-        // setup invalid inputs checks
-        setupInvalidInputChecks();
-
         saveButton = (Button) findViewById(R.id.saveButton);
         saveButton.setOnClickListener(new View.OnClickListener() {
 

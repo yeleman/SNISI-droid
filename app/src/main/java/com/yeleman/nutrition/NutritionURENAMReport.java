@@ -80,7 +80,7 @@ public class NutritionURENAMReport extends CheckedFormActivity implements View.O
         Constants.updateButtonCompletion(pwReportButton, report.pw_is_complete);
         pwReportButton.setOnClickListener(this);
 
-        exsamReportButton = (Button) findViewById(R.id.exmaURENAMButton);
+        exsamReportButton = (Button) findViewById(R.id.exsamURENAMButton);
         exsamReportButton.setText(String.format(getString(R.string.nutrition_fillout_report), getString(R.string.exsam)));
         Constants.updateButtonCompletion(exsamReportButton, report.exsam_is_complete);
         exsamReportButton.setOnClickListener(this);
@@ -101,7 +101,7 @@ public class NutritionURENAMReport extends CheckedFormActivity implements View.O
             case R.id.pwURENAMButton:
                 activity = NutritionPWURENAMReport.class;
                 break;
-            case R.id.exmaURENAMButton:
+            case R.id.exsamURENAMButton:
                 activity = NutritionExsamURENAMReport.class;
                 break;
         }

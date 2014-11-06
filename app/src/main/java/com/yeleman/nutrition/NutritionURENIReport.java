@@ -39,19 +39,21 @@ public class NutritionURENIReport extends CheckedFormActivity implements View.On
 
     protected void setupUI() {
         Log.d(TAG, "setupUI NutritionURENIReport");
-
-        String status = "  ";
+        NutritonURENIReportData report = NutritonURENIReportData.get();
 
         u6ReportButton = (Button) findViewById(R.id.u6URENIButton);
-        u6ReportButton.setText(String.format(getString(R.string.nutrition_fillout_report), new Object[]{"0-6m", status}));
+        u6ReportButton.setText(String.format(getString(R.string.nutrition_fillout_report), getString(R.string.u6)));
+        Constants.updateButtonCompletion(u59o6ReportButton, report.u6_is_complete);
         u6ReportButton.setOnClickListener(this);
 
         u59o6ReportButton = (Button) findViewById(R.id.u59URENiButton);
-        u59o6ReportButton.setText(String.format(getString(R.string.nutrition_fillout_report), new Object[]{"23-59m", status}));
+        u59o6ReportButton.setText(String.format(getString(R.string.nutrition_fillout_report), getString(R.string.u6)));
+        Constants.updateButtonCompletion(u59o6ReportButton, report.u59o6_is_complete);
         u59o6ReportButton.setOnClickListener(this);
 
         o59ReportButton = (Button) findViewById(R.id.o59URENiButton);
-        o59ReportButton.setText(String.format(getString(R.string.nutrition_fillout_report), new Object[]{"59m+", status}));
+        o59ReportButton.setText(String.format(getString(R.string.nutrition_fillout_report), getString(R.string.o59)));
+        Constants.updateButtonCompletion(o59ReportButton, report.u6_is_complete);
         o59ReportButton.setOnClickListener(this);
 
     }

@@ -38,13 +38,15 @@ public class NutritionURENASReport extends CheckedFormActivity implements View.O
 
     protected void setupUI() {
         Log.d(TAG, "setupUI NutritionMonthlyHome");
-        String status = "  ";
+        NutritonURENASReportData report = NutritonURENASReportData.get();
 
         u59o6ReportButton = (Button) findViewById(R.id.u59URENASButton);
-        u59o6ReportButton.setText(String.format(getString(R.string.nutrition_fillout_report), new Object[]{"6-59m", status}));
+        u59o6ReportButton.setText(String.format(getString(R.string.nutrition_fillout_report), getString(R.string.u59o6)));
+        Constants.updateButtonCompletion(u59o6ReportButton, report.u59o6_isComplete);
         u59o6ReportButton.setOnClickListener(this);
         o59ReportButton = (Button) findViewById(R.id.o59URENASButton);
-        o59ReportButton.setText(String.format(getString(R.string.nutrition_fillout_report), new Object[]{"59m+", status}));
+        o59ReportButton.setText(String.format(getString(R.string.nutrition_fillout_report), getString(R.string.o59)));
+        Constants.updateButtonCompletion(o59ReportButton, report.o59_is_complete);
         o59ReportButton.setOnClickListener(this);
     }
 

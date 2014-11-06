@@ -92,12 +92,13 @@
     <string name="nutrition_weekly_save_submit">Enregister et transmettre</string>
     <string name="nutrition_level_missing_title">Unité nutrition manquante</string>
 	<string name="nutrition_level_missing_body">Votre profil n\'indique aucune unité de nutrition pour votre unité sanitaire.\nAllez remplir les niveaux d\'UREN pour lesquelles vous faîtes la PEC dans les paramètres.</string>
-    <string name="nutrition_fillout_urenam_report">Rapport URENAM [%1$s]</string>
-    <string name="nutrition_fillout_urenas_report">Rapport URENAS [%1$s]</string>
-    <string name="nutrition_fillout_ureni_report">Rapport URENI [%1$s]</string>
-    <string name="nutrition_fillout_inputs_report">Rapport Intrants [%1$s]</string>
     <string name="nutrition_instructions_incomplete">Remplissez les sections du rapport pour chaque tranche d\'âge. En vert, les sections déjà remplies. Vous pouvez toujours les modifier.</string>
     <string name="nutrition_instructions_complete">Ce rapport est complet. Vous pouvez cependant le modifier. Ensuite, revenez en arrière pour remplir les autres rapports et les envoyer.</string>
+
+    <string name="urenam">URENAM</string>
+    <string name="ureni">URENI</string>
+    <string name="urenas">URENAS</string>
+    <string name="inputs">Intrants</string>
 
     <string name="u6">0-6m</string>
     <string name="u23o6">6-23m</string>
@@ -125,10 +126,10 @@
     <string name="nutrition_abandon">Abandons</string>
     <string name="nutrition_not_responding">Non Repond</string>
     <string name="nutrition_referred">Réf. %1$s</string>
-    <!-- Menu -->
-    <string name="nutrition_fillout_report">Section %1$s</string>
     <string name="nutrition_monthly_save">Enregister</string>
-    <string name="nutrition_monthly_complete">Marquer complet</string>
+    <!-- Menu -->
+    <string name="nutrition_fillout_report">Rapport %1$s</string>
+    <string name="nutrition_fillout_section">Section %1$s</string>
 
     <!-- SMIR -->
     <string name="smir_app_label">SMIR</string>
