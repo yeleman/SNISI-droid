@@ -94,6 +94,7 @@ public class NutritonURENIReportData extends ReportData {
         NutritonURENIReportData report = NutritonURENIReportData.get();
         report.u59o6_is_complete = false;
         report.o59_is_complete = false;
+        report.u6_is_complete = false;
         report.save();
     }
 }

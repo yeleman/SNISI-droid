@@ -14,6 +14,7 @@ import com.yeleman.snisidroid.Constants;
 import com.yeleman.snisidroid.R;
 
 import java.lang.reflect.Field;
+import java.sql.Struct;
 
 public class NutritonU23O6URENAMReport extends CheckedFormActivity {
     private final static String TAG = Constants.getLogTag("NutritonU23O6URENAMReport");
@@ -21,7 +22,7 @@ public class NutritonU23O6URENAMReport extends CheckedFormActivity {
     protected TextView referredLabel;
     
     protected EditText totalStartMField;
-    protected EditText totalStarttFField;
+    protected EditText totalStartFField;
     protected EditText newCasesField;
     protected EditText returnedField;
     protected EditText totalInMField;
@@ -54,7 +55,7 @@ public class NutritonU23O6URENAMReport extends CheckedFormActivity {
         Log.d(TAG, "setupUI NutritonU23O6URENAMReport");
         
         totalStartMField = (EditText) findViewById(R.id.totalStartMField);
-        totalStarttFField = (EditText) findViewById(R.id.totalStartFField);
+        totalStartFField = (EditText) findViewById(R.id.totalStartFField);
         newCasesField = (EditText) findViewById(R.id.newCasesField);
         returnedField = (EditText) findViewById(R.id.returnedField);
         totalInMField = (EditText) findViewById(R.id.totalInMField);
@@ -87,7 +88,6 @@ public class NutritonU23O6URENAMReport extends CheckedFormActivity {
             public void onClick(View v) {
                 // ensure data is OK
                 if (!checkInputsAndCoherence()) { return; }
-
                 // save data to DB
                 storeReportData();
 
@@ -102,7 +102,7 @@ public class NutritonU23O6URENAMReport extends CheckedFormActivity {
         report.updateMetaData();
 
         report.u23o6_total_start_m = integerFromField(totalStartMField);
-        report.u23o6_total_start_f = integerFromField(totalStarttFField);
+        report.u23o6_total_start_f = integerFromField(totalStartFField);
         report.u23o6_new_cases = integerFromField(newCasesField);
         report.u23o6_returned = integerFromField(returnedField);
         report.u23o6_total_in_m = integerFromField(totalInMField);
@@ -127,7 +127,7 @@ public class NutritonU23O6URENAMReport extends CheckedFormActivity {
         NutritonURENAMReportData report = NutritonURENAMReportData.get();
         if(report.u23o6_total_end_m != -1){
             setTextOnField(totalStartMField, report.u23o6_total_start_m);
-            setTextOnField(totalStarttFField, report.u23o6_total_start_f);
+            setTextOnField(totalStartFField, report.u23o6_total_start_f);
             setTextOnField(newCasesField, report.u23o6_new_cases);
             setTextOnField(returnedField, report.u23o6_returned);
             setTextOnField(totalInMField, report.u23o6_total_in_m);
@@ -147,7 +147,7 @@ public class NutritonU23O6URENAMReport extends CheckedFormActivity {
     protected void setupInvalidInputChecks() {
 
         setAssertPositiveInteger(totalStartMField);
-        setAssertPositiveInteger(totalStarttFField);
+        setAssertPositiveInteger(totalStartFField);
         setAssertPositiveInteger(newCasesField);
         setAssertPositiveInteger(returnedField);
         setAssertPositiveInteger(totalInMField);
@@ -193,12 +193,29 @@ public class NutritonU23O6URENAMReport extends CheckedFormActivity {
             return false;
         }
         // Sorties inferieur ou egal à PEC
-        int totalStart = integerFromField(totalStarttFField) + integerFromField(totalStartMField);
-        int allAvail = totalStart + totalIn;
-
+        int totalStart = integerFromField(totalStartFField) + integerFromField(totalStartMField);
+        int grandTotalIn = totalIn + integerFromField(newCasesField) + integerFromField(returnedField);
+        int allAvail = totalStart + grandTotalIn;
+        int grandTotalOut = totalOut + integerFromField(healedField) +
+                            integerFromField(deceasedField) +
+                            integerFromField(abandonField) +
+                            integerFromField(respondingField);
+        if (grandTotalOut > allAvail){
+            String errorMsg = String.format("total sorties général (%1$d) ne peut pas dépasser le " +
+                                            "total début + admissions (%2$d)", grandTotalOut, allAvail);
+            fireErrorDialog(this, errorMsg, newCasesField);
+            return false;
+        }
         // Total fin de mois
         // totalEnd = totalStart + grand_totalIn - grand_totalOut
-
+        int totalEnd = integerFromField(totalEndFField) + integerFromField(totalEndMField);
+        int startInNotOut = totalStart + grandTotalIn - grandTotalOut;
+        if (totalEnd != (startInNotOut)){
+            String errorMsg = String.format("total fin de mois (%1$d) doit être égal au début " +
+                                            "+ admissions - sorties (%2$d)", totalEnd, startInNotOut);
+            fireErrorDialog(this, errorMsg, totalStartFField);
+            return false;
+        }
         return true;
 
     }
