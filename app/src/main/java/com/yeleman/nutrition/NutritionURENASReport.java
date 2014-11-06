@@ -30,6 +30,12 @@ public class NutritionURENASReport extends CheckedFormActivity implements View.O
         setupUI();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume(); 
+        setupUI();
+    }
+
     protected void setupUI() {
         Log.d(TAG, "setupUI NutritionMonthlyHome");
         String status = "  ";
@@ -51,10 +57,6 @@ public class NutritionURENASReport extends CheckedFormActivity implements View.O
                 break;
             case R.id.o59URENiButton:
                 //activity = NutritionURENASReport.class;
-                break;
-            case R.id.monthlyCompleteButton:
-                //change the status on complete this report
-                //activity = NutritionURENIReport.class;
                 break;
         }
         Intent intent = new Intent(

@@ -73,6 +73,7 @@
     <string name="error_field_positive_integer">Entier positif requis</string>
     <string name="error_must_be_inferior" formatted="false">%s (%d) ne peut être supérieur ou égal à %s (%d)</string>
     <string name="error_must_be_inferior_or_equal" formatted="false">%s (%d) ne peut être supérieur à %s (%d)</string>
+    <string name="error_must_be_equal" formatted="false">%1$s (%2$d) doit être égal au %3$s (%4$d)</string>
     <string name="error_sms_not_sent_title">Erreur d\'envoi du SMS</string>
     <string name="error_sms_not_sent_body">Le SMS n\'a pa pu être envoyé correctement. Vérifiez que vous avez du réseau et du crédit puis réessayez.\n%1$s</string>
 

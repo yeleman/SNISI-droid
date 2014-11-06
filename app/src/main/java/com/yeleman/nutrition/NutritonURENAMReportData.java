@@ -82,6 +82,8 @@ public class NutritonURENAMReportData extends ReportData {
     // Former SAM
     int exsam_total_start_m = -1;
     int exsam_total_start_f = -1;
+    // int exsam_total_out_m = -1;
+    // int exsam_total_out_f = -1;
     int exsam_referred = -1;
     int exsam_total_end_m = -1;
     int exsam_total_end_f = -1;
@@ -104,5 +106,23 @@ public class NutritonURENAMReportData extends ReportData {
     @Override
     protected String buildName() {
         return "Nut Monthy";
+    }
+
+    protected Boolean isComplete(){
+        return pw_is_complete &&
+               o59_is_complete &&
+               u23o6_is_complete &&
+               u59o23_is_complete &&
+               exsam_is_complete;
+    }
+
+    protected void resetReportData() {
+        NutritonURENAMReportData report = NutritonURENAMReportData.get();
+        report.pw_is_complete = false;
+        report.o59_is_complete = false;
+        report.u23o6_is_complete = false;
+        report.u59o23_is_complete = false;
+        report.exsam_is_complete = false;
+        report.save();
     }
 }

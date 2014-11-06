@@ -53,6 +53,9 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
 	protected String buildSMSText() { return ""; }
 	protected void storeReportData() {}
 	protected void restoreReportData() {}
+    protected void resetReportData() {
+        Log.i(TAG, "resetReportData orig");
+    }
 
 	/* Visual feedback for invalid and incorect data */
 	protected void addErrorToField(EditText editText, String message) {
@@ -207,6 +210,19 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
                 fieldA.getHint(), valueA,
                 fieldB.getHint(), valueB);
         if (valueA > valueB) {
+            fireErrorDialog(this, errorMsg, fieldToReturnTo);
+            return false;
+        }
+        return true;
+    }
+
+    protected boolean mustBeEqual(EditText fieldToReturnTo, EditText fieldA, EditText fieldB) {
+        int valueA = integerFromField(fieldA);
+        int valueB = integerFromField(fieldB);
+        String errorMsg = String.format(getString(R.string.error_must_be_equal),
+                fieldA.getHint(), valueA,
+                fieldB.getHint(), valueB);
+        if (valueA != valueB) {
             fireErrorDialog(this, errorMsg, fieldToReturnTo);
             return false;
         }
@@ -472,7 +488,12 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
                     restoreReportData();
                 }
             });
-        questionDialogBuilder.setNeutralButton(R.string.resume_report_cancel_label, Popups.getBlankClickListener());
+        questionDialogBuilder.setNeutralButton(R.string.resume_report_cancel_label, new DialogInterface.OnClickListener() {
+            public void onClick(DialogInterface dialog, int which) {
+                // close the dialog, call reset report data
+                resetReportData();
+            }
+        });
         AlertDialog errorDialog = questionDialogBuilder.create();
         errorDialog.show();
     }

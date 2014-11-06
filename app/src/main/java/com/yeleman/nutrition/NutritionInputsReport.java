@@ -22,10 +22,14 @@ public class NutritionInputsReport extends CheckedFormActivity {
         setupUI();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume(); 
+        setupUI();
+    }
+
     protected void setupUI() {
         Log.d(TAG, "setupUI NutritionInputsReport");
-
-        String status = "  ";
 
     }
 }

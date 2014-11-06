@@ -31,6 +31,12 @@ public class NutritionURENIReport extends CheckedFormActivity implements View.On
         setupUI();
     }
 
+    @Override
+    public void onResume() {
+        super.onResume(); 
+        setupUI();
+    }
+
     protected void setupUI() {
         Log.d(TAG, "setupUI NutritionURENIReport");
 
@@ -61,9 +67,6 @@ public class NutritionURENIReport extends CheckedFormActivity implements View.On
                 activity = NutritionURENIReport.class;
                 break;
             case R.id.u59URENiButton:
-                activity = NutritionURENIReport.class;
-                break;
-            case R.id.monthlyCompleteButton:
                 activity = NutritionURENIReport.class;
                 break;
         }

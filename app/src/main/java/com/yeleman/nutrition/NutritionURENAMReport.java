@@ -25,7 +25,6 @@ public class NutritionURENAMReport extends CheckedFormActivity implements View.O
     private Button o59ReportButton;
     private Button pwReportButton;
     private Button exsamReportButton;
-    private String restoreReport;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,10 +32,16 @@ public class NutritionURENAMReport extends CheckedFormActivity implements View.O
         setContentView(R.layout.nutrition_urenam_report);
         setTitle(String.format(getString(R.string.sub_app_name_nut), "URENAM"));
         Log.d(TAG, "onCreate NutritionURENAMReport");
-        Bundle extras = getIntent().getExtras();
-         restoreReport = extras.getString("restoreReport");
+       // Bundle extras = getIntent().getExtras();
+       // restoreReport = extras.getString("restoreReport");
 
         setupSMSReceiver();
+        setupUI();
+    }
+    
+    @Override
+    public void onResume() {
+        super.onResume(); 
         setupUI();
     }
 
@@ -90,14 +95,10 @@ public class NutritionURENAMReport extends CheckedFormActivity implements View.O
             case R.id.exmaURENAMButton:
                 activity = NutritionExsamURENAMReport.class;
                 break;
-            case R.id.monthlyCompleteButton:
-                activity = NutritionURENAMReport.class;
-                break;
         }
         Intent intent = new Intent(
                 getApplicationContext(),
                 (Class<?>) activity);
-        intent.putExtra( "restoreReport", String.valueOf(restoreReport) );
         startActivity(intent);
     }
 }

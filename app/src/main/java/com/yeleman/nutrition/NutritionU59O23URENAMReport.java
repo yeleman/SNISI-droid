@@ -22,8 +22,8 @@ public class NutritionU59O23URENAMReport extends CheckedFormActivity {
     protected TextView transferredLabel;
     protected TextView referredLabel;
 
-    protected EditText totalStarMField;
-    protected EditText totalStarFField;
+    protected EditText totalStartMField;
+    protected EditText totalStartFField;
     protected EditText newCasesField;
     protected EditText returnedField;
     protected EditText totalInMField;
@@ -57,8 +57,8 @@ public class NutritionU59O23URENAMReport extends CheckedFormActivity {
     protected void setupUI() {
         Log.d(TAG, "setupUI NutritionU59O23URENAMReport");
 
-        totalStarMField = (EditText) findViewById(R.id.totalStarMField);
-        totalStarFField = (EditText) findViewById(R.id.totalStarFField);
+        totalStartMField = (EditText) findViewById(R.id.totalStartMField);
+        totalStartFField = (EditText) findViewById(R.id.totalStartFField);
         newCasesField = (EditText) findViewById(R.id.newCasesField);
         returnedField = (EditText) findViewById(R.id.returnedField);
         totalInMField = (EditText) findViewById(R.id.totalInMField);
@@ -77,9 +77,8 @@ public class NutritionU59O23URENAMReport extends CheckedFormActivity {
         totalEndMField = (EditText) findViewById(R.id.totalEndMField);
         totalEndFField = (EditText) findViewById(R.id.totalEndFField);
 
-        Bundle extras = getIntent().getExtras();
-        Boolean restoreReport = Boolean.valueOf(extras.getString("restoreReport"));
-        if (restoreReport){
+        NutritonURENAMReportData report = NutritonURENAMReportData.get();
+        if (report.u59o23_is_complete){
             restoreReportData();
         }
         // setup invalid inputs checks
@@ -106,8 +105,8 @@ public class NutritionU59O23URENAMReport extends CheckedFormActivity {
         NutritonURENAMReportData report = NutritonURENAMReportData.get();
         report.updateMetaData();
 
-        report.u59o23_total_start_m = integerFromField(totalStarMField);
-        report.u59o23_total_start_f = integerFromField(totalStarFField);
+        report.u59o23_total_start_m = integerFromField(totalStartMField);
+        report.u59o23_total_start_f = integerFromField(totalStartFField);
         report.u59o23_new_cases = integerFromField(newCasesField);
         report.u59o23_returned = integerFromField(returnedField);
         report.u59o23_total_in_m = integerFromField(totalInMField);
@@ -131,8 +130,8 @@ public class NutritionU59O23URENAMReport extends CheckedFormActivity {
         Log.d(TAG, "restoreReportData");
         NutritonURENAMReportData report = NutritonURENAMReportData.get();
         if (report.u59o23_total_start_m != -1){
-            setTextOnField(totalStarMField, report.u59o23_total_start_m);
-            setTextOnField(totalStarFField, report.u59o23_total_start_f);
+            setTextOnField(totalStartMField, report.u59o23_total_start_m);
+            setTextOnField(totalStartFField, report.u59o23_total_start_f);
             setTextOnField(newCasesField, report.u59o23_new_cases);
             setTextOnField(returnedField, report.u59o23_returned);
             setTextOnField(totalInMField, report.u59o23_total_in_m);
@@ -150,8 +149,8 @@ public class NutritionU59O23URENAMReport extends CheckedFormActivity {
     }
 
     protected void setupInvalidInputChecks() {
-        setAssertPositiveInteger(totalStarMField);
-        setAssertPositiveInteger(totalStarFField);
+        setAssertPositiveInteger(totalStartMField);
+        setAssertPositiveInteger(totalStartFField);
         setAssertPositiveInteger(newCasesField);
         setAssertPositiveInteger(returnedField);
         setAssertPositiveInteger(totalInMField);
