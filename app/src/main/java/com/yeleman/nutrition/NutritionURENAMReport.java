@@ -6,12 +6,13 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.yeleman.snisidroid.CheckedFormActivity;
 import com.yeleman.snisidroid.Constants;
 import com.yeleman.snisidroid.R;
 
-import static com.yeleman.snisidroid.Constants.getCompleteStatus;
+import com.yeleman.snisidroid.Constants;
 
 /**
  * Created by fad on 29/10/14.
@@ -20,6 +21,7 @@ public class NutritionURENAMReport extends CheckedFormActivity implements View.O
 
     private final static String TAG = Constants.getLogTag("NutritionURENAMReport");
 
+    private TextView instructionLabel;
     private Button u23o6ReportButton;
     private Button u59o23ReportButton;
     private Button o59ReportButton;
@@ -51,29 +53,36 @@ public class NutritionURENAMReport extends CheckedFormActivity implements View.O
 
         NutritonURENAMReportData report = NutritonURENAMReportData.get();
 
+        instructionLabel = (TextView) findViewById(R.id.instructionLabel);
+        if (report.isComplete()) {
+            instructionLabel.setText(R.string.nutrition_instructions_complete);
+        } else{
+            instructionLabel.setText(R.string.nutrition_instructions_incomplete);
+        }
+
         u23o6ReportButton = (Button) findViewById(R.id.u6o23URENAMButton);
-        u23o6ReportButton.setText(String.format(getString(R.string.nutrition_fillout_report),
-                         new Object[]{getString(R.string.u23o6), getCompleteStatus(report.u23o6_is_complete)}));
+        u23o6ReportButton.setText(String.format(getString(R.string.nutrition_fillout_report), getString(R.string.u23o6)));
+        Constants.updateButtonCompletion(u23o6ReportButton, report.u23o6_is_complete);
         u23o6ReportButton.setOnClickListener(this);
 
         u59o23ReportButton = (Button) findViewById(R.id.u59o23URENAMButton);
-        u59o23ReportButton.setText(String.format(getString(R.string.nutrition_fillout_report),
-                         new Object[]{getString(R.string.u59o23), getCompleteStatus(report.u59o23_is_complete)}));
+        u59o23ReportButton.setText(String.format(getString(R.string.nutrition_fillout_report), getString(R.string.u59o23)));
+        Constants.updateButtonCompletion(u59o23ReportButton, report.u59o23_is_complete);
         u59o23ReportButton.setOnClickListener(this);
 
         o59ReportButton = (Button) findViewById(R.id.o59URENAMButton);
-        o59ReportButton.setText(String.format(getString(R.string.nutrition_fillout_report),
-                         new Object[]{getString(R.string.o59), getCompleteStatus(report.o59_is_complete)}));
+        o59ReportButton.setText(String.format(getString(R.string.nutrition_fillout_report), getString(R.string.o59)));
+        Constants.updateButtonCompletion(o59ReportButton, report.o59_is_complete);
         o59ReportButton.setOnClickListener(this);
 
         pwReportButton = (Button) findViewById(R.id.pwURENAMButton);
-        pwReportButton.setText(String.format(getString(R.string.nutrition_fillout_report),
-                         new Object[]{getString(R.string.pw), getCompleteStatus(report.pw_is_complete)}));
+        pwReportButton.setText(String.format(getString(R.string.nutrition_fillout_report), getString(R.string.pw)));
+        Constants.updateButtonCompletion(pwReportButton, report.pw_is_complete);
         pwReportButton.setOnClickListener(this);
 
         exsamReportButton = (Button) findViewById(R.id.exmaURENAMButton);
-        exsamReportButton.setText(String.format(getString(R.string.nutrition_fillout_report),
-                         new Object[]{getString(R.string.exsam), getCompleteStatus(report.exsam_is_complete)}));
+        exsamReportButton.setText(String.format(getString(R.string.nutrition_fillout_report), getString(R.string.exsam)));
+        Constants.updateButtonCompletion(exsamReportButton, report.exsam_is_complete);
         exsamReportButton.setOnClickListener(this);
     }
 

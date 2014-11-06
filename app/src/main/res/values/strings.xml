@@ -96,6 +96,8 @@
     <string name="nutrition_fillout_urenas_report">Rapport URENAS [%1$s]</string>
     <string name="nutrition_fillout_ureni_report">Rapport URENI [%1$s]</string>
     <string name="nutrition_fillout_inputs_report">Rapport Intrants [%1$s]</string>
+    <string name="nutrition_instructions_incomplete">Remplissez les sections du rapport pour chaque tranche d\'âge. En vert, les sections déjà remplies. Vous pouvez toujours les modifier.</string>
+    <string name="nutrition_instructions_complete">Ce rapport est complet. Vous pouvez cependant le modifier. Ensuite, revenez en arrière pour remplir les autres rapports et les envoyer.</string>
 
     <string name="u6">0-6m</string>
     <string name="u23o6">6-23m</string>
@@ -124,9 +126,10 @@
     <string name="nutrition_not_responding">Non Repond</string>
     <string name="nutrition_referred">Réf. %1$s</string>
     <!-- Menu -->
-    <string name="nutrition_fillout_report">Rapport %1$s [%2$s]</string>
+    <string name="nutrition_fillout_report">Section %1$s</string>
     <string name="nutrition_monthly_save">Enregister</string>
     <string name="nutrition_monthly_complete">Marquer complet</string>
+
     <!-- SMIR -->
     <string name="smir_app_label">SMIR</string>
     <string name="menu_alert">Alerte</string>

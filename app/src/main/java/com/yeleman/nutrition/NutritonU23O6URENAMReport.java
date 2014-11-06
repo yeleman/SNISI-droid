@@ -74,12 +74,13 @@ public class NutritonU23O6URENAMReport extends CheckedFormActivity {
         totalEndMField = (EditText) findViewById(R.id.totalEndMField);
         totalEndFField = (EditText) findViewById(R.id.totalEndFField);
 
+        // setup invalid inputs checks
+        setupInvalidInputChecks();
+
         NutritonURENAMReportData report = NutritonURENAMReportData.get();
         if (report.u23o6_is_complete){
             restoreReportData();
         }
-        // setup invalid inputs checks
-        setupInvalidInputChecks();
 
         saveButton = (Button) findViewById(R.id.saveButton);
         saveButton.setOnClickListener(new View.OnClickListener() {

@@ -2,6 +2,8 @@ package com.yeleman.snisidroid;
 
 import android.graphics.Color;
 import android.util.Log;
+import android.widget.Button;
+import android.widget.EditText;
 
 public class Constants {
 
@@ -73,7 +75,17 @@ public class Constants {
         }
     }
    public static String getCompleteStatus(Boolean status) {
-       if (status) return "X";
-       else return "  ";
-       };
+       if (status) {
+           return "X";
+       } else {
+           return "  ";
+       }
+   }
+
+    public static void updateButtonCompletion(Button button, boolean is_complete) {
+        int color = getColorForStatus((is_complete) ? SMS_SUCCESS : SMS_UNKNOWN);
+        if (color != -1) {
+            button.setTextColor(color);
+        }
+    }
 }
