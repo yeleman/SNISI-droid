@@ -89,27 +89,37 @@
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.yeleman.nutrition.NutritonU23O6URENAMReport"
+            android:name="com.yeleman.nutrition.NutritionURENAMU23O6Report"
             android:label="@string/nutrition_app_label"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.yeleman.nutrition.NutritionU59O23URENAMReport"
+            android:name="com.yeleman.nutrition.NutritionURENAMU59O23Report"
             android:label="@string/nutrition_app_label"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.yeleman.nutrition.NutritionO59URENAMReport"
+            android:name="com.yeleman.nutrition.NutritionURENAMO59Report"
             android:label="@string/nutrition_app_label"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.yeleman.nutrition.NutritionPWURENAMReport"
+            android:name="com.yeleman.nutrition.NutritionURENAMPWReport"
             android:label="@string/nutrition_app_label"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.yeleman.nutrition.NutritionExsamURENAMReport"
+            android:name="com.yeleman.nutrition.NutritionURENAMExsamReport"
+            android:label="@string/nutrition_app_label"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.yeleman.nutrition.NutritionURENASO59Report"
+            android:label="@string/nutrition_app_label"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.yeleman.nutrition.NutritionURENASU59O6Report"
             android:label="@string/nutrition_app_label"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation" />

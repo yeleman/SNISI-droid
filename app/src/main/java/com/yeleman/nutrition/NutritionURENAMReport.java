@@ -32,10 +32,9 @@ public class NutritionURENAMReport extends CheckedFormActivity implements View.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nutrition_urenam_report);
-        setTitle(String.format(getString(R.string.sub_app_name_nut), "URENAM"));
+        setTitle(String.format(getString(R.string.sub_app_name_nut),
+                              getString(R.string.urenam)));
         Log.d(TAG, "onCreate NutritionURENAMReport");
-       // Bundle extras = getIntent().getExtras();
-       // restoreReport = extras.getString("restoreReport");
 
         setupSMSReceiver();
         setupUI();
@@ -51,7 +50,7 @@ public class NutritionURENAMReport extends CheckedFormActivity implements View.O
     protected void setupUI() {
         Log.d(TAG, "setupUI NutritionMonthlyHome");
 
-        NutritonURENAMReportData report = NutritonURENAMReportData.get();
+        NutritionURENAMReportData report = NutritionURENAMReportData.get();
 
         instructionLabel = (TextView) findViewById(R.id.instructionLabel);
         if (report.isComplete()) {
@@ -90,19 +89,19 @@ public class NutritionURENAMReport extends CheckedFormActivity implements View.O
         Object activity = null;
         switch (view.getId()) {
             case R.id.u6o23URENAMButton:
-                activity = NutritonU23O6URENAMReport.class;
+                activity = NutritionURENAMU23O6Report.class;
                 break;
             case R.id.u59o23URENAMButton:
-                activity = NutritionU59O23URENAMReport.class;
+                activity = NutritionURENAMU59O23Report.class;
                 break;
             case R.id.o59URENAMButton:
-                activity = NutritionO59URENAMReport.class;
+                activity = NutritionURENAMO59Report.class;
                 break;
             case R.id.pwURENAMButton:
-                activity = NutritionPWURENAMReport.class;
+                activity = NutritionURENAMPWReport.class;
                 break;
             case R.id.exsamURENAMButton:
-                activity = NutritionExsamURENAMReport.class;
+                activity = NutritionURENAMExsamReport.class;
                 break;
         }
         Intent intent = new Intent(

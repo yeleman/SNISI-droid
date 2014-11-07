@@ -39,7 +39,7 @@ public class NutritionURENIReport extends CheckedFormActivity implements View.On
 
     protected void setupUI() {
         Log.d(TAG, "setupUI NutritionURENIReport");
-        NutritonURENIReportData report = NutritonURENIReportData.get();
+        NutritionURENIReportData report = NutritionURENIReportData.get();
 
         u6ReportButton = (Button) findViewById(R.id.u6URENIButton);
         u6ReportButton.setText(String.format(getString(R.string.nutrition_fillout_report), getString(R.string.u6)));

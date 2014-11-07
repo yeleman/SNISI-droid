@@ -15,8 +15,9 @@ import com.yeleman.snisidroid.R;
 /**
  * Created by fad on 31/10/14.
  */
-public class NutritionPWURENAMReport extends CheckedFormActivity {
-    private final static String TAG = Constants.getLogTag("NutritionPWURENAMReport");
+
+public class NutritionURENAMO59Report extends CheckedFormActivity {
+    private final static String TAG = Constants.getLogTag("NutritionURENAMO59Report");
 
     protected TextView referredLabel;
 
@@ -42,17 +43,17 @@ public class NutritionPWURENAMReport extends CheckedFormActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.nutrition_uren_unit);
+        setContentView(R.layout.nutrition_uren_unit_fillout);
         setTitle(String.format(getString(R.string.nutrition_fillout_section),
-                getString(R.string.pw)));
-        Log.d(TAG, "onCreate NutritionPWURENAMReport");
+                getString(R.string.o59)));
+        Log.d(TAG, "onCreate NutritionURENAMO59Report");
 
         setupSMSReceiver();
         setupUI();
     }
 
     protected void setupUI() {
-        Log.d(TAG, "setupUI NutritionPWURENAMReport");
+        Log.d(TAG, "setupUI NutritionURENAMO59Report");
 
         totalStartMField = (EditText) findViewById(R.id.totalStartMField);
         totalStartFField = (EditText) findViewById(R.id.totalStartFField);
@@ -60,7 +61,7 @@ public class NutritionPWURENAMReport extends CheckedFormActivity {
         returnedField = (EditText) findViewById(R.id.returnedField);
         totalInMField = (EditText) findViewById(R.id.totalInMField);
         totalInFField = (EditText) findViewById(R.id.totalInFField);
-        LinearLayout transferred_parent = (LinearLayout) findViewById(R.id.TransferredLinearLayout);
+        LinearLayout transferred_parent = (LinearLayout) findViewById(R.id.transferredLinearLayout);
         transferred_parent.setVisibility(View.GONE);
         healedField = (EditText) findViewById(R.id.healedField);
         deceasedField = (EditText) findViewById(R.id.deceasedField);
@@ -68,19 +69,21 @@ public class NutritionPWURENAMReport extends CheckedFormActivity {
         respondingField = (EditText) findViewById(R.id.respondingField);
         totalOutMField = (EditText) findViewById(R.id.totalOutMField);
         totalOutFField = (EditText) findViewById(R.id.totalOutFField);
+
         referredLabel = (TextView) findViewById(R.id.referredLabel);
         referredLabel.setText(String.format(getString(R.string.nutrition_referred), "NUT"));
+
         referredField = (EditText) findViewById(R.id.referredField);
         totalEndMField = (EditText) findViewById(R.id.totalEndMField);
         totalEndFField = (EditText) findViewById(R.id.totalEndFField);
 
-        NutritonURENAMReportData report = NutritonURENAMReportData.get();
-        if (report.pw_is_complete){
-            restoreReportData();
-        }
         // setup invalid inputs checks
         setupInvalidInputChecks();
 
+        NutritionURENAMReportData report = NutritionURENAMReportData.get();
+        if (report.o59_is_complete){
+            restoreReportData();
+        }
         saveButton = (Button) findViewById(R.id.saveButton);
         saveButton.setOnClickListener(new View.OnClickListener() {
 
@@ -96,53 +99,51 @@ public class NutritionPWURENAMReport extends CheckedFormActivity {
             }
         });
     }
-
+    
     protected void storeReportData() {
         Log.d(TAG, "storeReportData");
-        NutritonURENAMReportData report = NutritonURENAMReportData.get();
+        NutritionURENAMReportData report = NutritionURENAMReportData.get();
         report.updateMetaData();
 
-        report.pw_total_start_m = integerFromField(totalStartMField);
-        report.pw_total_start_f = integerFromField(totalStartFField);
-        report.pw_new_cases = integerFromField(newCasesField);
-        report.pw_returned = integerFromField(returnedField);
-        report.pw_total_in_m = integerFromField(totalInMField);
-        report.pw_total_in_f = integerFromField(totalInFField);
-        report.pw_healed = integerFromField(healedField);
-        report.pw_deceased = integerFromField(deceasedField);
-        report.pw_abandon = integerFromField(abandonField);
-        report.pw_not_responding = integerFromField(respondingField);
-        report.pw_total_out_m = integerFromField(totalOutMField);
-        report.pw_total_out_f = integerFromField(totalOutFField);
-        report.pw_referred = integerFromField(referredField);
-        report.pw_total_end_m = integerFromField(totalEndMField);
-        report.pw_total_end_f = integerFromField(totalEndFField);
-        report.pw_is_complete = true;
+        report.o59_total_start_m = integerFromField(totalStartMField);
+        report.o59_total_start_f = integerFromField(totalStartFField);
+        report.o59_new_cases = integerFromField(newCasesField);
+        report.o59_returned = integerFromField(returnedField);
+        report.o59_total_in_m = integerFromField(totalInMField);
+        report.o59_total_in_f = integerFromField(totalInFField);
+        report.o59_healed = integerFromField(healedField);
+        report.o59_deceased = integerFromField(deceasedField);
+        report.o59_abandon = integerFromField(abandonField);
+        report.o59_not_responding = integerFromField(respondingField);
+        report.o59_total_out_m = integerFromField(totalOutMField);
+        report.o59_total_out_f = integerFromField(totalOutFField);
+        report.o59_referred = integerFromField(referredField);
+        report.o59_total_end_m = integerFromField(totalEndMField);
+        report.o59_total_end_f = integerFromField(totalEndFField);
+        report.o59_is_complete = true;
         report.save();
         Log.d(TAG, "storeReportData -- end");
-
     }
 
     protected void restoreReportData() {
         Log.d(TAG, "restoreReportData");
-        NutritonURENAMReportData report = NutritonURENAMReportData.get();
-
-        if (report.pw_total_start_m != -1){
-            setTextOnField(totalStartMField, report.pw_total_start_m);
-            setTextOnField(totalStartFField, report.pw_total_start_f);
-            setTextOnField(newCasesField, report.pw_new_cases);
-            setTextOnField(returnedField, report.pw_returned);
-            setTextOnField(totalInMField, report.pw_total_in_m);
-            setTextOnField(totalInFField, report.pw_total_in_f);
-            setTextOnField(healedField, report.pw_healed);
-            setTextOnField(deceasedField, report.pw_deceased);
-            setTextOnField(abandonField, report.pw_abandon);
-            setTextOnField(respondingField, report.pw_not_responding);
-            setTextOnField(totalOutMField, report.pw_total_out_m);
-            setTextOnField(totalOutFField, report.pw_total_out_f);
-            setTextOnField(referredField, report.pw_referred);
-            setTextOnField(totalEndMField, report.pw_total_end_m);
-            setTextOnField(totalEndFField, report.pw_total_end_f);
+        NutritionURENAMReportData report = NutritionURENAMReportData.get();
+        if (report.o59_total_start_m != -1){
+            setTextOnField(totalStartMField, report.o59_total_start_m);
+            setTextOnField(totalStartFField, report.o59_total_start_f);
+            setTextOnField(newCasesField, report.o59_new_cases);
+            setTextOnField(returnedField, report.o59_returned);
+            setTextOnField(totalInMField, report.o59_total_in_m);
+            setTextOnField(totalInFField, report.o59_total_in_f);
+            setTextOnField(healedField, report.o59_healed);
+            setTextOnField(deceasedField, report.o59_deceased);
+            setTextOnField(abandonField, report.o59_abandon);
+            setTextOnField(respondingField, report.o59_not_responding);
+            setTextOnField(totalOutMField, report.o59_total_out_m);
+            setTextOnField(totalOutFField, report.o59_total_out_f);
+            setTextOnField(referredField, report.o59_referred);
+            setTextOnField(totalEndMField, report.o59_total_end_m);
+            setTextOnField(totalEndFField, report.o59_total_end_f);
         }
     }
 
@@ -164,6 +165,7 @@ public class NutritionPWURENAMReport extends CheckedFormActivity {
         setAssertPositiveInteger(totalEndMField);
         setAssertPositiveInteger(totalEndFField);
     }
-
+    
     protected boolean ensureDataCoherence() { return true;}
+
 }

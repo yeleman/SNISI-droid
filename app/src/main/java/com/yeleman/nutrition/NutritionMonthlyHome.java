@@ -40,7 +40,7 @@ public class NutritionMonthlyHome extends CheckedFormActivity implements View.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nutrition_monthly_home);
         setTitle(String.format(getString(R.string.sub_app_name_nut),
-                              getString(R.string.nutrition_monthly_report_label)));
+                               getString(R.string.nutrition_monthly_report_label)));
         Log.d(TAG, "onCreate NutritionMonthlyHome");
 
         SharedPreferences sharedPrefs =
@@ -73,14 +73,10 @@ public class NutritionMonthlyHome extends CheckedFormActivity implements View.On
             AlertDialog prefCheckDialog = prefCheckBuilder.create();
             prefCheckDialog.show();
         } else {
-            //TODO Add check URENI URENAS and Inputs for requestForResumeReport
-
-            NutritonURENAMReportData report = NutritonURENAMReportData.get();
-            Log.d(TAG, "requestForResumeReport NutritonURENAMReportData");  
-            if (report.pw_is_complete || report.exsam_is_complete ||
-                report.o59_is_complete || report.u23o6_is_complete ||
-                report.u59o23_is_complete) {
-                    requestForResumeReport(this, NutritonURENAMReportData.get());
+            Log.d(TAG, "requestForResumeReport NutritionURENAMReportData");
+            NutritionMonthlyReportData monthlyReport = NutritionMonthlyReportData.get();
+            if (monthlyReport.atLeastOneIsCmplete()){
+                requestForResumeReport(this, NutritionMonthlyReportData.get());
             }
             setupUI();
         }
@@ -100,7 +96,7 @@ public class NutritionMonthlyHome extends CheckedFormActivity implements View.On
         ureniReportButton = (Button) findViewById(R.id.monthlyURENIButton);
 
         if (is_urenam) {
-            NutritonURENAMReportData urenamReport = NutritonURENAMReportData.get();
+            NutritionURENAMReportData urenamReport = NutritionURENAMReportData.get();
             urenamReportButton.setText(String.format(getString(R.string.nutrition_fillout_report),
                                                      getString(R.string.urenam)));
             Constants.updateButtonCompletion(urenamReportButton, urenamReport.isComplete());
@@ -109,7 +105,7 @@ public class NutritionMonthlyHome extends CheckedFormActivity implements View.On
             urenamReportButton.setVisibility(View.GONE);
         }
         if (is_urenas) {
-            NutritonURENASReportData urenasReport = NutritonURENASReportData.get();
+            NutritionURENASReportData urenasReport = NutritionURENASReportData.get();
             urenasReportButton.setText(String.format(getString(R.string.nutrition_fillout_report),
                                                      getString(R.string.urenas)));
             Constants.updateButtonCompletion(urenasReportButton, urenasReport.isComplete());
@@ -118,33 +114,27 @@ public class NutritionMonthlyHome extends CheckedFormActivity implements View.On
             urenasReportButton.setVisibility(View.GONE);
         }
         if (is_ureni) {
-            NutritonURENIReportData ureniReport = NutritonURENIReportData.get();
+            NutritionURENIReportData ureniReport = NutritionURENIReportData.get();
             ureniReportButton.setText(String.format(getString(R.string.nutrition_fillout_report),
-                                                     getString(R.string.ureni)));
+                                                    getString(R.string.ureni)));
             Constants.updateButtonCompletion(ureniReportButton, ureniReport.isComplete());
             ureniReportButton.setOnClickListener(this);
         } else{
             ureniReportButton.setVisibility(View.GONE);
         }
 
-        NutritonInputsReportData inputsReport = NutritonInputsReportData.get();
+        NutritionInputsReportData inputsReport = NutritionInputsReportData.get();
         inputsReportButton = (Button) findViewById(R.id.monthlyInputsButton);
         inputsReportButton.setText(String.format(getString(R.string.nutrition_fillout_report),
-                                                     getString(R.string.inputs)));
+                                                 getString(R.string.inputs)));
         Constants.updateButtonCompletion(inputsReportButton, inputsReport.isComplete());
         inputsReportButton.setOnClickListener(this);
     }
 
     protected void resetReportData(){
         Log.i(TAG, "resetReportData");
-        NutritonURENAMReportData urenamReport = NutritonURENAMReportData.get();
-        urenamReport.resetReportData();
-        NutritonURENASReportData urenasReport = NutritonURENASReportData.get();
-        urenasReport.resetReportData();
-        NutritonURENIReportData ureniReport = NutritonURENIReportData.get();
-        ureniReport.resetReportData();
-        NutritonInputsReportData inputsreport = NutritonInputsReportData.get();
-        inputsreport.resetReportData();
+        NutritionMonthlyReportData monthlyReport = NutritionMonthlyReportData.get();
+        monthlyReport.resetReportData();
         setupUI();
     }
 

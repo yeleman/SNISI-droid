@@ -16,8 +16,8 @@ import com.yeleman.snisidroid.R;
 import java.lang.reflect.Field;
 import java.sql.Struct;
 
-public class NutritonU23O6URENAMReport extends CheckedFormActivity {
-    private final static String TAG = Constants.getLogTag("NutritonU23O6URENAMReport");
+public class NutritionURENASO59Report extends CheckedFormActivity {
+    private final static String TAG = Constants.getLogTag("NutritionURENASO59Report");
 
     protected TextView referredLabel;
     
@@ -27,6 +27,7 @@ public class NutritonU23O6URENAMReport extends CheckedFormActivity {
     protected EditText returnedField;
     protected EditText totalInMField;
     protected EditText totalInFField;
+    protected EditText transferredField;
     protected EditText healedField;
     protected EditText deceasedField;
     protected EditText abandonField;
@@ -43,16 +44,16 @@ public class NutritonU23O6URENAMReport extends CheckedFormActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.nutrition_uren_unit);
+        setContentView(R.layout.nutrition_uren_unit_fillout);
         setTitle(String.format(getString(R.string.nutrition_fillout_section),
-                getString(R.string.u23o6)));
-        Log.d(TAG, "onCreate NutritonU23O6URENAMReport");
+                getString(R.string.o59)));
+        Log.d(TAG, "onCreate NutritionURENASO59Report");
         setupSMSReceiver();
         setupUI();
     }
 
     protected void setupUI() {
-        Log.d(TAG, "setupUI NutritonU23O6URENAMReport");
+        Log.d(TAG, "setupUI NutritionURENASO59Report");
         
         totalStartMField = (EditText) findViewById(R.id.totalStartMField);
         totalStartFField = (EditText) findViewById(R.id.totalStartFField);
@@ -60,16 +61,16 @@ public class NutritonU23O6URENAMReport extends CheckedFormActivity {
         returnedField = (EditText) findViewById(R.id.returnedField);
         totalInMField = (EditText) findViewById(R.id.totalInMField);
         totalInFField = (EditText) findViewById(R.id.totalInFField);
-        LinearLayout transferred_parent = (LinearLayout) findViewById(R.id.TransferredLinearLayout);
-        transferred_parent.setVisibility(View.GONE);
+        transferredField = (EditText) findViewById(R.id.transferredField);
         healedField = (EditText) findViewById(R.id.healedField);
+        transferredField = (EditText) findViewById(R.id.transferredField);
         deceasedField = (EditText) findViewById(R.id.deceasedField);
         abandonField = (EditText) findViewById(R.id.abandonField);
         respondingField = (EditText) findViewById(R.id.respondingField);
         totalOutMField = (EditText) findViewById(R.id.totalOutMField);
         totalOutFField = (EditText) findViewById(R.id.totalOutFField);
         referredLabel = (TextView) findViewById(R.id.referredLabel);
-        referredLabel.setText(String.format(getString(R.string.nutrition_referred), "NUT"));
+        referredLabel.setText(String.format(getString(R.string.nutrition_referred), "URENI"));
         referredField = (EditText) findViewById(R.id.referredField);
         totalEndMField = (EditText) findViewById(R.id.totalEndMField);
         totalEndFField = (EditText) findViewById(R.id.totalEndFField);
@@ -77,8 +78,8 @@ public class NutritonU23O6URENAMReport extends CheckedFormActivity {
         // setup invalid inputs checks
         setupInvalidInputChecks();
 
-        NutritonURENAMReportData report = NutritonURENAMReportData.get();
-        if (report.u23o6_is_complete){
+        NutritionURENASReportData report = NutritionURENASReportData.get();
+        if (report.o59_is_complete){
             restoreReportData();
         }
 
@@ -99,25 +100,26 @@ public class NutritonU23O6URENAMReport extends CheckedFormActivity {
 
     protected void storeReportData() {
         Log.d(TAG, "storeReportData");
-        NutritonURENAMReportData report = NutritonURENAMReportData.get();
+        NutritionURENASReportData report = NutritionURENASReportData.get();
         report.updateMetaData();
 
-        report.u23o6_total_start_m = integerFromField(totalStartMField);
-        report.u23o6_total_start_f = integerFromField(totalStartFField);
-        report.u23o6_new_cases = integerFromField(newCasesField);
-        report.u23o6_returned = integerFromField(returnedField);
-        report.u23o6_total_in_m = integerFromField(totalInMField);
-        report.u23o6_total_in_f = integerFromField(totalInFField);
-        report.u23o6_healed = integerFromField(healedField);
-        report.u23o6_deceased = integerFromField(deceasedField);
-        report.u23o6_abandon = integerFromField(abandonField);
-        report.u23o6_not_responding = integerFromField(respondingField);
-        report.u23o6_total_out_m = integerFromField(totalOutMField);
-        report.u23o6_total_out_f = integerFromField(totalOutFField);
-        report.u23o6_referred = integerFromField(referredField);
-        report.u23o6_total_end_m = integerFromField(totalEndMField);
-        report.u23o6_total_end_f = integerFromField(totalEndFField);
-        report.u23o6_is_complete = true;
+        report.o59_total_start_m = integerFromField(totalStartMField);
+        report.o59_total_start_f = integerFromField(totalStartFField);
+        report.o59_new_cases = integerFromField(newCasesField);
+        report.o59_returned = integerFromField(returnedField);
+        report.o59_total_in_m = integerFromField(totalInMField);
+        report.o59_total_in_f = integerFromField(totalInFField);
+        report.o59_healed = integerFromField(healedField);
+        report.o59_transferred = integerFromField(transferredField);
+        report.o59_deceased = integerFromField(deceasedField);
+        report.o59_abandon = integerFromField(abandonField);
+        report.o59_not_responding = integerFromField(respondingField);
+        report.o59_total_out_m = integerFromField(totalOutMField);
+        report.o59_total_out_f = integerFromField(totalOutFField);
+        report.o59_referred = integerFromField(referredField);
+        report.o59_total_end_m = integerFromField(totalEndMField);
+        report.o59_total_end_f = integerFromField(totalEndFField);
+        report.o59_is_complete = true;
         report.save();
         Log.d(TAG, "storeReportData -- end");
 
@@ -125,23 +127,23 @@ public class NutritonU23O6URENAMReport extends CheckedFormActivity {
 
     protected void restoreReportData() {
         Log.d(TAG, "restoreReportData");
-        NutritonURENAMReportData report = NutritonURENAMReportData.get();
-        if(report.u23o6_total_end_m != -1){
-            setTextOnField(totalStartMField, report.u23o6_total_start_m);
-            setTextOnField(totalStartFField, report.u23o6_total_start_f);
-            setTextOnField(newCasesField, report.u23o6_new_cases);
-            setTextOnField(returnedField, report.u23o6_returned);
-            setTextOnField(totalInMField, report.u23o6_total_in_m);
-            setTextOnField(totalInFField, report.u23o6_total_in_f);
-            setTextOnField(healedField, report.u23o6_healed);
-            setTextOnField(deceasedField, report.u23o6_deceased);
-            setTextOnField(abandonField, report.u23o6_abandon);
-            setTextOnField(respondingField, report.u23o6_not_responding);
-            setTextOnField(totalOutMField, report.u23o6_total_out_m);
-            setTextOnField(totalOutFField, report.u23o6_total_out_f);
-            setTextOnField(referredField, report.u23o6_referred);
-            setTextOnField(totalEndMField, report.u23o6_total_end_m);
-            setTextOnField(totalEndFField, report.u23o6_total_end_f);
+        NutritionURENASReportData report = NutritionURENASReportData.get();
+        if(report.o59_total_end_m != -1){
+            setTextOnField(totalStartMField, report.o59_total_start_m);
+            setTextOnField(totalStartFField, report.o59_total_start_f);
+            setTextOnField(newCasesField, report.o59_new_cases);
+            setTextOnField(returnedField, report.o59_returned);
+            setTextOnField(totalInMField, report.o59_total_in_m);
+            setTextOnField(totalInFField, report.o59_total_in_f);
+            setTextOnField(healedField, report.o59_healed);
+            setTextOnField(deceasedField, report.o59_deceased);
+            setTextOnField(abandonField, report.o59_abandon);
+            setTextOnField(respondingField, report.o59_not_responding);
+            setTextOnField(totalOutMField, report.o59_total_out_m);
+            setTextOnField(totalOutFField, report.o59_total_out_f);
+            setTextOnField(referredField, report.o59_referred);
+            setTextOnField(totalEndMField, report.o59_total_end_m);
+            setTextOnField(totalEndFField, report.o59_total_end_f);
         }
     }
 
@@ -187,15 +189,15 @@ public class NutritonU23O6URENAMReport extends CheckedFormActivity {
                             integerFromField(respondingField);
         if (allOutReasons != totalOut){
             String errorMsg = String.format(getString(R.string.error_must_be_equal,
-                                            "guéris, décès, abandons, non-resp.",
-                                            totalOut, "total sorties",
-                                            allOutReasons));
+                    "guéris, décès, abandons, non-resp.",
+                    allOutReasons, "total sorties", totalOut));
             fireErrorDialog(this, errorMsg, healedField);
             return false;
         }
         // Sorties inferieur ou egal à PEC
         int totalStart = integerFromField(totalStartFField) + integerFromField(totalStartMField);
-        int grandTotalIn = totalIn + integerFromField(newCasesField) + integerFromField(returnedField);
+        int grandTotalIn = totalIn + integerFromField(newCasesField) + integerFromField(returnedField) +
+                            integerFromField(transferredField);
         int allAvail = totalStart + grandTotalIn;
         int grandTotalOut = totalOut + integerFromField(healedField) +
                             integerFromField(deceasedField) +

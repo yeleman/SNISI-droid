@@ -6,11 +6,11 @@ import android.util.Log;
 import com.orm.dsl.Ignore;
 import com.yeleman.snisidroid.ReportData;
 
-public class NutritonInputsReportData extends ReportData {
+public class NutritionInputsReportData extends ReportData {
 
     @Ignore
     private final static String TAG = Constants.getLogTag(
-            NutritonInputsReportData.class.getSimpleName());
+            NutritionInputsReportData.class.getSimpleName());
         
         // Plumpy Nut
         int plumpy_nut_initial = -1;
@@ -86,13 +86,13 @@ public class NutritonInputsReportData extends ReportData {
         Boolean input_is_complete = false;
 
 
-    public NutritonInputsReportData() {}
+    public NutritionInputsReportData() {}
 
-    public static NutritonInputsReportData get() {
-        NutritonInputsReportData report = getUniqueRecord(NutritonInputsReportData.class);
+    public static NutritionInputsReportData get() {
+        NutritionInputsReportData report = getUniqueRecord(NutritionInputsReportData.class);
         if (report == null) {
             Log.d(TAG, "No Record in DB. Creating.");
-            report = new NutritonInputsReportData();
+            report = new NutritionInputsReportData();
             report.save();
         } else {
             Log.d(TAG, "Record exist in Database.");
@@ -106,11 +106,15 @@ public class NutritonInputsReportData extends ReportData {
     }
 
     protected Boolean isComplete(){
-        return false;
+        return input_is_complete;
     }
 
+    protected Boolean atLeastOneIsCmplete(){
+        return input_is_complete;
+    }
+    
     protected void resetReportData() {
-        NutritonInputsReportData report = NutritonInputsReportData.get();
+        NutritionInputsReportData report = NutritionInputsReportData.get();
         report.input_is_complete = false;
         report.save();
     }

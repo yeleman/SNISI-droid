@@ -15,8 +15,8 @@ import com.yeleman.snisidroid.R;
 /**
  * Created by fad on 31/10/14.
  */
-public class NutritionExsamURENAMReport extends CheckedFormActivity {
-    private final static String TAG = Constants.getLogTag("NutritionExsamURENAMReport");
+public class NutritionURENAMExsamReport extends CheckedFormActivity {
+    private final static String TAG = Constants.getLogTag("NutritionURENAMExsamReport");
 
     protected TextView referredLabel;
 
@@ -31,10 +31,10 @@ public class NutritionExsamURENAMReport extends CheckedFormActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.nutrition_uren_unit);
+        setContentView(R.layout.nutrition_uren_unit_fillout);
         setTitle(String.format(getString(R.string.nutrition_fillout_section),
                 getString(R.string.exsam)));
-        Log.d(TAG, "onCreate NutritionO59URENAMReport");
+        Log.d(TAG, "onCreate NutritionURENAMExsamReport");
 
         setupSMSReceiver();
         setupUI();
@@ -42,9 +42,9 @@ public class NutritionExsamURENAMReport extends CheckedFormActivity {
 
 
     protected void setupUI() {
-        Log.d(TAG, "setupUI NutritionO59URENAMReport");
+        Log.d(TAG, "setupUI NutritionURENAMExsamReport");
 
-        LinearLayout transferred_parent = (LinearLayout) findViewById(R.id.TransferredLinearLayout);
+        LinearLayout transferred_parent = (LinearLayout) findViewById(R.id.transferredLinearLayout);
         transferred_parent.setVisibility(View.GONE);
         LinearLayout in_parent = (LinearLayout) findViewById(R.id.inLinearLayout);
         in_parent.setVisibility(View.GONE);
@@ -62,7 +62,7 @@ public class NutritionExsamURENAMReport extends CheckedFormActivity {
         // setup invalid inputs checks
         setupInvalidInputChecks();
 
-        NutritonURENAMReportData report = NutritonURENAMReportData.get();
+        NutritionURENAMReportData report = NutritionURENAMReportData.get();
         if (report.exsam_is_complete){
             restoreReportData();
         }
@@ -85,7 +85,7 @@ public class NutritionExsamURENAMReport extends CheckedFormActivity {
 
     protected void storeReportData() {
         Log.d(TAG, "storeReportData");
-        NutritonURENAMReportData report = NutritonURENAMReportData.get();
+        NutritionURENAMReportData report = NutritionURENAMReportData.get();
         report.updateMetaData();
 
         report.exsam_total_start_m = integerFromField(totalStartMField);
@@ -102,7 +102,7 @@ public class NutritionExsamURENAMReport extends CheckedFormActivity {
 
     protected void restoreReportData() {
         Log.d(TAG, "restoreReportData");
-        NutritonURENAMReportData report = NutritonURENAMReportData.get();
+        NutritionURENAMReportData report = NutritionURENAMReportData.get();
         if(report.exsam_total_start_m != -1){
             setTextOnField(totalStartMField, report.exsam_total_start_m);
             setTextOnField(totalStartFField, report.exsam_total_start_f);

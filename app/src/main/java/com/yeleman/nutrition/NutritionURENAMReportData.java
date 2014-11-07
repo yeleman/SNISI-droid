@@ -6,11 +6,11 @@ import android.util.Log;
 import com.orm.dsl.Ignore;
 import com.yeleman.snisidroid.ReportData;
 
-public class NutritonURENAMReportData extends ReportData {
+public class NutritionURENAMReportData extends ReportData {
 
     @Ignore
     private final static String TAG = Constants.getLogTag(
-            NutritonURENAMReportData.class.getSimpleName());
+            NutritionURENAMReportData.class.getSimpleName());
 
     int u23o6_total_start_m = -1;
     int u23o6_total_start_f = -1;
@@ -89,13 +89,13 @@ public class NutritonURENAMReportData extends ReportData {
     int exsam_total_end_f = -1;
     boolean exsam_is_complete = false;
 
-    public NutritonURENAMReportData() {}
+    public NutritionURENAMReportData() {}
 
-    public static NutritonURENAMReportData get() {
-        NutritonURENAMReportData report = getUniqueRecord(NutritonURENAMReportData.class);
+    public static NutritionURENAMReportData get() {
+        NutritionURENAMReportData report = getUniqueRecord(NutritionURENAMReportData.class);
         if (report == null) {
             Log.d(TAG, "No Record in DB. Creating.");
-            report = new NutritonURENAMReportData();
+            report = new NutritionURENAMReportData();
             report.save();
         } else {
             Log.d(TAG, "Record exist in Database.");
@@ -116,8 +116,15 @@ public class NutritonURENAMReportData extends ReportData {
                exsam_is_complete;
     }
 
+    protected Boolean atLeastOneIsCmplete(){
+        return pw_is_complete ||
+               o59_is_complete ||
+               u23o6_is_complete ||
+               u59o23_is_complete ||
+               exsam_is_complete;
+    }
     protected void resetReportData() {
-        NutritonURENAMReportData report = NutritonURENAMReportData.get();
+        NutritionURENAMReportData report = NutritionURENAMReportData.get();
         report.pw_is_complete = false;
         report.o59_is_complete = false;
         report.u23o6_is_complete = false;

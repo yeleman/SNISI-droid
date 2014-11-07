@@ -13,22 +13,30 @@
         android:id="@+id/scrollView"
         android:orientation="vertical">
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/instructionLabel"
+            android:gravity="center|center_vertical|center_horizontal"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="10dp" />
+
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/nutrition_fillout_report"
+            android:text="@string/nutrition_fillout_section"
             android:id="@+id/u6URENIButton"
             android:layout_margin="10dp" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/nutrition_fillout_report"
+            android:text="@string/nutrition_fillout_section"
             android:id="@+id/u59URENiButton"
             android:layout_margin="10dp" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/nutrition_fillout_report"
+            android:text="@string/nutrition_fillout_section"
             android:id="@+id/o59URENiButton"
             android:layout_margin="10dp" />
     </LinearLayout>

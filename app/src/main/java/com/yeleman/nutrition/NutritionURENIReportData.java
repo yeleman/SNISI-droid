@@ -6,11 +6,11 @@ import android.util.Log;
 import com.orm.dsl.Ignore;
 import com.yeleman.snisidroid.ReportData;
 
-public class NutritonURENIReportData extends ReportData {
+public class NutritionURENIReportData extends ReportData {
 
     @Ignore
     private final static String TAG = Constants.getLogTag(
-            NutritonURENIReportData.class.getSimpleName());
+            NutritionURENIReportData.class.getSimpleName());
 
         //  0-6 months
         int u6_total_start_m = -1;
@@ -67,13 +67,13 @@ public class NutritonURENIReportData extends ReportData {
         int o59_total_end_f = -1;
         Boolean o59_is_complete = false;
 
-    public NutritonURENIReportData() {}
+    public NutritionURENIReportData() {}
 
-    public static NutritonURENIReportData get() {
-        NutritonURENIReportData report = getUniqueRecord(NutritonURENIReportData.class);
+    public static NutritionURENIReportData get() {
+        NutritionURENIReportData report = getUniqueRecord(NutritionURENIReportData.class);
         if (report == null) {
             Log.d(TAG, "No Record in DB. Creating.");
-            report = new NutritonURENIReportData();
+            report = new NutritionURENIReportData();
             report.save();
         } else {
             Log.d(TAG, "Record exist in Database.");
@@ -87,11 +87,15 @@ public class NutritonURENIReportData extends ReportData {
     }
 
     protected Boolean isComplete(){
-        return o59_is_complete && o59_is_complete;
+        return o59_is_complete && o59_is_complete && u6_is_complete;
+    }
+
+    protected Boolean atLeastOneIsCmplete(){
+        return o59_is_complete || o59_is_complete || u6_is_complete;
     }
 
     protected void resetReportData() {
-        NutritonURENIReportData report = NutritonURENIReportData.get();
+        NutritionURENIReportData report = NutritionURENIReportData.get();
         report.u59o6_is_complete = false;
         report.o59_is_complete = false;
         report.u6_is_complete = false;

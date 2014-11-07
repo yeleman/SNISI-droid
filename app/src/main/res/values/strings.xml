@@ -120,7 +120,7 @@
 
     <string name="nutrition_new_cases">Nouveau cas</string>
     <string name="nutrition_returned">Readmisson</string>
-    <string name="nutrition_transferred">Transf. [%1$s]</string>
+    <string name="nutrition_transferred">Transf. URENI</string>
     <string name="nutrition_healed">Guéris</string>
     <string name="nutrition_deceased">Décès</string>
     <string name="nutrition_abandon">Abandons</string>

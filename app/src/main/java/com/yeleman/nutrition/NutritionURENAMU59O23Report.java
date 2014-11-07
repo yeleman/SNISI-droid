@@ -15,9 +15,9 @@ import com.yeleman.snisidroid.R;
 /**
  * Created by fad on 31/10/14.
  */
-public class NutritionU59O23URENAMReport extends CheckedFormActivity {
+public class NutritionURENAMU59O23Report extends CheckedFormActivity {
 
-    private final static String TAG = Constants.getLogTag("NutritionU59O23URENAMReport");
+    private final static String TAG = Constants.getLogTag("NutritionURENAMU59O23Report");
 
     protected TextView transferredLabel;
     protected TextView referredLabel;
@@ -45,17 +45,17 @@ public class NutritionU59O23URENAMReport extends CheckedFormActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.nutrition_uren_unit);
+        setContentView(R.layout.nutrition_uren_unit_fillout);
         setTitle(String.format(getString(R.string.nutrition_fillout_section),
                 getString(R.string.u59o23)));
-        Log.d(TAG, "onCreate NutritionU59O23URENAMReport");
+        Log.d(TAG, "onCreate NutritionURENAMU59O23Report");
 
         setupSMSReceiver();
         setupUI();
     }
 
     protected void setupUI() {
-        Log.d(TAG, "setupUI NutritionU59O23URENAMReport");
+        Log.d(TAG, "setupUI NutritionURENAMU59O23Report");
 
         totalStartMField = (EditText) findViewById(R.id.totalStartMField);
         totalStartFField = (EditText) findViewById(R.id.totalStartFField);
@@ -63,7 +63,7 @@ public class NutritionU59O23URENAMReport extends CheckedFormActivity {
         returnedField = (EditText) findViewById(R.id.returnedField);
         totalInMField = (EditText) findViewById(R.id.totalInMField);
         totalInFField = (EditText) findViewById(R.id.totalInFField);
-        LinearLayout transferred_parent = (LinearLayout) findViewById(R.id.TransferredLinearLayout);
+        LinearLayout transferred_parent = (LinearLayout) findViewById(R.id.transferredLinearLayout);
         transferred_parent.setVisibility(View.GONE);
         healedField = (EditText) findViewById(R.id.healedField);
         deceasedField = (EditText) findViewById(R.id.deceasedField);
@@ -80,7 +80,7 @@ public class NutritionU59O23URENAMReport extends CheckedFormActivity {
         // setup invalid inputs checks
         setupInvalidInputChecks();
 
-        NutritonURENAMReportData report = NutritonURENAMReportData.get();
+        NutritionURENAMReportData report = NutritionURENAMReportData.get();
         if (report.u59o23_is_complete){
             restoreReportData();
         }
@@ -103,7 +103,7 @@ public class NutritionU59O23URENAMReport extends CheckedFormActivity {
 
     protected void storeReportData() {
         Log.d(TAG, "storeReportData");
-        NutritonURENAMReportData report = NutritonURENAMReportData.get();
+        NutritionURENAMReportData report = NutritionURENAMReportData.get();
         report.updateMetaData();
 
         report.u59o23_total_start_m = integerFromField(totalStartMField);
@@ -129,7 +129,7 @@ public class NutritionU59O23URENAMReport extends CheckedFormActivity {
 
     protected void restoreReportData() {
         Log.d(TAG, "restoreReportData");
-        NutritonURENAMReportData report = NutritonURENAMReportData.get();
+        NutritionURENAMReportData report = NutritionURENAMReportData.get();
         if (report.u59o23_total_start_m != -1){
             setTextOnField(totalStartMField, report.u59o23_total_start_m);
             setTextOnField(totalStartFField, report.u59o23_total_start_f);

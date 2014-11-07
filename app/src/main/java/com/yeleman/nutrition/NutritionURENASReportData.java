@@ -6,11 +6,11 @@ import android.util.Log;
 import com.orm.dsl.Ignore;
 import com.yeleman.snisidroid.ReportData;
 
-public class NutritonURENASReportData extends ReportData {
+public class NutritionURENASReportData extends ReportData {
 
     @Ignore
     private final static String TAG = Constants.getLogTag(
-            NutritonURENASReportData.class.getSimpleName());
+            NutritionURENASReportData.class.getSimpleName());
         
         // 6-59 months
         int u59o6_total_start_m = -1;
@@ -29,7 +29,7 @@ public class NutritonURENASReportData extends ReportData {
         int u59o6_referred = -1;
         int u59o6_total_end_m = -1;
         int u59o6_total_end_f = -1;
-        Boolean u59o6_isComplete = false;
+        Boolean u59o6_is_complete = false;
         // Pregnant & Breast Feeding Women
         int o59_total_start_m = -1;
         int o59_total_start_f = -1;
@@ -49,13 +49,13 @@ public class NutritonURENASReportData extends ReportData {
         int o59_total_end_f = -1;
         Boolean o59_is_complete = false;
 
-    public NutritonURENASReportData() {}
+    public NutritionURENASReportData() {}
 
-    public static NutritonURENASReportData get() {
-        NutritonURENASReportData report = getUniqueRecord(NutritonURENASReportData.class);
+    public static NutritionURENASReportData get() {
+        NutritionURENASReportData report = getUniqueRecord(NutritionURENASReportData.class);
         if (report == null) {
             Log.d(TAG, "No Record in DB. Creating.");
-            report = new NutritonURENASReportData();
+            report = new NutritionURENASReportData();
             report.save();
         } else {
             Log.d(TAG, "Record exist in Database.");
@@ -69,12 +69,16 @@ public class NutritonURENASReportData extends ReportData {
     }
 
     protected Boolean isComplete(){
-        return u59o6_isComplete && o59_is_complete;
+        return u59o6_is_complete && o59_is_complete;
     }
 
+    protected Boolean atLeastOneIsCmplete(){
+        return u59o6_is_complete || o59_is_complete;
+    }
+    
     protected void resetReportData() {
-        NutritonURENASReportData report = NutritonURENASReportData.get();
-        report.u59o6_isComplete = false;
+        NutritionURENASReportData report = NutritionURENASReportData.get();
+        report.u59o6_is_complete = false;
         report.o59_is_complete = false;
         report.save();
     }
