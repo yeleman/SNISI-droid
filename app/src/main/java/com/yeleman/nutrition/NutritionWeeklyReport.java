@@ -68,6 +68,10 @@ public class NutritionWeeklyReport extends CheckedFormActivity {
             mamScreeningField = (EditText) inflated_urenam.findViewById(R.id.screeningField);
             mamCasesField = (EditText) inflated_urenam.findViewById(R.id.casesField);
             mamDeathsField = (EditText) inflated_urenam.findViewById(R.id.deathsField);
+            // change deathField id to be unique across UREN
+            mamDeathsField.setId(R.id.urenamdeathsField);
+            mamCasesField.setNextFocusRightId(mamDeathsField.getId());
+            mamCasesField.setNextFocusDownId(mamDeathsField.getId());
         }
 
         if (is_urenas) {
@@ -78,6 +82,9 @@ public class NutritionWeeklyReport extends CheckedFormActivity {
             samScreeningField = (EditText) inflated_urenas.findViewById(R.id.screeningField);
             samCasesField = (EditText) inflated_urenas.findViewById(R.id.casesField);
             samDeathsField = (EditText) inflated_urenas.findViewById(R.id.deathsField);
+            samDeathsField.setId(R.id.urenasdeathsField);
+            samCasesField.setNextFocusRightId(samDeathsField.getId());
+            samCasesField.setNextFocusDownId(samDeathsField.getId());
         }
 
         if (is_ureni) {
@@ -88,6 +95,9 @@ public class NutritionWeeklyReport extends CheckedFormActivity {
             samcScreeningField = (EditText) inflated_ureni.findViewById(R.id.screeningField);
             samcCasesField = (EditText) inflated_ureni.findViewById(R.id.casesField);
             samcDeathsField = (EditText) inflated_ureni.findViewById(R.id.deathsField);
+            samcDeathsField.setId(R.id.urenideathsField);
+            samcCasesField.setNextFocusRightId(samcDeathsField.getId());
+            samcCasesField.setNextFocusDownId(samcDeathsField.getId());
         }
 
         // setup invalid inputs checks
