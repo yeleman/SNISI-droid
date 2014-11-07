@@ -20,7 +20,7 @@ public class NutritionURENAMU23O6Report extends CheckedFormActivity {
     private final static String TAG = Constants.getLogTag("NutritionURENAMU23O6Report");
 
     protected TextView referredLabel;
-    
+
     protected EditText totalStartMField;
     protected EditText totalStartFField;
     protected EditText newCasesField;
@@ -53,7 +53,7 @@ public class NutritionURENAMU23O6Report extends CheckedFormActivity {
 
     protected void setupUI() {
         Log.d(TAG, "setupUI NutritionURENAMU23O6Report");
-        
+
         totalStartMField = (EditText) findViewById(R.id.totalStartMField);
         totalStartFField = (EditText) findViewById(R.id.totalStartFField);
         newCasesField = (EditText) findViewById(R.id.newCasesField);
@@ -78,7 +78,7 @@ public class NutritionURENAMU23O6Report extends CheckedFormActivity {
         setupInvalidInputChecks();
 
         NutritionURENAMReportData report = NutritionURENAMReportData.get();
-        if (report.u23o6_is_complete){
+        if (report.u23o6_is_complete) {
             restoreReportData();
         }
 
@@ -88,7 +88,9 @@ public class NutritionURENAMU23O6Report extends CheckedFormActivity {
             @Override
             public void onClick(View v) {
                 // ensure data is OK
-                if (!checkInputsAndCoherence()) { return; }
+                if (!checkInputsAndCoherence()) {
+                    return;
+                }
                 // save data to DB
                 storeReportData();
 
@@ -126,7 +128,7 @@ public class NutritionURENAMU23O6Report extends CheckedFormActivity {
     protected void restoreReportData() {
         Log.d(TAG, "restoreReportData");
         NutritionURENAMReportData report = NutritionURENAMReportData.get();
-        if(report.u23o6_total_end_m != -1){
+        if (report.u23o6_total_end_m != -1) {
             setTextOnField(totalStartMField, report.u23o6_total_start_m);
             setTextOnField(totalStartFField, report.u23o6_total_start_f);
             setTextOnField(newCasesField, report.u23o6_new_cases);
@@ -163,7 +165,7 @@ public class NutritionURENAMU23O6Report extends CheckedFormActivity {
         setAssertPositiveInteger(totalEndMField);
         setAssertPositiveInteger(totalEndFField);
     }
-    
+
     protected boolean ensureDataCoherence() {
 
         // newCases + returned == totalIn
@@ -172,9 +174,9 @@ public class NutritionURENAMU23O6Report extends CheckedFormActivity {
 
         if (newsCaseAndReferred != totalIn) {
             String errorMsg = String.format(getString(R.string.error_must_be_equal,
-                                            newCasesField.getHint() + " + " + returnedField.getHint(),
-                                            newsCaseAndReferred,
-                                            "total admis ", totalIn));
+                    newCasesField.getHint() + " + " + returnedField.getHint(),
+                    newsCaseAndReferred,
+                    "total admis ", totalIn));
             fireErrorDialog(this, errorMsg, newCasesField);
             return false;
         }
@@ -182,9 +184,9 @@ public class NutritionURENAMU23O6Report extends CheckedFormActivity {
         // allOut == totalOut
         int totalOut = integerFromField(totalOutFField) + integerFromField(totalOutMField);
         int allOutReasons = integerFromField(healedField) +
-                            integerFromField(deceasedField) +
-                            integerFromField(abandonField) +
-                            integerFromField(respondingField);
+                integerFromField(deceasedField) +
+                integerFromField(abandonField) +
+                integerFromField(respondingField);
         if (allOutReasons != totalOut){
             String errorMsg = String.format(getString(R.string.error_must_be_equal,
                     "guéris, décès, abandons, non-resp.",
@@ -197,12 +199,12 @@ public class NutritionURENAMU23O6Report extends CheckedFormActivity {
         int grandTotalIn = totalIn + integerFromField(newCasesField) + integerFromField(returnedField);
         int allAvail = totalStart + grandTotalIn;
         int grandTotalOut = totalOut + integerFromField(healedField) +
-                            integerFromField(deceasedField) +
-                            integerFromField(abandonField) +
-                            integerFromField(respondingField);
+                integerFromField(deceasedField) +
+                integerFromField(abandonField) +
+                integerFromField(respondingField);
         if (grandTotalOut > allAvail){
             String errorMsg = String.format("total sorties général (%1$d) ne peut pas dépasser le " +
-                                            "total début + admissions (%2$d)", grandTotalOut, allAvail);
+                    "total début + admissions (%2$d)", grandTotalOut, allAvail);
             fireErrorDialog(this, errorMsg, newCasesField);
             return false;
         }
@@ -212,11 +214,11 @@ public class NutritionURENAMU23O6Report extends CheckedFormActivity {
         int startInNotOut = totalStart + grandTotalIn - grandTotalOut;
         if (totalEnd != (startInNotOut)){
             String errorMsg = String.format("total fin de mois (%1$d) doit être égal au début " +
-                                            "+ admissions - sorties (%2$d)", totalEnd, startInNotOut);
+                    "+ admissions - sorties (%2$d)", totalEnd, startInNotOut);
             fireErrorDialog(this, errorMsg, totalStartFField);
             return false;
         }
         return true;
-
     }
 }
+    

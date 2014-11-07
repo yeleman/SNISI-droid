@@ -124,6 +124,22 @@
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation" />
         <activity
+            android:name="com.yeleman.nutrition.NutritionURENIU6Report"
+            android:label="@string/nutrition_app_label"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.yeleman.nutrition.NutritionURENIO59Report"
+            android:label="@string/nutrition_app_label"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.yeleman.nutrition.NutritionURENIU59O6Report"
+            android:label="@string/nutrition_app_label"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation" />
+
+        <activity
             android:name="com.yeleman.smir.SMIRHome"
             android:label="@string/smir_app_label"
             android:screenOrientation="portrait"

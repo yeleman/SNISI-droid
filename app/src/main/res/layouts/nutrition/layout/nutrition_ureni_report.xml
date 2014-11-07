@@ -31,7 +31,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/nutrition_fillout_section"
-            android:id="@+id/u59URENiButton"
+            android:id="@+id/u59o6URENASButton"
             android:layout_margin="10dp" />
         <Button
             android:layout_width="match_parent"

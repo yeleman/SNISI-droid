@@ -18,7 +18,7 @@ public class NutritionURENIReport extends CheckedFormActivity implements View.On
 
 
     private Button u6ReportButton;
-    private Button u59o6ReportButton;
+    private Button u59o6URENASButton;
     private Button o59ReportButton;
 
     @Override
@@ -42,17 +42,17 @@ public class NutritionURENIReport extends CheckedFormActivity implements View.On
         NutritionURENIReportData report = NutritionURENIReportData.get();
 
         u6ReportButton = (Button) findViewById(R.id.u6URENIButton);
-        u6ReportButton.setText(String.format(getString(R.string.nutrition_fillout_report), getString(R.string.u6)));
-        Constants.updateButtonCompletion(u59o6ReportButton, report.u6_is_complete);
+        u6ReportButton.setText(String.format(getString(R.string.nutrition_fillout_section), getString(R.string.u6)));
+        Constants.updateButtonCompletion(u6ReportButton, report.u6_is_complete);
         u6ReportButton.setOnClickListener(this);
 
-        u59o6ReportButton = (Button) findViewById(R.id.u59URENiButton);
-        u59o6ReportButton.setText(String.format(getString(R.string.nutrition_fillout_report), getString(R.string.u6)));
-        Constants.updateButtonCompletion(u59o6ReportButton, report.u59o6_is_complete);
-        u59o6ReportButton.setOnClickListener(this);
+        u59o6URENASButton = (Button) findViewById(R.id.u59o6URENASButton);
+        u59o6URENASButton.setText(String.format(getString(R.string.nutrition_fillout_section), getString(R.string.u59o6)));
+        Constants.updateButtonCompletion(u59o6URENASButton, report.u59o6_is_complete);
+        u59o6URENASButton.setOnClickListener(this);
 
         o59ReportButton = (Button) findViewById(R.id.o59URENiButton);
-        o59ReportButton.setText(String.format(getString(R.string.nutrition_fillout_report), getString(R.string.o59)));
+        o59ReportButton.setText(String.format(getString(R.string.nutrition_fillout_section), getString(R.string.o59)));
         Constants.updateButtonCompletion(o59ReportButton, report.u6_is_complete);
         o59ReportButton.setOnClickListener(this);
 
@@ -63,13 +63,13 @@ public class NutritionURENIReport extends CheckedFormActivity implements View.On
         Object activity = null;
         switch (view.getId()) {
             case R.id.u6URENIButton:
-                activity = NutritionURENIReport.class;
+                activity = NutritionURENIU6Report.class;
+                break;
+            case R.id.u59o6URENASButton:
+                activity = NutritionURENIU59O6Report.class;
                 break;
             case R.id.o59URENiButton:
-                activity = NutritionURENIReport.class;
-                break;
-            case R.id.u59URENiButton:
-                activity = NutritionURENIReport.class;
+                activity = NutritionURENIO59Report.class;
                 break;
         }
         Intent intent = new Intent(

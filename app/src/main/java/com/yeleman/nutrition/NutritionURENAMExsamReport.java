@@ -120,7 +120,8 @@ public class NutritionURENAMExsamReport extends CheckedFormActivity {
         setAssertPositiveInteger(totalEndMField);
         setAssertPositiveInteger(totalEndFField);
     }
-    
-    protected boolean ensureDataCoherence() { return true;}
 
+    protected boolean ensureDataCoherence() {
+        return true;
+    }
 }

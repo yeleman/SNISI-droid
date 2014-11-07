@@ -136,6 +136,7 @@ public class NutritionURENASO59Report extends CheckedFormActivity {
             setTextOnField(totalInMField, report.o59_total_in_m);
             setTextOnField(totalInFField, report.o59_total_in_f);
             setTextOnField(healedField, report.o59_healed);
+            setTextOnField(transferredField, report.o59_transferred);
             setTextOnField(deceasedField, report.o59_deceased);
             setTextOnField(abandonField, report.o59_abandon);
             setTextOnField(respondingField, report.o59_not_responding);
@@ -156,6 +157,7 @@ public class NutritionURENASO59Report extends CheckedFormActivity {
         setAssertPositiveInteger(totalInMField);
         setAssertPositiveInteger(totalInFField);
         setAssertPositiveInteger(healedField);
+        setAssertPositiveInteger(transferredField);
         setAssertPositiveInteger(deceasedField);
         setAssertPositiveInteger(abandonField);
         setAssertPositiveInteger(respondingField);
