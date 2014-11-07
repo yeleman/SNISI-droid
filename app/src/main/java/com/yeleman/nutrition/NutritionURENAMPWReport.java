@@ -50,7 +50,7 @@ public class NutritionURENAMPWReport extends NutritionURENForm implements Nutrit
         healedField = (EditText) findViewById(R.id.healedField);
         deceasedField = (EditText) findViewById(R.id.deceasedField);
         abandonField = (EditText) findViewById(R.id.abandonField);
-        respondingField = (EditText) findViewById(R.id.respondingField);
+        notRespondingField = (EditText) findViewById(R.id.notRespondingField);
         totalOutMField = (EditText) findViewById(R.id.totalOutMField);
         totalOutFField = (EditText) findViewById(R.id.totalOutFField);
         referredLabel = (TextView) findViewById(R.id.referredLabel);
@@ -96,7 +96,7 @@ public class NutritionURENAMPWReport extends NutritionURENForm implements Nutrit
         report.pw_healed = integerFromField(healedField);
         report.pw_deceased = integerFromField(deceasedField);
         report.pw_abandon = integerFromField(abandonField);
-        report.pw_not_responding = integerFromField(respondingField);
+        report.pw_not_responding = integerFromField(notRespondingField);
         report.pw_total_out_m = integerFromField(totalOutMField);
         report.pw_total_out_f = integerFromField(totalOutFField);
         report.pw_referred = integerFromField(referredField);
@@ -122,7 +122,7 @@ public class NutritionURENAMPWReport extends NutritionURENForm implements Nutrit
             setTextOnField(healedField, report.pw_healed);
             setTextOnField(deceasedField, report.pw_deceased);
             setTextOnField(abandonField, report.pw_abandon);
-            setTextOnField(respondingField, report.pw_not_responding);
+            setTextOnField(notRespondingField, report.pw_not_responding);
             setTextOnField(totalOutMField, report.pw_total_out_m);
             setTextOnField(totalOutFField, report.pw_total_out_f);
             setTextOnField(referredField, report.pw_referred);
@@ -142,7 +142,7 @@ public class NutritionURENAMPWReport extends NutritionURENForm implements Nutrit
         setAssertPositiveInteger(healedField);
         setAssertPositiveInteger(deceasedField);
         setAssertPositiveInteger(abandonField);
-        setAssertPositiveInteger(respondingField);
+        setAssertPositiveInteger(notRespondingField);
         setAssertPositiveInteger(totalOutMField);
         setAssertPositiveInteger(totalOutFField);
         setAssertPositiveInteger(referredField);

@@ -48,7 +48,7 @@ public class NutritionURENAMU59O23Report extends NutritionURENForm implements Nu
         healedField = (EditText) findViewById(R.id.healedField);
         deceasedField = (EditText) findViewById(R.id.deceasedField);
         abandonField = (EditText) findViewById(R.id.abandonField);
-        respondingField = (EditText) findViewById(R.id.respondingField);
+        notRespondingField = (EditText) findViewById(R.id.notRespondingField);
         totalOutMField = (EditText) findViewById(R.id.totalOutMField);
         totalOutFField = (EditText) findViewById(R.id.totalOutFField);
         referredLabel = (TextView) findViewById(R.id.referredLabel);
@@ -95,7 +95,7 @@ public class NutritionURENAMU59O23Report extends NutritionURENForm implements Nu
         report.u59o23_healed = integerFromField(healedField);
         report.u59o23_deceased = integerFromField(deceasedField);
         report.u59o23_abandon = integerFromField(abandonField);
-        report.u59o23_not_responding = integerFromField(respondingField);
+        report.u59o23_not_responding = integerFromField(notRespondingField);
         report.u59o23_total_out_m = integerFromField(totalOutMField);
         report.u59o23_total_out_f = integerFromField(totalOutFField);
         report.u59o23_referred = integerFromField(referredField);
@@ -120,7 +120,7 @@ public class NutritionURENAMU59O23Report extends NutritionURENForm implements Nu
             setTextOnField(healedField, report.u59o23_healed);
             setTextOnField(deceasedField, report.u59o23_deceased);
             setTextOnField(abandonField, report.u59o23_abandon);
-            setTextOnField(respondingField, report.u59o23_not_responding);
+            setTextOnField(notRespondingField, report.u59o23_not_responding);
             setTextOnField(totalOutMField, report.u59o23_total_out_m);
             setTextOnField(totalOutFField, report.u59o23_total_out_f);
             setTextOnField(referredField, report.u59o23_referred);
@@ -139,7 +139,7 @@ public class NutritionURENAMU59O23Report extends NutritionURENForm implements Nu
         setAssertPositiveInteger(healedField);
         setAssertPositiveInteger(deceasedField);
         setAssertPositiveInteger(abandonField);
-        setAssertPositiveInteger(respondingField);
+        setAssertPositiveInteger(notRespondingField);
         setAssertPositiveInteger(totalOutMField);
         setAssertPositiveInteger(totalOutFField);
         setAssertPositiveInteger(referredField);

@@ -52,7 +52,7 @@ public class NutritionURENASO59Report extends NutritionURENForm implements Nutri
         transferredField = (EditText) findViewById(R.id.transferredField);
         deceasedField = (EditText) findViewById(R.id.deceasedField);
         abandonField = (EditText) findViewById(R.id.abandonField);
-        respondingField = (EditText) findViewById(R.id.respondingField);
+        notRespondingField = (EditText) findViewById(R.id.notRespondingField);
         totalOutMField = (EditText) findViewById(R.id.totalOutMField);
         totalOutFField = (EditText) findViewById(R.id.totalOutFField);
         referredLabel = (TextView) findViewById(R.id.referredLabel);
@@ -99,7 +99,7 @@ public class NutritionURENASO59Report extends NutritionURENForm implements Nutri
         report.o59_transferred = integerFromField(transferredField);
         report.o59_deceased = integerFromField(deceasedField);
         report.o59_abandon = integerFromField(abandonField);
-        report.o59_not_responding = integerFromField(respondingField);
+        report.o59_not_responding = integerFromField(notRespondingField);
         report.o59_total_out_m = integerFromField(totalOutMField);
         report.o59_total_out_f = integerFromField(totalOutFField);
         report.o59_referred = integerFromField(referredField);
@@ -125,7 +125,7 @@ public class NutritionURENASO59Report extends NutritionURENForm implements Nutri
             setTextOnField(transferredField, report.o59_transferred);
             setTextOnField(deceasedField, report.o59_deceased);
             setTextOnField(abandonField, report.o59_abandon);
-            setTextOnField(respondingField, report.o59_not_responding);
+            setTextOnField(notRespondingField, report.o59_not_responding);
             setTextOnField(totalOutMField, report.o59_total_out_m);
             setTextOnField(totalOutFField, report.o59_total_out_f);
             setTextOnField(referredField, report.o59_referred);
@@ -146,7 +146,7 @@ public class NutritionURENASO59Report extends NutritionURENForm implements Nutri
         setAssertPositiveInteger(transferredField);
         setAssertPositiveInteger(deceasedField);
         setAssertPositiveInteger(abandonField);
-        setAssertPositiveInteger(respondingField);
+        setAssertPositiveInteger(notRespondingField);
         setAssertPositiveInteger(totalOutMField);
         setAssertPositiveInteger(totalOutFField);
         setAssertPositiveInteger(referredField);

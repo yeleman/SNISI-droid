@@ -52,7 +52,7 @@ public class NutritionURENAMU23O6Report extends NutritionURENForm implements Nut
         healedField = (EditText) findViewById(R.id.healedField);
         deceasedField = (EditText) findViewById(R.id.deceasedField);
         abandonField = (EditText) findViewById(R.id.abandonField);
-        respondingField = (EditText) findViewById(R.id.respondingField);
+        notRespondingField = (EditText) findViewById(R.id.notRespondingField);
         totalOutMField = (EditText) findViewById(R.id.totalOutMField);
         totalOutFField = (EditText) findViewById(R.id.totalOutFField);
         referredLabel = (TextView) findViewById(R.id.referredLabel);
@@ -100,7 +100,7 @@ public class NutritionURENAMU23O6Report extends NutritionURENForm implements Nut
         report.u23o6_healed = integerFromField(healedField);
         report.u23o6_deceased = integerFromField(deceasedField);
         report.u23o6_abandon = integerFromField(abandonField);
-        report.u23o6_not_responding = integerFromField(respondingField);
+        report.u23o6_not_responding = integerFromField(notRespondingField);
         report.u23o6_total_out_m = integerFromField(totalOutMField);
         report.u23o6_total_out_f = integerFromField(totalOutFField);
         report.u23o6_referred = integerFromField(referredField);
@@ -125,7 +125,7 @@ public class NutritionURENAMU23O6Report extends NutritionURENForm implements Nut
             setTextOnField(healedField, report.u23o6_healed);
             setTextOnField(deceasedField, report.u23o6_deceased);
             setTextOnField(abandonField, report.u23o6_abandon);
-            setTextOnField(respondingField, report.u23o6_not_responding);
+            setTextOnField(notRespondingField, report.u23o6_not_responding);
             setTextOnField(totalOutMField, report.u23o6_total_out_m);
             setTextOnField(totalOutFField, report.u23o6_total_out_f);
             setTextOnField(referredField, report.u23o6_referred);
@@ -145,7 +145,7 @@ public class NutritionURENAMU23O6Report extends NutritionURENForm implements Nut
         setAssertPositiveInteger(healedField);
         setAssertPositiveInteger(deceasedField);
         setAssertPositiveInteger(abandonField);
-        setAssertPositiveInteger(respondingField);
+        setAssertPositiveInteger(notRespondingField);
         setAssertPositiveInteger(totalOutMField);
         setAssertPositiveInteger(totalOutFField);
         setAssertPositiveInteger(referredField);

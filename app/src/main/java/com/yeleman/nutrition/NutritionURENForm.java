@@ -38,7 +38,7 @@ public class NutritionURENForm extends CheckedFormActivity {
     protected EditText healedField;
     protected EditText deceasedField;
     protected EditText abandonField;
-    protected EditText respondingField;
+    protected EditText notRespondingField;
     protected EditText totalOutMField;
     protected EditText totalOutFField;
     protected EditText referredField;
@@ -112,8 +112,7 @@ public class NutritionURENForm extends CheckedFormActivity {
         if (getAge() == EXSAM) {
             return 0;
         }
-        // TODO: change field name
-        return integerFromField(respondingField);
+        return integerFromField(notRespondingField);
     }
     protected int getTotalOutM() {
         if (getAge() == EXSAM || getAge() == PW) {
@@ -128,9 +127,6 @@ public class NutritionURENForm extends CheckedFormActivity {
         return integerFromField(totalOutFField);
     }
     protected int getReferred() {
-        if (getUREN() == URENI) {
-            return 0;
-        }
         return integerFromField(referredField);
     }
     protected int getTotalEndM() {
@@ -151,14 +147,12 @@ public class NutritionURENForm extends CheckedFormActivity {
         return getTotalInM() + getTotalInF();
     }
     protected int getGrandTotalIn() {
-        // TODO: check if same for URENI and others
         return getTotalIn() + getTransferred();
     }
     protected int getTotalOut() {
         return getTotalOutM() + getTotalOutF();
     }
     protected int getGrandTotalOut() {
-        // TODO: check if same for URENI and others
         return getTotalOut() + getReferred();
     }
     protected int getTotalEnd() {

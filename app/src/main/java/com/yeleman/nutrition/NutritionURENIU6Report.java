@@ -52,7 +52,7 @@ public class NutritionURENIU6Report extends NutritionURENForm implements Nutriti
         transferredField = (EditText) findViewById(R.id.transferredField);
         deceasedField = (EditText) findViewById(R.id.deceasedField);
         abandonField = (EditText) findViewById(R.id.abandonField);
-        respondingField = (EditText) findViewById(R.id.respondingField);
+        notRespondingField = (EditText) findViewById(R.id.notRespondingField);
         totalOutMField = (EditText) findViewById(R.id.totalOutMField);
         totalOutFField = (EditText) findViewById(R.id.totalOutFField);
         referredLabel = (TextView) findViewById(R.id.referredLabel);
@@ -99,7 +99,7 @@ public class NutritionURENIU6Report extends NutritionURENForm implements Nutriti
         report.u6_transferred = integerFromField(transferredField);
         report.u6_deceased = integerFromField(deceasedField);
         report.u6_abandon = integerFromField(abandonField);
-        report.u6_not_responding = integerFromField(respondingField);
+        report.u6_not_responding = integerFromField(notRespondingField);
         report.u6_total_out_m = integerFromField(totalOutMField);
         report.u6_total_out_f = integerFromField(totalOutFField);
         report.u6_referred = integerFromField(referredField);
@@ -125,7 +125,7 @@ public class NutritionURENIU6Report extends NutritionURENForm implements Nutriti
             setTextOnField(transferredField, report.u6_transferred);
             setTextOnField(deceasedField, report.u6_deceased);
             setTextOnField(abandonField, report.u6_abandon);
-            setTextOnField(respondingField, report.u6_not_responding);
+            setTextOnField(notRespondingField, report.u6_not_responding);
             setTextOnField(totalOutMField, report.u6_total_out_m);
             setTextOnField(totalOutFField, report.u6_total_out_f);
             setTextOnField(referredField, report.u6_referred);
@@ -146,7 +146,7 @@ public class NutritionURENIU6Report extends NutritionURENForm implements Nutriti
         setAssertPositiveInteger(transferredField);
         setAssertPositiveInteger(deceasedField);
         setAssertPositiveInteger(abandonField);
-        setAssertPositiveInteger(respondingField);
+        setAssertPositiveInteger(notRespondingField);
         setAssertPositiveInteger(totalOutMField);
         setAssertPositiveInteger(totalOutFField);
         setAssertPositiveInteger(referredField);

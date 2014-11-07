@@ -52,7 +52,7 @@ public class NutritionURENASU59O6Report extends NutritionURENForm implements Nut
         transferredField = (EditText) findViewById(R.id.transferredField);
         deceasedField = (EditText) findViewById(R.id.deceasedField);
         abandonField = (EditText) findViewById(R.id.abandonField);
-        respondingField = (EditText) findViewById(R.id.respondingField);
+        notRespondingField = (EditText) findViewById(R.id.notRespondingField);
         totalOutMField = (EditText) findViewById(R.id.totalOutMField);
         totalOutFField = (EditText) findViewById(R.id.totalOutFField);
         referredLabel = (TextView) findViewById(R.id.referredLabel);
@@ -99,7 +99,7 @@ public class NutritionURENASU59O6Report extends NutritionURENForm implements Nut
         report.u59o6_transferred = integerFromField(transferredField);
         report.u59o6_deceased = integerFromField(deceasedField);
         report.u59o6_abandon = integerFromField(abandonField);
-        report.u59o6_not_responding = integerFromField(respondingField);
+        report.u59o6_not_responding = integerFromField(notRespondingField);
         report.u59o6_total_out_m = integerFromField(totalOutMField);
         report.u59o6_total_out_f = integerFromField(totalOutFField);
         report.u59o6_referred = integerFromField(referredField);
@@ -125,7 +125,7 @@ public class NutritionURENASU59O6Report extends NutritionURENForm implements Nut
             setTextOnField(transferredField, report.u59o6_transferred);
             setTextOnField(deceasedField, report.u59o6_deceased);
             setTextOnField(abandonField, report.u59o6_abandon);
-            setTextOnField(respondingField, report.u59o6_not_responding);
+            setTextOnField(notRespondingField, report.u59o6_not_responding);
             setTextOnField(totalOutMField, report.u59o6_total_out_m);
             setTextOnField(totalOutFField, report.u59o6_total_out_f);
             setTextOnField(referredField, report.u59o6_referred);
@@ -146,7 +146,7 @@ public class NutritionURENASU59O6Report extends NutritionURENForm implements Nut
         setAssertPositiveInteger(transferredField);
         setAssertPositiveInteger(deceasedField);
         setAssertPositiveInteger(abandonField);
-        setAssertPositiveInteger(respondingField);
+        setAssertPositiveInteger(notRespondingField);
         setAssertPositiveInteger(totalOutMField);
         setAssertPositiveInteger(totalOutFField);
         setAssertPositiveInteger(referredField);
