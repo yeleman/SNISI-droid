@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="urenamdeathsField" type="id"/>
+    <item name="urenasdeathsField" type="id"/>
+    <item name="urenideathsField" type="id"/>
+</resources>
