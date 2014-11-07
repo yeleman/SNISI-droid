@@ -12,21 +12,16 @@ import com.yeleman.snisidroid.CheckedFormActivity;
 import com.yeleman.snisidroid.Constants;
 import com.yeleman.snisidroid.R;
 
-/**
- * Created by fad on 31/10/14.
- */
-public class NutritionURENAMExsamReport extends CheckedFormActivity {
+public class NutritionURENAMExsamReport extends NutritionURENForm implements NutritionURENFormIface {
+
     private final static String TAG = Constants.getLogTag("NutritionURENAMExsamReport");
 
-    protected TextView referredLabel;
+    /* NutritionURENFormIFace */
+    public String getUREN() { return URENAM; }
+    public String getAge() { return EXSAM; }
 
-    protected EditText totalStartMField;
-    protected EditText totalStartFField;
-    protected EditText referredField;
-    protected EditText totalEndMField;
-    protected EditText totalEndFField;
-
-    protected Button saveButton;
+    /* NutritionURENForm */
+    protected boolean ensureDataCoherence() { return ensureURENCoherence(); }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -120,6 +115,4 @@ public class NutritionURENAMExsamReport extends CheckedFormActivity {
         setAssertPositiveInteger(totalEndMField);
         setAssertPositiveInteger(totalEndFField);
     }
-
-    protected boolean ensureDataCoherence() { return true; }
 }

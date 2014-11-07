@@ -8,38 +8,19 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.yeleman.snisidroid.CheckedFormActivity;
 import com.yeleman.snisidroid.Constants;
 import com.yeleman.snisidroid.R;
 
-/**
- * Created by fad on 31/10/14.
- */
-public class NutritionURENAMU59O23Report extends CheckedFormActivity {
+public class NutritionURENAMU59O23Report extends NutritionURENForm implements NutritionURENFormIface {
 
     private final static String TAG = Constants.getLogTag("NutritionURENAMU59O23Report");
 
-    protected TextView transferredLabel;
-    protected TextView referredLabel;
+    /* NutritionURENFormIFace */
+    public String getUREN() { return URENAM; }
+    public String getAge() { return U59O23; }
 
-    protected EditText totalStartMField;
-    protected EditText totalStartFField;
-    protected EditText newCasesField;
-    protected EditText returnedField;
-    protected EditText totalInMField;
-    protected EditText totalInFField;
-    protected EditText healedField;
-    protected EditText deceasedField;
-    protected EditText abandonField;
-    protected EditText respondingField;
-    protected EditText totalOutMField;
-    protected EditText totalOutFField;
-    protected EditText referredField;
-    protected EditText totalEndMField;
-    protected EditText totalEndFField;
-
-    protected Button saveButton;
-
+    /* NutritionURENForm */
+    protected boolean ensureDataCoherence() { return ensureURENCoherence(); }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -164,58 +145,5 @@ public class NutritionURENAMU59O23Report extends CheckedFormActivity {
         setAssertPositiveInteger(referredField);
         setAssertPositiveInteger(totalEndMField);
         setAssertPositiveInteger(totalEndFField);
-    }
-
-    protected boolean ensureDataCoherence() {
-
-        // newCases + returned == totalIn
-        int newsCaseAndReturned = integerFromField(newCasesField) + integerFromField(returnedField);
-        int totalIn = integerFromField(totalInMField) + integerFromField(totalInFField);
-
-        if (newsCaseAndReturned != totalIn) {
-            String errorMsg = String.format(getString(R.string.error_must_be_equal,
-                    newCasesField.getHint() + " + " + returnedField.getHint(),
-                    newsCaseAndReturned,
-                    "total admis ", totalIn));
-            fireErrorDialog(this, errorMsg, newCasesField);
-            return false;
-        }
-        // Détails sorties
-        // allOut == totalOut
-        int totalOut = integerFromField(totalOutFField) + integerFromField(totalOutMField);
-        int allOutReasons = integerFromField(healedField) +
-                integerFromField(deceasedField) +
-                integerFromField(abandonField) +
-                integerFromField(respondingField);
-        if (allOutReasons != totalOut){
-            String errorMsg = String.format(getString(R.string.error_must_be_equal,
-                    "guéris, décès, abandons, non-resp.",
-                    allOutReasons, "total sorties", totalOut));
-            fireErrorDialog(this, errorMsg, healedField);
-            return false;
-        }
-        // Sorties inferieur ou egal à PEC
-        int totalStart = integerFromField(totalStartFField) + integerFromField(totalStartMField);
-        int grandTotalIn = totalIn;
-        int allAvail = totalStart + grandTotalIn;
-        int grandTotalOut = totalOut + integerFromField(referredField);
-        if (grandTotalOut > allAvail){
-            String errorMsg = String.format("total sorties général (%1$d) ne peut pas dépasser le " +
-                    "total début + admissions (%2$d)", grandTotalOut, allAvail);
-            fireErrorDialog(this, errorMsg, newCasesField);
-            return false;
-        }
-        // Total fin de mois
-        // totalEnd = totalStart + grand_totalIn - grand_totalOut
-        int totalEnd = integerFromField(totalEndFField) + integerFromField(totalEndMField);
-        int startInNotOut = totalStart + grandTotalIn - grandTotalOut;
-        if (totalEnd != (startInNotOut)){
-            String errorMsg = String.format("total fin de mois (%1$d) doit être égal au début " +
-                    "+ admissions - sorties (%2$d)", totalEnd, startInNotOut);
-            fireErrorDialog(this, errorMsg, totalStartFField);
-            return false;
-        }
-        return true;
-
     }
 }
