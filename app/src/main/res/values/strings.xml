@@ -131,6 +131,34 @@
     <string name="nutrition_fillout_report">Rapport %1$s</string>
     <string name="nutrition_fillout_section">Section %1$s</string>
 
+    <!-- Stok -->
+    <string name="nutrition_sachet">sachet</string>
+    <string name="nutrition_litre">litre</string>
+    <string name="nutrition_kilo">kilo</string>
+    <string name="nutrition_flacon">flacon</string>
+    <string name="nutrition_comprimé">comprimé</string>
+    <string name="nutrition_amploule">amploule</string>
+
+    <string name="nutrition_initial">Initial</string>
+    <string name="nutrition_received">Reçue</string>
+    <string name="nutrition_used">Utilisée</string>
+    <string name="nutrition_lost">Perdue</string>
+
+    <string name="nutrition_plumpy_nut">Plumpy Nut (sachet)</string>
+    <string name="nutrition_milk_f75">Lait F75 (litre)</string>
+    <string name="nutrition_milk_f100">Lait F100 (litre)</string>
+    <string name="nutrition_resomal">Resomal (kilo)</string>
+    <string name="nutrition_plumpy_sup">Plumpy sup (sachet)</string>
+    <string name="nutrition_supercereal">Supercereal (kilo)</string>
+    <string name="nutrition_supercereal_plus">Supercereal + (kilo)</string>
+    <string name="nutrition_oil">Huile (litre)</string>
+    <string name="nutrition_amoxycilline_125mg_vials">Amoxycilline 125mg (flacon)</string>
+    <string name="nutrition_amoxycilline_250mg_caps">Amoxycilline 250mg (cp)</string>
+    <string name="nutrition_albendazole_400mg">Albendazole 400mg (cp)</string>
+    <string name="nutrition_vita_100K_ui_injectable">Vit A 100.000 UI (ampoule)</string>
+    <string name="nutrition_vita_200K_ui_injectable">Vit A 200.000 UI (ampoule)</string>
+    <string name="nutrition_iron_folic_acid">Fer /acide folique (cp)</string>
+    
     <!-- SMIR -->
     <string name="smir_app_label">SMIR</string>
     <string name="menu_alert">Alerte</string>
@@ -141,4 +169,5 @@
     <string name="sendbtt">Envoyer</string>
     <string name="disease_prompt">les maladies</string>
     <string name="label_password">Mot de passe</string>
+
 </resources>
