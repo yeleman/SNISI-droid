@@ -157,7 +157,6 @@ public class NutritionURENAMU59O23Report extends CheckedFormActivity {
         setAssertPositiveInteger(totalInMField);
         setAssertPositiveInteger(totalInFField);
         setAssertPositiveInteger(healedField);
-        setAssertPositiveInteger(transferredField);
         setAssertPositiveInteger(deceasedField);
         setAssertPositiveInteger(abandonField);
         setAssertPositiveInteger(respondingField);
