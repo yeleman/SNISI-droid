@@ -171,14 +171,14 @@ public class NutritionURENASO59Report extends CheckedFormActivity {
     protected boolean ensureDataCoherence() {
 
         // newCases + returned == totalIn
-        int newsCaseAndReferred = integerFromField(newCasesField) + integerFromField(returnedField);
+        int newsCaseAndReturned = integerFromField(newCasesField) + integerFromField(returnedField);
         int totalIn = integerFromField(totalInMField) + integerFromField(totalInFField);
 
-        if (newsCaseAndReferred != totalIn) {
+        if (newsCaseAndReturned != totalIn) {
             String errorMsg = String.format(getString(R.string.error_must_be_equal,
-                                            newCasesField.getHint() + " + " + returnedField.getHint(),
-                                            newsCaseAndReferred,
-                                            "total admis ", totalIn));
+                    newCasesField.getHint() + " + " + returnedField.getHint(),
+                    newsCaseAndReturned,
+                    "total admis ", totalIn));
             fireErrorDialog(this, errorMsg, newCasesField);
             return false;
         }
@@ -186,9 +186,9 @@ public class NutritionURENASO59Report extends CheckedFormActivity {
         // allOut == totalOut
         int totalOut = integerFromField(totalOutFField) + integerFromField(totalOutMField);
         int allOutReasons = integerFromField(healedField) +
-                            integerFromField(deceasedField) +
-                            integerFromField(abandonField) +
-                            integerFromField(respondingField);
+                integerFromField(deceasedField) +
+                integerFromField(abandonField) +
+                integerFromField(respondingField);
         if (allOutReasons != totalOut){
             String errorMsg = String.format(getString(R.string.error_must_be_equal,
                     "guéris, décès, abandons, non-resp.",
@@ -198,16 +198,12 @@ public class NutritionURENASO59Report extends CheckedFormActivity {
         }
         // Sorties inferieur ou egal à PEC
         int totalStart = integerFromField(totalStartFField) + integerFromField(totalStartMField);
-        int grandTotalIn = totalIn + integerFromField(newCasesField) + integerFromField(returnedField) +
-                            integerFromField(transferredField);
+        int grandTotalIn = totalIn + integerFromField(transferredField);
         int allAvail = totalStart + grandTotalIn;
-        int grandTotalOut = totalOut + integerFromField(healedField) +
-                            integerFromField(deceasedField) +
-                            integerFromField(abandonField) +
-                            integerFromField(respondingField);
+        int grandTotalOut = totalOut + integerFromField(referredField);
         if (grandTotalOut > allAvail){
             String errorMsg = String.format("total sorties général (%1$d) ne peut pas dépasser le " +
-                                            "total début + admissions (%2$d)", grandTotalOut, allAvail);
+                    "total début + admissions (%2$d)", grandTotalOut, allAvail);
             fireErrorDialog(this, errorMsg, newCasesField);
             return false;
         }
@@ -217,7 +213,7 @@ public class NutritionURENASO59Report extends CheckedFormActivity {
         int startInNotOut = totalStart + grandTotalIn - grandTotalOut;
         if (totalEnd != (startInNotOut)){
             String errorMsg = String.format("total fin de mois (%1$d) doit être égal au début " +
-                                            "+ admissions - sorties (%2$d)", totalEnd, startInNotOut);
+                    "+ admissions - sorties (%2$d)", totalEnd, startInNotOut);
             fireErrorDialog(this, errorMsg, totalStartFField);
             return false;
         }

@@ -167,17 +167,17 @@ public class NutritionURENIO59Report extends CheckedFormActivity {
         setAssertPositiveInteger(totalEndMField);
         setAssertPositiveInteger(totalEndFField);
     }
-    
+
     protected boolean ensureDataCoherence() {
 
         // newCases + returned == totalIn
-        int newsCaseAndReferred = integerFromField(newCasesField) + integerFromField(returnedField);
+        int newsCaseAndReturned = integerFromField(newCasesField) + integerFromField(returnedField);
         int totalIn = integerFromField(totalInMField) + integerFromField(totalInFField);
 
-        if (newsCaseAndReferred != totalIn) {
+        if (newsCaseAndReturned != totalIn) {
             String errorMsg = String.format(getString(R.string.error_must_be_equal,
                                             newCasesField.getHint() + " + " + returnedField.getHint(),
-                                            newsCaseAndReferred,
+                                            newsCaseAndReturned,
                                             "total admis ", totalIn));
             fireErrorDialog(this, errorMsg, newCasesField);
             return false;
@@ -198,13 +198,9 @@ public class NutritionURENIO59Report extends CheckedFormActivity {
         }
         // Sorties inferieur ou egal à PEC
         int totalStart = integerFromField(totalStartFField) + integerFromField(totalStartMField);
-        int grandTotalIn = totalIn + integerFromField(newCasesField) + integerFromField(returnedField) +
-                            integerFromField(transferredField);
+        int grandTotalIn = totalIn + integerFromField(transferredField);
         int allAvail = totalStart + grandTotalIn;
-        int grandTotalOut = totalOut + integerFromField(healedField) +
-                            integerFromField(deceasedField) +
-                            integerFromField(abandonField) +
-                            integerFromField(respondingField);
+        int grandTotalOut = totalOut + integerFromField(referredField);
         if (grandTotalOut > allAvail){
             String errorMsg = String.format("total sorties général (%1$d) ne peut pas dépasser le " +
                                             "total début + admissions (%2$d)", grandTotalOut, allAvail);
