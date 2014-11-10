@@ -40,10 +40,12 @@ public class NutritionURENAMPWReport extends NutritionURENForm implements Nutrit
         Log.d(TAG, "setupUI NutritionURENAMPWReport");
 
         totalStartMField = (EditText) findViewById(R.id.totalStartMField);
+        totalStartMField.setVisibility(View.GONE);
         totalStartFField = (EditText) findViewById(R.id.totalStartFField);
         newCasesField = (EditText) findViewById(R.id.newCasesField);
         returnedField = (EditText) findViewById(R.id.returnedField);
         totalInMField = (EditText) findViewById(R.id.totalInMField);
+        totalInMField.setVisibility(View.GONE);
         totalInFField = (EditText) findViewById(R.id.totalInFField);
         LinearLayout transferred_parent = (LinearLayout) findViewById(R.id.transferredLinearLayout);
         transferred_parent.setVisibility(View.GONE);
@@ -57,6 +59,7 @@ public class NutritionURENAMPWReport extends NutritionURENForm implements Nutrit
         referredLabel.setText(String.format(getString(R.string.nutrition_referred), "NUT"));
         referredField = (EditText) findViewById(R.id.referredField);
         totalEndMField = (EditText) findViewById(R.id.totalEndMField);
+        totalEndMField.setVisibility(View.GONE);
         totalEndFField = (EditText) findViewById(R.id.totalEndFField);
 
         NutritionURENAMReportData report = NutritionURENAMReportData.get();
@@ -87,20 +90,16 @@ public class NutritionURENAMPWReport extends NutritionURENForm implements Nutrit
         NutritionURENAMReportData report = NutritionURENAMReportData.get();
         report.updateMetaData();
 
-        report.pw_total_start_m = integerFromField(totalStartMField);
         report.pw_total_start_f = integerFromField(totalStartFField);
         report.pw_new_cases = integerFromField(newCasesField);
         report.pw_returned = integerFromField(returnedField);
-        report.pw_total_in_m = integerFromField(totalInMField);
         report.pw_total_in_f = integerFromField(totalInFField);
         report.pw_healed = integerFromField(healedField);
         report.pw_deceased = integerFromField(deceasedField);
         report.pw_abandon = integerFromField(abandonField);
         report.pw_not_responding = integerFromField(notRespondingField);
-        report.pw_total_out_m = integerFromField(totalOutMField);
         report.pw_total_out_f = integerFromField(totalOutFField);
         report.pw_referred = integerFromField(referredField);
-        report.pw_total_end_m = integerFromField(totalEndMField);
         report.pw_total_end_f = integerFromField(totalEndFField);
         report.pw_is_complete = true;
         report.save();
@@ -112,41 +111,32 @@ public class NutritionURENAMPWReport extends NutritionURENForm implements Nutrit
         Log.d(TAG, "restoreReportData");
         NutritionURENAMReportData report = NutritionURENAMReportData.get();
 
-        if (report.pw_total_start_m != -1){
-            setTextOnField(totalStartMField, report.pw_total_start_m);
-            setTextOnField(totalStartFField, report.pw_total_start_f);
-            setTextOnField(newCasesField, report.pw_new_cases);
-            setTextOnField(returnedField, report.pw_returned);
-            setTextOnField(totalInMField, report.pw_total_in_m);
-            setTextOnField(totalInFField, report.pw_total_in_f);
-            setTextOnField(healedField, report.pw_healed);
-            setTextOnField(deceasedField, report.pw_deceased);
-            setTextOnField(abandonField, report.pw_abandon);
-            setTextOnField(notRespondingField, report.pw_not_responding);
-            setTextOnField(totalOutMField, report.pw_total_out_m);
-            setTextOnField(totalOutFField, report.pw_total_out_f);
-            setTextOnField(referredField, report.pw_referred);
-            setTextOnField(totalEndMField, report.pw_total_end_m);
-            setTextOnField(totalEndFField, report.pw_total_end_f);
-        }
+        setTextOnField(totalStartFField, report.pw_total_start_f);
+        setTextOnField(newCasesField, report.pw_new_cases);
+        setTextOnField(returnedField, report.pw_returned);
+        setTextOnField(totalInFField, report.pw_total_in_f);
+        setTextOnField(healedField, report.pw_healed);
+        setTextOnField(deceasedField, report.pw_deceased);
+        setTextOnField(abandonField, report.pw_abandon);
+        setTextOnField(notRespondingField, report.pw_not_responding);
+        setTextOnField(totalOutFField, report.pw_total_out_f);
+        setTextOnField(referredField, report.pw_referred);
+        setTextOnField(totalEndFField, report.pw_total_end_f);
+
     }
 
     protected void setupInvalidInputChecks() {
 
-        setAssertPositiveInteger(totalStartMField);
         setAssertPositiveInteger(totalStartFField);
         setAssertPositiveInteger(newCasesField);
         setAssertPositiveInteger(returnedField);
-        setAssertPositiveInteger(totalInMField);
         setAssertPositiveInteger(totalInFField);
         setAssertPositiveInteger(healedField);
         setAssertPositiveInteger(deceasedField);
         setAssertPositiveInteger(abandonField);
         setAssertPositiveInteger(notRespondingField);
-        setAssertPositiveInteger(totalOutMField);
         setAssertPositiveInteger(totalOutFField);
         setAssertPositiveInteger(referredField);
-        setAssertPositiveInteger(totalEndMField);
         setAssertPositiveInteger(totalEndFField);
     }
 }

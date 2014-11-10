@@ -114,24 +114,22 @@ public class NutritionURENIO59Report extends NutritionURENForm implements Nutrit
     protected void restoreReportData() {
         Log.d(TAG, "restoreReportData");
         NutritionURENIReportData report = NutritionURENIReportData.get();
-        if(report.o59_total_end_m != -1){
-            setTextOnField(totalStartMField, report.o59_total_start_m);
-            setTextOnField(totalStartFField, report.o59_total_start_f);
-            setTextOnField(newCasesField, report.o59_new_cases);
-            setTextOnField(returnedField, report.o59_returned);
-            setTextOnField(totalInMField, report.o59_total_in_m);
-            setTextOnField(totalInFField, report.o59_total_in_f);
-            setTextOnField(healedField, report.o59_healed);
-            setTextOnField(transferredField, report.o59_transferred);
-            setTextOnField(deceasedField, report.o59_deceased);
-            setTextOnField(abandonField, report.o59_abandon);
-            setTextOnField(notRespondingField, report.o59_not_responding);
-            setTextOnField(totalOutMField, report.o59_total_out_m);
-            setTextOnField(totalOutFField, report.o59_total_out_f);
-            setTextOnField(referredField, report.o59_referred);
-            setTextOnField(totalEndMField, report.o59_total_end_m);
-            setTextOnField(totalEndFField, report.o59_total_end_f);
-        }
+        setTextOnField(totalStartMField, report.o59_total_start_m);
+        setTextOnField(totalStartFField, report.o59_total_start_f);
+        setTextOnField(newCasesField, report.o59_new_cases);
+        setTextOnField(returnedField, report.o59_returned);
+        setTextOnField(totalInMField, report.o59_total_in_m);
+        setTextOnField(totalInFField, report.o59_total_in_f);
+        setTextOnField(healedField, report.o59_healed);
+        setTextOnField(transferredField, report.o59_transferred);
+        setTextOnField(deceasedField, report.o59_deceased);
+        setTextOnField(abandonField, report.o59_abandon);
+        setTextOnField(notRespondingField, report.o59_not_responding);
+        setTextOnField(totalOutMField, report.o59_total_out_m);
+        setTextOnField(totalOutFField, report.o59_total_out_f);
+        setTextOnField(referredField, report.o59_referred);
+        setTextOnField(totalEndMField, report.o59_total_end_m);
+        setTextOnField(totalEndFField, report.o59_total_end_f);
     }
 
     protected void setupInvalidInputChecks() {

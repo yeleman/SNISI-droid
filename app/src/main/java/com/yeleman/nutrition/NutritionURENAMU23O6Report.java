@@ -115,23 +115,22 @@ public class NutritionURENAMU23O6Report extends NutritionURENForm implements Nut
     protected void restoreReportData() {
         Log.d(TAG, "restoreReportData");
         NutritionURENAMReportData report = NutritionURENAMReportData.get();
-        if (report.u23o6_total_end_m != -1) {
-            setTextOnField(totalStartMField, report.u23o6_total_start_m);
-            setTextOnField(totalStartFField, report.u23o6_total_start_f);
-            setTextOnField(newCasesField, report.u23o6_new_cases);
-            setTextOnField(returnedField, report.u23o6_returned);
-            setTextOnField(totalInMField, report.u23o6_total_in_m);
-            setTextOnField(totalInFField, report.u23o6_total_in_f);
-            setTextOnField(healedField, report.u23o6_healed);
-            setTextOnField(deceasedField, report.u23o6_deceased);
-            setTextOnField(abandonField, report.u23o6_abandon);
-            setTextOnField(notRespondingField, report.u23o6_not_responding);
-            setTextOnField(totalOutMField, report.u23o6_total_out_m);
-            setTextOnField(totalOutFField, report.u23o6_total_out_f);
-            setTextOnField(referredField, report.u23o6_referred);
-            setTextOnField(totalEndMField, report.u23o6_total_end_m);
-            setTextOnField(totalEndFField, report.u23o6_total_end_f);
-        }
+        setTextOnField(totalStartMField, report.u23o6_total_start_m);
+        setTextOnField(totalStartFField, report.u23o6_total_start_f);
+        setTextOnField(newCasesField, report.u23o6_new_cases);
+        setTextOnField(returnedField, report.u23o6_returned);
+        setTextOnField(totalInMField, report.u23o6_total_in_m);
+        setTextOnField(totalInFField, report.u23o6_total_in_f);
+        setTextOnField(healedField, report.u23o6_healed);
+        setTextOnField(deceasedField, report.u23o6_deceased);
+        setTextOnField(abandonField, report.u23o6_abandon);
+        setTextOnField(notRespondingField, report.u23o6_not_responding);
+        setTextOnField(totalOutMField, report.u23o6_total_out_m);
+        setTextOnField(totalOutFField, report.u23o6_total_out_f);
+        setTextOnField(referredField, report.u23o6_referred);
+        setTextOnField(totalEndMField, report.u23o6_total_end_m);
+        setTextOnField(totalEndFField, report.u23o6_total_end_f);
+
     }
 
     protected void setupInvalidInputChecks() {

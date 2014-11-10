@@ -63,20 +63,16 @@ public class NutritionURENAMReportData extends ReportData {
     int o59_total_end_f = -1;
     boolean o59_is_complete = false;
     // Pregnant & Breast Feeding Women
-    int pw_total_start_m = -1;
     int pw_total_start_f = -1;
     int pw_new_cases = -1;
     int pw_returned = -1;
-    int pw_total_in_m = -1;
     int pw_total_in_f = -1;
     int pw_healed = -1;
     int pw_deceased = -1;
     int pw_abandon = -1;
     int pw_not_responding = -1;
-    int pw_total_out_m = -1;
     int pw_total_out_f = -1;
     int pw_referred = -1;
-    int pw_total_end_m = -1;
     int pw_total_end_f = -1;
     boolean pw_is_complete = false;
     // Former SAM

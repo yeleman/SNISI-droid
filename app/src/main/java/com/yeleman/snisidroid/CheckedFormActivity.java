@@ -497,5 +497,21 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
         AlertDialog errorDialog = questionDialogBuilder.create();
         errorDialog.show();
     }
+    protected boolean mustMatchStockCoherence(EditText initialField,
+                                              EditText receivedField,
+                                              EditText usedField,
+                                              EditText lostField) {
+        int initialAndReceived = integerFromField(initialField) + integerFromField(receivedField);
+        int usedAndLost = integerFromField(usedField) + integerFromField(lostField);
 
+        String errorMsg = String.format(getString(R.string.error_must_be_inferior_or_equal),
+                getString(R.string.nutrition_used) + " + " + getString(R.string.nutrition_lost), usedAndLost,
+                getString(R.string.nutrition_initial) + " + " + getString(R.string.nutrition_received), initialAndReceived
+        );
+        if (usedAndLost > initialAndReceived) {
+            fireErrorDialog(this, errorMsg, initialField);
+            return false;
+        }
+        return true;
+    }
 }

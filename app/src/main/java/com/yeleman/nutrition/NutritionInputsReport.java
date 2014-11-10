@@ -399,5 +399,48 @@ public class NutritionInputsReport extends CheckedFormActivity {
         setAssertPositiveInteger(ironFolicAcidLostField);
     }
 
-    protected boolean ensureDataCoherence() { return true; }
+    protected boolean ensureDataCoherence() {
+
+        // Initial + Received >= Used + Lost
+       return  mustMatchStockCoherence(plumpyNutInitialField,
+                                       plumpyNutReceivedField,
+                                       plumpyNutUsedField,
+                                       plumpyNutLostField) &&
+               mustMatchStockCoherence(supercerealInitialField,
+                                       supercerealReceivedField,
+                                       supercerealUsedField,
+                                       supercerealLostField) &&
+               mustMatchStockCoherence(supercerealPlusInitialField,
+                                       supercerealPlusReceivedField,
+                                       supercerealPlusUsedField,
+                                       supercerealPlusLostField)&&
+               mustMatchStockCoherence(oilInitialField,
+                                       oilReceivedField,
+                                       oilUsedField,
+                                       oilLostField) &&
+               mustMatchStockCoherence(amoxycilline125VialsInitialField,
+                                       amoxycilline125VialsReceivedField,
+                                       amoxycilline125VialsUsedField,
+                                       amoxycilline125VialsLostField) &&
+               mustMatchStockCoherence(amoxycilline250CapsInitialField,
+                                       amoxycilline250CapsReceivedField,
+                                       amoxycilline250CapsUsedField,
+                                       amoxycilline250CapsLostField) &&
+               mustMatchStockCoherence(albendazole400InitialField,
+                                       albendazole400ReceivedField,
+                                       albendazole400UsedField,
+                                       albendazole400LostField) &&
+               mustMatchStockCoherence(vita100InjectableInitialField,
+                                       vita100InjectableReceivedField,
+                                       vita100InjectableUsedField,
+                                       vita100InjectableLostField) &&
+               mustMatchStockCoherence(vita200InjectableInitialField,
+                                       vita200InjectableReceivedField,
+                                       vita200InjectableUsedField,
+                                       vita200InjectableLostField) &&
+               mustMatchStockCoherence(ironFolicAcidInitialField,
+                                       ironFolicAcidReceivedField,
+                                       ironFolicAcidUsedField,
+                                       ironFolicAcidLostField);
+    }
 }

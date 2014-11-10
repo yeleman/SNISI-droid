@@ -98,13 +98,12 @@ public class NutritionURENAMExsamReport extends NutritionURENForm implements Nut
     protected void restoreReportData() {
         Log.d(TAG, "restoreReportData");
         NutritionURENAMReportData report = NutritionURENAMReportData.get();
-        if(report.exsam_total_start_m != -1){
-            setTextOnField(totalStartMField, report.exsam_total_start_m);
-            setTextOnField(totalStartFField, report.exsam_total_start_f);
-            setTextOnField(referredField, report.exsam_referred);
-            setTextOnField(totalEndMField, report.exsam_total_end_m);
-            setTextOnField(totalEndFField, report.exsam_total_end_f);
-        }
+
+        setTextOnField(totalStartMField, report.exsam_total_start_m);
+        setTextOnField(totalStartFField, report.exsam_total_start_f);
+        setTextOnField(referredField, report.exsam_referred);
+        setTextOnField(totalEndMField, report.exsam_total_end_m);
+        setTextOnField(totalEndFField, report.exsam_total_end_f);
     }
 
     protected void setupInvalidInputChecks() {
