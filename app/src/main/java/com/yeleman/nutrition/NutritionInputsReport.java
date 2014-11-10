@@ -196,9 +196,7 @@ public class NutritionInputsReport extends CheckedFormActivity {
             @Override
             public void onClick(View v) {
                 // ensure data is OK
-                if (!checkInputsAndCoherence()) {
-                    return;
-                }
+                if (!checkInputsAndCoherence()) { return; }
                 // save data to DB
                 storeReportData();
 
@@ -212,11 +210,11 @@ public class NutritionInputsReport extends CheckedFormActivity {
         NutritionInputsReportData report = NutritionInputsReportData.get();
         report.updateMetaData();
 
+        report.plumpy_nut_initial = integerFromField(plumpyNutInitialField);
+        report.plumpy_nut_received = integerFromField(plumpyNutReceivedField);
+        report.plumpy_nut_used = integerFromField(plumpyNutUsedField);
+        report.plumpy_nut_lost = integerFromField(plumpyNutLostField);
         if(is_ureni){
-            report.plumpy_nut_initial = integerFromField(plumpyNutInitialField);
-            report.plumpy_nut_received = integerFromField(plumpyNutReceivedField);
-            report.plumpy_nut_used = integerFromField(plumpyNutUsedField);
-            report.plumpy_nut_lost = integerFromField(plumpyNutLostField);
             report.milk_f75_initial = integerFromField(milkF75InitialField);
             report.milk_f75_received = integerFromField(milkF75ReceivedField);
             report.milk_f75_used = integerFromField(milkF75UsedField);
@@ -225,11 +223,11 @@ public class NutritionInputsReport extends CheckedFormActivity {
             report.milk_f100_received = integerFromField(milkF100ReceivedField);
             report.milk_f100_used = integerFromField(milkF100UsedField);
             report.milk_f100_lost = integerFromField(milkF100LostField);
+            report.resomal_initial = integerFromField(resomalInitialField);
+            report.resomal_received = integerFromField(resomalReceivedField);
+            report.resomal_used = integerFromField(resomalUsedField);
+            report.resomal_lost = integerFromField(resomalLostField);
         }
-        report.resomal_initial = integerFromField(resomalInitialField);
-        report.resomal_received = integerFromField(resomalReceivedField);
-        report.resomal_used = integerFromField(resomalUsedField);
-        report.resomal_lost = integerFromField(resomalLostField);
         report.plumpy_sup_initial = integerFromField(plumpySupInitialField);
         report.plumpy_sup_received = integerFromField(plumpySupReceivedField);
         report.plumpy_sup_used = integerFromField(plumpySupUsedField);
@@ -341,10 +339,10 @@ public class NutritionInputsReport extends CheckedFormActivity {
 
     protected void setupInvalidInputChecks() {
         
-            setAssertPositiveInteger(plumpyNutInitialField);
-            setAssertPositiveInteger(plumpyNutReceivedField);
-            setAssertPositiveInteger(plumpyNutUsedField);
-            setAssertPositiveInteger(plumpyNutLostField);
+        setAssertPositiveInteger(plumpyNutInitialField);
+        setAssertPositiveInteger(plumpyNutReceivedField);
+        setAssertPositiveInteger(plumpyNutUsedField);
+        setAssertPositiveInteger(plumpyNutLostField);
         if (is_ureni) {
             setAssertPositiveInteger(milkF75InitialField);
             setAssertPositiveInteger(milkF75ReceivedField);
@@ -357,8 +355,8 @@ public class NutritionInputsReport extends CheckedFormActivity {
             setAssertPositiveInteger(resomalInitialField);
             setAssertPositiveInteger(resomalReceivedField);
             setAssertPositiveInteger(resomalUsedField);
+            setAssertPositiveInteger(resomalLostField);
         }
-        setAssertPositiveInteger(resomalLostField);
         setAssertPositiveInteger(plumpySupInitialField);
         setAssertPositiveInteger(plumpySupReceivedField);
         setAssertPositiveInteger(plumpySupUsedField);
@@ -401,4 +399,5 @@ public class NutritionInputsReport extends CheckedFormActivity {
         setAssertPositiveInteger(ironFolicAcidLostField);
     }
 
+    protected boolean ensureDataCoherence() { return true; }
 }
