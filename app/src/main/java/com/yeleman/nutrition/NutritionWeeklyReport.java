@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.yeleman.snisidroid.CheckedFormActivity;
@@ -59,45 +60,27 @@ public class NutritionWeeklyReport extends CheckedFormActivity {
         is_urenas = sharedPrefs.getBoolean("hc_is_urenas", false);
         is_ureni = sharedPrefs.getBoolean("hc_is_ureni", false);
 
-        LayoutInflater inflater = (LayoutInflater) getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-        if (is_urenam) {
-            ViewGroup urenam_parent = (ViewGroup) findViewById(R.id.linearLayoutURENAM);
-            View inflated_urenam = inflater.inflate(R.layout.nutrition_weekly_unit, urenam_parent);
-            urenamLabel = (TextView) inflated_urenam.findViewById(R.id.levelLabel);
-            urenamLabel.setText(getString(R.string.nutrition_weekly_urenam));
-            mamScreeningField = (EditText) inflated_urenam.findViewById(R.id.screeningField);
-            mamCasesField = (EditText) inflated_urenam.findViewById(R.id.casesField);
-            mamDeathsField = (EditText) inflated_urenam.findViewById(R.id.deathsField);
-            // change deathField id to be unique across UREN
-            mamDeathsField.setId(R.id.urenamdeathsField);
-            mamCasesField.setNextFocusRightId(mamDeathsField.getId());
-            mamCasesField.setNextFocusDownId(mamDeathsField.getId());
-        }
+        mamScreeningField = (EditText) findViewById(R.id.screeningURENAMField);
+        mamCasesField = (EditText) findViewById(R.id.casesURENAMField);
+        mamDeathsField = (EditText) findViewById(R.id.deathsURENAMField);
+        samScreeningField = (EditText) findViewById(R.id.screeningURENASField);
+        samCasesField = (EditText) findViewById(R.id.casesURENASField);
+        samDeathsField = (EditText) findViewById(R.id.deathsURENASField);
+        samcScreeningField = (EditText) findViewById(R.id.screeningURENIField);
+        samcCasesField = (EditText) findViewById(R.id.casesURENIField);
+        samcDeathsField = (EditText) findViewById(R.id.deathsURENIField);
 
-        if (is_urenas) {
-            ViewGroup urenas_parent = (ViewGroup) findViewById(R.id.linearLayoutURENAS);
-            View inflated_urenas = inflater.inflate(R.layout.nutrition_weekly_unit, urenas_parent);
-            urenasLabel = (TextView) inflated_urenas.findViewById(R.id.levelLabel);
-            urenasLabel.setText(getString(R.string.nutrition_weekly_urenas));
-            samScreeningField = (EditText) inflated_urenas.findViewById(R.id.screeningField);
-            samCasesField = (EditText) inflated_urenas.findViewById(R.id.casesField);
-            samDeathsField = (EditText) inflated_urenas.findViewById(R.id.deathsField);
-            samDeathsField.setId(R.id.urenasdeathsField);
-            samCasesField.setNextFocusRightId(samDeathsField.getId());
-            samCasesField.setNextFocusDownId(samDeathsField.getId());
+        if (!is_urenam) {
+            LinearLayout linearLayoutURENAM = (LinearLayout) findViewById(R.id.linearLayoutURENAM);
+            linearLayoutURENAM.setVisibility(View.GONE);
         }
-
-        if (is_ureni) {
-            ViewGroup ureni_parent = (ViewGroup) findViewById(R.id.linearLayoutURENI);
-            View inflated_ureni = inflater.inflate(R.layout.nutrition_weekly_unit, ureni_parent);
-            ureniLabel = (TextView) inflated_ureni.findViewById(R.id.levelLabel);
-            ureniLabel.setText(getString(R.string.nutrition_weekly_ureni));
-            samcScreeningField = (EditText) inflated_ureni.findViewById(R.id.screeningField);
-            samcCasesField = (EditText) inflated_ureni.findViewById(R.id.casesField);
-            samcDeathsField = (EditText) inflated_ureni.findViewById(R.id.deathsField);
-            samcDeathsField.setId(R.id.urenideathsField);
-            samcCasesField.setNextFocusRightId(samcDeathsField.getId());
-            samcCasesField.setNextFocusDownId(samcDeathsField.getId());
+        if (!is_urenas) {
+            LinearLayout linearLayoutURENAS = (LinearLayout) findViewById(R.id.linearLayoutURENAS);
+            linearLayoutURENAS.setVisibility(View.GONE);
+        }
+        if (!is_ureni) {
+            LinearLayout linearLayoutURENI = (LinearLayout) findViewById(R.id.linearLayoutURENI);
+            linearLayoutURENI.setVisibility(View.GONE);
         }
 
         // setup invalid inputs checks

@@ -11,35 +11,200 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/linearLayout"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_margin="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/linearLayoutURENAM"
             android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/levelLabelURENAM"
+                android:linksClickable="false"
+                android:text="@string/nutrition_weekly_urenam"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/screeningURENAMField"
+                android:nextFocusRight="@+id/casesURENAMField"
+                android:nextFocusDown="@+id/casesURENAMField"
+                android:imeOptions="actionNext"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:hint="@string/nutrition_weekly_screening"
+                android:singleLine="false" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/linearLayoutFMURENAM"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/casesURENAMField"
+                    android:nextFocusRight="@+id/deathsURENAMField"
+                    android:nextFocusDown="@+id/deathsURENAMField"
+                    android:imeOptions="actionNext"
+                    android:hint="@string/nutrition_weekly_cases"
+                    android:singleLine="false"
+                    android:layout_weight="0.50" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/deathsURENAMField"
+                    android:nextFocusRight="@+id/screeningURENASField"
+                    android:nextFocusDown="@+id/screeningURENASField"
+                    android:imeOptions="actionNext"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:hint="@string/nutrition_weekly_deaths"
+                    android:singleLine="false"
+                    android:layout_weight="0.50" />
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/linearLayoutURENAS"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/levelLabelURENAS"
+                android:linksClickable="false"
+                android:text="@string/nutrition_weekly_urenas"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/screeningURENASField"
+                android:nextFocusRight="@+id/casesURENASField"
+                android:nextFocusDown="@+id/casesURENASField"
+                android:imeOptions="actionNext"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:hint="@string/nutrition_weekly_screening"
+                android:singleLine="false" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/linearLayoutFMURENAS"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/casesURENASField"
+                    android:nextFocusRight="@+id/deathsURENASField"
+                    android:nextFocusDown="@+id/deathsURENASField"
+                    android:imeOptions="actionNext"
+                    android:hint="@string/nutrition_weekly_cases"
+                    android:singleLine="false"
+                    android:layout_weight="0.50" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/deathsURENASField"
+                    android:nextFocusRight="@+id/screeningURENIField"
+                    android:nextFocusDown="@+id/screeningURENIField"
+                    android:imeOptions="actionNext"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:hint="@string/nutrition_weekly_deaths"
+                    android:singleLine="false"
+                    android:layout_weight="0.50" />
+            </LinearLayout>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/linearLayoutURENI"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginBottom="10dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/levelLabelURENI"
+                android:linksClickable="false"
+                android:text="@string/nutrition_weekly_ureni"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/screeningURENIField"
+                android:nextFocusRight="@+id/casesURENIField"
+                android:nextFocusDown="@+id/casesURENIField"
+                android:imeOptions="actionNext"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:hint="@string/nutrition_weekly_screening"
+                android:singleLine="false" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/linearLayoutFMURENI"
+                android:orientation="horizontal">
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/casesURENIField"
+                    android:nextFocusRight="@+id/deathsURENIField"
+                    android:nextFocusDown="@+id/deathsURENIField"
+                    android:imeOptions="actionNext"
+                    android:hint="@string/nutrition_weekly_cases"
+                    android:layout_weight="0.50"
+                    android:singleLine="false" />
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:ems="10"
+                    android:id="@+id/deathsURENIField"
+                    android:imeOptions="actionDone"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true"
+                    android:hint="@string/nutrition_weekly_deaths"
+                    android:layout_weight="0.50"
+                    android:singleLine="false" />
+            </LinearLayout>
         </LinearLayout>
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/nutrition_weekly_save_submit"
-            android:id="@+id/saveAndSubmitButton"
-            android:layout_margin="10dp" />
-
+            android:id="@+id/saveAndSubmitButton" />
     </LinearLayout>
 </ScrollView>

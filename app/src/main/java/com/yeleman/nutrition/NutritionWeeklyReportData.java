@@ -31,6 +31,8 @@ public class NutritionWeeklyReportData extends ReportData {
     int samc_cases = -1;
     int samc_deaths = -1;
 
+    boolean is_complete;
+
     public NutritionWeeklyReportData() {}
 
     public static NutritionWeeklyReportData get() {
@@ -48,6 +50,20 @@ public class NutritionWeeklyReportData extends ReportData {
     @Override
     protected String buildName() {
         return "Nut Hebdo";
+    }
+
+    protected Boolean isComplete(){
+        return is_complete;
+    }
+
+    protected Boolean atLeastOneIsCmplete(){
+        return is_complete;
+    }
+
+    protected void resetReportData() {
+        NutritionWeeklyReportData report = NutritionWeeklyReportData.get();
+        report.is_complete = false;
+        report.save();
     }
 }
 
