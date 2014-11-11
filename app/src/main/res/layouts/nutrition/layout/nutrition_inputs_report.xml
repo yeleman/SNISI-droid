@@ -12,8 +12,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/inputsLinearLayout"
             android:orientation="vertical"
-            android:weightSum="1"
-            android:layout_margin="10dp">
+            android:weightSum="1">
             <!-- Plumpy Nut -->
             <LinearLayout
                 android:layout_width="match_parent"
@@ -21,7 +20,7 @@
                 android:id="@+id/plumpyLinearLayout"
                 android:orientation="vertical"
                 android:weightSum="1"
-                android:layout_marginBottom="10dp">
+                android:layout_margin="10dp">
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -107,7 +106,7 @@
                 android:id="@+id/milkF75LinearLayout"
                 android:orientation="vertical"
                 android:weightSum="1"
-                android:layout_marginBottom="10dp">
+                android:layout_margin="10dp">
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -193,7 +192,7 @@
                 android:id="@+id/milkF100LinearLayout"
                 android:orientation="vertical"
                 android:weightSum="1"
-                android:layout_marginBottom="10dp">
+                android:layout_margin="10dp">
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -279,7 +278,7 @@
                 android:id="@+id/resomalLinearLayout"
                 android:orientation="vertical"
                 android:weightSum="1"
-                android:layout_marginBottom="10dp">
+                android:layout_margin="10dp">
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -365,7 +364,7 @@
                 android:id="@+id/plumpySupLinearLayout"
                 android:orientation="vertical"
                 android:weightSum="1"
-                android:layout_marginBottom="10dp">
+                android:layout_margin="10dp">
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -451,7 +450,7 @@
                 android:id="@+id/supercerealLinearLayout"
                 android:orientation="vertical"
                 android:weightSum="1"
-                android:layout_marginBottom="10dp">
+                android:layout_margin="10dp">
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -537,7 +536,7 @@
                 android:id="@+id/supercerealPlusLinearLayout"
                 android:orientation="vertical"
                 android:weightSum="1"
-                android:layout_marginBottom="10dp">
+                android:layout_margin="10dp">
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -623,7 +622,7 @@
                 android:id="@+id/oilLinearLayout"
                 android:orientation="vertical"
                 android:weightSum="1"
-                android:layout_marginBottom="10dp">
+                android:layout_margin="10dp">
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -709,7 +708,7 @@
                 android:id="@+id/amoxycilline125VialsLinearLayout"
                 android:orientation="vertical"
                 android:weightSum="1"
-                android:layout_marginBottom="10dp">
+                android:layout_margin="10dp">
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -795,7 +794,7 @@
                 android:id="@+id/amoxycilline250CapsLinearLayout"
                 android:orientation="vertical"
                 android:weightSum="1"
-                android:layout_marginBottom="10dp">
+                android:layout_margin="10dp">
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -881,7 +880,7 @@
                 android:id="@+id/albendazole400LinearLayout"
                 android:orientation="vertical"
                 android:weightSum="1"
-                android:layout_marginBottom="10dp">
+                android:layout_margin="10dp">
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -967,7 +966,7 @@
                 android:id="@+id/vita100InjectableLinearLayout"
                 android:orientation="vertical"
                 android:weightSum="1"
-                android:layout_marginBottom="10dp">
+                android:layout_margin="10dp">
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -1053,7 +1052,7 @@
                 android:id="@+id/vita200InjectableLinearLayout"
                 android:orientation="vertical"
                 android:weightSum="1"
-                android:layout_marginBottom="10dp">
+                android:layout_margin="10dp">
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -1139,7 +1138,7 @@
                 android:id="@+id/ironFolicAcidLinearLayout"
                 android:orientation="vertical"
                 android:weightSum="1"
-                android:layout_marginBottom="10dp">
+                android:layout_margin="10dp">
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"

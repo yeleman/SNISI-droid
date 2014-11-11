@@ -442,5 +442,5 @@ public class NutritionInputsReport extends CheckedFormActivity {
                                        ironFolicAcidReceivedField,
                                        ironFolicAcidUsedField,
                                        ironFolicAcidLostField);
-    }
+    } 
 }

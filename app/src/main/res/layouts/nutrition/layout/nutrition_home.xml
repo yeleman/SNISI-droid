@@ -11,30 +11,31 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/scrollView"
-        android:orientation="vertical"
-        android:layout_margin="10dp"
-        android:padding="10dp">
+        android:orientation="vertical">
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/nutrition_weekly_report_label"
             android:id="@+id/weeklyReportButton"
-            android:layout_marginTop="10dp" />
+            android:padding="10dp"
+            android:layout_margin="10dp" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/nutrition_monthly_report_label"
             android:id="@+id/monthlyReportButton"
-            android:layout_marginTop="10dp" />
+            android:padding="10dp"
+            android:layout_margin="10dp" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/nutrition_website_label"
             android:id="@+id/webSiteButton"
-            android:layout_marginTop="10dp" />
+            android:padding="10dp"
+            android:layout_margin="10dp" />
 
     </LinearLayout>
 

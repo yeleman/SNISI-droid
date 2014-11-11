@@ -11,42 +11,46 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/scrollView"
-        android:orientation="vertical"
-        android:padding="10dp">
+        android:orientation="vertical">
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/nutrition_fillout_report"
             android:id="@+id/monthlyURENAMButton"
-            android:layout_marginTop="10dp" />
+            android:padding="10dp"
+            android:layout_margin="10dp" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/nutrition_fillout_report"
             android:id="@+id/monthlyURENASButton"
-            android:layout_marginTop="10dp" />
+            android:padding="10dp"
+            android:layout_margin="10dp" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/nutrition_fillout_report"
             android:id="@+id/monthlyURENIButton"
-            android:layout_marginTop="10dp" />
+            android:padding="10dp"
+            android:layout_margin="10dp" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/nutrition_fillout_report"
             android:id="@+id/monthlyInputsButton"
-            android:layout_marginTop="10dp" />
+            android:padding="10dp"
+            android:layout_margin="10dp" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/nutrition_weekly_save_submit"
             android:id="@+id/saveAndSubmitButton"
-            android:layout_marginTop="10dp" />
+            android:padding="10dp"
+            android:layout_margin="10dp" />
 
     </LinearLayout>
 

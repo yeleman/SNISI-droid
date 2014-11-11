@@ -5,8 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".NutritionHome"
-    android:layout_margin="10dp"  >
+    tools:context=".NutritionHome">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -27,31 +26,31 @@
             android:layout_height="wrap_content"
             android:text="@string/nutrition_fillout_section"
             android:id="@+id/u6o23URENAMButton"
-            android:layout_marginTop="10dp" />
+            android:layout_margin="10dp" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/nutrition_fillout_section"
             android:id="@+id/u59o23URENAMButton"
-            android:layout_marginTop="10dp" />
+            android:layout_margin="10dp" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/nutrition_fillout_section"
             android:id="@+id/o59URENAMButton"
-            android:layout_marginTop="10dp" />
+            android:layout_margin="10dp" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/nutrition_fillout_section"
             android:id="@+id/pwURENAMButton"
-            android:layout_marginTop="10dp" />
+            android:layout_margin="10dp" />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/nutrition_fillout_section"
             android:id="@+id/exsamURENAMButton"
-            android:layout_marginTop="10dp" />
+            android:layout_margin="10dp" />
 
     </LinearLayout>
 
