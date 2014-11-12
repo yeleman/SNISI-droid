@@ -82,4 +82,40 @@ public class NutritionURENASReportData extends ReportData {
         report.o59_is_complete = false;
         report.save();
     }
+
+    protected String buildSMSText() {
+        Log.d(TAG, "buildSMSText");
+        return u59o6_total_start_m + Constants.SMS_NUTRITION_SPACER +
+               u59o6_total_start_f + Constants.SMS_NUTRITION_SPACER +
+               u59o6_new_cases + Constants.SMS_NUTRITION_SPACER +
+               u59o6_returned + Constants.SMS_NUTRITION_SPACER +
+               u59o6_total_in_m + Constants.SMS_NUTRITION_SPACER +
+               u59o6_total_in_f + Constants.SMS_NUTRITION_SPACER +
+               u59o6_transferred + Constants.SMS_NUTRITION_SPACER +
+               u59o6_healed + Constants.SMS_NUTRITION_SPACER +
+               u59o6_deceased + Constants.SMS_NUTRITION_SPACER +
+               u59o6_abandon + Constants.SMS_NUTRITION_SPACER +
+               u59o6_not_responding + Constants.SMS_NUTRITION_SPACER +
+               u59o6_total_out_m + Constants.SMS_NUTRITION_SPACER +
+               u59o6_total_out_f + Constants.SMS_NUTRITION_SPACER +
+               u59o6_referred + Constants.SMS_NUTRITION_SPACER +
+               u59o6_total_end_m + Constants.SMS_NUTRITION_SPACER +
+               u59o6_total_end_f + Constants.SMS_NUTRITION_SPACER +
+               o59_total_start_m + Constants.SMS_NUTRITION_SPACER +
+               o59_total_start_f + Constants.SMS_NUTRITION_SPACER +
+               o59_new_cases + Constants.SMS_NUTRITION_SPACER +
+               o59_returned + Constants.SMS_NUTRITION_SPACER +
+               o59_total_in_m + Constants.SMS_NUTRITION_SPACER +
+               o59_total_in_f + Constants.SMS_NUTRITION_SPACER +
+               o59_transferred + Constants.SMS_NUTRITION_SPACER +
+               o59_healed + Constants.SMS_NUTRITION_SPACER +
+               o59_deceased + Constants.SMS_NUTRITION_SPACER +
+               o59_abandon + Constants.SMS_NUTRITION_SPACER +
+               o59_not_responding + Constants.SMS_NUTRITION_SPACER +
+               o59_total_out_m + Constants.SMS_NUTRITION_SPACER +
+               o59_total_out_f + Constants.SMS_NUTRITION_SPACER +
+               o59_referred + Constants.SMS_NUTRITION_SPACER +
+               o59_total_end_m + Constants.SMS_NUTRITION_SPACER +
+               o59_total_end_f;
+    }
 }

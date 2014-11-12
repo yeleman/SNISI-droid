@@ -26,7 +26,14 @@ public class Constants {
     public static final int NB_SECONDS_WAIT_FOR_REPLY = 60;
 
     public static final String SMS_CHANGE_PASSWRD = "passwd %1$s %2$s %3$s";
+    public static final String SMS_NUTRITION_SPACER="-";
     public static final String SMS_NUTRITION_WEEKLY_REPORT = "nut %1$d %2$d %3$d %4$d %5$d %6$d %7$d %8$d %9$d%";
+    // public static final String SMS_NUTRITION_URENAM_REPORT = "%1$d-%2$d-%3$d-%4$d-%5$d-%6$d-%7$d-%8$d-%9$d-%10$d-%11$d-%12$d-%13$d-%14$d-%15$d-%16$d-%17$d-%18$d-%19$d-%20$d-%21$d-%22$d-%23$d-%24$d-%25$d-%26$d-%27$d-%28$d-%29$d-%30$d-%31$d-%32$d-%33$d-%34$d-%35$d-%36$d-%37$d-%38$d-%39$d-%40$d-%41$d-%42$d-%43$d-%44$d-%45$d-%46$d-%47$d-%48$d-%49$d-%50$d-%51$d-%52$d-%53$d-%54$d-%55$d-%56$d-%57$d-%58$d-%59$d-%60$d-%61$d-%62$d-%63d";
+    // public static final String SMS_NUTRITION_URENAS_REPORT = "%1$d-%2$d-%3$d-%4$d-%5$d-%6$d-%7$d-%8$d-%9$d-%10$d-%11$d-%12$d-%13$d-%14$d-%15$d-%16$d-%17$d-%18$d-%19$d-%20$d-%21$d-%22$d-%23$d-%24$d-%25$d-%26$d-%27$d-%28$d-%29$d-%30$d-%31$d-%32$d";
+    // public static final String SMS_NUTRITION_URENI_REPORT = "%1$d-%2$d-%3$d-%4$d-%5$d-%6$d-%7$d-%8$d-%9$d-%10$d-%11$d-%12$d-%13$d-%14$d-%15$d-%16$d-%17$d-%18$d-%19$d-%20$d-%21$d-%22$d-%23$d-%24$d-%25$d-%26$d-%27$d-%28$d-%29$d-%30$d-%31$d-%32$d-%33$d-%34$d-%35$d-%36$d-%37$d-%38$d-%39$d-%40$d-%41$d-%42$d-%43$d-%44$d-%45$d-%46$d-%47$d-%48$d";
+    // public static final String SMS_NUTRITION_INPUTS_REPORT = "%1$d-%2$d-%3$d-%4$d-%5$d-%6$d-%7$d-%8$d-%9$d-%10$d-%11$d-%12$d-%13$d-%14$d-%15$d-%16$d-%17$d-%18$d-%19$d-%20$d-%21$d-%22$d-%23$d-%24$d-%25$d-%26$d-%27$d-%28$d-%29$d-%30$d-%31$d-%32$d-%33$d-%34$d-%35$d-%36$d-%37$d-%38$d-%39$d-%40$d-%41$d-%42$d-%43$d-%44$d-%45$d-%46$d-%47$d-%48$d-%49$d-%50$d-%51$d-%52$d-%53$d-%54$d-%55$d-%56$d";
+    //'kw', 'kw2', 'username', 'password', 'month', 'year', 'urenam_data', 'urenas_data', 'ureni_data', 'stocks_data'
+    public static final String SMS_NUTRITION_MONTHLY_REPORT = "nut-%1$s-%2$s-%3$s-%4$s-%5$s-%6$s-%7$s-%8$s";
 
     public static final String getLogTag(String activity) {
     	return String.format("SNISILog-%s", activity);

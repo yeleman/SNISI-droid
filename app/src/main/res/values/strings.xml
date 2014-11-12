@@ -73,6 +73,8 @@
     <string name="error_field_positive_integer">Entier positif requis</string>
     <string name="error_must_be_inferior" formatted="false">%s (%d) ne peut être supérieur ou égal à %s (%d)</string>
     <string name="error_must_be_inferior_or_equal" formatted="false">%s (%d) ne peut être supérieur à %s (%d)</string>
+    <string name="error_must_be_inferior_or_equal_float" formatted="false">%s (%.2f) ne peut être supérieur à %s (%.2f)</string>
+    <!-- <string name="error_must_be_inferior_or_equal_float" formatted="false">%s (%.2f) ne peut être supérieur à %s (%.2f)</string> -->
     <string name="error_must_be_equal" formatted="false">%1$s (%2$d) doit être égal au %3$s (%4$d)</string>
     <string name="error_sms_not_sent_title">Erreur d\'envoi du SMS</string>
     <string name="error_sms_not_sent_body">Le SMS n\'a pa pu être envoyé correctement. Vérifiez que vous avez du réseau et du crédit puis réessayez.\n%1$s</string>
@@ -116,15 +118,15 @@
     <string name="nutrition_all_out">Toutes Sorties</string>
     <string name="nutrition_total_out">Total Sorties</string>
     <string name="nutrition_m">Homme</string>
-    <string name="nutrition_f">femme</string>
+    <string name="nutrition_f">Femme</string>
 
     <string name="nutrition_new_cases">Nouveau cas</string>
-    <string name="nutrition_returned">Readmisson</string>
+    <string name="nutrition_returned">Réadmission</string>
     <string name="nutrition_transferred">Transf. URENI</string>
     <string name="nutrition_healed">Guéris</string>
     <string name="nutrition_deceased">Décès</string>
     <string name="nutrition_abandon">Abandons</string>
-    <string name="nutrition_not_responding">Non Repond</string>
+    <string name="nutrition_not_responding">Non Repond.</string>
     <string name="nutrition_referred">Réf. %1$s</string>
     <string name="nutrition_monthly_save">Enregister</string>
     <!-- Menu -->
@@ -150,7 +152,7 @@
     <string name="nutrition_resomal">Resomal (kilo)</string>
     <string name="nutrition_plumpy_sup">Plumpy sup (sachet)</string>
     <string name="nutrition_supercereal">Supercereal (kilo)</string>
-    <string name="nutrition_supercereal_plus">Supercereal + (kilo)</string>
+    <string name="nutrition_supercereal_plus">Supercereal + (sachet 1.5Kg)</string>
     <string name="nutrition_oil">Huile (litre)</string>
     <string name="nutrition_amoxycilline_125mg_vials">Amoxycilline 125mg (flacon)</string>
     <string name="nutrition_amoxycilline_250mg_caps">Amoxycilline 250mg (cp)</string>

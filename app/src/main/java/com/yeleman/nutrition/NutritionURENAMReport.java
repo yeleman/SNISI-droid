@@ -60,27 +60,27 @@ public class NutritionURENAMReport extends CheckedFormActivity implements View.O
         }
 
         u23o6ReportButton = (Button) findViewById(R.id.u6o23URENAMButton);
-        u23o6ReportButton.setText(String.format(getString(R.string.nutrition_fillout_report), getString(R.string.u23o6)));
+        u23o6ReportButton.setText(String.format(getString(R.string.nutrition_fillout_section), getString(R.string.u23o6)));
         Constants.updateButtonCompletion(u23o6ReportButton, report.u23o6_is_complete);
         u23o6ReportButton.setOnClickListener(this);
 
         u59o23ReportButton = (Button) findViewById(R.id.u59o23URENAMButton);
-        u59o23ReportButton.setText(String.format(getString(R.string.nutrition_fillout_report), getString(R.string.u59o23)));
+        u59o23ReportButton.setText(String.format(getString(R.string.nutrition_fillout_section), getString(R.string.u59o23)));
         Constants.updateButtonCompletion(u59o23ReportButton, report.u59o23_is_complete);
         u59o23ReportButton.setOnClickListener(this);
 
         o59ReportButton = (Button) findViewById(R.id.o59URENAMButton);
-        o59ReportButton.setText(String.format(getString(R.string.nutrition_fillout_report), getString(R.string.o59)));
+        o59ReportButton.setText(String.format(getString(R.string.nutrition_fillout_section), getString(R.string.o59)));
         Constants.updateButtonCompletion(o59ReportButton, report.o59_is_complete);
         o59ReportButton.setOnClickListener(this);
 
         pwReportButton = (Button) findViewById(R.id.pwURENAMButton);
-        pwReportButton.setText(String.format(getString(R.string.nutrition_fillout_report), getString(R.string.pw)));
+        pwReportButton.setText(String.format(getString(R.string.nutrition_fillout_section), getString(R.string.pw)));
         Constants.updateButtonCompletion(pwReportButton, report.pw_is_complete);
         pwReportButton.setOnClickListener(this);
 
         exsamReportButton = (Button) findViewById(R.id.exsamURENAMButton);
-        exsamReportButton.setText(String.format(getString(R.string.nutrition_fillout_report), getString(R.string.exsam)));
+        exsamReportButton.setText(String.format(getString(R.string.nutrition_fillout_section), getString(R.string.exsam)));
         Constants.updateButtonCompletion(exsamReportButton, report.exsam_is_complete);
         exsamReportButton.setOnClickListener(this);
     }

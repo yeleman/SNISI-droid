@@ -33,7 +33,8 @@ public class NutritionMonthlyHome extends CheckedFormActivity implements View.On
     private Button urenamReportButton;
     private Button inputsReportButton;
 
-    private boolean is_urenam, is_urenas, is_ureni;
+    private boolean is_urenam, is_urenas, is_ureni, pewIs_urenam, pewIs_urenas, pewIs_ureni;
+    private Boolean ppu = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,9 +46,13 @@ public class NutritionMonthlyHome extends CheckedFormActivity implements View.On
 
         SharedPreferences sharedPrefs =
                 PreferenceManager.getDefaultSharedPreferences(this);
+
         is_urenam = sharedPrefs.getBoolean("hc_is_urenam", false);
+        pewIs_urenam = is_urenam;
         is_urenas = sharedPrefs.getBoolean("hc_is_urenas", false);
+        pewIs_urenas = is_urenas;
         is_ureni = sharedPrefs.getBoolean("hc_is_ureni", false);
+        pewIs_ureni = is_ureni;
 
         if (!is_urenam && !is_urenas && !is_ureni) {
             AlertDialog.Builder prefCheckBuilder = new AlertDialog.Builder(this);
@@ -90,6 +95,27 @@ public class NutritionMonthlyHome extends CheckedFormActivity implements View.On
 
     protected void setupUI() {
         Log.d(TAG, "setupUI NutritionMonthlyHome");
+
+        SharedPreferences sharedPrefs =
+                PreferenceManager.getDefaultSharedPreferences(this);
+        Log.i(TAG, String.valueOf(sharedPrefs.getBoolean("hc_is_urenam", false)));
+
+        if (is_urenam !=sharedPrefs.getBoolean("hc_is_urenam", false)){
+            Log.i(TAG, "URENAM ***************************");
+        }
+
+        if (ppu == null) {
+            ppu = sharedPrefs.getBoolean("hc_is_urenam", false);
+            Log.d(TAG, "PREMIERE FOIS");
+        } else {
+            Boolean x = sharedPrefs.getBoolean("hc_is_urenam", false);
+            if (x != ppu) {
+                // reset RENAM
+                Log.d(TAG, "URENAM A CHANGE");
+            } else {
+                Log.d(TAG, "URENAM PAS CHANGE");
+            }
+        }
 
         urenamReportButton = (Button) findViewById(R.id.monthlyURENAMButton);
         urenasReportButton = (Button) findViewById(R.id.monthlyURENASButton);
@@ -155,7 +181,9 @@ public class NutritionMonthlyHome extends CheckedFormActivity implements View.On
                 activity = NutritionInputsReport.class;
                 break;
             case R.id.saveAndSubmitButton:
-                activity = NutritionInputsReport.class;
+                Log.i(TAG, "saveAndSubmitButton");
+                NutritionMonthlyReportData report = NutritionMonthlyReportData.get();
+                report.buildSMSText();
                 break;
         }
         Intent intent = new Intent(

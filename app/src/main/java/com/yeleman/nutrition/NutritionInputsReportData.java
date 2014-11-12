@@ -39,10 +39,10 @@ public class NutritionInputsReportData extends ReportData {
         int plumpy_sup_used = -1;
         int plumpy_sup_lost = -1;
         // Supercereal
-        int supercereal_initial = -1;
-        int supercereal_received = -1;
-        int supercereal_used = -1;
-        int supercereal_lost = -1;
+        float supercereal_initial = -1;
+        float supercereal_received = -1;
+        float supercereal_used = -1;
+        float supercereal_lost = -1;
         // Supercereal_Plus
         int supercereal_plus_initial = -1;
         int supercereal_plus_received = -1;
@@ -117,5 +117,65 @@ public class NutritionInputsReportData extends ReportData {
         NutritionInputsReportData report = NutritionInputsReportData.get();
         report.input_is_complete = false;
         report.save();
+    }
+
+    protected String buildSMSText() {
+        Log.d(TAG, "buildSMSText");
+        return plumpy_nut_initial + Constants.SMS_NUTRITION_SPACER +
+               plumpy_nut_received + Constants.SMS_NUTRITION_SPACER +
+               plumpy_nut_used + Constants.SMS_NUTRITION_SPACER +
+               plumpy_nut_lost + Constants.SMS_NUTRITION_SPACER +
+               milk_f75_initial + Constants.SMS_NUTRITION_SPACER +
+               milk_f75_received + Constants.SMS_NUTRITION_SPACER +
+               milk_f75_used + Constants.SMS_NUTRITION_SPACER +
+               milk_f75_lost + Constants.SMS_NUTRITION_SPACER +
+               milk_f100_initial + Constants.SMS_NUTRITION_SPACER +
+               milk_f100_received + Constants.SMS_NUTRITION_SPACER +
+               milk_f100_used + Constants.SMS_NUTRITION_SPACER +
+               milk_f100_lost + Constants.SMS_NUTRITION_SPACER +
+               resomal_initial + Constants.SMS_NUTRITION_SPACER +
+               resomal_received + Constants.SMS_NUTRITION_SPACER +
+               resomal_used + Constants.SMS_NUTRITION_SPACER +
+               resomal_lost + Constants.SMS_NUTRITION_SPACER +
+               plumpy_sup_initial + Constants.SMS_NUTRITION_SPACER +
+               plumpy_sup_received + Constants.SMS_NUTRITION_SPACER +
+               plumpy_sup_used + Constants.SMS_NUTRITION_SPACER +
+               plumpy_sup_lost + Constants.SMS_NUTRITION_SPACER +
+               supercereal_initial + Constants.SMS_NUTRITION_SPACER +
+               supercereal_received + Constants.SMS_NUTRITION_SPACER +
+               supercereal_used + Constants.SMS_NUTRITION_SPACER +
+               supercereal_lost + Constants.SMS_NUTRITION_SPACER +
+               supercereal_plus_initial + Constants.SMS_NUTRITION_SPACER +
+               supercereal_plus_received + Constants.SMS_NUTRITION_SPACER +
+               supercereal_plus_used + Constants.SMS_NUTRITION_SPACER +
+               supercereal_plus_lost + Constants.SMS_NUTRITION_SPACER +
+               oil_initial + Constants.SMS_NUTRITION_SPACER +
+               oil_received + Constants.SMS_NUTRITION_SPACER +
+               oil_used + Constants.SMS_NUTRITION_SPACER +
+               oil_lost + Constants.SMS_NUTRITION_SPACER +
+               amoxycilline_125_vials_initial + Constants.SMS_NUTRITION_SPACER +
+               amoxycilline_125_vials_received + Constants.SMS_NUTRITION_SPACER +
+               amoxycilline_125_vials_used + Constants.SMS_NUTRITION_SPACER +
+               amoxycilline_125_vials_lost + Constants.SMS_NUTRITION_SPACER +
+               amoxycilline_250_caps_initial + Constants.SMS_NUTRITION_SPACER +
+               amoxycilline_250_caps_received + Constants.SMS_NUTRITION_SPACER +
+               amoxycilline_250_caps_used + Constants.SMS_NUTRITION_SPACER +
+               amoxycilline_250_caps_lost + Constants.SMS_NUTRITION_SPACER +
+               albendazole_400_initial + Constants.SMS_NUTRITION_SPACER +
+               albendazole_400_received + Constants.SMS_NUTRITION_SPACER +
+               albendazole_400_used + Constants.SMS_NUTRITION_SPACER +
+               albendazole_400_lost + Constants.SMS_NUTRITION_SPACER +
+               vita_100_injectable_initial + Constants.SMS_NUTRITION_SPACER +
+               vita_100_injectable_received + Constants.SMS_NUTRITION_SPACER +
+               vita_100_injectable_used + Constants.SMS_NUTRITION_SPACER +
+               vita_100_injectable_lost + Constants.SMS_NUTRITION_SPACER +
+               vita_200_injectable_initial + Constants.SMS_NUTRITION_SPACER +
+               vita_200_injectable_received + Constants.SMS_NUTRITION_SPACER +
+               vita_200_injectable_used + Constants.SMS_NUTRITION_SPACER +
+               vita_200_injectable_lost + Constants.SMS_NUTRITION_SPACER +
+               iron_folic_acid_initial + Constants.SMS_NUTRITION_SPACER +
+               iron_folic_acid_received + Constants.SMS_NUTRITION_SPACER +
+               iron_folic_acid_used + Constants.SMS_NUTRITION_SPACER +
+               iron_folic_acid_lost;
     }
 }

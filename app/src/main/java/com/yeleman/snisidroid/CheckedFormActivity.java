@@ -20,6 +20,7 @@ import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -82,7 +83,7 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
                 public void onClick(DialogInterface dialog, int which) {
                     // close the dialog and focus on the requested field
                     if (fieldToReturnTo != null) {
-                    	fieldToReturnTo.requestFocus();	
+                        fieldToReturnTo.requestFocus();
                     }
                 }
             });
@@ -150,6 +151,13 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
 		return doCheckAndProceed(test, error_msg, editText);
 	}
 
+	protected boolean assertPositiveFloat(EditText editText) {
+		boolean test = (floatFromField(editText, -1) < 0);
+		String error_msg = String.format(
+			getString(R.string.error_field_positive_integer));
+		return doCheckAndProceed(test, error_msg, editText);
+	}
+
 	/* Input Validation Checks (EventListener creators) */
 	protected void setAssertNotEmpty(final EditText editText) {
     	updateFieldCheckedStatus(editText, false);
@@ -184,6 +192,18 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
             	updateFieldCheckedStatus(editText, assertPositiveInteger(editText));
             }
 
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+            public void onTextChanged(CharSequence s, int start, int before, int count) {}
+        });
+    }
+
+    protected void setAssertPositiveFloat(final EditText editText) {
+
+    	updateFieldCheckedStatus(editText, false);
+    	editText.addTextChangedListener(new TextWatcher() {
+            public void afterTextChanged(Editable s) {
+            	updateFieldCheckedStatus(editText, assertPositiveFloat(editText));
+            }
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
             public void onTextChanged(CharSequence s, int start, int before, int count) {}
         });
@@ -272,6 +292,16 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
         return fallback;
     }
 
+    protected float floatFromField(EditText editText) {
+        return floatFromField(editText, -1);
+    }
+    protected float floatFromField(EditText editText, int fallback) {
+        String text = stringFromField(editText);
+        if (text.length() > 0) {
+            return Float.parseFloat(text);
+        }
+        return fallback;
+    }
     protected void setTextOnField(EditText editText, Object value) {
         String default_str = "";
         String value_str;
@@ -326,7 +356,6 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
                 if (progressDialog != null) {
                     progressDialog.dismiss();
                 }
-
                 if (!progressDialog.isShowing()) {
                     return;
                 }
@@ -497,21 +526,50 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
         AlertDialog errorDialog = questionDialogBuilder.create();
         errorDialog.show();
     }
+
     protected boolean mustMatchStockCoherence(EditText initialField,
                                               EditText receivedField,
                                               EditText usedField,
                                               EditText lostField) {
-        int initialAndReceived = integerFromField(initialField) + integerFromField(receivedField);
-        int usedAndLost = integerFromField(usedField) + integerFromField(lostField);
+        return mustMatchStockCoherence(initialField, receivedField, usedField, lostField, false);
+    }
 
-        String errorMsg = String.format(getString(R.string.error_must_be_inferior_or_equal),
-                getString(R.string.nutrition_used) + " + " + getString(R.string.nutrition_lost), usedAndLost,
-                getString(R.string.nutrition_initial) + " + " + getString(R.string.nutrition_received), initialAndReceived
-        );
-        if (usedAndLost > initialAndReceived) {
-            fireErrorDialog(this, errorMsg, initialField);
-            return false;
+    protected boolean mustMatchStockCoherence(EditText initialField,
+                                              EditText receivedField,
+                                              EditText usedField,
+                                              EditText lostField,
+                                              Boolean valuesAsFloat) {
+
+        if (valuesAsFloat) {
+            float initialAndReceived = floatFromField(initialField) + floatFromField(receivedField);
+            float usedAndLost = floatFromField(usedField) + floatFromField(lostField);
+            String errorMsg = String.format(getString(R.string.error_must_be_inferior_or_equal_float),
+                    getString(R.string.nutrition_used) + " + " + getString(R.string.nutrition_lost), floatFormat(usedAndLost),
+                    getString(R.string.nutrition_initial) + " + " + getString(R.string.nutrition_received), floatFormat(initialAndReceived)
+            );
+            if (usedAndLost > initialAndReceived) {
+                fireErrorDialog(this, errorMsg, initialField);
+                return false;
+            }
+        } else {
+            int initialAndReceived = integerFromField(initialField) + integerFromField(receivedField);
+            int usedAndLost = integerFromField(usedField) + integerFromField(lostField);
+
+            String errorMsg = String.format(getString(R.string.error_must_be_inferior_or_equal),
+                    getString(R.string.nutrition_used) + " + " + getString(R.string.nutrition_lost), usedAndLost,
+                    getString(R.string.nutrition_initial) + " + " + getString(R.string.nutrition_received), initialAndReceived
+            );
+            if (usedAndLost > initialAndReceived) {
+                fireErrorDialog(this, errorMsg, initialField);
+                return false;
+            }
         }
         return true;
+    }
+
+    protected float floatFormat(float value){
+        DecimalFormat df = new DecimalFormat("########.00");
+        String str = df.format(value);
+        return Float.parseFloat(str.replace(',', '.'));
     }
 }

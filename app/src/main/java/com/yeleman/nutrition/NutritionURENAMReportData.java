@@ -131,70 +131,69 @@ public class NutritionURENAMReportData extends ReportData {
         report.save();
     }
 
-    // protected String buildSMSText() {
-    //     Log.d(TAG, "buildSMSText");
-    //     return String.format(Constants.SMS_NUTRITION_WEEKLY_REPORT,
-    //                     u23o6_total_start_f,
-    //                     u23o6_new_cases,
-    //                     u23o6_returned,
-    //                     u23o6_total_in_m,
-    //                     u23o6_total_in_f,
-    //                     u23o6_healed,
-    //                     u23o6_deceased,
-    //                     u23o6_abandon,
-    //                     u23o6_not_responding,
-    //                     u23o6_total_out_m,
-    //                     u23o6_total_out_f,
-    //                     u23o6_referred,
-    //                     u23o6_total_end_m,
-    //                     u23o6_total_end_f,
-    //                     u59o23_total_start_m,
-    //                     u59o23_total_start_f,
-    //                     u59o23_new_cases,
-    //                     u59o23_returned,
-    //                     u59o23_total_in_m,
-    //                     u59o23_total_in_f,
-    //                     u59o23_healed,
-    //                     u59o23_deceased,
-    //                     u59o23_abandon,
-    //                     u59o23_not_responding,
-    //                     u59o23_total_out_m,
-    //                     u59o23_total_out_f,
-    //                     u59o23_referred,
-    //                     u59o23_total_end_m,
-    //                     u59o23_total_end_f,
-    //                     o59_total_start_m,
-    //                     o59_total_start_f,
-    //                     o59_new_cases,
-    //                     o59_returned,
-    //                     o59_total_in_m,
-    //                     o59_total_in_f,
-    //                     o59_healed,
-    //                     o59_deceased,
-    //                     o59_abandon,
-    //                     o59_not_responding,
-    //                     o59_total_out_m,
-    //                     o59_total_out_f,
-    //                     o59_referred,
-    //                     o59_total_end_m,
-    //                     o59_total_end_f,
-    //                     pw_total_start_f,
-    //                     pw_new_cases,
-    //                     pw_returned,
-    //                     pw_total_in_f,
-    //                     pw_healed,
-    //                     pw_deceased,
-    //                     pw_abandon,
-    //                     pw_not_responding,
-    //                     pw_total_out_f,
-    //                     pw_referred,
-    //                     pw_total_end_f,
-    //                     exsam_total_start_m,
-    //                     exsam_total_start_f,
-    //                     //exsam_total_out_m,
-    //                     //exsam_total_out_f,
-    //                     exsam_referred,
-    //                     exsam_total_end_m,
-    //                     exsam_total_end_f);
-    // }
+    protected String buildSMSText() {
+        Log.d(TAG, "buildSMSText");
+        return u23o6_total_start_f + Constants.SMS_NUTRITION_SPACER +
+               u23o6_new_cases + Constants.SMS_NUTRITION_SPACER +
+               u23o6_returned + Constants.SMS_NUTRITION_SPACER +
+               u23o6_total_in_m + Constants.SMS_NUTRITION_SPACER +
+               u23o6_total_in_f + Constants.SMS_NUTRITION_SPACER +
+               u23o6_healed + Constants.SMS_NUTRITION_SPACER +
+               u23o6_deceased + Constants.SMS_NUTRITION_SPACER +
+               u23o6_abandon + Constants.SMS_NUTRITION_SPACER +
+               u23o6_not_responding + Constants.SMS_NUTRITION_SPACER +
+               u23o6_total_out_m + Constants.SMS_NUTRITION_SPACER +
+               u23o6_total_out_f + Constants.SMS_NUTRITION_SPACER +
+               u23o6_referred + Constants.SMS_NUTRITION_SPACER +
+               u23o6_total_end_m + Constants.SMS_NUTRITION_SPACER +
+               u23o6_total_end_f + Constants.SMS_NUTRITION_SPACER +
+               u59o23_total_start_m + Constants.SMS_NUTRITION_SPACER +
+               u59o23_total_start_f + Constants.SMS_NUTRITION_SPACER +
+               u59o23_new_cases + Constants.SMS_NUTRITION_SPACER +
+               u59o23_returned + Constants.SMS_NUTRITION_SPACER +
+               u59o23_total_in_m + Constants.SMS_NUTRITION_SPACER +
+               u59o23_total_in_f + Constants.SMS_NUTRITION_SPACER +
+               u59o23_healed + Constants.SMS_NUTRITION_SPACER +
+               u59o23_deceased + Constants.SMS_NUTRITION_SPACER +
+               u59o23_abandon + Constants.SMS_NUTRITION_SPACER +
+               u59o23_not_responding + Constants.SMS_NUTRITION_SPACER +
+               u59o23_total_out_m + Constants.SMS_NUTRITION_SPACER +
+               u59o23_total_out_f + Constants.SMS_NUTRITION_SPACER +
+               u59o23_referred + Constants.SMS_NUTRITION_SPACER +
+               u59o23_total_end_m + Constants.SMS_NUTRITION_SPACER +
+               u59o23_total_end_f + Constants.SMS_NUTRITION_SPACER +
+               o59_total_start_m + Constants.SMS_NUTRITION_SPACER +
+               o59_total_start_f + Constants.SMS_NUTRITION_SPACER +
+               o59_new_cases + Constants.SMS_NUTRITION_SPACER +
+               o59_returned + Constants.SMS_NUTRITION_SPACER +
+               o59_total_in_m + Constants.SMS_NUTRITION_SPACER +
+               o59_total_in_f + Constants.SMS_NUTRITION_SPACER +
+               o59_healed + Constants.SMS_NUTRITION_SPACER +
+               o59_deceased + Constants.SMS_NUTRITION_SPACER +
+               o59_abandon + Constants.SMS_NUTRITION_SPACER +
+               o59_not_responding + Constants.SMS_NUTRITION_SPACER +
+               o59_total_out_m + Constants.SMS_NUTRITION_SPACER +
+               o59_total_out_f + Constants.SMS_NUTRITION_SPACER +
+               o59_referred + Constants.SMS_NUTRITION_SPACER +
+               o59_total_end_m + Constants.SMS_NUTRITION_SPACER +
+               o59_total_end_f + Constants.SMS_NUTRITION_SPACER +
+               pw_total_start_f + Constants.SMS_NUTRITION_SPACER +
+               pw_new_cases + Constants.SMS_NUTRITION_SPACER +
+               pw_returned + Constants.SMS_NUTRITION_SPACER +
+               pw_total_in_f + Constants.SMS_NUTRITION_SPACER +
+               pw_healed + Constants.SMS_NUTRITION_SPACER +
+               pw_deceased + Constants.SMS_NUTRITION_SPACER +
+               pw_abandon + Constants.SMS_NUTRITION_SPACER +
+               pw_not_responding + Constants.SMS_NUTRITION_SPACER +
+               pw_total_out_f + Constants.SMS_NUTRITION_SPACER +
+               pw_referred + Constants.SMS_NUTRITION_SPACER +
+               pw_total_end_f + Constants.SMS_NUTRITION_SPACER +
+               exsam_total_start_m + Constants.SMS_NUTRITION_SPACER +
+               exsam_total_start_f + Constants.SMS_NUTRITION_SPACER +
+               //exsam_total_out_m + Constants.SMS_NUTRITION_SPACER +
+               //exsam_total_out_f + Constants.SMS_NUTRITION_SPACER +
+               exsam_referred + Constants.SMS_NUTRITION_SPACER +
+               exsam_total_end_m + Constants.SMS_NUTRITION_SPACER +
+               exsam_total_end_f;
+    }
 }

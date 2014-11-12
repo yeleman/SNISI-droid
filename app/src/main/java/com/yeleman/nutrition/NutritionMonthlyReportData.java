@@ -58,4 +58,14 @@ public class NutritionMonthlyReportData extends ReportData {
         ureniReport.resetReportData();
         inputsReport.resetReportData();
     }
+
+    protected String buildSMSText() {
+        Log.d(TAG, "buildSMSText"); 
+        return String.format(Constants.SMS_NUTRITION_MONTHLY_REPORT,
+
+            urenamReport.buildSMSText(),
+            urenasReport.buildSMSText(),
+            ureniReport.buildSMSText()
+            );
+    }
 }

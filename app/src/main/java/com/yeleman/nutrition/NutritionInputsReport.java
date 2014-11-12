@@ -232,10 +232,10 @@ public class NutritionInputsReport extends CheckedFormActivity {
         report.plumpy_sup_received = integerFromField(plumpySupReceivedField);
         report.plumpy_sup_used = integerFromField(plumpySupUsedField);
         report.plumpy_sup_lost = integerFromField(plumpySupLostField);
-        report.supercereal_initial = integerFromField(supercerealInitialField);
-        report.supercereal_received = integerFromField(supercerealReceivedField);
-        report.supercereal_used = integerFromField(supercerealUsedField);
-        report.supercereal_lost = integerFromField(supercerealLostField);
+        report.supercereal_initial = floatFromField(supercerealInitialField);
+        report.supercereal_received = floatFromField(supercerealReceivedField);
+        report.supercereal_used = floatFromField(supercerealUsedField);
+        report.supercereal_lost = floatFromField(supercerealLostField);
         report.supercereal_plus_initial = integerFromField(supercerealPlusInitialField);
         report.supercereal_plus_received = integerFromField(supercerealPlusReceivedField);
         report.supercereal_plus_used = integerFromField(supercerealPlusUsedField);
@@ -271,8 +271,8 @@ public class NutritionInputsReport extends CheckedFormActivity {
         report.input_is_complete = true;
         report.save();
         Log.d(TAG, "storeReportData -- end");
-
     }
+
     protected void restoreReportData() {
         Log.d(TAG, "restoreReportData");
         NutritionInputsReportData report = NutritionInputsReportData.get();
@@ -361,10 +361,10 @@ public class NutritionInputsReport extends CheckedFormActivity {
         setAssertPositiveInteger(plumpySupReceivedField);
         setAssertPositiveInteger(plumpySupUsedField);
         setAssertPositiveInteger(plumpySupLostField);
-        setAssertPositiveInteger(supercerealInitialField);
-        setAssertPositiveInteger(supercerealReceivedField);
-        setAssertPositiveInteger(supercerealUsedField);
-        setAssertPositiveInteger(supercerealLostField);
+        setAssertPositiveFloat(supercerealInitialField);
+        setAssertPositiveFloat(supercerealReceivedField);
+        setAssertPositiveFloat(supercerealUsedField);
+        setAssertPositiveFloat(supercerealLostField);
         setAssertPositiveInteger(supercerealPlusInitialField);
         setAssertPositiveInteger(supercerealPlusReceivedField);
         setAssertPositiveInteger(supercerealPlusUsedField);
@@ -400,16 +400,20 @@ public class NutritionInputsReport extends CheckedFormActivity {
     }
 
     protected boolean ensureDataCoherence() {
-
+        boolean isEnsureDataCoherence;
         // Initial + Received >= Used + Lost
-       return  mustMatchStockCoherence(plumpyNutInitialField,
+        isEnsureDataCoherence =  mustMatchStockCoherence(plumpyNutInitialField,
                                        plumpyNutReceivedField,
                                        plumpyNutUsedField,
                                        plumpyNutLostField) &&
+               mustMatchStockCoherence(plumpySupInitialField,
+                                       plumpySupReceivedField,
+                                       plumpySupUsedField,
+                                       plumpySupLostField) &&
                mustMatchStockCoherence(supercerealInitialField,
                                        supercerealReceivedField,
                                        supercerealUsedField,
-                                       supercerealLostField) &&
+                                       supercerealLostField, true) &&
                mustMatchStockCoherence(supercerealPlusInitialField,
                                        supercerealPlusReceivedField,
                                        supercerealPlusUsedField,
@@ -442,5 +446,21 @@ public class NutritionInputsReport extends CheckedFormActivity {
                                        ironFolicAcidReceivedField,
                                        ironFolicAcidUsedField,
                                        ironFolicAcidLostField);
-    } 
+        if (is_ureni) {
+            isEnsureDataCoherence = isEnsureDataCoherence &&
+                                    mustMatchStockCoherence(milkF75InitialField,
+                                            milkF75ReceivedField,
+                                            milkF75UsedField,
+                                            milkF75LostField) &&
+                                    mustMatchStockCoherence(milkF100InitialField,
+                                            milkF100ReceivedField,
+                                            milkF100UsedField,
+                                            milkF100LostField) &&
+                                    mustMatchStockCoherence(resomalInitialField,
+                                            resomalReceivedField,
+                                            resomalUsedField,
+                                            resomalLostField);
+        }
+        return isEnsureDataCoherence;
+    }
 }

@@ -467,7 +467,6 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:inputType="number"
                         android:nextFocusRight="@+id/supercerealReceivedField"
                         android:nextFocusDown="@+id/supercerealReceivedField"
                         android:id="@+id/supercerealInitialField"
@@ -477,11 +476,12 @@
                         android:hint="@string/nutrition_initial"
                         android:singleLine="false"
                         android:editable="true"
-                        android:layout_weight="0.50" />
+                        android:layout_weight="0.50"
+                        android:inputType="numberDecimal" />
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:inputType="number"
+                        android:inputType="numberDecimal"
                         android:nextFocusRight="@+id/supercerealUsedField"
                         android:nextFocusDown="@+id/supercerealUsedField"
                         android:id="@+id/supercerealReceivedField"
@@ -502,7 +502,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:inputType="number"
+                        android:inputType="numberDecimal"
                         android:nextFocusRight="@+id/supercerealLostField"
                         android:nextFocusDown="@+id/supercerealLostField"
                         android:id="@+id/supercerealUsedField"
@@ -516,7 +516,7 @@
                     <EditText
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:inputType="number"
+                        android:inputType="numberDecimal"
                         android:nextFocusRight="@+id/supercerealPlusInitialField"
                         android:nextFocusDown="@+id/supercerealPlusInitialField"
                         android:id="@+id/supercerealLostField"
