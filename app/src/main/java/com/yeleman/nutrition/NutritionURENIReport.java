@@ -53,9 +53,8 @@ public class NutritionURENIReport extends CheckedFormActivity implements View.On
 
         o59ReportButton = (Button) findViewById(R.id.o59URENiButton);
         o59ReportButton.setText(String.format(getString(R.string.nutrition_fillout_section), getString(R.string.o59)));
-        Constants.updateButtonCompletion(o59ReportButton, report.u6_is_complete);
+        Constants.updateButtonCompletion(o59ReportButton, report.o59_is_complete);
         o59ReportButton.setOnClickListener(this);
-
     }
 
     @Override
