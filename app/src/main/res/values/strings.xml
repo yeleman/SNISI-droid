@@ -40,6 +40,14 @@
     <string name="newpassword">Nouveau mot de passe</string>
     <string name="changePasswordButtonText">Envoyer la demande</string>
 
+    <!-- Password Dialog -->
+    <string name="username">Identifiant</string>
+    <string name="password">Mot de passe</string>
+    <string name="submit">Envoyer</string>
+    <string name="cancel">Retour</string>
+    <string name="password_dialog_title">Identification</string>
+    <string name="password_dialog_text">Merci de renseigner vos identifiants SNISI pour transmettre le rapport %1$s</string>
+
     <!-- Preferences -->
     <string name="pref_server_num">Numéro Serveur</string>
     <string name="pref_server_num_summary">Numéro flotte du serveur SNISI</string>
@@ -70,6 +78,7 @@
     <string name="error_dialog_button_text">Fermer et corriger</string>
     <string name="error_field_empty">Champs requis</string>
     <string name="error_field_min_chars">%s caractères minimum</string>
+    <string name="error_field_nopasswd">pas d\'espace, %s caractères mini.</string>
     <string name="error_field_positive_integer">Entier positif requis</string>
     <string name="error_must_be_inferior" formatted="false">%s (%d) ne peut être supérieur ou égal à %s (%d)</string>
     <string name="error_must_be_inferior_or_equal" formatted="false">%s (%d) ne peut être supérieur à %s (%d)</string>

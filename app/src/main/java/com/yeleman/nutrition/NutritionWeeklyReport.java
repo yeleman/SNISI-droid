@@ -1,13 +1,10 @@
 package com.yeleman.nutrition;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -86,6 +83,7 @@ public class NutritionWeeklyReport extends CheckedFormActivity {
         // setup invalid inputs checks
         setupInvalidInputChecks();
 
+        final CheckedFormActivity activity = this;
         saveAndSubmitButton = (Button) findViewById(R.id.saveAndSubmitButton);
         saveAndSubmitButton.setOnClickListener(new View.OnClickListener() {
 
@@ -97,7 +95,9 @@ public class NutritionWeeklyReport extends CheckedFormActivity {
                 // save data to DB
                 storeReportData();
 
-                finish();
+                // transmit SMS
+                requestPasswordAndTransmitSMS(activity, NutritionWeeklyReportData.get().getName(),
+                                              Constants.SMS_KEYWORD_NUT_WEEKLY, buildSMSText());
             }
         });
 
@@ -193,21 +193,10 @@ public class NutritionWeeklyReport extends CheckedFormActivity {
         } else { ureni_checks = true; }
 
         return urenam_checks && urenas_checks && ureni_checks;
-
     }
 
     protected String buildSMSText() {
-        Log.d(TAG, "buildSMSText");
         NutritionWeeklyReportData report = NutritionWeeklyReportData.get();
-        return String.format(Constants.SMS_NUTRITION_WEEKLY_REPORT,
-                             report.mam_screening,
-                             report.sam_screening,
-                             report.sam_screening,
-                             report.mam_cases,
-                             report.mam_deaths,
-                             report.sam_cases,
-                             report.sam_deaths,
-                             report.samc_cases,
-                             report.samc_deaths);
+        return report.buildSMSText();
     }
 }

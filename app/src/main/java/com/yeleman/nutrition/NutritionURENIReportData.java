@@ -102,55 +102,54 @@ public class NutritionURENIReportData extends ReportData {
         report.save();
     }
 
-    protected String buildSMSText() {
-        Log.d(TAG, "buildSMSText");
-        return u6_total_start_m + Constants.SMS_NUTRITION_SPACER + 
-               u6_total_start_f + Constants.SMS_NUTRITION_SPACER + 
-               u6_new_cases + Constants.SMS_NUTRITION_SPACER + 
-               u6_returned + Constants.SMS_NUTRITION_SPACER + 
-               u6_total_in_m + Constants.SMS_NUTRITION_SPACER + 
-               u6_total_in_f + Constants.SMS_NUTRITION_SPACER + 
-               u6_referred + Constants.SMS_NUTRITION_SPACER + 
-               u6_healed + Constants.SMS_NUTRITION_SPACER + 
-               u6_deceased + Constants.SMS_NUTRITION_SPACER + 
-               u6_abandon + Constants.SMS_NUTRITION_SPACER + 
-               u6_not_responding + Constants.SMS_NUTRITION_SPACER + 
-               u6_total_out_m + Constants.SMS_NUTRITION_SPACER + 
-               u6_total_out_f + Constants.SMS_NUTRITION_SPACER + 
-               u6_transferred + Constants.SMS_NUTRITION_SPACER + 
-               u6_total_end_m + Constants.SMS_NUTRITION_SPACER + 
-               u6_total_end_f + Constants.SMS_NUTRITION_SPACER + 
-               u59o6_total_start_m + Constants.SMS_NUTRITION_SPACER + 
-               u59o6_total_start_f + Constants.SMS_NUTRITION_SPACER + 
-               u59o6_new_cases + Constants.SMS_NUTRITION_SPACER + 
-               u59o6_returned + Constants.SMS_NUTRITION_SPACER + 
-               u59o6_total_in_m + Constants.SMS_NUTRITION_SPACER + 
-               u59o6_total_in_f + Constants.SMS_NUTRITION_SPACER + 
-               u59o6_referred + Constants.SMS_NUTRITION_SPACER + 
-               u59o6_healed + Constants.SMS_NUTRITION_SPACER + 
-               u59o6_deceased + Constants.SMS_NUTRITION_SPACER + 
-               u59o6_abandon + Constants.SMS_NUTRITION_SPACER + 
-               u59o6_not_responding + Constants.SMS_NUTRITION_SPACER + 
-               u59o6_total_out_m + Constants.SMS_NUTRITION_SPACER + 
-               u59o6_total_out_f + Constants.SMS_NUTRITION_SPACER + 
-               u59o6_transferred + Constants.SMS_NUTRITION_SPACER + 
-               u59o6_total_end_m + Constants.SMS_NUTRITION_SPACER + 
-               u59o6_total_end_f + Constants.SMS_NUTRITION_SPACER + 
-               o59_total_start_m + Constants.SMS_NUTRITION_SPACER + 
-               o59_total_start_f + Constants.SMS_NUTRITION_SPACER + 
-               o59_new_cases + Constants.SMS_NUTRITION_SPACER + 
-               o59_returned + Constants.SMS_NUTRITION_SPACER + 
-               o59_total_in_m + Constants.SMS_NUTRITION_SPACER + 
-               o59_total_in_f + Constants.SMS_NUTRITION_SPACER + 
-               o59_referred + Constants.SMS_NUTRITION_SPACER + 
-               o59_healed + Constants.SMS_NUTRITION_SPACER + 
-               o59_deceased + Constants.SMS_NUTRITION_SPACER + 
-               o59_abandon + Constants.SMS_NUTRITION_SPACER + 
-               o59_not_responding + Constants.SMS_NUTRITION_SPACER + 
-               o59_total_out_m + Constants.SMS_NUTRITION_SPACER + 
-               o59_total_out_f + Constants.SMS_NUTRITION_SPACER + 
-               o59_transferred + Constants.SMS_NUTRITION_SPACER + 
-               o59_total_end_m + Constants.SMS_NUTRITION_SPACER + 
-               o59_total_end_f;
+    public String buildSMSText() {
+        return Constants.stringFromInteger(u6_total_start_m) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(u6_total_start_f) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(u6_new_cases) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(u6_returned) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(u6_total_in_m) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(u6_total_in_f) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(u6_referred) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(u6_healed) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(u6_deceased) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(u6_abandon) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(u6_not_responding) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(u6_total_out_m) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(u6_total_out_f) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(u6_transferred) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(u6_total_end_m) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(u6_total_end_f) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(u59o6_total_start_m) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(u59o6_total_start_f) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(u59o6_new_cases) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(u59o6_returned) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(u59o6_total_in_m) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(u59o6_total_in_f) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(u59o6_referred) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(u59o6_healed) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(u59o6_deceased) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(u59o6_abandon) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(u59o6_not_responding) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(u59o6_total_out_m) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(u59o6_total_out_f) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(u59o6_transferred) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(u59o6_total_end_m) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(u59o6_total_end_f) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(o59_total_start_m) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(o59_total_start_f) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(o59_new_cases) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(o59_returned) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(o59_total_in_m) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(o59_total_in_f) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(o59_referred) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(o59_healed) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(o59_deceased) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(o59_abandon) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(o59_not_responding) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(o59_total_out_m) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(o59_total_out_f) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(o59_transferred) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(o59_total_end_m) + Constants.SUB_SPACER + 
+               Constants.stringFromInteger(o59_total_end_f);
     }
 }

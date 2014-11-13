@@ -2,6 +2,7 @@ package com.yeleman.snisidroid;
 
 import android.app.Activity;
 import android.app.AlertDialog;
+import android.app.Dialog;
 import android.app.PendingIntent;
 import android.app.ProgressDialog;
 import android.content.Context;
@@ -9,6 +10,7 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.SharedPreferences;
+import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
 import android.telephony.SmsManager;
@@ -16,13 +18,18 @@ import android.telephony.SmsMessage;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.Locale;
 import java.util.Map;
 
 public class CheckedFormActivity extends Activity implements SMSUpdater {
@@ -31,6 +38,10 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
 
     /* progress dialog */
     private ProgressDialog progressDialog;
+
+    /* Username & Password for transmission */
+    protected String username = "-";
+    protected String password = "-";
 
     /* SMS Receiver */
     private SMSReceiver mSmsReceiver = null;
@@ -47,6 +58,15 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
 	protected void updateFieldCheckedStatus(EditText editText, Boolean status) {
 		checkedFields.put(editText.getId(), status);
 	}
+
+    /* Username & Password accessors */
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
 	/* Abstract methods */
 	protected void setupInvalidInputChecks() {}
@@ -143,6 +163,22 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
                 String.valueOf(min_chars));
 		return doCheckAndProceed(test, error_msg, editText);
 	}
+
+    protected boolean assertPasswordAlike(EditText editText) {
+        String text = stringFromField(editText);
+        boolean test = (text.contains(" ") || text.length() < Constants.MIN_CHARS_PASSWORD);
+        String error_msg = String.format(getString(R.string.error_field_nopasswd),
+                String.valueOf(Constants.MIN_CHARS_PASSWORD));
+        return doCheckAndProceed(test, error_msg, editText);
+    }
+
+    protected boolean assertUsernameAlike(EditText editText) {
+        String text = stringFromField(editText);
+        boolean test = (text.contains(" ") || text.length() < Constants.MIN_CHARS_USERNAME);
+        String error_msg = String.format(getString(R.string.error_field_nopasswd),
+                String.valueOf(Constants.MIN_CHARS_USERNAME));
+        return doCheckAndProceed(test, error_msg, editText);
+    }
 
 	protected boolean assertPositiveInteger(EditText editText) {
 		boolean test = (integerFromField(editText, -1) < 0);
@@ -314,6 +350,53 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
         editText.setText(value_str);
     }
 
+    /* SMS Submission Helper */
+    protected void requestPasswordAndTransmitSMS(CheckedFormActivity activity,
+                                                 String reportName,
+                                                 final String smsKeyword,
+                                                 final String smsData) {
+        SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
+        String defaultUsername = sharedPrefs.getString("username", "");
+        AlertDialog.Builder identDialogBuilder = Popups.getDialogBuilder(
+                activity, getString(R.string.password_dialog_title),
+                String.format(getString(R.string.password_dialog_text), reportName),
+                false);
+        LayoutInflater inflater = activity.getLayoutInflater();
+        final View view = (View) inflater.inflate(R.layout.snisi_password_dialog, null);
+        EditText usernameField = (EditText) view.findViewById(R.id.usernameField);
+        usernameField.setText(defaultUsername);
+        identDialogBuilder.setView(view);
+        identDialogBuilder.setPositiveButton(R.string.submit, Popups.getBlankClickListener());
+        identDialogBuilder.setNegativeButton(R.string.cancel, Popups.getBlankClickListener());
+        final AlertDialog identDialog = identDialogBuilder.create();
+        identDialog.show();
+        identDialog.getButton(AlertDialog.BUTTON_POSITIVE).setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                EditText usernameField = (EditText) view.findViewById(R.id.usernameField);
+                EditText passwordField = (EditText) view.findViewById(R.id.passwordField);
+                String username = stringFromField(usernameField);
+                usernameField.setError(null);
+                String password = stringFromField(passwordField);
+                passwordField.setError(null);
+                if (!assertUsernameAlike(usernameField)) {
+                    usernameField.requestFocus();
+                    return;
+                }
+                if (!assertPasswordAlike(passwordField)) {
+                    passwordField.requestFocus();
+                    return;
+                }
+
+                String completeSMSText = Constants.buildCompleteSMSText(smsKeyword, username,
+                                                                        password, smsData);
+                Log.d(TAG, completeSMSText);
+                transmitSMSForReply(completeSMSText);
+
+                identDialog.dismiss();
+            }
+        });
+    }
+
     /* SMS Submission Code */
     protected boolean transmitSMS(String message) {
 		// retrieve server number
@@ -355,9 +438,6 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
                 // close progress
                 if (progressDialog != null) {
                     progressDialog.dismiss();
-                }
-                if (!progressDialog.isShowing()) {
-                    return;
                 }
 
                 // display popup to warn user
@@ -567,7 +647,16 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
         return true;
     }
 
+    protected String stringFromInteger(int data) {
+        return Constants.stringFromInteger(data);
+    }
+
+    protected String stringFromFloat(float data) {
+        return Constants.stringFromFloat(data);
+    }
+
     protected float floatFormat(float value){
+
         DecimalFormat df = new DecimalFormat("########.00");
         String str = df.format(value);
         return Float.parseFloat(str.replace(',', '.'));

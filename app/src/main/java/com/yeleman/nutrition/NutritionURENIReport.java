@@ -76,7 +76,10 @@ public class NutritionURENIReport extends CheckedFormActivity implements View.On
                 getApplicationContext(),
                 (Class<?>) activity);
         startActivity(intent);
+    }
 
-
+    protected String buildSMSText() {
+        NutritionURENIReportData report = NutritionURENIReportData.get();
+        return report.buildSMSText();
     }
 }

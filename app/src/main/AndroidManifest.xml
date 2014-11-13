@@ -53,6 +53,7 @@
             android:label="@string/app_name"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation" />
+
         <activity
             android:name="com.yeleman.nutrition.NutritionHome"
             android:label="@string/nutrition_app_label"

@@ -58,4 +58,6 @@ public class ReportData extends SugarRecord {
         this.updateName();
         this.updateModifiedOn();
     }
+
+    public String buildSMSText() { return "-"; }
 }

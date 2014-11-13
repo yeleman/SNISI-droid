@@ -109,4 +109,9 @@ public class NutritionURENAMReport extends CheckedFormActivity implements View.O
                 (Class<?>) activity);
         startActivity(intent);
     }
+
+    protected String buildSMSText() {
+        NutritionURENAMReportData report = NutritionURENAMReportData.get();
+        return report.buildSMSText();
+    }
 }

@@ -463,4 +463,9 @@ public class NutritionInputsReport extends CheckedFormActivity {
         }
         return isEnsureDataCoherence;
     }
+
+    protected String buildSMSText() {
+        NutritionInputsReportData report = NutritionInputsReportData.get();
+        return report.buildSMSText();
+    }
 }
