@@ -37,11 +37,7 @@ public class NutritionHome extends ActionBarActivity {
         setContentView(R.layout.nutrition_home);
         setTitle(String.format(getString(R.string.sub_app_name_nut), "Menu"));
 
-        SharedPreferences sharedPrefs =
-        	PreferenceManager.getDefaultSharedPreferences(this);
-        is_urenam = sharedPrefs.getBoolean("hc_is_urenam", false);
-        is_urenas = sharedPrefs.getBoolean("hc_is_urenas", false);
-        is_ureni = sharedPrefs.getBoolean("hc_is_ureni", false);
+        setUrenLevels();
 
         if (!is_urenam && !is_urenas && !is_ureni) {
             AlertDialog.Builder prefCheckBuilder = new AlertDialog.Builder(this);
@@ -71,8 +67,45 @@ public class NutritionHome extends ActionBarActivity {
         }
     }
 
+    protected void setUrenLevels() {
+        SharedPreferences sharedPrefs =
+                PreferenceManager.getDefaultSharedPreferences(this);
+        is_urenam = sharedPrefs.getBoolean("hc_is_urenam", false);
+        is_urenas = sharedPrefs.getBoolean("hc_is_urenas", false);
+        is_ureni = sharedPrefs.getBoolean("hc_is_ureni", false);
+    }
+
     protected void setupUI() {
         Log.d(TAG, "setupUI NutritionHome");
+
+        // might have changed
+        setUrenLevels();
+
+        NutritionMonthlyReportData reportMonthly = NutritionMonthlyReportData.get();
+
+        if (reportMonthly.has_urenam != is_urenam) {
+            Log.i(TAG, "URENAM has change in preference");
+            NutritionURENAMReportData reportURENAM = NutritionURENAMReportData.get();
+            if (!is_urenam){
+                reportURENAM.delete();
+            }
+        }
+        if (reportMonthly.has_urenas != is_urenas){
+            Log.i(TAG, "URENAS has change in preference");
+            NutritionURENASReportData reportURENAS = NutritionURENASReportData.get();
+            if (!is_urenam){
+                reportURENAS.delete();
+            }
+        }
+        if (reportMonthly.has_ureni != is_ureni){
+            Log.i(TAG, "URENI has change in preference");
+            NutritionURENIReportData reportURENI = NutritionURENIReportData.get();
+            if (!is_urenam){
+                reportURENI.delete();
+            }
+        }
+        reportMonthly.updateUren(is_urenam, is_urenas, is_ureni);
+
     	weeklyReportButton = (Button) findViewById(R.id.weeklyReportButton);
     	monthlyReportButton = (Button) findViewById(R.id.monthlyReportButton);
         webSiteButton = (Button) findViewById(R.id.webSiteButton);

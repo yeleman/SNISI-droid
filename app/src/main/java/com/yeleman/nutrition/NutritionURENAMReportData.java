@@ -107,28 +107,27 @@ public class NutritionURENAMReportData extends ReportData {
 
     protected Boolean isComplete() {
         return pw_is_complete &&
-                o59_is_complete &&
-                u23o6_is_complete &&
-                u59o23_is_complete &&
-                exsam_is_complete;
+               o59_is_complete &&
+               u23o6_is_complete &&
+               u59o23_is_complete &&
+               exsam_is_complete;
     }
 
     protected Boolean atLeastOneIsCmplete() {
         return pw_is_complete ||
-                o59_is_complete ||
-                u23o6_is_complete ||
-                u59o23_is_complete ||
-                exsam_is_complete;
+               o59_is_complete ||
+               u23o6_is_complete ||
+               u59o23_is_complete ||
+               exsam_is_complete;
     }
 
     protected void resetReportData() {
-        NutritionURENAMReportData report = NutritionURENAMReportData.get();
-        report.pw_is_complete = false;
-        report.o59_is_complete = false;
-        report.u23o6_is_complete = false;
-        report.u59o23_is_complete = false;
-        report.exsam_is_complete = false;
-        report.save();
+        this.pw_is_complete = false;
+        this.o59_is_complete = false;
+        this.u23o6_is_complete = false;
+        this.u59o23_is_complete = false;
+        this.exsam_is_complete = false;
+        this.save();
     }
 
     public String buildSMSText() {

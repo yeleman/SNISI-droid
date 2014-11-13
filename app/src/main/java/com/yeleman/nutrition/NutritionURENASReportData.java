@@ -77,10 +77,9 @@ public class NutritionURENASReportData extends ReportData {
     }
     
     protected void resetReportData() {
-        NutritionURENASReportData report = NutritionURENASReportData.get();
-        report.u59o6_is_complete = false;
-        report.o59_is_complete = false;
-        report.save();
+        this.u59o6_is_complete = false;
+        this.o59_is_complete = false;
+        this.save();
     }
 
     @Override

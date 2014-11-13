@@ -61,9 +61,8 @@ public class NutritionWeeklyReportData extends ReportData {
     }
 
     protected void resetReportData() {
-        NutritionWeeklyReportData report = NutritionWeeklyReportData.get();
-        report.is_complete = false;
-        report.save();
+        this.is_complete = false;
+        this.save();
     }
 
     public String buildSMSText() {

@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.yeleman.snisidroid.CheckedFormActivity;
 import com.yeleman.snisidroid.Constants;
@@ -16,7 +17,7 @@ import com.yeleman.snisidroid.R;
 public class NutritionURENIReport extends CheckedFormActivity implements View.OnClickListener {
     private final static String TAG = Constants.getLogTag("NutritionURENIReport");
 
-
+    private TextView instructionLabel;
     private Button u6ReportButton;
     private Button u59o6URENASButton;
     private Button o59ReportButton;
@@ -25,6 +26,8 @@ public class NutritionURENIReport extends CheckedFormActivity implements View.On
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.nutrition_ureni_report);
+        setTitle(String.format(getString(R.string.sub_app_name_nut),
+                getString(R.string.ureni)));
         Log.d(TAG, "onCreate NutritionURENIReport");
 
         setupSMSReceiver();
@@ -40,6 +43,13 @@ public class NutritionURENIReport extends CheckedFormActivity implements View.On
     protected void setupUI() {
         Log.d(TAG, "setupUI NutritionURENIReport");
         NutritionURENIReportData report = NutritionURENIReportData.get();
+
+        instructionLabel = (TextView) findViewById(R.id.instructionLabel);
+        if (report.isComplete()) {
+            instructionLabel.setText(R.string.nutrition_instructions_complete);
+        } else{
+            instructionLabel.setText(R.string.nutrition_instructions_incomplete);
+        }
 
         u6ReportButton = (Button) findViewById(R.id.u6URENIButton);
         u6ReportButton.setText(String.format(getString(R.string.nutrition_fillout_section), getString(R.string.u6)));

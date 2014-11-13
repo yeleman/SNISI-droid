@@ -95,11 +95,10 @@ public class NutritionURENIReportData extends ReportData {
     }
 
     protected void resetReportData() {
-        NutritionURENIReportData report = NutritionURENIReportData.get();
-        report.u59o6_is_complete = false;
-        report.o59_is_complete = false;
-        report.u6_is_complete = false;
-        report.save();
+        this.u59o6_is_complete = false;
+        this.o59_is_complete = false;
+        this.u6_is_complete = false;
+        this.save();
     }
 
     public String buildSMSText() {
