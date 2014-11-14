@@ -132,7 +132,8 @@ public class NutritionURENAMReportData extends ReportData {
 
     public String buildSMSText() {
         Log.d(TAG, "buildSMSText");
-        return Constants.stringFromInteger(u23o6_total_start_f) + Constants.SUB_SPACER +
+        return Constants.stringFromInteger(u23o6_total_start_m) + Constants.SUB_SPACER +
+        	   Constants.stringFromInteger(u23o6_total_start_f) + Constants.SUB_SPACER +
                Constants.stringFromInteger(u23o6_new_cases) + Constants.SUB_SPACER +
                Constants.stringFromInteger(u23o6_returned) + Constants.SUB_SPACER +
                Constants.stringFromInteger(u23o6_total_in_m) + Constants.SUB_SPACER +

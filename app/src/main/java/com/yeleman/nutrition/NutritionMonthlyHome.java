@@ -72,6 +72,7 @@ public class NutritionMonthlyHome extends CheckedFormActivity implements View.On
             if (monthlyReport.atLeastOneIsComplete()) {
                 requestForResumeReport(this, NutritionMonthlyReportData.get());
             }
+            setupSMSReceiver();
             setupUI();
         }
     }

@@ -403,12 +403,32 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
 		SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
 		String serverNumber = sharedPrefs.getString("serverPhoneNumber", Constants.server_number);
 		try {
-			SmsManager sms = SmsManager.getDefault();
-			PendingIntent piSent = PendingIntent.getBroadcast(
-				this, 0, new Intent(Constants.SMS_SENT_INTENT), 0);
-			PendingIntent piDelivered = PendingIntent.getBroadcast(
-				this, 0, new Intent(Constants.SMS_DELIVERED_INTENT), 0);
-			sms.sendTextMessage(serverNumber, null, message, piSent, piDelivered);
+			// Find out how many parts required
+    		SmsManager sms = SmsManager.getDefault();
+    		ArrayList<String> parts = sms.divideMessage(message);
+        	final int numParts = parts.size();
+
+            // Send regular SMS if only one part
+            if (numParts == 1) {
+                PendingIntent piSent = PendingIntent.getBroadcast(
+                        this, 0, new Intent(Constants.SMS_SENT_INTENT), 0);
+                PendingIntent piDelivered = PendingIntent.getBroadcast(
+                        this, 0, new Intent(Constants.SMS_DELIVERED_INTENT), 0);
+                sms.sendTextMessage(serverNumber, null, message, piSent, piDelivered);
+            } else {
+                ArrayList<PendingIntent> sentIntents = new ArrayList<PendingIntent>();
+                ArrayList<PendingIntent> deliveredIntents = new ArrayList<PendingIntent>();
+
+                for (int i = 0; i < numParts; i++) {
+                    sentIntents.add(PendingIntent.getBroadcast(
+                            this, 0, new Intent(Constants.SMS_SENT_INTENT), 0));
+                    deliveredIntents.add(PendingIntent.getBroadcast(
+                            this, 0, new Intent(Constants.SMS_DELIVERED_INTENT), 0));
+                }
+
+                sms.sendMultipartTextMessage(serverNumber, null, parts, sentIntents, deliveredIntents);
+            }
+
 			Toast toast = Toast.makeText(getApplicationContext(), getString(R.string.notif_sms_sent), Toast.LENGTH_LONG);
 			toast.show();
 		} catch (Exception e) {
