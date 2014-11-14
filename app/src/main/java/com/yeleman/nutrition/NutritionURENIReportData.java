@@ -151,4 +151,66 @@ public class NutritionURENIReportData extends ReportData {
                Constants.stringFromInteger(o59_total_end_m) + Constants.SUB_SPACER + 
                Constants.stringFromInteger(o59_total_end_f);
     }
+
+    protected int totalStartM() {
+        return o59_total_start_m +
+                u59o6_total_start_m +
+                u6_total_start_m;
+    }
+
+    protected int totalStartF() {
+        return o59_total_start_f +
+               u59o6_total_start_f +
+               u6_total_start_f;
+    }
+
+    protected int totalStart() {
+        return totalStartF() + totalStartM();
+    }
+
+    protected int totalInM() {
+        return o59_total_in_m +
+               u59o6_total_in_m +
+               u6_total_in_m;
+    }
+    protected int totalInF() {
+        return o59_total_in_f +
+               u59o6_total_in_f +
+               u6_total_in_f;
+    }
+
+    protected int totalIn() {
+        return totalInF() + totalInM();
+    }
+
+    protected int totalOutM() {
+        return o59_total_out_m +
+               u59o6_total_out_m +
+               u6_total_out_m;
+    }
+
+    protected int totalOutF() {
+        return o59_total_out_f +
+               u59o6_total_out_f +
+               u6_total_out_f;
+    }
+
+    protected int totalOut() {
+        return totalOutF() + totalOutM();
+    }
+
+    protected int totalEndM() {
+        return o59_total_end_m +
+               u59o6_total_end_m +
+               u6_total_end_m;
+    }
+    protected int totalEndF() {
+        return o59_total_end_f +
+               u59o6_total_end_f +
+               u6_total_end_f;
+    }
+
+    protected int totalEnd() {
+        return totalEndM() + totalEndF();
+    }
 }

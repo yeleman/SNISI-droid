@@ -48,6 +48,14 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="@string/nutrition_resume_report_label"
+            android:id="@+id/resumeReportButton"
+            android:padding="10dp"
+            android:layout_margin="10dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/nutrition_weekly_save_submit"
             android:id="@+id/saveAndSubmitButton"
             android:padding="10dp"

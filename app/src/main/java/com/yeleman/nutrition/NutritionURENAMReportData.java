@@ -194,4 +194,74 @@ public class NutritionURENAMReportData extends ReportData {
                Constants.stringFromInteger(exsam_total_end_m) + Constants.SUB_SPACER +
                Constants.stringFromInteger(exsam_total_end_f);
     }
+
+    protected int totalStartM() {
+        return u23o6_total_start_m +
+               u59o23_total_start_m +
+               o59_total_start_m +
+               exsam_total_start_m;
+    }
+
+    protected int totalStartF() {
+        return u23o6_total_start_f +
+               u59o23_total_start_f +
+               o59_total_start_f + 
+               pw_total_start_f  +
+               exsam_total_start_f;
+    }
+
+    protected int totalStart() {
+        return totalStartF() + totalStartM();
+    }
+
+    protected int totalInM() {
+        return u23o6_total_in_m +
+               u59o23_total_in_m +
+               o59_total_in_m;
+    }
+    protected int totalInF() {
+        return u23o6_total_in_f +
+               u59o23_total_in_f +
+               o59_total_in_f + 
+               pw_total_in_f;
+    }
+
+    protected int totalIn() {
+        return totalInF() + totalInM();
+    }
+
+    protected int totalOutM() {
+        return u23o6_total_out_m +
+               u59o23_total_out_m +
+               o59_total_out_m;
+    }
+
+    protected int totalOutF() {
+        return u23o6_total_out_f +
+               u59o23_total_out_f +
+               o59_total_out_f + 
+               pw_total_out_f;
+    }
+
+    protected int totalOut() {
+        return totalOutF() + totalOutM();
+    }
+
+    protected int totalEndM() {
+        return u23o6_total_end_m +
+               u59o23_total_end_m +
+               o59_total_end_m +
+               exsam_total_end_m;
+    }
+    protected int totalEndF() {
+        return u23o6_total_end_f +
+               u59o23_total_end_f +
+               o59_total_end_f + 
+               pw_total_end_f  +
+               exsam_total_end_f;
+    }
+
+    protected int totalEnd() {
+        return totalEndM() + totalEndF();
+    }
 }

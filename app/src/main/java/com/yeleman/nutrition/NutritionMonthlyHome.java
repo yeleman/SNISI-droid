@@ -23,6 +23,7 @@ public class NutritionMonthlyHome extends CheckedFormActivity implements View.On
     private Button ureniReportButton;
     private Button urenamReportButton;
     private Button inputsReportButton;
+    private Button resumeReportButton;
     private Button saveAndSubmitButton;
 
     private boolean is_urenam, is_urenas, is_ureni;
@@ -90,6 +91,8 @@ public class NutritionMonthlyHome extends CheckedFormActivity implements View.On
         urenasReportButton = (Button) findViewById(R.id.monthlyURENASButton);
         ureniReportButton = (Button) findViewById(R.id.monthlyURENIButton);
         inputsReportButton = (Button) findViewById(R.id.monthlyInputsButton);
+        resumeReportButton = (Button) findViewById(R.id.resumeReportButton);
+        resumeReportButton.setEnabled(false);
         saveAndSubmitButton = (Button) findViewById(R.id.saveAndSubmitButton);
         saveAndSubmitButton.setEnabled(false);
 
@@ -125,6 +128,8 @@ public class NutritionMonthlyHome extends CheckedFormActivity implements View.On
         } else{
             ureniReportButton.setVisibility(View.GONE);
         }
+        // Resume Report
+        resumeReportButton.setOnClickListener(this);
 
         // Stocks
         inputsReportButton.setText(String.format(getString(R.string.nutrition_fillout_report),
@@ -148,6 +153,7 @@ public class NutritionMonthlyHome extends CheckedFormActivity implements View.On
         NutritionMonthlyReportData monthlyReport = NutritionMonthlyReportData.get();
         monthlyReport.updateUren(is_urenam, is_urenas, is_ureni);
         if (monthlyReport.isComplete()) {
+            resumeReportButton.setEnabled(true);
             saveAndSubmitButton.setEnabled(true);
         }
     }
@@ -175,6 +181,9 @@ public class NutritionMonthlyHome extends CheckedFormActivity implements View.On
                 break;
             case R.id.monthlyInputsButton:
                 activity = NutritionInputsReport.class;
+                break;
+            case R.id.resumeReportButton:
+                activity = NutritionResumeReport.class;
                 break;
         }
         Intent intent = new Intent(

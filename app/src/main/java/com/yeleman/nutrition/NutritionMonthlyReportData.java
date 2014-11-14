@@ -108,4 +108,81 @@ public class NutritionMonthlyReportData extends ReportData {
         this.has_ureni = has_ureni;
         this.save();
     }
+    // Start
+    protected int totalStartMURENI() {
+        return ureniReport.totalStartM();
+    }
+    protected int totalStartFURENI() {
+        return ureniReport.totalStartF();
+    }
+    protected int totalStartURENI() {
+        return totalStartFURENI() + totalStartMURENI();
+    }
+    protected int totalStartMURENAMAndRENAS() {
+        return urenasReport.totalStartM() + urenamReport.totalStartM();
+    }
+    protected int totalStartFURENAMAndRENAS() {
+        return urenasReport.totalStartF() + urenamReport.totalStartF();
+    }
+    protected int totalStartURENAMAndRENAS() {
+        return totalStartMURENAMAndRENAS() + totalStartFURENAMAndRENAS();
+    }
+    //  In
+    protected int totalInMURENI() {
+        return ureniReport.totalInM();
+    }
+    protected int totalInFURENI() {
+        return ureniReport.totalInF();
+    }    
+    protected int totalInURENI() {
+        return totalInMURENI() + totalInFURENI();
+    }
+    protected int totalInMURENAMAndRENAS() {
+        return urenasReport.totalInM() + urenamReport.totalInM();
+    }
+    protected int totalInFURENAMAndRENAS() {
+        return urenasReport.totalInF() + urenamReport.totalInF();
+    }
+    protected int totalInURENAMAndRENAS() {
+        return totalInFURENAMAndRENAS() + totalInMURENAMAndRENAS();
+    }
+    // Out
+    protected int totalOutMURENI() {
+        return ureniReport.totalOutM();
+    }
+    protected int totalOutFURENI() {
+        return ureniReport.totalOutF();
+    }
+    protected int totalOutURENI() {
+        return totalOutMURENI() + totalOutFURENI();
+    }
+    protected int totalOutMURENAMAndRENAS() {
+        return urenasReport.totalOutM() + urenamReport.totalOutM();
+    }
+    protected int totalOutFURENAMAndRENAS() {
+        return urenasReport.totalOutF() + urenamReport.totalOutF();
+    }
+
+    protected int totalOutURENAMAndRENAS() {
+        return totalOutMURENAMAndRENAS() + totalOutFURENAMAndRENAS();
+    }
+    // End
+    protected int totalEndMURENI() {
+        return ureniReport.totalEndM();
+    }
+    protected int totalEndFURENI() {
+        return ureniReport.totalEndF();
+    }
+    protected int totalEndURENI() {
+        return totalEndFURENI() + totalEndMURENI();
+    }
+    protected int totalEndMURENAMAndRENAS() {
+        return urenasReport.totalEndM() + urenamReport.totalEndM();
+    }
+    protected int totalEndFURENAMAndRENAS() {
+        return urenasReport.totalEndF() + urenamReport.totalEndF();
+    }
+    protected int totalEndURENAMAndRENAS() {
+        return totalEndMURENAMAndRENAS() + totalEndFURENAMAndRENAS();
+    }
 }
