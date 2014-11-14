@@ -451,14 +451,27 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
         return transmitSMS(message);
     }
 
+    protected boolean closeProgressDialogIfShowing() {
+    	boolean wasShowing = false;
+    	if (progressDialog != null) {
+            wasShowing = progressDialog.isShowing();
+            if (wasShowing) {
+            	progressDialog.dismiss();
+            }
+
+        } 
+        return wasShowing;
+    }
+
     protected void setProgressTimeOut(long time) {
         final Activity activity = this;
         new Handler().postDelayed(new Runnable() {
             public void run() {
-                // close progress
-                if (progressDialog != null) {
-                    progressDialog.dismiss();
-                }
+            	// if dialog was one, that's an error and we need to 
+            	// display timeout message
+				if (!closeProgressDialogIfShowing()) {
+					return;
+				}
 
                 // display popup to warn user
                 AlertDialog dialog = Popups.getStandardDialog(
@@ -474,7 +487,9 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
         if (mSmsReceiver != null) {
             Log.d(TAG, "registering SMSReceiver");
             IntentFilter filter = new IntentFilter();
-            filter.setPriority(1);
+            // must be set high so that we have priority over other SMS Apps.
+            // doesn't matter as we don't discard SMS.
+            filter.setPriority(1000);
             filter.addAction("android.provider.Telephony.SMS_RECEIVED");
             registerReceiver(mSmsReceiver, filter);
         }
