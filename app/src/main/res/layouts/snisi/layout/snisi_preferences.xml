@@ -9,12 +9,15 @@
             android:title="@string/pref_server_num"
             android:summary="@string/pref_server_num_summary"
             android:key="serverPhoneNumber"
+            android:inputType="number"
+            android:ems="10"
             android:defaultValue="70062552"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
       <EditTextPreference
             android:title="@string/pref_username"
             android:summary="@string/pref_username_summary"
+            android:singleLine="true"
             android:key="username"/>
     </PreferenceCategory>
     <PreferenceCategory android:title="@string/nutrition_app_label"

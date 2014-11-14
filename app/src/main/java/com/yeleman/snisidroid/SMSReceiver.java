@@ -11,7 +11,7 @@ import android.telephony.SmsMessage;
 
 import java.util.ArrayList;
 
-class SMSReceiver extends BroadcastReceiver
+public class SMSReceiver extends BroadcastReceiver
 {
     private static final String TAG = Constants.getLogTag("SMSReceiver");
 

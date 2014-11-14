@@ -32,7 +32,7 @@ public class Constants {
     public static final String SMS_SENT_INTENT = "com.yeleman.snisidroid.SMS_SENT";
     public static final String SMS_DELIVERED_INTENT = "com.yeleman.snisidroid.SMS_DELIVERED";
 
-    public static final int NB_SECONDS_WAIT_FOR_REPLY = 60;
+    public static final int NB_SECONDS_WAIT_FOR_REPLY = 150;
     public static final String SMS_CHANGE_PASSWRD = "passwd %1$s %2$s %3$s";
     public static final String SMS_NUTRITION_MONTHLY_REPORT = "nut-%1$s-%2$s-%3$s-%4$s-%5$s-%6$s-%7$s-%8$s";
 
