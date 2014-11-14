@@ -29,7 +29,7 @@ public class NutritionURENASReportData extends ReportData {
         int u59o6_referred = -1;
         int u59o6_total_end_m = -1;
         int u59o6_total_end_f = -1;
-        Boolean u59o6_is_complete = false;
+        boolean u59o6_is_complete = false;
         // Pregnant & Breast Feeding Women
         int o59_total_start_m = -1;
         int o59_total_start_f = -1;
@@ -47,7 +47,7 @@ public class NutritionURENASReportData extends ReportData {
         int o59_referred = -1;
         int o59_total_end_m = -1;
         int o59_total_end_f = -1;
-        Boolean o59_is_complete = false;
+        boolean o59_is_complete = false;
 
     public NutritionURENASReportData() {}
 
@@ -72,7 +72,7 @@ public class NutritionURENASReportData extends ReportData {
         return u59o6_is_complete && o59_is_complete;
     }
 
-    protected Boolean atLeastOneIsCmplete(){
+    protected Boolean atLeastOneIsComplete(){
         return u59o6_is_complete || o59_is_complete;
     }
     

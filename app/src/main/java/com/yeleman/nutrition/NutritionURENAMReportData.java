@@ -113,7 +113,7 @@ public class NutritionURENAMReportData extends ReportData {
                exsam_is_complete;
     }
 
-    protected Boolean atLeastOneIsCmplete() {
+    protected Boolean atLeastOneIsComplete() {
         return pw_is_complete ||
                o59_is_complete ||
                u23o6_is_complete ||

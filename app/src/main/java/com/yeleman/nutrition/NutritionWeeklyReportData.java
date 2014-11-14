@@ -19,15 +19,14 @@ public class NutritionWeeklyReportData extends ReportData {
             NutritionWeeklyReportData.class.getSimpleName());
 
     int mam_screening = -1;
-    int sam_screening = -1;
-    int samc_screening = -1;
-
     int mam_cases = -1;
     int mam_deaths = -1;
 
+    int sam_screening = -1;
     int sam_cases = -1;
     int sam_deaths = -1;
 
+    int samc_screening = -1;
     int samc_cases = -1;
     int samc_deaths = -1;
 
@@ -56,7 +55,7 @@ public class NutritionWeeklyReportData extends ReportData {
         return is_complete;
     }
 
-    protected Boolean atLeastOneIsCmplete(){
+    protected Boolean atLeastOneIsComplete(){
         return is_complete;
     }
 
@@ -67,16 +66,13 @@ public class NutritionWeeklyReportData extends ReportData {
 
     public String buildSMSText() {
         return Constants.stringFromInteger(mam_screening) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(sam_screening) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(sam_screening) + Constants.SUB_SPACER +
                Constants.stringFromInteger(mam_cases) + Constants.SUB_SPACER +
                Constants.stringFromInteger(mam_deaths) + Constants.SUB_SPACER +
+               Constants.stringFromInteger(sam_screening) + Constants.SUB_SPACER +
                Constants.stringFromInteger(sam_cases) + Constants.SUB_SPACER +
                Constants.stringFromInteger(sam_deaths) + Constants.SUB_SPACER +
+               Constants.stringFromInteger(samc_screening) + Constants.SUB_SPACER +
                Constants.stringFromInteger(samc_cases) + Constants.SUB_SPACER +
                Constants.stringFromInteger(samc_deaths);
     }
 }
-
-
-

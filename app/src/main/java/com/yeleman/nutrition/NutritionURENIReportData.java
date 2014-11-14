@@ -29,7 +29,7 @@ public class NutritionURENIReportData extends ReportData {
         int u6_transferred = -1;
         int u6_total_end_m = -1;
         int u6_total_end_f = -1;
-        Boolean u6_is_complete = false;
+        boolean u6_is_complete = false;
         //  6-59 months
         int u59o6_total_start_m = -1;
         int u59o6_total_start_f = -1;
@@ -47,7 +47,7 @@ public class NutritionURENIReportData extends ReportData {
         int u59o6_transferred = -1;
         int u59o6_total_end_m = -1;
         int u59o6_total_end_f = -1;
-        Boolean u59o6_is_complete = false;
+        boolean u59o6_is_complete = false;
         //  Over 59 months
         int o59_total_start_m = -1;
         int o59_total_start_f = -1;
@@ -65,7 +65,7 @@ public class NutritionURENIReportData extends ReportData {
         int o59_transferred = -1;
         int o59_total_end_m = -1;
         int o59_total_end_f = -1;
-        Boolean o59_is_complete = false;
+        boolean o59_is_complete = false;
 
     public NutritionURENIReportData() {}
 
@@ -90,7 +90,7 @@ public class NutritionURENIReportData extends ReportData {
         return o59_is_complete && o59_is_complete && u6_is_complete;
     }
 
-    protected Boolean atLeastOneIsCmplete(){
+    protected Boolean atLeastOneIsComplete(){
         return o59_is_complete || o59_is_complete || u6_is_complete;
     }
 

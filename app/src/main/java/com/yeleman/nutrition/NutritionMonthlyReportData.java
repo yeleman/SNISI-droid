@@ -63,10 +63,10 @@ public class NutritionMonthlyReportData extends ReportData {
     }
 
     protected Boolean atLeastOneIsComplete(){
-        return urenamReport.atLeastOneIsCmplete() ||
-               urenasReport.atLeastOneIsCmplete() ||
-               ureniReport.atLeastOneIsCmplete() ||
-               inputsReport.atLeastOneIsCmplete();
+        return urenamReport.atLeastOneIsComplete() ||
+               urenasReport.atLeastOneIsComplete() ||
+               ureniReport.atLeastOneIsComplete() ||
+               inputsReport.atLeastOneIsComplete();
     }
 
     protected void resetReportData() {
@@ -77,10 +77,29 @@ public class NutritionMonthlyReportData extends ReportData {
     }
 
     public String buildSMSText() {
-        return urenamReport.buildSMSText() + Constants.SPACER +
-               urenasReport.buildSMSText() + Constants.SPACER +
-               ureniReport.buildSMSText() + Constants.SPACER +
-               inputsReport.buildSMSText();
+        String smsText = "";
+
+        if (has_urenam) {
+            smsText += urenamReport.buildSMSText();
+        } else {
+            smsText += "-";
+        }
+        smsText +=  Constants.SPACER;
+
+        if (has_urenas) {
+            smsText += urenasReport.buildSMSText();
+        } else {
+            smsText += "-";
+        }
+        smsText +=  Constants.SPACER;
+
+        if (has_ureni) {
+            smsText += ureniReport.buildSMSText();
+        } else {
+            smsText += "-";
+        }
+        smsText +=  Constants.SPACER + inputsReport.buildSMSText();
+        return smsText;
     }
 
     public void updateUren(boolean has_urenam, boolean has_urenas, boolean has_ureni) {

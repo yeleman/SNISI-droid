@@ -83,7 +83,7 @@ public class NutritionInputsReportData extends ReportData {
         int iron_folic_acid_received = -1;
         int iron_folic_acid_used = -1;
         int iron_folic_acid_lost = -1;
-        Boolean input_is_complete = false;
+        boolean input_is_complete = false;
 
 
     public NutritionInputsReportData() {}
@@ -109,7 +109,7 @@ public class NutritionInputsReportData extends ReportData {
         return input_is_complete;
     }
 
-    protected Boolean atLeastOneIsCmplete(){
+    protected Boolean atLeastOneIsComplete(){
         return input_is_complete;
     }
     
