@@ -99,8 +99,8 @@ public class NutritionResumeReport extends Activity {
         endTotalValueMUreni.setText(String.valueOf(report.totalEndMURENI()));
 
         // Inputs
-        TextView inputBalance = (TextView) findViewById(R.id.plumpyBalance);
-        inputBalance.setText(String.valueOf(report.balancePlumpy()));
+        TextView plumpyBalance = (TextView) findViewById(R.id.plumpyBalance);
+        plumpyBalance.setText(String.valueOf(report.balancePlumpy()));
 
         TextView milkF75Balance = (TextView) findViewById(R.id.milkF75Balance);
         milkF75Balance.setText(String.valueOf(report.balanceMilkF75()));
@@ -115,7 +115,7 @@ public class NutritionResumeReport extends Activity {
         plumpySupBalance.setText(String.valueOf(report.balancePlumpySup()));
 
         TextView supercerealBalance = (TextView) findViewById(R.id.supercerealBalance);
-        supercerealBalance.setText(String.valueOf(report.balancePlumpySup()));
+        supercerealBalance.setText(String.valueOf(report.balanceSupercereal()));
 
         TextView supercerealPlusBalance = (TextView) findViewById(R.id.supercerealPlusBalance);
         supercerealPlusBalance.setText(String.valueOf(report.balanceSupercerealPlus()));
