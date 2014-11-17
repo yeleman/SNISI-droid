@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <LinearLayout
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
@@ -16,7 +16,6 @@
             android:background="#ffffff"
             android:id="@+id/tableURENAMAndURENAS">
             <!--URENAM + URENAS -->
-
         </TableLayout>
         <TableLayout
             android:layout_width="match_parent"
@@ -25,9 +24,392 @@
             android:stretchColumns="*"
             android:background="#ffffff"
             android:id="@+id/tableURENI">
-            <!--URENAM + URENAS -->
-
+            <!--URENI -->
         </TableLayout>
+        <!-- Intrants -->
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:shrinkColumns="*"
+            android:stretchColumns="*"
+            android:background="#ffffff"
+            android:id="@+id/tableInputs">
+            <TextView
+                android:id="@+id/titleLabelInputs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="18dp"
+                android:text="Stocks"
+                android:layout_span="3"
+                android:padding="10dp"
+                android:background="#b0b0b0"
+                android:textColor="#000"
+                android:gravity="center" />
+            <TableRow
+                android:id="@+id/plumpyRow"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:weightSum="1"
+                android:background="#d3d3d3">
+                <TextView
+                    android:id="@+id/plumpyLabel"
+                    android:text="@string/nutrition_plumpy_nut"
+                    android:textColor="#000000"
+                    android:gravity="left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:textSize="17dp"
+                    android:paddingLeft="10dp" />
+                <TextView
+                    android:id="@+id/plumpyBalance"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:background="#d3d3d3"
+                    android:textSize="17dp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/milkF75Row"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:weightSum="1">
+                <TextView
+                    android:id="@+id/milkF75Label"
+                    android:text="@string/nutrition_milk_f75"
+                    android:textColor="#000000"
+                    android:gravity="left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:textSize="17dp"
+                    android:paddingLeft="10dp" />
+                <TextView
+                    android:id="@+id/milkF75Balance"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:background="#fff8fbff"
+                    android:textSize="17dp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/milkF100Row"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:weightSum="1">
+                android:id="@+id/milkF75Row"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:weightSum="1">
+                <TextView
+                    android:id="@+id/milkF100Label"
+                    android:text="@string/nutrition_milk_f100"
+                    android:background="#dcdcdc"
+                    android:textColor="#000000"
+                    android:gravity="left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:textSize="17dp"
+                    android:paddingLeft="10dp" />
+                <TextView
+                    android:id="@+id/milkF100Balance"
+                    android:background="#d3d3d3"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:textSize="17dp" />
+            </TableRow>
 
+            <TableRow
+                android:id="@+id/resomalRow"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:weightSum="1">
+                <TextView
+                    android:id="@+id/resumeLabel"
+                    android:text="@string/nutrition_resomal"
+                    android:textColor="#000000"
+                    android:gravity="left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:textSize="17dp"
+                    android:paddingLeft="10dp" />
+                <TextView
+                    android:id="@+id/resumeBalance"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:background="#fff8fbff"
+                    android:textSize="17dp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/plumpySupRow"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:weightSum="1">
+                <TextView
+                    android:id="@+id/plumpySupLabel"
+                    android:text="@string/nutrition_plumpy_sup"
+                    android:background="#dcdcdc"
+                    android:textColor="#000000"
+                    android:gravity="left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:textSize="17dp"
+                    android:paddingLeft="10dp" />
+                <TextView
+                    android:id="@+id/plumpySupBalance"
+                    android:background="#d3d3d3"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:textSize="17dp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/supercerealRow"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:weightSum="1">
+                <TextView
+                    android:id="@+id/supercerealLabel"
+                    android:text="@string/nutrition_supercereal"
+                    android:textColor="#000000"
+                    android:gravity="left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:textSize="17dp"
+                    android:paddingLeft="10dp" />
+                <TextView
+                    android:id="@+id/supercerealBalance"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:background="#fff8fbff"
+                    android:textSize="17dp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/supercerealPlusRow"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:weightSum="1">
+                <TextView
+                    android:id="@+id/supercerealPlusLabel"
+                    android:text="@string/nutrition_supercereal_plus"
+                    android:background="#dcdcdc"
+                    android:textColor="#000000"
+                    android:gravity="left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:textSize="17dp"
+                    android:paddingLeft="10dp" />
+                <TextView
+                    android:id="@+id/supercerealPlusBalance"
+                    android:background="#d3d3d3"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:textSize="17dp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/oilRow"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:weightSum="1">
+                <TextView
+                    android:id="@+id/oilLabel"
+                    android:text="@string/nutrition_oil"
+                    android:textColor="#000000"
+                    android:gravity="left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:textSize="17dp"
+                    android:paddingLeft="10dp" />
+                <TextView
+                    android:id="@+id/oilBalance"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:textSize="17dp" />
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/amoxycilline125mgVialsRow"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:weightSum="1"
+                android:background="#dcdcdc">
+                <TextView
+                    android:id="@+id/amoxycilline125mgVialsLabel"
+                    android:text="@string/nutrition_amoxycilline_125mg_vials"
+                    android:textColor="#000000"
+                    android:gravity="left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:textSize="17dp"
+                    android:paddingLeft="10dp" />
+                <TextView
+                    android:id="@+id/amoxycilline125mgVialsBalance"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:background="#d3d3d3"
+                    android:textSize="17dp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/amoxycilline250mgVialsRow"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:weightSum="1">
+                <TextView
+                    android:id="@+id/amoxycilline250mgVialsLabel"
+                    android:text="@string/nutrition_amoxycilline_250mg_caps"
+                    android:textColor="#000000"
+                    android:gravity="left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:textSize="17dp"
+                    android:paddingLeft="10dp" />
+                <TextView
+                    android:id="@+id/amoxycilline250mgVialsBalance"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:background="#fff8fbff"
+                    android:textSize="17dp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/albendazole400mgRow"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:weightSum="1"
+                android:background="#dcdcdc">
+                <TextView
+                    android:id="@+id/albendazole400mgLabel"
+                    android:text="@string/nutrition_albendazole_400mg"
+                    android:textColor="#000000"
+                    android:gravity="left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:textSize="17dp"
+                    android:paddingLeft="10dp" />
+                <TextView
+                    android:id="@+id/albendazole400mgBalance"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:background="#d3d3d3"
+                    android:textSize="17dp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/vita100KUiInjectableRow"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:weightSum="1">
+                <TextView
+                    android:id="@+id/vita100KUiInjectableLabel"
+                    android:text="@string/nutrition_vita_100K_ui_injectable"
+                    android:textColor="#000000"
+                    android:gravity="left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:textSize="17dp"
+                    android:paddingLeft="10dp" />
+                <TextView
+                    android:id="@+id/vita100KUiInjectableBalance"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:background="#fff8fbff"
+                    android:textSize="17dp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/vita200KUiInjectableRow"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:weightSum="1"
+                android:background="#dcdcdc">
+                <TextView
+                    android:id="@+id/vita200KUiInjectableLabel"
+                    android:text="@string/nutrition_vita_200K_ui_injectable"
+                    android:textColor="#000000"
+                    android:gravity="left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:textSize="17dp"
+                    android:paddingLeft="10dp" />
+                <TextView
+                    android:id="@+id/vita200KUiInjectableBalance"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:background="#d3d3d3"
+                    android:textSize="17dp" />
+            </TableRow>
+            <TableRow
+                android:id="@+id/ironFolicAcidRow"
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:weightSum="1"
+                android:layout_marginBottom="10dp">
+                <TextView
+                    android:id="@+id/ironFolicAcidLabel"
+                    android:text="@string/nutrition_vita_200K_ui_injectable"
+                    android:textColor="#000000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:textSize="17dp"
+                    android:paddingLeft="10dp"
+                    android:gravity="left" />
+                <TextView
+                    android:id="@+id/ironFolicAcidBalance"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:background="#fff8fbff"
+                    android:textIsSelectable="false"
+                    android:textSize="17dp" />
+            </TableRow>
+        </TableLayout>
     </LinearLayout>
 </ScrollView>

@@ -35,8 +35,8 @@ public class NutritionResumeReport extends Activity {
 
         LayoutInflater inflater = (LayoutInflater) getBaseContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         // URENAM + URENAS
-        ViewGroup urenam_and_urenas_parent = (ViewGroup) findViewById(R.id.tableURENAMAndURENAS);
-        View inflated_urenam_and_urenas = inflater.inflate(R.layout.nutrition_resume_unit, urenam_and_urenas_parent);
+        ViewGroup urenamAndUrenasParent = (ViewGroup) findViewById(R.id.tableURENAMAndURENAS);
+        View inflated_urenam_and_urenas = inflater.inflate(R.layout.nutrition_resume_uren_unit, urenamAndUrenasParent);
         TextView startTotalsValueUrenasAndURENAM = (TextView) inflated_urenam_and_urenas.findViewById(R.id.startTotalsValue);
         startTotalsValueUrenasAndURENAM.setText(String.valueOf(report.totalStartURENAMAndRENAS()));
         TextView startTotalValueFUrenasAndURENAM = (TextView) inflated_urenam_and_urenas.findViewById(R.id.startTotalValueF);
@@ -66,8 +66,8 @@ public class NutritionResumeReport extends Activity {
         endTotalValueMUrenasAndURENAM.setText(String.valueOf(report.totalEndMURENAMAndRENAS()));
 
         // URENI
-        ViewGroup ureni_parent = (ViewGroup) findViewById(R.id.tableURENI);
-        View inflated_ureni = inflater.inflate(R.layout.nutrition_resume_unit, ureni_parent);
+        ViewGroup ureniPrent = (ViewGroup) findViewById(R.id.tableURENI);
+        View inflated_ureni = inflater.inflate(R.layout.nutrition_resume_uren_unit, ureniPrent);
         TextView ureniLabel = (TextView) inflated_ureni.findViewById(R.id.titleLabelUREN);
         ureniLabel.setText("URENI");
         TextView startTotalsValueUreni = (TextView) inflated_ureni.findViewById(R.id.startTotalsValue);
@@ -98,5 +98,47 @@ public class NutritionResumeReport extends Activity {
         TextView endTotalValueMUreni = (TextView) inflated_ureni.findViewById(R.id.endTotalValueM);
         endTotalValueMUreni.setText(String.valueOf(report.totalEndMURENI()));
 
+        // Inputs
+        TextView inputBalance = (TextView) findViewById(R.id.plumpyBalance);
+        inputBalance.setText(String.valueOf(report.balancePlumpy()));
+
+        TextView milkF75Balance = (TextView) findViewById(R.id.milkF75Balance);
+        milkF75Balance.setText(String.valueOf(report.balanceMilkF75()));
+
+        TextView milkF100Balance = (TextView) findViewById(R.id.milkF100Balance);
+        milkF100Balance.setText(String.valueOf(report.balanceMilkF100()));
+
+        TextView resomalBalance = (TextView) findViewById(R.id.resumeBalance);
+        resomalBalance.setText(String.valueOf(report.balanceResomal()));
+
+        TextView plumpySupBalance = (TextView) findViewById(R.id.plumpySupBalance);
+        plumpySupBalance.setText(String.valueOf(report.balancePlumpySup()));
+
+        TextView supercerealBalance = (TextView) findViewById(R.id.supercerealBalance);
+        supercerealBalance.setText(String.valueOf(report.balancePlumpySup()));
+
+        TextView supercerealPlusBalance = (TextView) findViewById(R.id.supercerealPlusBalance);
+        supercerealPlusBalance.setText(String.valueOf(report.balanceSupercerealPlus()));
+
+        TextView oilBalance = (TextView) findViewById(R.id.oilBalance);
+        oilBalance.setText(String.valueOf(report.balanceOil()));
+
+        TextView amoxycilline125mgVialsBalance = (TextView) findViewById(R.id.amoxycilline125mgVialsBalance);
+        amoxycilline125mgVialsBalance.setText(String.valueOf(report.balanceAmoxycilline125mgVials()));
+
+        TextView amoxycilline250mgVialsBalance = (TextView) findViewById(R.id.amoxycilline250mgVialsBalance);
+        amoxycilline250mgVialsBalance.setText(String.valueOf(report.balanceAmoxycilline250mgCaps()));
+
+        TextView albendazole400mgBalance = (TextView) findViewById(R.id.albendazole400mgBalance);
+        albendazole400mgBalance.setText(String.valueOf(report.balanceAlbendazole400mg()));
+
+        TextView vita100KUiInjectableBalance = (TextView) findViewById(R.id.vita100KUiInjectableBalance);
+        vita100KUiInjectableBalance.setText(String.valueOf(report.balanceVita100KUiInjectable()));
+
+        TextView vita200KUiInjectableBalance = (TextView) findViewById(R.id.vita200KUiInjectableBalance);
+        vita200KUiInjectableBalance.setText(String.valueOf(report.balanceVita200KUiInjectable()));
+
+        TextView ironFolicAcidBalance = (TextView) findViewById(R.id.ironFolicAcidBalance);
+        ironFolicAcidBalance.setText(String.valueOf(report.balanceIronFolicAcid()));
     }
 }

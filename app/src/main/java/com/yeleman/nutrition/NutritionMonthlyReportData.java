@@ -43,7 +43,7 @@ public class NutritionMonthlyReportData extends ReportData {
         return "Nut Monthy";
     }
 
-    protected Boolean isComplete(){
+    protected Boolean isComplete() {
 
 
         Boolean urenam, urenas, ureni, inputs;
@@ -62,7 +62,7 @@ public class NutritionMonthlyReportData extends ReportData {
         return urenam && urenas && ureni && inputs;
     }
 
-    protected Boolean atLeastOneIsComplete(){
+    protected Boolean atLeastOneIsComplete() {
         return urenamReport.atLeastOneIsComplete() ||
                urenasReport.atLeastOneIsComplete() ||
                ureniReport.atLeastOneIsComplete() ||
@@ -184,5 +184,92 @@ public class NutritionMonthlyReportData extends ReportData {
     }
     protected int totalEndURENAMAndRENAS() {
         return totalEndMURENAMAndRENAS() + totalEndFURENAMAndRENAS();
+    }
+
+    protected int balancePlumpy() {
+        return (inputsReport.plumpy_nut_initial + inputsReport.plumpy_nut_received) -
+               (inputsReport.plumpy_nut_used + inputsReport.plumpy_nut_lost);
+    }
+
+    protected int balanceMilkF75() {
+        return (inputsReport.milk_f75_initial +
+                inputsReport.milk_f75_received) -
+               (inputsReport.milk_f75_used + 
+                inputsReport.milk_f75_lost);
+    }
+    
+    protected int balanceMilkF100() {
+        return (inputsReport.milk_f100_initial +
+                inputsReport.milk_f100_received) -
+               (inputsReport.milk_f100_used + 
+                inputsReport.milk_f100_lost);
+    }
+    protected int balanceResomal() {
+        return (inputsReport.resomal_initial +
+                inputsReport.resomal_received) -
+               (inputsReport.resomal_used + 
+                inputsReport.resomal_lost);
+    }
+
+    protected int balancePlumpySup() {
+        return (inputsReport.plumpy_sup_initial +
+                inputsReport.plumpy_sup_received) -
+               (inputsReport.plumpy_sup_used +
+                inputsReport.plumpy_sup_lost);
+    }
+
+    protected float balanceSupercereal() {
+        return (inputsReport.supercereal_initial +
+                inputsReport.supercereal_received) -
+               (inputsReport.supercereal_used + 
+                inputsReport.supercereal_lost);
+    }
+    protected int balanceSupercerealPlus() {
+        return (inputsReport.supercereal_plus_initial +
+                inputsReport.supercereal_plus_received) -
+               (inputsReport.supercereal_plus_used +
+                inputsReport.supercereal_plus_lost);
+    }
+    protected int balanceOil() {
+        return (inputsReport.oil_initial + 
+                inputsReport.oil_received) -
+               (inputsReport.oil_used + 
+                inputsReport.oil_lost);
+    }
+    protected int balanceAmoxycilline125mgVials() {
+        return (inputsReport.amoxycilline_125_vials_initial +
+                inputsReport.amoxycilline_125_vials_received) -
+               (inputsReport.amoxycilline_125_vials_used + 
+                inputsReport.amoxycilline_125_vials_lost);
+    }
+    protected int balanceAmoxycilline250mgCaps() {
+        return (inputsReport.amoxycilline_250_caps_initial +
+                inputsReport.amoxycilline_250_caps_received) -
+               (inputsReport.amoxycilline_250_caps_used +
+               inputsReport.amoxycilline_250_caps_lost);
+    }
+    protected int balanceAlbendazole400mg() {
+        return (inputsReport.albendazole_400_initial + 
+                inputsReport.albendazole_400_received) -
+               (inputsReport.albendazole_400_used + 
+                inputsReport.albendazole_400_lost);
+    }
+    protected int balanceVita100KUiInjectable() {
+        return (inputsReport.vita_100_injectable_initial +
+                inputsReport.vita_100_injectable_received) -
+               (inputsReport.vita_100_injectable_used +
+                inputsReport.vita_100_injectable_lost);
+    }
+    protected int balanceVita200KUiInjectable() {
+        return (inputsReport.vita_200_injectable_initial +
+                inputsReport.vita_200_injectable_received) -
+               (inputsReport.vita_200_injectable_used +
+                inputsReport.vita_200_injectable_lost);
+    }
+    protected int balanceIronFolicAcid() {
+        return (inputsReport.iron_folic_acid_initial +
+                inputsReport.iron_folic_acid_received) -
+               (inputsReport.iron_folic_acid_used +
+                inputsReport.iron_folic_acid_lost);
     }
 }
