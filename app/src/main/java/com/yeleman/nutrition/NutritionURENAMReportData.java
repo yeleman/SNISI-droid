@@ -196,18 +196,18 @@ public class NutritionURENAMReportData extends ReportData {
     }
 
     protected int totalStartM() {
-        return u23o6_total_start_m +
-               u59o23_total_start_m +
-               o59_total_start_m +
-               exsam_total_start_m;
+        return Constants.integerFromReport(u23o6_total_start_m) +
+               Constants.integerFromReport(u59o23_total_start_m) +
+               Constants.integerFromReport(o59_total_start_m) +
+               Constants.integerFromReport(exsam_total_start_m);
     }
 
     protected int totalStartF() {
-        return u23o6_total_start_f +
-               u59o23_total_start_f +
-               o59_total_start_f + 
-               pw_total_start_f  +
-               exsam_total_start_f;
+        return Constants.integerFromReport(u23o6_total_start_f) +
+               Constants.integerFromReport(u59o23_total_start_f) +
+               Constants.integerFromReport(o59_total_start_f) + 
+               Constants.integerFromReport(pw_total_start_f)  +
+               Constants.integerFromReport(exsam_total_start_f);
     }
 
     protected int totalStart() {
@@ -215,15 +215,15 @@ public class NutritionURENAMReportData extends ReportData {
     }
 
     protected int totalInM() {
-        return u23o6_total_in_m +
-               u59o23_total_in_m +
-               o59_total_in_m;
+        return Constants.integerFromReport(u23o6_total_in_m) +
+               Constants.integerFromReport(u59o23_total_in_m) +
+               Constants.integerFromReport(o59_total_in_m);
     }
     protected int totalInF() {
-        return u23o6_total_in_f +
-               u59o23_total_in_f +
-               o59_total_in_f + 
-               pw_total_in_f;
+        return Constants.integerFromReport(u23o6_total_in_f) +
+               Constants.integerFromReport(u59o23_total_in_f) +
+               Constants.integerFromReport(o59_total_in_f) + 
+               Constants.integerFromReport(pw_total_in_f);
     }
 
     protected int totalIn() {
@@ -231,16 +231,16 @@ public class NutritionURENAMReportData extends ReportData {
     }
 
     protected int totalOutM() {
-        return u23o6_total_out_m +
-               u59o23_total_out_m +
-               o59_total_out_m;
+        return Constants.integerFromReport(u23o6_total_out_m) +
+               Constants.integerFromReport(u59o23_total_out_m) +
+               Constants.integerFromReport(o59_total_out_m);
     }
 
     protected int totalOutF() {
-        return u23o6_total_out_f +
-               u59o23_total_out_f +
-               o59_total_out_f + 
-               pw_total_out_f;
+        return Constants.integerFromReport(u23o6_total_out_f) +
+               Constants.integerFromReport(u59o23_total_out_f) +
+               Constants.integerFromReport(o59_total_out_f) + 
+               Constants.integerFromReport(pw_total_out_f);
     }
 
     protected int totalOut() {
@@ -248,17 +248,17 @@ public class NutritionURENAMReportData extends ReportData {
     }
 
     protected int totalEndM() {
-        return u23o6_total_end_m +
-               u59o23_total_end_m +
-               o59_total_end_m +
-               exsam_total_end_m;
+        return Constants.integerFromReport(u23o6_total_end_m) +
+               Constants.integerFromReport(u59o23_total_end_m) +
+               Constants.integerFromReport(o59_total_end_m) +
+               Constants.integerFromReport(exsam_total_end_m);
     }
     protected int totalEndF() {
-        return u23o6_total_end_f +
-               u59o23_total_end_f +
-               o59_total_end_f + 
-               pw_total_end_f  +
-               exsam_total_end_f;
+        return Constants.integerFromReport(u23o6_total_end_f) +
+               Constants.integerFromReport(u59o23_total_end_f) +
+               Constants.integerFromReport(o59_total_end_f) + 
+               Constants.integerFromReport(pw_total_end_f)  +
+               Constants.integerFromReport(exsam_total_end_f);
     }
 
     protected int totalEnd() {

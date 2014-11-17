@@ -116,16 +116,20 @@ public class NutritionMonthlyReportData extends ReportData {
         return ureniReport.totalStartF();
     }
     protected int totalStartURENI() {
-        return totalStartFURENI() + totalStartMURENI();
+        return totalStartFURENI() +
+               totalStartMURENI();
     }
     protected int totalStartMURENAMAndRENAS() {
-        return urenasReport.totalStartM() + urenamReport.totalStartM();
+        return urenasReport.totalStartM() +
+               urenamReport.totalStartM();
     }
     protected int totalStartFURENAMAndRENAS() {
-        return urenasReport.totalStartF() + urenamReport.totalStartF();
+        return urenasReport.totalStartF() +
+               urenamReport.totalStartF();
     }
     protected int totalStartURENAMAndRENAS() {
-        return totalStartMURENAMAndRENAS() + totalStartFURENAMAndRENAS();
+        return totalStartMURENAMAndRENAS() +
+               totalStartFURENAMAndRENAS();
     }
     //  In
     protected int totalInMURENI() {
@@ -138,13 +142,16 @@ public class NutritionMonthlyReportData extends ReportData {
         return totalInMURENI() + totalInFURENI();
     }
     protected int totalInMURENAMAndRENAS() {
-        return urenasReport.totalInM() + urenamReport.totalInM();
+        return urenasReport.totalInM() +
+               urenamReport.totalInM();
     }
     protected int totalInFURENAMAndRENAS() {
-        return urenasReport.totalInF() + urenamReport.totalInF();
+        return urenasReport.totalInF() +
+               urenamReport.totalInF();
     }
     protected int totalInURENAMAndRENAS() {
-        return totalInFURENAMAndRENAS() + totalInMURENAMAndRENAS();
+        return totalInFURENAMAndRENAS() +
+               totalInMURENAMAndRENAS();
     }
     // Out
     protected int totalOutMURENI() {
@@ -157,14 +164,16 @@ public class NutritionMonthlyReportData extends ReportData {
         return totalOutMURENI() + totalOutFURENI();
     }
     protected int totalOutMURENAMAndRENAS() {
-        return urenasReport.totalOutM() + urenamReport.totalOutM();
+        return urenasReport.totalOutM() +
+               urenamReport.totalOutM();
     }
     protected int totalOutFURENAMAndRENAS() {
-        return urenasReport.totalOutF() + urenamReport.totalOutF();
+        return urenasReport.totalOutF() +
+               urenamReport.totalOutF();
     }
-
     protected int totalOutURENAMAndRENAS() {
-        return totalOutMURENAMAndRENAS() + totalOutFURENAMAndRENAS();
+        return totalOutMURENAMAndRENAS() +
+               totalOutFURENAMAndRENAS();
     }
     // End
     protected int totalEndMURENI() {
@@ -174,102 +183,104 @@ public class NutritionMonthlyReportData extends ReportData {
         return ureniReport.totalEndF();
     }
     protected int totalEndURENI() {
-        return totalEndFURENI() + totalEndMURENI();
+        return totalEndFURENI() +
+               totalEndMURENI();
     }
     protected int totalEndMURENAMAndRENAS() {
-        return urenasReport.totalEndM() + urenamReport.totalEndM();
+        return urenasReport.totalEndM() +
+               urenamReport.totalEndM();
     }
     protected int totalEndFURENAMAndRENAS() {
-        return urenasReport.totalEndF() + urenamReport.totalEndF();
+        return urenasReport.totalEndF() +
+               urenamReport.totalEndF();
     }
     protected int totalEndURENAMAndRENAS() {
-        return totalEndMURENAMAndRENAS() + totalEndFURENAMAndRENAS();
+        return totalEndMURENAMAndRENAS() +
+               totalEndFURENAMAndRENAS();
     }
 
     protected int balancePlumpy() {
-        return (inputsReport.plumpy_nut_initial + inputsReport.plumpy_nut_received) -
-               (inputsReport.plumpy_nut_used + inputsReport.plumpy_nut_lost);
+        return (Constants.integerFromReport(inputsReport.plumpy_nut_initial) +
+               Constants.integerFromReport(inputsReport.plumpy_nut_received)) -
+               (Constants.integerFromReport(inputsReport.plumpy_nut_used) +
+                Constants.integerFromReport(inputsReport.plumpy_nut_lost));
     }
-
     protected int balanceMilkF75() {
-        return (inputsReport.milk_f75_initial +
-                inputsReport.milk_f75_received) -
-               (inputsReport.milk_f75_used + 
-                inputsReport.milk_f75_lost);
+        return (Constants.integerFromReport(inputsReport.milk_f75_initial) +
+                Constants.integerFromReport(inputsReport.milk_f75_received)) -
+               (Constants.integerFromReport(inputsReport.milk_f75_used) + 
+                Constants.integerFromReport(inputsReport.milk_f75_lost));
     }
-    
     protected int balanceMilkF100() {
-        return (inputsReport.milk_f100_initial +
-                inputsReport.milk_f100_received) -
-               (inputsReport.milk_f100_used + 
-                inputsReport.milk_f100_lost);
+        return (Constants.integerFromReport(inputsReport.milk_f100_initial) +
+                Constants.integerFromReport(inputsReport.milk_f100_received)) -
+               (Constants.integerFromReport(inputsReport.milk_f100_used) + 
+                Constants.integerFromReport(inputsReport.milk_f100_lost));
     }
     protected int balanceResomal() {
-        return (inputsReport.resomal_initial +
-                inputsReport.resomal_received) -
-               (inputsReport.resomal_used + 
-                inputsReport.resomal_lost);
+        return (Constants.integerFromReport(inputsReport.resomal_initial) +
+                Constants.integerFromReport(inputsReport.resomal_received)) -
+               (Constants.integerFromReport(inputsReport.resomal_used) + 
+                Constants.integerFromReport(inputsReport.resomal_lost));
     }
-
     protected int balancePlumpySup() {
-        return (inputsReport.plumpy_sup_initial +
-                inputsReport.plumpy_sup_received) -
-               (inputsReport.plumpy_sup_used +
-                inputsReport.plumpy_sup_lost);
+        return (Constants.integerFromReport(inputsReport.plumpy_sup_initial) +
+                Constants.integerFromReport(inputsReport.plumpy_sup_received)) -
+               (Constants.integerFromReport(inputsReport.plumpy_sup_used) +
+                Constants.integerFromReport(inputsReport.plumpy_sup_lost));
     }
-
     protected float balanceSupercereal() {
-        return (inputsReport.supercereal_initial +
-                inputsReport.supercereal_received) -
-               (inputsReport.supercereal_used + 
-                inputsReport.supercereal_lost);
+        return (Constants.floatFromReport(inputsReport.supercereal_initial) +
+                Constants.floatFromReport(inputsReport.supercereal_received)) -
+               (Constants.floatFromReport(inputsReport.supercereal_used) +
+                Constants.floatFromReport(inputsReport.supercereal_lost));
     }
     protected int balanceSupercerealPlus() {
-        return (inputsReport.supercereal_plus_initial +
-                inputsReport.supercereal_plus_received) -
-               (inputsReport.supercereal_plus_used +
-                inputsReport.supercereal_plus_lost);
+        return (Constants.integerFromReport(inputsReport.supercereal_plus_initial) +
+                Constants.integerFromReport(inputsReport.supercereal_plus_received)) -
+               (Constants.integerFromReport(inputsReport.supercereal_plus_used) +
+                Constants.integerFromReport(inputsReport.supercereal_plus_lost));
     }
     protected int balanceOil() {
-        return (inputsReport.oil_initial + 
-                inputsReport.oil_received) -
-               (inputsReport.oil_used + 
-                inputsReport.oil_lost);
+        return (Constants.integerFromReport(inputsReport.oil_initial) + 
+                Constants.integerFromReport(inputsReport.oil_received)) -
+               (Constants.integerFromReport(inputsReport.oil_used) + 
+                Constants.integerFromReport(inputsReport.oil_lost));
     }
     protected int balanceAmoxycilline125mgVials() {
-        return (inputsReport.amoxycilline_125_vials_initial +
-                inputsReport.amoxycilline_125_vials_received) -
-               (inputsReport.amoxycilline_125_vials_used + 
-                inputsReport.amoxycilline_125_vials_lost);
+        return (Constants.integerFromReport(inputsReport.amoxycilline_125_vials_initial) +
+                Constants.integerFromReport(inputsReport.amoxycilline_125_vials_received)) -
+               (Constants.integerFromReport(inputsReport.amoxycilline_125_vials_used) + 
+                Constants.integerFromReport(inputsReport.amoxycilline_125_vials_lost));
     }
     protected int balanceAmoxycilline250mgCaps() {
-        return (inputsReport.amoxycilline_250_caps_initial +
-                inputsReport.amoxycilline_250_caps_received) -
-               (inputsReport.amoxycilline_250_caps_used +
-               inputsReport.amoxycilline_250_caps_lost);
+        return (Constants.integerFromReport(inputsReport.amoxycilline_250_caps_initial) +
+                Constants.integerFromReport(inputsReport.amoxycilline_250_caps_received)) -
+               (Constants.integerFromReport(inputsReport.amoxycilline_250_caps_used) +
+               Constants.integerFromReport(inputsReport.amoxycilline_250_caps_lost));
     }
     protected int balanceAlbendazole400mg() {
-        return (inputsReport.albendazole_400_initial + 
-                inputsReport.albendazole_400_received) -
-               (inputsReport.albendazole_400_used + 
-                inputsReport.albendazole_400_lost);
+        return (Constants.integerFromReport(inputsReport.albendazole_400_initial) + 
+                Constants.integerFromReport(inputsReport.albendazole_400_received)) -
+               (Constants.integerFromReport(inputsReport.albendazole_400_used) + 
+                Constants.integerFromReport(inputsReport.albendazole_400_lost));
     }
     protected int balanceVita100KUiInjectable() {
-        return (inputsReport.vita_100_injectable_initial +
-                inputsReport.vita_100_injectable_received) -
-               (inputsReport.vita_100_injectable_used +
-                inputsReport.vita_100_injectable_lost);
+        return (Constants.integerFromReport(inputsReport.vita_100_injectable_initial) +
+                Constants.integerFromReport(inputsReport.vita_100_injectable_received)) -
+               (Constants.integerFromReport(inputsReport.vita_100_injectable_used) +
+                Constants.integerFromReport(inputsReport.vita_100_injectable_lost));
     }
     protected int balanceVita200KUiInjectable() {
-        return (inputsReport.vita_200_injectable_initial +
-                inputsReport.vita_200_injectable_received) -
-               (inputsReport.vita_200_injectable_used +
-                inputsReport.vita_200_injectable_lost);
+        return (Constants.integerFromReport(inputsReport.vita_200_injectable_initial) +
+                Constants.integerFromReport(inputsReport.vita_200_injectable_received)) -
+               (Constants.integerFromReport(inputsReport.vita_200_injectable_used) +
+                Constants.integerFromReport(inputsReport.vita_200_injectable_lost));
     }
     protected int balanceIronFolicAcid() {
-        return (inputsReport.iron_folic_acid_initial +
-                inputsReport.iron_folic_acid_received) -
-               (inputsReport.iron_folic_acid_used +
-                inputsReport.iron_folic_acid_lost);
+        return (Constants.integerFromReport(inputsReport.iron_folic_acid_initial) +
+                Constants.integerFromReport(inputsReport.iron_folic_acid_received)) -
+               (Constants.integerFromReport(inputsReport.iron_folic_acid_used) +
+                Constants.integerFromReport(inputsReport.iron_folic_acid_lost));
     }
 }

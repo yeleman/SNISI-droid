@@ -87,21 +87,35 @@ public class NutritionHome extends ActionBarActivity {
             Log.i(TAG, "URENAM has change in preference");
             NutritionURENAMReportData reportURENAM = NutritionURENAMReportData.get();
             if (!is_urenam){
+              try {
                 reportURENAM.delete();
+              } catch (Exception e){
+                  Log.i(TAG, String.valueOf(e));
+              }
             }
         }
         if (reportMonthly.has_urenas != is_urenas){
             Log.i(TAG, "URENAS has change in preference");
             NutritionURENASReportData reportURENAS = NutritionURENASReportData.get();
-            if (!is_urenam){
-                reportURENAS.delete();
+            if (!is_urenas){
+              try {
+                    reportURENAS.delete();
+              } catch (Exception e){
+                  Log.i(TAG, String.valueOf(e));
+              }
             }
         }
         if (reportMonthly.has_ureni != is_ureni){
             Log.i(TAG, "URENI has change in preference");
             NutritionURENIReportData reportURENI = NutritionURENIReportData.get();
-            if (!is_urenam){
-                reportURENI.delete();
+            NutritionInputsReportData reportInput = NutritionInputsReportData.get();
+            if (!is_ureni){
+              try {
+                  reportURENI.delete();
+                  reportInput.delete();
+              } catch (Exception e){
+                  Log.i(TAG, String.valueOf(e));
+              }
             }
         }
         reportMonthly.updateUren(is_urenam, is_urenas, is_ureni);

@@ -8,6 +8,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
+        <!--URENAM + URENAS -->     
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -15,8 +16,8 @@
             android:stretchColumns="*"
             android:background="#ffffff"
             android:id="@+id/tableURENAMAndURENAS">
-            <!--URENAM + URENAS -->
         </TableLayout>
+        <!--URENI -->
         <TableLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -24,7 +25,6 @@
             android:stretchColumns="*"
             android:background="#ffffff"
             android:id="@+id/tableURENI">
-            <!--URENI -->
         </TableLayout>
         <!-- Intrants -->
         <TableLayout
@@ -101,10 +101,6 @@
                 android:layout_height="wrap_content"
                 android:layout_width="match_parent"
                 android:weightSum="1">
-                android:id="@+id/milkF75Row"
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:weightSum="1">
                 <TextView
                     android:id="@+id/milkF100Label"
                     android:text="@string/nutrition_milk_f100"
@@ -126,7 +122,6 @@
                     android:layout_weight="0.50"
                     android:textSize="17dp" />
             </TableRow>
-
             <TableRow
                 android:id="@+id/resomalRow"
                 android:layout_height="wrap_content"

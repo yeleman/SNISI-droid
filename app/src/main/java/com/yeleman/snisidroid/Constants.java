@@ -115,4 +115,18 @@ public class Constants {
     public static String stringFromInteger(int data) {
         return String.valueOf(data);
     }
+
+    public static int integerFromReport(int data) {
+        if(data < 0) {
+            data = 0;
+        }
+        return data;
+    }
+
+    public static float floatFromReport(float data) {
+        if(data < 0) {
+            data = (float) 0.00;
+        }
+        return data;
+    }
 }
