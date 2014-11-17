@@ -106,7 +106,7 @@ public class NutritionURENIU6Report extends NutritionURENForm implements Nutriti
         report.u6_total_end_m = integerFromField(totalEndMField);
         report.u6_total_end_f = integerFromField(totalEndFField);
         report.u6_is_complete = true;
-        report.save();
+        report.safeSave();
         Log.d(TAG, "storeReportData -- end");
 
     }

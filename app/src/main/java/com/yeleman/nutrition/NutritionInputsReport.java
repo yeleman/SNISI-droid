@@ -269,7 +269,7 @@ public class NutritionInputsReport extends CheckedFormActivity {
         report.iron_folic_acid_used = integerFromField(ironFolicAcidUsedField);
         report.iron_folic_acid_lost = integerFromField(ironFolicAcidLostField);
         report.input_is_complete = true;
-        report.save();
+        report.safeSave();
         Log.d(TAG, "storeReportData -- end");
     }
 

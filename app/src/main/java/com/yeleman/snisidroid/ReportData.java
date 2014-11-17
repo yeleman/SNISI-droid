@@ -42,6 +42,11 @@ public class ReportData extends SugarRecord {
         return findById(type, (long) 1);
     }
 
+    public void safeSave() {
+        this.setId((long) 1);
+        super.save();
+    }
+
     public Date getModifiedOn() {
         return this.modifiedOn;
     }

@@ -10,9 +10,13 @@ import com.yeleman.snisidroid.ReportData;
 
 public class NutritionMonthlyReportData extends ReportData {
 
+    @Ignore
     NutritionURENAMReportData urenamReport = NutritionURENAMReportData.get();
+    @Ignore
     NutritionURENASReportData urenasReport = NutritionURENASReportData.get();
+    @Ignore
     NutritionURENIReportData ureniReport = NutritionURENIReportData.get();
+    @Ignore
     NutritionInputsReportData inputsReport = NutritionInputsReportData.get();
 
     @Ignore
@@ -31,7 +35,7 @@ public class NutritionMonthlyReportData extends ReportData {
             Log.d(TAG, "No Record in DB. Creating.");
             report = new NutritionMonthlyReportData();
             report.updateMetaData();
-            report.save();
+            report.safeSave();
         } else {
             Log.d(TAG, "Record exist in Database.");
         }
@@ -106,7 +110,7 @@ public class NutritionMonthlyReportData extends ReportData {
         this.has_urenam = has_urenam;
         this.has_urenas = has_urenas;
         this.has_ureni = has_ureni;
-        this.save();
+        this.safeSave();
     }
     // Start
     protected int totalStartMURENI() {

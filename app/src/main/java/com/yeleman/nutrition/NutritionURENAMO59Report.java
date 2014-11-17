@@ -105,7 +105,7 @@ public class NutritionURENAMO59Report extends NutritionURENForm implements Nutri
         report.o59_total_end_m = integerFromField(totalEndMField);
         report.o59_total_end_f = integerFromField(totalEndFField);
         report.o59_is_complete = true;
-        report.save();
+        report.safeSave();
         Log.d(TAG, "storeReportData -- end");
     }
 

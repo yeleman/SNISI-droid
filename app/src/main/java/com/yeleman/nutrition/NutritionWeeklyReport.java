@@ -127,7 +127,7 @@ public class NutritionWeeklyReport extends CheckedFormActivity {
     		report.samc_cases = integerFromField(samcCasesField);
     		report.samc_deaths = integerFromField(samcDeathsField);
     	}
-    	report.save();
+    	report.safeSave();
         Log.d(TAG, "storeReportData -- end");
     }
 

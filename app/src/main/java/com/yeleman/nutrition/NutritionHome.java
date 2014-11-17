@@ -88,7 +88,7 @@ public class NutritionHome extends ActionBarActivity {
             NutritionURENAMReportData reportURENAM = NutritionURENAMReportData.get();
             if (!is_urenam){
               try {
-                reportURENAM.delete();
+                reportURENAM.deleteAll(reportURENAM.getClass());
               } catch (Exception e){
                   Log.i(TAG, String.valueOf(e));
               }
@@ -99,7 +99,7 @@ public class NutritionHome extends ActionBarActivity {
             NutritionURENASReportData reportURENAS = NutritionURENASReportData.get();
             if (!is_urenas){
               try {
-                    reportURENAS.delete();
+                    reportURENAS.deleteAll(reportURENAS.getClass());
               } catch (Exception e){
                   Log.i(TAG, String.valueOf(e));
               }
@@ -111,8 +111,9 @@ public class NutritionHome extends ActionBarActivity {
             NutritionInputsReportData reportInput = NutritionInputsReportData.get();
             if (!is_ureni){
               try {
-                  reportURENI.delete();
-                  reportInput.delete();
+                  Log.d(TAG, "DELETING URENI/INPUT Reports");
+                  reportURENI.deleteAll(reportURENI.getClass());
+                  reportInput.deleteAll(reportInput.getClass());
               } catch (Exception e){
                   Log.i(TAG, String.valueOf(e));
               }

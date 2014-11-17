@@ -56,7 +56,7 @@ public class NutritionURENASReportData extends ReportData {
         if (report == null) {
             Log.d(TAG, "No Record in DB. Creating.");
             report = new NutritionURENASReportData();
-            report.save();
+            report.safeSave();
         } else {
             Log.d(TAG, "Record exist in Database.");
         }
@@ -79,7 +79,7 @@ public class NutritionURENASReportData extends ReportData {
     protected void resetReportData() {
         this.u59o6_is_complete = false;
         this.o59_is_complete = false;
-        this.save();
+        this.safeSave();
     }
 
     @Override

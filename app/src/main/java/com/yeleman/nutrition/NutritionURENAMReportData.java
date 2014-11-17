@@ -93,7 +93,7 @@ public class NutritionURENAMReportData extends ReportData {
         if (report == null) {
             Log.d(TAG, "No Record in DB. Creating.");
             report = new NutritionURENAMReportData();
-            report.save();
+            report.safeSave();
         } else {
             Log.d(TAG, "Record exist in Database.");
         }
@@ -127,7 +127,7 @@ public class NutritionURENAMReportData extends ReportData {
         this.u23o6_is_complete = false;
         this.u59o23_is_complete = false;
         this.exsam_is_complete = false;
-        this.save();
+        this.safeSave();
     }
 
     public String buildSMSText() {

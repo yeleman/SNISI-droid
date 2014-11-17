@@ -90,7 +90,7 @@ public class NutritionURENAMExsamReport extends NutritionURENForm implements Nut
         report.exsam_total_end_f = integerFromField(totalEndFField);
         report.exsam_is_complete = true;
         
-        report.save();
+        report.safeSave();
         Log.d(TAG, "storeReportData -- end");
 
     }

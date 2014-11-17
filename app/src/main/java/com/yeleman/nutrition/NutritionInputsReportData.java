@@ -93,7 +93,7 @@ public class NutritionInputsReportData extends ReportData {
         if (report == null) {
             Log.d(TAG, "No Record in DB. Creating.");
             report = new NutritionInputsReportData();
-            report.save();
+            report.safeSave();
         } else {
             Log.d(TAG, "Record exist in Database.");
         }
@@ -116,7 +116,7 @@ public class NutritionInputsReportData extends ReportData {
     protected void resetReportData() {
         NutritionInputsReportData report = NutritionInputsReportData.get();
         report.input_is_complete = false;
-        report.save();
+        report.safeSave();
     }
 
     public String buildSMSText() {

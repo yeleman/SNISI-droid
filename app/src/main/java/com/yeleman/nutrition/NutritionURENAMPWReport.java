@@ -103,7 +103,7 @@ public class NutritionURENAMPWReport extends NutritionURENForm implements Nutrit
         report.pw_referred = integerFromField(referredField);
         report.pw_total_end_f = integerFromField(totalEndFField);
         report.pw_is_complete = true;
-        report.save();
+        report.safeSave();
         Log.d(TAG, "storeReportData -- end");
 
     }

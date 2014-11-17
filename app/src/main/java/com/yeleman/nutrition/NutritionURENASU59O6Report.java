@@ -106,7 +106,7 @@ public class NutritionURENASU59O6Report extends NutritionURENForm implements Nut
         report.u59o6_total_end_m = integerFromField(totalEndMField);
         report.u59o6_total_end_f = integerFromField(totalEndFField);
         report.u59o6_is_complete = true;
-        report.save();
+        report.safeSave();
         Log.d(TAG, "storeReportData -- end");
 
     }
