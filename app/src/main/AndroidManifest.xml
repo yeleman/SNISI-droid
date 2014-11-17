@@ -140,7 +140,7 @@
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.yeleman.nutrition.NutritionResumeReport"
+            android:name="com.yeleman.nutrition.NutritionSummaryReport"
             android:label="@string/nutrition_app_label"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation" />

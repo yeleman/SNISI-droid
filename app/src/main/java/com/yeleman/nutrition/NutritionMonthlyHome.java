@@ -183,7 +183,7 @@ public class NutritionMonthlyHome extends CheckedFormActivity implements View.On
                 activity = NutritionInputsReport.class;
                 break;
             case R.id.resumeReportButton:
-                activity = NutritionResumeReport.class;
+                activity = NutritionSummaryReport.class;
                 break;
         }
         Intent intent = new Intent(

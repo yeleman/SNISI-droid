@@ -9,19 +9,16 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.TableRow;
 import android.widget.TextView;
 
 import com.yeleman.snisidroid.Constants;
 import com.yeleman.snisidroid.R;
 
-import org.w3c.dom.Text;
-
 /**
  * Created by fad on 14/11/14.
  */
-public class NutritionResumeReport extends Activity {
+public class NutritionSummaryReport extends Activity {
     private final static String TAG = Constants.getLogTag("NutritionResumeReport");
 
     private boolean is_urenam, is_urenas, is_ureni;
@@ -29,7 +26,7 @@ public class NutritionResumeReport extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.nutrition_resume_report);
+        setContentView(R.layout.nutrition_summary_report);
         Log.d(TAG, "onCreate NutritionResumeReport");
         setupUI();
     }
@@ -50,7 +47,7 @@ public class NutritionResumeReport extends Activity {
         if(is_urenam || is_urenas) {
             // URENAM + URENAS
             ViewGroup urenamAndUrenasParent = (ViewGroup) findViewById(R.id.tableURENAMAndURENAS);
-            View inflated_urenam_and_urenas = inflater.inflate(R.layout.nutrition_resume_uren_unit,
+            View inflated_urenam_and_urenas = inflater.inflate(R.layout.nutrition_summary_uren_unit,
                     urenamAndUrenasParent);
             TextView startTotalsValueUrenasAndURENAM = (TextView) inflated_urenam_and_urenas.findViewById(R.id.startTotalsValue);
             startTotalsValueUrenasAndURENAM.setText(String.valueOf(report.totalStartURENAMAndRENAS()));
@@ -83,7 +80,7 @@ public class NutritionResumeReport extends Activity {
         if(is_ureni) {
             // URENI
             ViewGroup ureniPrent = (ViewGroup) findViewById(R.id.tableURENI);
-            View inflated_ureni = inflater.inflate(R.layout.nutrition_resume_uren_unit, ureniPrent);
+            View inflated_ureni = inflater.inflate(R.layout.nutrition_summary_uren_unit, ureniPrent);
             TextView ureniLabel = (TextView) inflated_ureni.findViewById(R.id.titleLabelUREN);
             ureniLabel.setText("URENI");
             TextView startTotalsValueUreni = (TextView) inflated_ureni.findViewById(R.id.startTotalsValue);

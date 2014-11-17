@@ -30,12 +30,6 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent">
             <TextView
-                android:id="@+id/totalsText"
-                android:text="Total"
-                android:background="#dcdcdc"
-                android:textColor="#000000"
-                android:gravity="center"/>
-            <TextView
                 android:id="@+id/totalMText"
                 android:text="@string/nutrition_m"
                 android:layout_weight="1"
@@ -47,6 +41,12 @@
                 android:text="@string/nutrition_f"
                 android:layout_weight="1"
                 android:background="#cac9c9"
+                android:textColor="#000000"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/totalsText"
+                android:text="Total"
+                android:background="#dcdcdc"
                 android:textColor="#000000"
                 android:gravity="center"/>
         </TableRow>
@@ -71,12 +71,6 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent">
             <TextView
-                android:id="@+id/startTotalsValue"
-                android:layout_weight="1"
-                android:background="#dcdcdc"
-                android:textColor="#000000"
-                android:gravity="center"/>
-            <TextView
                 android:id="@+id/startTotalValueM"
                 android:layout_weight="1"
                 android:background="#d3d3d3"
@@ -86,6 +80,12 @@
                 android:id="@+id/startTotalValueF"
                 android:layout_weight="1"
                 android:background="#cac9c9"
+                android:textColor="#000000"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/startTotalsValue"
+                android:layout_weight="1"
+                android:background="#dcdcdc"
                 android:textColor="#000000"
                 android:gravity="center"/>
         </TableRow>
