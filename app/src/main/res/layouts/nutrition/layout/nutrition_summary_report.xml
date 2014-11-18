@@ -41,10 +41,38 @@
                 android:textSize="18dp"
                 android:text="Stocks"
                 android:layout_span="3"
-                android:padding="10dp"
+                android:padding="5dp"
                 android:background="#b0b0b0"
                 android:textColor="#000"
-                android:gravity="center" />
+                android:gravity="center"
+                android:textStyle="bold" />
+            <TableRow
+                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:weightSum="1"
+                android:background="#d3d3d3"
+                android:baselineAligned="false">
+                <TextView
+                    android:text="Intrant"
+                    android:textColor="#000000"
+                    android:gravity="left"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:paddingLeft="10dp"
+                    android:textStyle="bold"
+                    android:background="#fff8fbff" />
+                <TextView
+                    android:text="Solde"
+                    android:textColor="#000000"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="0.50"
+                    android:background="#fff8fbff"
+                    android:singleLine="false"
+                    android:textStyle="bold" />
+            </TableRow>
             <TableRow
                 android:id="@+id/plumpyRow"
                 android:layout_height="wrap_content"
@@ -324,7 +352,6 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="0.50"
-                    android:background="#d3d3d3"
                     android:textSize="17dp" />
             </TableRow>
             <TableRow
