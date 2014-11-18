@@ -12,6 +12,10 @@ public class Preferences extends PreferenceActivity {
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        setTitle(String.format(getString(R.string.label_tmpl),
+                               getString(R.string.app_name),
+                               getString(R.string.menu_settings)));
+
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         String serverNumber = sharedPrefs.getString("serverPhoneNumber", "");
         if (serverNumber.trim().equals("")) {

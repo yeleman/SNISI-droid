@@ -35,7 +35,7 @@ public class NutritionHome extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         Log.d(TAG, "onCreate NutritionHome");
         setContentView(R.layout.nutrition_home);
-        setTitle(String.format(getString(R.string.sub_app_name_nut), "Menu"));
+        setTitle(getString(R.string.nutrition_app_label));
 
         setUrenLevels();
 

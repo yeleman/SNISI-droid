@@ -65,7 +65,7 @@ public class NutritionURENASReportData extends ReportData {
 
     @Override
     protected String buildName() {
-        return "Nut Monthy";
+        return "Mensuel URENAS";
     }
 
     protected Boolean isComplete(){

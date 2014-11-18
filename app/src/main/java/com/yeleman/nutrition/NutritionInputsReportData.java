@@ -102,7 +102,7 @@ public class NutritionInputsReportData extends ReportData {
 
     @Override
     protected String buildName() {
-        return "Nut Monthy";
+        return "Situation Stocks";
     }
 
     protected Boolean isComplete(){

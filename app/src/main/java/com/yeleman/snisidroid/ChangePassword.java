@@ -42,6 +42,11 @@ public class ChangePassword extends CheckedFormActivity {
     }
 
     private void setupUI() {
+        setTitle(String.format(getString(R.string.label_tmpl),
+                               getString(R.string.app_name),
+                               getString(R.string.menu_change_password)));
+
+
         // Instantiate all UI elements
         usernameText = (EditText) findViewById(R.id.usernameField);
         oldPasswordText = (EditText) findViewById(R.id.oldPasswordField);

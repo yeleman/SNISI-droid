@@ -2,6 +2,7 @@
 <resources>
 
 	<string name="app_name">SNISI</string>
+	<string name="label_tmpl">%1$s/%2$s</string>
 	<string name="app_market_url">market://details?id=com.yeleman.snisidroid</string>
 	<string name="notif_sms_sent">Rapport envoyé par SMS. Une réponse vous parviendra bientôt.</string>
 	<string name="notif_sms_failed">Échec de l\'envoi du rapport par SMS. Veuillez réessayer dans quelques minutes.</string>
@@ -12,7 +13,7 @@
 	<string name="standard_dialog_ok">OK</string>
 	
 	<string name="sms_timeout_dialog_title">Pas de réponse du serveur</string>
-	<string name="sms_timeout_dialog_body">L\'application SNISI n\'a pas reçu de réponse du serveur.\nLa réponse peut parfois prendre du temps avant d\'arriver.\nVérifier vos SMS pendant 5mn puis appelez la Hotline.</string>
+	<string name="sms_timeout_dialog_body">L\'application SNISI n\'a pas reçue de réponse du serveur.\nLa réponse peut parfois prendre du temps avant d\'arriver.\nVérifiez vos SMS pendant 5mn puis appelez la Hotline.</string>
 	
 	<string name="resume_report_title">Continuer le rapport ?</string>
 	<string name="resume_report_body">Voulez-vous continuer avec les données du rapport %1$s déjà renseignées ?</string>
@@ -25,7 +26,7 @@
 	<string name="sending_sms_report_body">Votre demande a été envoyée par SMS.\nVeuillez attendre la réponse du serveur pour vérifier qu\'il a bien été enregistré.\nVous recevrez alors un numéro de reçu.</string>
 
 	<string name="required_connexion_title">Connexion requise</string>
-	<string name="required_connexion_body">Cette action nécessite une connexion à Internet. Activez les données ou le WiFi puis réessayez.</string>
+	<string name="required_connexion_body">Cette action nécessite une connexion à Internet. Activez les données mobiles ou le WiFi puis réessayez.</string>
 	<string name="required_connexion_cancel">Annuler</string>
 	<string name="required_connexion_retry">Réessayer</string>
 
@@ -33,7 +34,7 @@
 
 	<!-- Home -->
 	<string name="app_name_long">Système Numérique d\'Information Sanitaire Intégré</string>
-	<string name="website_goto_label">Aller sur SNISI</string>
+	<string name="website_goto_label">Accèder au SNISI (en ligne)</string>
 
 	<!-- Change Password -->
     <string name="oldpassword">Ancien mot de passe</string>
@@ -61,15 +62,12 @@
     <string name="pref_is_ureni_summary">L\'unité sanitaire fait la PEC URENI</string>
     
     <!-- About -->
-    <string name="about_long_description">Le SNISI est un outil numérique du Ministère de la Santé (MSHP) du Mali.\nSes principales composantes sont une Flotte Mobile, des formulaires et applications de collecte de données au niveau primaire (CSCom, CSRéf), des procedures standardisées de suivi et de validation, un système d\'agrégation et de désagrégation et un site web de consultation des donées brutes, indicateurs et visualisations cartographique.\n\nLa gestion opérationnelle du système est opérée par l\'ANTIM.\n\nLe système est ouvert à toutes les données de routine et à tous les projets.</string>
-    
-    <!-- Resources -->
-    <string name="str_image">Image</string>   
+    <string name="about_long_description">Le SNISI est un outil numérique du Ministère de la Santé (MSHP) du Mali.\nSes principales composantes sont une Flotte Mobile, des formulaires et applications de collecte de données au niveau primaire (CSCom, CSRéf), des procedures standardisées de suivi et de validation, un système d\'agrégation et de désagrégation et un site web de consultation des donées brutes, indicateurs et visualisations cartographique.\n\nLa gestion opérationnelle du système est opérée par l\'ANTIM. La gestion sanitaire du système est opérée par les différents programes et divisions.\n\nLe système est ouvert à toutes les données de routine et à tous les projets.</string>
 
     <!-- menu items -->
     <string name="app_version">Version</string>
     <string name="menu_settings">Paramètres</string>
-    <string name="news">Ressources</string>
+    <string name="news">Ressources (en ligne)</string>
     <string name="menu_about">À propos</string>
     <string name="menu_change_password">Changer mot de passe</string>
 
@@ -83,17 +81,16 @@
     <string name="error_must_be_inferior" formatted="false">%s (%d) ne peut être supérieur ou égal à %s (%d)</string>
     <string name="error_must_be_inferior_or_equal" formatted="false">%s (%d) ne peut être supérieur à %s (%d)</string>
     <string name="error_must_be_inferior_or_equal_float" formatted="false">%s (%.2f) ne peut être supérieur à %s (%.2f)</string>
-    <!-- <string name="error_must_be_inferior_or_equal_float" formatted="false">%s (%.2f) ne peut être supérieur à %s (%.2f)</string> -->
     <string name="error_must_be_equal" formatted="false">%1$s (%2$d) doit être égal au %3$s (%4$d)</string>
     <string name="error_sms_not_sent_title">Erreur d\'envoi du SMS</string>
-    <string name="error_sms_not_sent_body">Le SMS n\'a pa pu être envoyé correctement. Vérifiez que vous avez du réseau et du crédit puis réessayez.\n%1$s</string>
+    <string name="error_sms_not_sent_body">Le SMS n\'a pas pu être envoyé correctement. Vérifiez que vous avez du réseau et du crédit puis réessayez.\n%1$s</string>
 
     <!-- Nutrition -->
-    <string name="sub_app_name_nut">Nutrition %1$s</string>
+    <string name="sub_app_name_nut">Nutrition/%1$s</string>
     <string name="nutrition_app_label">Nutrition</string>
     <string name="nutrition_monthly_report_label">Rapport Mensuel</string>
     <string name="nutrition_weekly_report_label">Rapport Hebdomadaire</string>
-    <string name="nutrition_website_label">Consulter mes données</string>
+    <string name="nutrition_website_label">Consulter mes données (en ligne)</string>
     <string name="nutrition_weekly_screening">Dépistage</string>
     <string name="nutrition_weekly_cases">Cas PEC</string>
     <string name="nutrition_weekly_deaths">Décès PEC</string>
@@ -105,27 +102,28 @@
 	<string name="nutrition_level_missing_body">Votre profil n\'indique aucune unité de nutrition pour votre unité sanitaire.\nAllez remplir les niveaux d\'UREN pour lesquelles vous faîtes la PEC dans les paramètres.</string>
     <string name="nutrition_instructions_incomplete">Remplissez les sections du rapport pour chaque tranche d\'âge. En vert, les sections déjà remplies. Vous pouvez toujours les modifier.</string>
     <string name="nutrition_instructions_complete">Ce rapport est complet. Vous pouvez cependant le modifier. Ensuite, revenez en arrière pour remplir les autres rapports et les envoyer.</string>
-    <string name="nutrition_resume_report_label">Resumé</string>
+    <string name="nutrition_summary_report_label">Resumé / chiffres clés</string>
+    <string name="nutrition_summary_report_label_short">Resumé</string>
     <string name="urenam">URENAM</string>
     <string name="ureni">URENI</string>
     <string name="urenas">URENAS</string>
     <string name="inputs">Intrants</string>
 
-    <string name="u6">0-6m</string>
-    <string name="u23o6">6-23m</string>
-    <string name="u59o23">23-59m</string>
-    <string name="u59o6">6-59m</string>
-    <string name="o59">59m+</string>
-    <string name="pw">FE/FA</string>
-    <string name="exsam">ExMAS</string>
+    <string name="u6">moins de 6 mois (0-6m)</string>
+    <string name="u23o6">6 à 23 mois (6-23m)</string>
+    <string name="u59o23">23 à 59 mois (23-59m)</string>
+    <string name="u59o6">6 à 59 mois (6-59m)</string>
+    <string name="o59">plus de 59 mois (59m+)</string>
+    <string name="pw">femmes enceintes ou allaitantes (FE/FA)</string>
+    <string name="exsam">Ex. MAS</string>
 
     <string name="nutrition_total_start">Total début du mois</string>
     <string name="nutrition_total_end">Total fin du mois</string>
     <string name="nutrition_admission">Admissions</string>
-    <string name="nutrition_total_adm">Total Admissions</string>
+    <string name="nutrition_total_adm">Total admissions</string>
     <string name="nutrition_out">Sorties</string>
-    <string name="nutrition_all_out">Toutes Sorties</string>
-    <string name="nutrition_total_out">Total Sorties</string>
+    <string name="nutrition_all_out">Toutes sorties</string>
+    <string name="nutrition_total_out">Total sorties</string>
     <string name="nutrition_m">Homme</string>
     <string name="nutrition_f">Femme</string>
 
@@ -135,7 +133,7 @@
     <string name="nutrition_healed">Guéris</string>
     <string name="nutrition_deceased">Décès</string>
     <string name="nutrition_abandon">Abandons</string>
-    <string name="nutrition_not_responding">Non Repond.</string>
+    <string name="nutrition_not_responding">Non répondant</string>
     <string name="nutrition_referred">Réf. %1$s</string>
     <string name="nutrition_monthly_save">Enregister</string>
     <!-- Menu -->
@@ -148,12 +146,11 @@
     <string name="nutrition_kilo">kilo</string>
     <string name="nutrition_flacon">flacon</string>
     <string name="nutrition_comprimé">comprimé</string>
-    <string name="nutrition_amploule">amploule</string>
 
-    <string name="nutrition_initial">Initial</string>
-    <string name="nutrition_received">Reçue</string>
-    <string name="nutrition_used">Utilisée</string>
-    <string name="nutrition_lost">Perdue</string>
+    <string name="nutrition_initial">Qté initiale</string>
+    <string name="nutrition_received">Qté reçue</string>
+    <string name="nutrition_used">Qté utilisée</string>
+    <string name="nutrition_lost">Qté perdue</string>
 
     <string name="nutrition_plumpy_nut">Plumpy Nut (sachet)</string>
     <string name="nutrition_milk_f75">Lait F75 (litre)</string>

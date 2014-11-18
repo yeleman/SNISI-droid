@@ -44,7 +44,7 @@ public class NutritionMonthlyReportData extends ReportData {
 
     @Override
     protected String buildName() {
-        return "Nut Monthy";
+        return "Mensuel NUT";
     }
 
     protected Boolean isComplete() {

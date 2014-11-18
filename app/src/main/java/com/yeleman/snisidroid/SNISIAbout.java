@@ -19,6 +19,10 @@ public class SNISIAbout extends Activity {
     }
 
     protected void setupUI() {
+        setTitle(String.format(getString(R.string.label_tmpl),
+                               getString(R.string.app_name),
+                               getString(R.string.menu_about)));
+
     	versionButton = (Button) findViewById(R.id.versionButton);
     	versionButton.setText(String.format(
     		getString(R.string.version_button_label),

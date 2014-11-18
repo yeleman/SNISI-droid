@@ -33,6 +33,9 @@ public class NutritionSummaryReport extends Activity {
 
     protected void setupUI() {
         Log.d(TAG, "setupUI NutritionResumeReport");
+        setTitle(String.format(getString(R.string.sub_app_name_nut),
+                               getString(R.string.nutrition_summary_report_label_short)));
+
         NutritionMonthlyReportData report = NutritionMonthlyReportData.get();
 
         SharedPreferences sharedPrefs =

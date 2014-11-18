@@ -48,7 +48,7 @@ public class NutritionWeeklyReportData extends ReportData {
 
     @Override
     protected String buildName() {
-        return "Nut Hebdo";
+        return "Hebdo NUT";
     }
 
     protected Boolean isComplete(){
