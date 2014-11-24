@@ -8,8 +8,8 @@ android {
         applicationId "com.yeleman.snisidroid"
         minSdkVersion 10
         targetSdkVersion 20
-        versionCode 2
-        versionName "1.2" // Mopti Nutrition Test
+        versionCode 3
+        versionName "1.3" // Mopti Nutrition Deploy (Monday morning)
     }
 
     buildTypes {
