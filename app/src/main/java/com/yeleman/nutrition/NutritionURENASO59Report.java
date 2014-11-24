@@ -47,17 +47,20 @@ public class NutritionURENASO59Report extends NutritionURENForm implements Nutri
         returnedField = (EditText) findViewById(R.id.returnedField);
         totalInMField = (EditText) findViewById(R.id.totalInMField);
         totalInFField = (EditText) findViewById(R.id.totalInFField);
-        transferredField = (EditText) findViewById(R.id.transferredField);
         healedField = (EditText) findViewById(R.id.healedField);
+        transferredLabel = (TextView) findViewById(R.id.totalTransferredLabel);
+        transferredLabel.setText(getString(R.string.nutrition_transfer_label_urenas));
         transferredField = (EditText) findViewById(R.id.transferredField);
+        transferredField.setHint(getString(R.string.nutrition_transfer_label_urenas));
         deceasedField = (EditText) findViewById(R.id.deceasedField);
         abandonField = (EditText) findViewById(R.id.abandonField);
         notRespondingField = (EditText) findViewById(R.id.notRespondingField);
         totalOutMField = (EditText) findViewById(R.id.totalOutMField);
         totalOutFField = (EditText) findViewById(R.id.totalOutFField);
         referredLabel = (TextView) findViewById(R.id.referredLabel);
-        referredLabel.setText(String.format(getString(R.string.nutrition_referred), "URENI"));
+        referredLabel.setText(getString(R.string.nutrition_referred_label_urenas));
         referredField = (EditText) findViewById(R.id.referredField);
+        referredField.setHint(getString(R.string.nutrition_referred_label_urenas));
         totalEndMField = (EditText) findViewById(R.id.totalEndMField);
         totalEndFField = (EditText) findViewById(R.id.totalEndFField);
 

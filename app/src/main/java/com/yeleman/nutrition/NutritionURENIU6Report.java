@@ -40,24 +40,29 @@ public class NutritionURENIU6Report extends NutritionURENForm implements Nutriti
 
     protected void setupUI() {
         Log.d(TAG, "setupUI NutritionURENIU6Report");
-        
+
         totalStartMField = (EditText) findViewById(R.id.totalStartMField);
         totalStartFField = (EditText) findViewById(R.id.totalStartFField);
         newCasesField = (EditText) findViewById(R.id.newCasesField);
         returnedField = (EditText) findViewById(R.id.returnedField);
         totalInMField = (EditText) findViewById(R.id.totalInMField);
         totalInFField = (EditText) findViewById(R.id.totalInFField);
+        transferredLabel = (TextView) findViewById(R.id.totalTransferredLabel);
+        transferredLabel.setText(getString(R.string.nutrition_transfer_label_ureni));
         transferredField = (EditText) findViewById(R.id.transferredField);
+        transferredField.setHint(getString(R.string.nutrition_transfer_label_ureni));
         healedField = (EditText) findViewById(R.id.healedField);
-        transferredField = (EditText) findViewById(R.id.transferredField);
+        healedField.setHint(getString(R.string.nutrition_healed_label_ureni));
         deceasedField = (EditText) findViewById(R.id.deceasedField);
         abandonField = (EditText) findViewById(R.id.abandonField);
         notRespondingField = (EditText) findViewById(R.id.notRespondingField);
+        notRespondingField.setHint(getString(R.string.nutrition_not_responding_label_ureni));
         totalOutMField = (EditText) findViewById(R.id.totalOutMField);
         totalOutFField = (EditText) findViewById(R.id.totalOutFField);
         referredLabel = (TextView) findViewById(R.id.referredLabel);
-        referredLabel.setText(String.format(getString(R.string.nutrition_referred), "URENI"));
+        referredLabel.setText(getString(R.string.nutrition_referred_label_ureni));
         referredField = (EditText) findViewById(R.id.referredField);
+        referredField.setHint(getString(R.string.nutrition_referred_label_ureni));
         totalEndMField = (EditText) findViewById(R.id.totalEndMField);
         totalEndFField = (EditText) findViewById(R.id.totalEndFField);
 

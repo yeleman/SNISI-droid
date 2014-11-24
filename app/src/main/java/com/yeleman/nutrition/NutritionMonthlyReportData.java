@@ -120,8 +120,7 @@ public class NutritionMonthlyReportData extends ReportData {
         return ureniReport.totalStartF();
     }
     protected int totalStartURENI() {
-        return totalStartFURENI() +
-               totalStartMURENI();
+        return ureniReport.totalStart();
     }
     protected int totalStartMURENAMAndRENAS() {
         return urenasReport.totalStartM() +
@@ -132,19 +131,14 @@ public class NutritionMonthlyReportData extends ReportData {
                urenamReport.totalStartF();
     }
     protected int totalStartURENAMAndRENAS() {
-        return totalStartMURENAMAndRENAS() +
-               totalStartFURENAMAndRENAS();
+        return urenasReport.totalStart() +
+               urenamReport.totalStart();
     }
     //  In
-    protected int totalInMURENI() {
-        return ureniReport.totalInM();
-    }
-    protected int totalInFURENI() {
-        return ureniReport.totalInF();
-    }    
-    protected int totalInURENI() {
-        return totalInMURENI() + totalInFURENI();
-    }
+    protected int totalInMURENI() { return ureniReport.totalInM(); }
+    protected int totalInFURENI() { return ureniReport.totalInF(); }
+    protected int totalInURENI() { return ureniReport.totalIn(); }
+
     protected int totalInMURENAMAndRENAS() {
         return urenasReport.totalInM() +
                urenamReport.totalInM();
@@ -154,8 +148,14 @@ public class NutritionMonthlyReportData extends ReportData {
                urenamReport.totalInF();
     }
     protected int totalInURENAMAndRENAS() {
-        return totalInFURENAMAndRENAS() +
-               totalInMURENAMAndRENAS();
+        return urenasReport.totalIn() +
+               urenamReport.totalIn();
+    }
+    // Grand Total In
+    protected int grandTotalInURENI() { return ureniReport.grandTotalIn(); }
+    protected int grandTotalInURENAMAndRENAS() {
+        return urenasReport.grandTotalIn() +
+                urenamReport.grandTotalIn();
     }
     // Out
     protected int totalOutMURENI() {
@@ -165,8 +165,9 @@ public class NutritionMonthlyReportData extends ReportData {
         return ureniReport.totalOutF();
     }
     protected int totalOutURENI() {
-        return totalOutMURENI() + totalOutFURENI();
+        return ureniReport.totalOut();
     }
+
     protected int totalOutMURENAMAndRENAS() {
         return urenasReport.totalOutM() +
                urenamReport.totalOutM();
@@ -176,8 +177,14 @@ public class NutritionMonthlyReportData extends ReportData {
                urenamReport.totalOutF();
     }
     protected int totalOutURENAMAndRENAS() {
-        return totalOutMURENAMAndRENAS() +
-               totalOutFURENAMAndRENAS();
+        return urenasReport.totalOut() +
+               urenamReport.totalOut();
+    }
+    // Grand Total Out
+    protected int grandTotalOutURENI() { return ureniReport.grandTotalOut(); }
+    protected int grandTotalOutURENAMAndRENAS() {
+        return urenasReport.grandTotalOut() +
+               urenamReport.grandTotalOut();
     }
     // End
     protected int totalEndMURENI() {
@@ -186,10 +193,7 @@ public class NutritionMonthlyReportData extends ReportData {
     protected int totalEndFURENI() {
         return ureniReport.totalEndF();
     }
-    protected int totalEndURENI() {
-        return totalEndFURENI() +
-               totalEndMURENI();
-    }
+    protected int totalEndURENI() { return ureniReport.totalEnd(); }
     protected int totalEndMURENAMAndRENAS() {
         return urenasReport.totalEndM() +
                urenamReport.totalEndM();
@@ -199,8 +203,8 @@ public class NutritionMonthlyReportData extends ReportData {
                urenamReport.totalEndF();
     }
     protected int totalEndURENAMAndRENAS() {
-        return totalEndMURENAMAndRENAS() +
-               totalEndFURENAMAndRENAS();
+        return urenasReport.totalEnd() +
+               urenamReport.totalEnd();
     }
 
     protected int balancePlumpy() {

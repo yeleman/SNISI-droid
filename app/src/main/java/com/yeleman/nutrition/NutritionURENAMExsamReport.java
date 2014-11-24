@@ -49,8 +49,9 @@ public class NutritionURENAMExsamReport extends NutritionURENForm implements Nut
         totalStartMField = (EditText) findViewById(R.id.totalStartMField);
         totalStartFField = (EditText) findViewById(R.id.totalStartFField);
         referredLabel = (TextView) findViewById(R.id.referredLabel);
-        referredLabel.setText(String.format(getString(R.string.nutrition_referred), "NUT"));
+        referredLabel.setText(getString(R.string.nutrition_referred_label_urenam));
         referredField = (EditText) findViewById(R.id.referredField);
+        referredField.setHint(getString(R.string.nutrition_referred_label_urenam));
         totalEndMField = (EditText) findViewById(R.id.totalEndMField);
         totalEndFField = (EditText) findViewById(R.id.totalEndFField);
 

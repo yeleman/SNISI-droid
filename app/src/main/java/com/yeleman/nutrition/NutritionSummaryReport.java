@@ -66,12 +66,18 @@ public class NutritionSummaryReport extends Activity {
             TextView admissionTotalValueMUrenasAndURENAM = (TextView) inflated_urenam_and_urenas.findViewById(R.id.admissionTotalValueM);
             admissionTotalValueMUrenasAndURENAM.setText(String.valueOf(report.totalInMURENAMAndRENAS()));
 
+            TextView admissionGrandTotalsValueUrenasAndURENAM = (TextView) inflated_urenam_and_urenas.findViewById(R.id.admissionGrandTotalsValue);
+            admissionGrandTotalsValueUrenasAndURENAM.setText(String.valueOf(report.grandTotalInURENAMAndRENAS()));
+
             TextView outTotalsValueUrenasAndURENAM = (TextView) inflated_urenam_and_urenas.findViewById(R.id.outTotalsValue);
             outTotalsValueUrenasAndURENAM.setText(String.valueOf(report.totalOutURENAMAndRENAS()));
             TextView outTotalValueFUrenasAndURENAM = (TextView) inflated_urenam_and_urenas.findViewById(R.id.outTotalValueF);
             outTotalValueFUrenasAndURENAM.setText(String.valueOf(report.totalOutFURENAMAndRENAS()));
             TextView outTotalValueMUrenasAndURENAM = (TextView) inflated_urenam_and_urenas.findViewById(R.id.outTotalValueM);
             outTotalValueMUrenasAndURENAM.setText(String.valueOf(report.totalOutMURENAMAndRENAS()));
+
+            TextView outGrandTotalsValueUrenasAndURENAM = (TextView) inflated_urenam_and_urenas.findViewById(R.id.outGrandTotalsValue);
+            outGrandTotalsValueUrenasAndURENAM.setText(String.valueOf(report.grandTotalOutURENAMAndRENAS()));
 
             TextView endTotalsValueUrenasAndURENAM = (TextView) inflated_urenam_and_urenas.findViewById(R.id.endTotalsValue);
             endTotalsValueUrenasAndURENAM.setText(String.valueOf(report.totalEndURENAMAndRENAS()));
@@ -100,12 +106,18 @@ public class NutritionSummaryReport extends Activity {
             TextView admissionTotalValueMUreni = (TextView) inflated_ureni.findViewById(R.id.admissionTotalValueM);
             admissionTotalValueMUreni.setText(String.valueOf(report.totalInMURENI()));
 
+            TextView admissionGrandTotalsValueUreni = (TextView) inflated_ureni.findViewById(R.id.admissionGrandTotalsValue);
+            admissionGrandTotalsValueUreni.setText(String.valueOf(report.grandTotalInURENI()));
+
             TextView outTotalsValueUreni = (TextView) inflated_ureni.findViewById(R.id.outTotalsValue);
             outTotalsValueUreni.setText(String.valueOf(report.totalOutURENI()));
             TextView outTotalValueFUreni = (TextView) inflated_ureni.findViewById(R.id.outTotalValueF);
             outTotalValueFUreni.setText(String.valueOf(report.totalOutFURENI()));
             TextView outTotalValueMUreni = (TextView) inflated_ureni.findViewById(R.id.outTotalValueM);
             outTotalValueMUreni.setText(String.valueOf(report.totalOutMURENI()));
+
+            TextView outGrandTotalsValueUreni = (TextView) inflated_ureni.findViewById(R.id.outGrandTotalsValue);
+            outGrandTotalsValueUreni.setText(String.valueOf(report.grandTotalOutURENI()));
 
             TextView endTotalsValueUreni = (TextView) inflated_ureni.findViewById(R.id.endTotalsValue);
             endTotalsValueUreni.setText(String.valueOf(report.totalEndURENI()));

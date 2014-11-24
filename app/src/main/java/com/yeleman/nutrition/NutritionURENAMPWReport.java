@@ -57,8 +57,9 @@ public class NutritionURENAMPWReport extends NutritionURENForm implements Nutrit
         totalOutMField.setVisibility(View.GONE);
         totalOutFField = (EditText) findViewById(R.id.totalOutFField);
         referredLabel = (TextView) findViewById(R.id.referredLabel);
-        referredLabel.setText(String.format(getString(R.string.nutrition_referred), "NUT"));
+        referredLabel.setText(getString(R.string.nutrition_referred_label_urenam));
         referredField = (EditText) findViewById(R.id.referredField);
+        referredField.setHint(getString(R.string.nutrition_referred_label_urenam));
         totalEndMField = (EditText) findViewById(R.id.totalEndMField);
         totalEndMField.setVisibility(View.GONE);
         totalEndFField = (EditText) findViewById(R.id.totalEndFField);

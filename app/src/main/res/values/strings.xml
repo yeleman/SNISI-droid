@@ -129,7 +129,7 @@
 
     <string name="nutrition_new_cases">Nouveau cas</string>
     <string name="nutrition_returned">Réadmission</string>
-    <string name="nutrition_transferred">Transf. URENI</string>
+    <string name="nutrition_transferred">Transf. URENI vers URENAS</string>
     <string name="nutrition_healed">Guéris</string>
     <string name="nutrition_deceased">Décès</string>
     <string name="nutrition_abandon">Abandons</string>
@@ -166,6 +166,18 @@
     <string name="nutrition_vita_100K_ui_injectable">Vit A 100.000 UI (ampoule)</string>
     <string name="nutrition_vita_200K_ui_injectable">Vit A 200.000 UI (ampoule)</string>
     <string name="nutrition_iron_folic_acid">Fer /acide folique (cp)</string>
+
+    <string name="nutrition_transfer_label_urenas">Transf. URENI vers URENAS</string>
+    <string name="nutrition_transfer_label_ureni">Référence vers URENI</string>
+    <string name="nutrition_referred_label_urenam">Référence NUT</string>
+    <string name="nutrition_referred_label_urenas">Réf. vers URENI / Transf. vers URENAS</string>
+    <string name="nutrition_referred_label_ureni">Transfert vers URENI</string>
+
+    <string name="nutrition_healed_label_ureni">Traités avec succès</string>
+    <string name="nutrition_not_responding_label_ureni">Non répondant/Transf. Médical</string>
+
+    <string name="nutrition_grand_total_in_label">Total admiss. général</string>
+    <string name="nutrition_grand_total_out_label">Total sorties général</string>
     
     <!-- SMIR -->
     <string name="smir_app_label">SMIR</string>

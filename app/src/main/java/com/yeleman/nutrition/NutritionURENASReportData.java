@@ -118,57 +118,75 @@ public class NutritionURENASReportData extends ReportData {
                Constants.stringFromInteger(o59_total_end_f);
     }
 
-    protected int totalStartM() {
+    public int totalStartM() {
          return Constants.integerFromReport(o59_total_start_m) +
                 Constants.integerFromReport(u59o6_total_start_m);
     }
 
-    protected int totalStartF() {
+    public int totalStartF() {
          return Constants.integerFromReport(o59_total_start_f) +
                 Constants.integerFromReport(u59o6_total_start_f);
     }
 
-    protected int totalStart() {
+    public int totalStart() {
          return totalStartF() + totalStartM();
     }
 
-    protected int totalInM() {
+    public int totalInM() {
          return Constants.integerFromReport(o59_total_in_m) +
                 Constants.integerFromReport(u59o6_total_in_m);
     }
-    protected int totalInF() {
+    public int totalInF() {
          return Constants.integerFromReport(o59_total_in_f) +
                 Constants.integerFromReport(u59o6_total_in_f);
     }
 
-    protected int totalIn() {
+    public int totalIn() {
         return totalInF() + totalInM();
     }
 
-    protected int totalOutM() {
+    public int totalTransferred() {
+        return Constants.integerFromReport(o59_transferred) +
+                Constants.integerFromReport(u59o6_transferred);
+    }
+
+    public int grandTotalIn() {
+        return totalIn() + totalTransferred();
+    }
+
+    public int totalOutM() {
          return Constants.integerFromReport(o59_total_out_m) +
                 Constants.integerFromReport(u59o6_total_out_m);
     }
 
-    protected int totalOutF() {
+    public int totalOutF() {
          return Constants.integerFromReport(o59_total_out_f) +
                 Constants.integerFromReport(u59o6_total_out_f);
     }
 
-    protected int totalOut() {
+    public int totalOut() {
          return totalOutF() + totalOutM();
     }
 
-    protected int totalEndM() {
+    public int totalReferred() {
+        return Constants.integerFromReport(o59_referred) +
+               Constants.integerFromReport(u59o6_referred);
+    }
+
+    public int grandTotalOut() {
+        return totalOut() + totalReferred();
+    }
+
+    public int totalEndM() {
         return Constants.integerFromReport(o59_total_end_m) +
                Constants.integerFromReport(u59o6_total_end_m);
     }
-    protected int totalEndF() {
+    public int totalEndF() {
         return Constants.integerFromReport(o59_total_end_f) +
                Constants.integerFromReport(u59o6_total_end_f);
     }
 
-    protected int totalEnd() {
+    public int totalEnd() {
         return totalEndM() + totalEndF();
     }
 }

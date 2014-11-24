@@ -52,8 +52,9 @@ public class NutritionURENAMU59O23Report extends NutritionURENForm implements Nu
         totalOutMField = (EditText) findViewById(R.id.totalOutMField);
         totalOutFField = (EditText) findViewById(R.id.totalOutFField);
         referredLabel = (TextView) findViewById(R.id.referredLabel);
-        referredLabel.setText(String.format(getString(R.string.nutrition_referred), "NUT"));
+        referredLabel.setText(getString(R.string.nutrition_referred_label_urenam));
         referredField = (EditText) findViewById(R.id.referredField);
+        referredField.setHint(getString(R.string.nutrition_referred_label_urenam));
         totalEndMField = (EditText) findViewById(R.id.totalEndMField);
         totalEndFField = (EditText) findViewById(R.id.totalEndFField);
 

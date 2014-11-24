@@ -126,6 +126,22 @@
                 android:textColor="#000000"
                 android:gravity="center"/>
         </TableRow>
+        <TableRow
+            android:id="@+id/admissionGrandTableRow"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+            <TextView
+                android:id="@+id/admissionGrandTotalLabel"
+                android:layout_weight="1"
+                android:textColor="#000000"
+                android:text="@string/nutrition_grand_total_in_label"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/admissionGrandTotalsValue"
+                android:layout_weight="1"
+                android:textColor="#000000"
+                android:gravity="center"/>
+        </TableRow>
         <!-- Out -->
         <TableRow
             android:layout_height="wrap_content"
@@ -159,6 +175,22 @@
                 android:gravity="center"/>
             <TextView
                 android:id="@+id/outTotalsValue"
+                android:layout_weight="1"
+                android:textColor="#000000"
+                android:gravity="center"/>
+        </TableRow>
+        <TableRow
+            android:id="@+id/outGrandTableRow"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent">
+            <TextView
+                android:id="@+id/outGrandTotalLabel"
+                android:layout_weight="1"
+                android:textColor="#000000"
+                android:text="@string/nutrition_grand_total_out_label"
+                android:gravity="center"/>
+            <TextView
+                android:id="@+id/outGrandTotalsValue"
                 android:layout_weight="1"
                 android:textColor="#000000"
                 android:gravity="center"/>
