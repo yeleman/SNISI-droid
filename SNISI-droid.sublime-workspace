@@ -95,87 +95,6 @@
 	},
 	"buffers":
 	[
-		{
-			"file": "app/src/main/java/com/yeleman/snisidroid/ChangePassword.java",
-			"settings":
-			{
-				"buffer_size": 3450,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/src/main/java/com/yeleman/snisidroid/CheckedFormActivity.java",
-			"settings":
-			{
-				"buffer_size": 8814,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/src/main/java/com/yeleman/nutrition/NutritionWeeklyReport.java",
-			"settings":
-			{
-				"buffer_size": 5626,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/src/main/res/values/strings.xml",
-			"settings":
-			{
-				"buffer_size": 4204,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/build/intermediates/res/debug/layout/snisi_home.xml",
-			"settings":
-			{
-				"buffer_size": 1863,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "protected EditText mamScreeningField;\nprotected EditText samScreeningField;\nprotected EditText samcScreeningField;\n\nprotected EditText mamCasesField;\nprotected EditText mamDeathsField;\n\nprotected EditText samCasesField;\nprotected EditText samDeathsField;\n\nprotected EditText samcCasesField;\nprotected EditText samcDeathsField;\n",
-			"settings":
-			{
-				"buffer_size": 327,
-				"line_ending": "Unix",
-				"name": "protected EditText mamScreeningField;"
-			}
-		},
-		{
-			"file": "app/src/main/res/layouts/nutrition/layout/nutrition_home.xml",
-			"settings":
-			{
-				"buffer_size": 1135,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/src/main/res/layouts/snisi/layout/snisi_change_password.xml",
-			"settings":
-			{
-				"buffer_size": 2063,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "app/src/main/res/layouts/snisi/layout/nutrition_weekly_report.xml",
-			"settings":
-			{
-				"buffer_size": 1299,
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"contents": "protected Method getMethodFor(String methodName, Class[] parameterTypes) {\n		Class[] nparameterTypes = new Class[parameterTypes.length + 1];\n		nparameterTypes[0] = EditText.class;\n		for (int i = 0 ; i < parameterTypes.length ; i++ ) {\n			nparameterTypes[i + 1] = parameterTypes[i];\n		}\n        Method method = null;\n        Class<?> c = getClass();\n\n        try {\n            method = c.getMethod(methodName, nparameterTypes);\n        } catch (NoSuchMethodException e) {\n            e.printStackTrace();\n            return null;\n        }\n        return method;\n	}\n\n	protected void addValidityControl(final EditText editText, String methodName,\n									  Class[] parameterTypes,\n									  Object[] params) {\n\n		final Method method = getMethodFor(methodName, parameterTypes);\n		if (method == null) {\n			Log.e(TAG, \"Method not found.\");\n			return;\n		}\n		final Object[] mparams = new Object[params.length + 1];\n		mparams[0] = editText;\n		for (int i = 0 ; i < params.length ; i++ ) {\n			mparams[i + 1] = params[i];\n		}\n\n		editText.addTextChangedListener(new TextWatcher() {\n            public void afterTextChanged(Editable s) {\n            	Log.i(TAG, \"afterTextChanged\");\n                Class<?> c = getClass();\n                try {\n                    Object ret = method.invoke(c.newInstance(), mparams);\n                } catch (IllegalAccessException e) {\n                	Log.i(TAG, \"IllegalAccessException\");\n                    e.printStackTrace();\n                } catch (InvocationTargetException e) {\n                	Log.i(TAG, \"InvocationTargetException\");\n                    e.printStackTrace();\n                } catch (InstantiationException e) {\n                    e.printStackTrace();\n                }\n                Log.i(TAG, \"afterTextChanged: method called\");\n            }\n\n            public void beforeTextChanged(CharSequence s, int start, int count, int after) {}\n            public void onTextChanged(CharSequence s, int start, int before, int count) {}\n        });\n\n	}",
-			"settings":
-			{
-				"buffer_size": 2003,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -220,43 +139,75 @@
 		"/Users/reg/src/SNISI-droid",
 		"/Users/reg/src/SNISI-droid/app",
 		"/Users/reg/src/SNISI-droid/app/src",
-		"/Users/reg/src/SNISI-droid/app/src/main",
-		"/Users/reg/src/SNISI-droid/app/src/main/java",
-		"/Users/reg/src/SNISI-droid/app/src/main/java/com",
-		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman",
-		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/smir",
-		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid",
-		"/Users/reg/src/SNISI-droid/app/src/main/res",
-		"/Users/reg/src/SNISI-droid/app/src/main/res/layouts",
-		"/Users/reg/src/SNISI-droid/app/src/main/res/layouts/snisi",
-		"/Users/reg/src/SNISI-droid/app/src/main/res/layouts/snisi/layout",
-		"/Users/reg/src/SNISI-droid/app/src/main/res/values"
+		"/Users/reg/src/SNISI-droid/app/src/androidTest/java",
+		"/Users/reg/src/SNISI-droid/app/src/main"
 	],
 	"file_history":
 	[
-		"/Users/reg/src/SNISI-droid/app/src/main/res/layouts/snisi/menu/nutrition_weekly_report.xml",
+		"/Users/reg/src/SNISI-droid/app/src/main/res/values/strings.xml",
+		"/Users/reg/src/SNISI-droid/app/src/main/res/layouts/nutrition/layout/nutrition_monthly_home.xml",
+		"/Users/reg/src/SNISI-droid/app/src/main/res/layouts/nutrition/layout/nutrition_summary_uren_unit.xml",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/nutrition/NutritionWeeklyReport.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/nutrition/NutritionWeeklyReportData.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid/ReportData.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/nutrition/NutritionMonthlyHome.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid/CheckedFormActivity.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/nutrition/NutritionInputsReport.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/nutrition/NutritionInputsReportData.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/nutrition/NutritionMonthlyReportData.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/nutrition/NutritionURENAMExsamReport.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/nutrition/NutritionURENAMO59Report.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/nutrition/NutritionURENAMPWReport.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/nutrition/NutritionHome.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid/SMSSentReceiver.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/nutrition/NutritionURENAMReportData.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/nutrition/NutritionURENAMU23O6Report.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/nutrition/NutritionURENAMU59O23Report.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/nutrition/NutritionURENASO59Report.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/nutrition/NutritionURENASReportData.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/nutrition/NutritionURENASU59O6Report.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/nutrition/NutritionURENIO59Report.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/nutrition/NutritionURENIReportData.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/nutrition/NutritionURENIU59O6Report.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/nutrition/NutritionURENIU6Report.java",
+		"/Users/reg/src/SNISI-droid/.idea/compiler.xml",
+		"/Users/reg/src/SNISI-droid/.idea/modules.xml",
+		"/Users/reg/src/SNISI-droid/app/src/main/AndroidManifest.xml",
+		"/Users/reg/src/SNISI-droid/app/src/main/res/layouts/nutrition/layout/nutrition_weekly_report.xml",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/nutrition/NutritionURENIReport.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/res/layouts/nutrition/layout/nutrition_ureni_report.xml",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/nutrition/NutritionURENASReport.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/res/layouts/nutrition/layout/nutrition_urenas_report.xml",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/nutrition/NutritionURENAMReport.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/res/layouts/nutrition/layout/nutrition_urenam_report.xml",
+		"/Users/reg/src/SNISI-droid/README.md",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid/Constants.java",
 		"/Users/reg/src/SNISI-droid/app/src/main/res/layouts/snisi/layout/nutrition_weekly_report.xml",
+		"/Users/reg/src/SNISI-droid/app/src/main/res/layouts/snisi/layout/snisi_change_password.xml",
+		"/Users/reg/src/SNISI-droid/app/src/main/res/layouts/nutrition/layout/nutrition_home.xml",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid/Popups.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid/ChangePassword.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/nutrition/NutritionURENForm.java",
+		"/Users/reg/src/SNISI-droid/app/build/intermediates/res/debug/layout/snisi_home.xml",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid/SNISIHome.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/res/layouts/smir/layout/smir_alert.xml",
+		"/Users/reg/src/SNISI-droid/app/src/main/res/layouts/snisi/layout/snisi_resource.xml",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid/SNISIApp.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/res/menu/nutrition.xml",
+		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid/AbstractReportData.java",
+		"/Users/reg/src/SNISI-droid/app/src/main/res/layouts/snisi/menu/nutrition_weekly_report.xml",
+		"/Users/reg/src/SNISI-droid/.idea/.name",
 		"/Users/reg/src/SNISI-droid/app/build/intermediates/res/debug/menu/nutrition_weekly_report.xml",
 		"/Users/reg/src/SNISI-droid/app/build/intermediates/res/debug/layout/nutrition_weekly_report.xml",
 		"/Users/reg/src/SNISI-droid/app/build/intermediates/res/debug/layout/nutrition_home.xml",
-		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid/Constants.java",
-		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/nutrition/NutritionHome.java",
 		"/Users/reg/src/SNISI-droid/app/build/intermediates/res/debug/layout/snisi_change_password.xml",
-		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid/CheckedFormActivity.java",
-		"/Users/reg/src/SNISI-droid/app/src/main/AndroidManifest.xml",
 		"/Users/reg/src/SNISI-droid/.idea/workspace.xml",
-		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid/ChangePassword.java",
-		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid/SNISIHome.java",
 		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/smir/SMIRHome.java",
-		"/Users/reg/src/SNISI-droid/app/build/intermediates/res/debug/layout/snisi_home.xml",
 		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid/SNISIAbout.java",
-		"/Users/reg/src/SNISI-droid/app/src/main/res/layouts/nutrition/layout/nutrition_home.xml",
 		"/Users/reg/src/SNISI-droid/app/build/intermediates/res/debug/menu/nutrition.xml",
-		"/Users/reg/src/SNISI-droid/app/src/main/res/menu/nutrition.xml",
 		"/Users/reg/src/SNISI-droid/.idea/misc.xml",
 		"/Users/reg/src/SNISI-droid/app/app.iml",
 		"/Users/reg/src/SNISI-droid/app/src/main/res/layouts/snisi/layout/snisi_about.xml",
-		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid/Popups.java",
 		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid/Preferences.java",
 		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid/Resource.java",
 		"/Users/reg/src/SNISI-droid/app/build/intermediates/symbols/debug/R.txt",
@@ -274,17 +225,14 @@
 		"/Users/reg/src/SNISI-droid/app/proguard-rules.pro",
 		"/Users/reg/src/SNISI-droid/ProjetSNISI.iml",
 		"/Users/reg/src/SNISI-droid/SNISI-droid.iml",
-		"/Users/reg/src/SNISI-droid/app/src/main/res/values/strings.xml",
 		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid/SNISI.java",
 		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid/Commons.java",
 		"/Users/reg/src/SNISI-droid/app/build/intermediates/res/debug/layout/smir_home.xml",
 		"/Users/reg/src/SNISI-droid/.gradle/1.12/taskArtifacts/fileHashes.bin",
 		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/smir/Constants.java",
-		"/Users/reg/src/SNISI-droid/.idea/compiler.xml",
 		"/Users/reg/src/SNISI-droid/dist_stable/SNISI.apk",
 		"/Users/reg/src/SNISI-droid/app/build/intermediates/exploded-aar/com.android.support/support-v4/20.0.0/aidl/android/support/v4/app/INotificationSideChannel.aidl",
 		"/Users/reg/src/SNISI-droid/app/build/intermediates/res/debug/drawable/abc_ic_clear_holo_light.xml",
-		"/Users/reg/src/SNISI-droid/app/src/main/res/layouts/snisi/layout/snisi_change_password.xml",
 		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/snisidroid/CommonValidations.java",
 		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/smir/SMIR.java",
 		"/Users/reg/src/SNISI-droid/app/src/main/java/com/yeleman/smir/AlertActivity.java",
@@ -323,45 +271,7 @@
 		"/Users/reg/src/ZerinDroid/app/src/main/AndroidManifest.xml",
 		"/Users/reg/src/douentza/douentza/static/js_factory/node_modules/grunt/test/fixtures/files/dist/built-a.js",
 		"/Users/reg/src/douentza/douentza/templates/base.html",
-		"/Users/reg/src/douentza/douentza/static/js_factory/node_modules/grunt-contrib-clean/docs/overview.md",
-		"/Users/reg/src/douentza/douentza/views/events.py",
-		"/Users/reg/src/douentza/douentza/views/__init__.py",
-		"/Users/reg/src/douentza/douentza/static/js_factory/less/variables.less",
-		"/Users/reg/src/snisi/requirements.pip",
-		"/Users/reg/src/snisi/snisi_core/models/Projects.py",
-		"/Users/reg/src/snisi/snisi_malaria/aggregations.py",
-		"/Users/reg/src/snisi/snisi_tools/auth.py",
-		"/Users/reg/src/snisi/snisi_web/templates/parts/indicator_graph.html",
-		"/Users/reg/src/snisi/snisi_malaria/templates/malaria/indicator_browser.html",
-		"/Users/reg/src/snisi/snisi_web/views/indicators_api.py",
-		"/Users/reg/src/snisi/snisi_epidemiology/templates/epidemiology/indicators.html",
-		"/Users/reg/src/snisi/snisi_malaria/views/indicators.py",
-		"/Users/reg/src/snisi/snisi_vacc/indicators.py",
-		"/Users/reg/src/snisi/snisi_trachoma/indicators.py",
-		"/Users/reg/src/snisi/snisi_reprohealth/indicators.py",
-		"/Users/reg/src/snisi/snisi_core/indicators.py",
-		"/Users/reg/src/snisi/snisi_malaria/indicators/map.py",
-		"/Users/reg/src/snisi/snisi_epidemiology/__init__.py",
-		"/Users/reg/src/snisi/snisi_malaria/templates/report/edit_malaria_monthly_routine.html",
-		"/Users/reg/src/snisi/snisi_nutrition/templates/report/nutrition_monthly_routine_aggregated.html",
-		"/Users/reg/src/snisi/snisi_malaria/templates/report/malaria_monthly_routine_aggregated.html",
-		"/Users/reg/src/snisi/snisi_malaria/templates/report/malaria_monthly_routine.html",
-		"/Users/reg/src/snisi/snisi_epidemiology/cache/epidemiology_routine_members.json",
-		"/Users/reg/src/snisi/snisi_epidemiology/cache/epidemiology_routine_sms_members.json",
-		"/Users/reg/src/snisi/snisi_malaria/cache/malaria_monthly_routine_members.json",
-		"/Users/reg/src/snisi/snisi_reprohealth/cache/msi_reprohealth_routine_members.json",
-		"/Users/reg/src/snisi/snisi_vacc/cache/vacc_coverage_routine_members.json",
-		"/Users/reg/src/snisi/snisi_epidemiology/xls_export.py",
-		"/Users/reg/src/snisi/snisi_epidemiology/fixtures/Domain.xml",
-		"/Users/reg/src/snisi/snisi_epidemiology/templates/epidemiology/dashboard.html",
-		"/Users/reg/src/snisi/snisi_core/xls_import.py",
-		"/Users/reg/src/snisi/snisi_core/xls_export.py",
-		"/Users/reg/src/snisi/snisi_bednets/xls_import.py",
-		"/Users/reg/src/snisi/snisi_bednets/xls_export.py",
-		"/Users/reg/src/snisi/snisi_web/templates/parts/report_header_occasional_multiple.html",
-		"/Users/reg/src/snisi/snisi_epidemiology/fixtures/template-hebdo-MADO.xls",
-		"/Users/reg/src/snisi/snisi_malaria/templates/malaria/epidemio.html",
-		"/Users/reg/src/snisi/snisi_epidemiology/urls.py"
+		"/Users/reg/src/douentza/douentza/static/js_factory/node_modules/grunt-contrib-clean/docs/overview.md"
 	],
 	"find":
 	{
@@ -372,6 +282,7 @@
 		"height": 95.0,
 		"where_history":
 		[
+			"<open folders>,*.java,*.xml",
 			"<open folders>,*.java",
 			"<open folders>,*.py",
 			"<open folders>,*.po",
@@ -397,6 +308,58 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"totalIn",
+			"totalInMURENI",
+			"nutrition_referred_label_urenam",
+			" en l",
+			"Web",
+			"changer",
+			"nutrition_resume_report_label",
+			"nutrition_summary_report_label",
+			"nutrition_resum",
+			"nutrition_res",
+			"resume",
+			"\\'",
+			"De ",
+			"nutrition_amploule",
+			"str_image",
+			"version_button_default_label",
+			".save();",
+			"deleteAll",
+			"delete()",
+			"// if dialog was one, that's an error and we need to \n            	// display timeout message",
+			"progressDialog.dismiss",
+			"dismiss",
+			"filter.addAction",
+			"setPriority",
+			"u23o6_",
+			"u59o23_",
+			"o59_",
+			"stringFromInteger",
+			"smsManager",
+			"stringFromInteger",
+			"Constants.SUB_SPACER +",
+			"report.",
+			"stringFromFloat",
+			"stringFromInteger",
+			"SMS_NUTRITION_SPACER",
+			"respondingField",
+			"rapport",
+			"smsDialogBuilder",
+			"errorDialog",
+			"questionDialogBuilder",
+			"\"Sugar\"",
+			"errorDialog",
+			"questionDialogBuilder",
+			"String",
+			"requestForResumeReport",
+			" = ",
+			"errorDialogBuilder",
+			"mam",
+			"testReport",
+			"masc",
+			"mas",
+			"mam",
 			"mustBeInferior",
 			"_",
 			";",
@@ -472,59 +435,7 @@
 			"JSON",
 			"downloadUrl",
 			"random",
-			"gen_uuid",
-			"task",
-			"créee",
-			"is_selected",
-			"checked",
-			"cadded",
-			"cupdated",
-			"ccreated",
-			"AddGroupForm",
-			" a:hover",
-			",",
-			"uuid",
-			"settings",
-			"PhoneNumber",
-			"identity",
-			"name",
-			"legend",
-			"pure-menu-heading",
-			"contacts",
-			"page",
-			".sidebar .pure-menu ",
-			"group",
-			"groups",
-			"tasks_list",
-			"tasks",
-			"tasks_list",
-			"task",
-			"@login_required\ndef tasks_list(request, **kwargs):\n    context = {}\n    return render(request,\n                  kwargs.get('template_name', 'tasks_list.html'),\n                  context)",
-			"pure-menu-selected",
-			"#nav",
-			"500",
-			"')\n",
-			"print",
-			"duration",
-			"duration =",
-			"get_event_responses_counts",
-			"graph_event_response_counts",
-			"\\",
-			"unicodedata",
-			"NKFD",
-			"Routine Hebdomadire MADO",
-			"_(\"",
-			"EpidemiologyR",
-			"week",
-			"period",
-			"months",
-			"weeks_data",
-			"start(",
-			"expected_arr",
-			"middle().",
-			"logger.debug",
-			"find_create_with",
-			"print"
+			"gen_uuid"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -532,6 +443,9 @@
 		"regex": false,
 		"replace_history":
 		[
+			".safeSave();",
+			"SUB_SPACER",
+			"notRespondingField",
 			",",
 			"\\t",
 			"http://casden.mybookforge.com/epub/",
@@ -546,1131 +460,8 @@
 	"groups":
 	[
 		{
-			"selected": 2,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "app/src/main/java/com/yeleman/snisidroid/ChangePassword.java",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3450,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								454,
-								382
-							]
-						],
-						"settings":
-						{
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"history_list_is_closing": true,
-							"sublime_auto_complete": true,
-							"syntax": "Packages/Java/Java.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "app/src/main/java/com/yeleman/snisidroid/CheckedFormActivity.java",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 8814,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								3182,
-								3182
-							]
-						],
-						"settings":
-						{
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"sublime_auto_complete": true,
-							"syntax": "Packages/Java/Java.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1011.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "app/src/main/java/com/yeleman/nutrition/NutritionWeeklyReport.java",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5626,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Java/Java.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
-			]
-		},
-		{
-			"selected": 0,
-			"sheets":
-			[
-				{
-					"buffer": 3,
-					"file": "app/src/main/res/values/strings.xml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4204,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2956,
-								2984
-							]
-						],
-						"settings":
-						{
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"history_list_is_closing": true,
-							"sublime_auto_complete": true,
-							"syntax": "Packages/XML/XML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 431.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "app/build/intermediates/res/debug/layout/snisi_home.xml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1863,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								869,
-								811
-							]
-						],
-						"settings":
-						{
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"history_list_is_closing": true,
-							"sublime_auto_complete": true,
-							"syntax": "Packages/XML/XML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 327,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								327,
-								327
-							]
-						],
-						"settings":
-						{
-							"auto_name": "protected EditText mamScreeningField;",
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"sublime_auto_complete": true,
-							"syntax": "Packages/Text/Plain text.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "app/src/main/res/layouts/nutrition/layout/nutrition_home.xml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1135,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								190,
-								190
-							]
-						],
-						"settings":
-						{
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"history_list_is_closing": true,
-							"sublime_auto_complete": true,
-							"syntax": "Packages/XML/XML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "app/src/main/res/layouts/snisi/layout/snisi_change_password.xml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2063,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								638,
-								1192
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/XML/XML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "app/src/main/res/layouts/snisi/layout/nutrition_weekly_report.xml",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1299,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								594,
-								594
-							]
-						],
-						"settings":
-						{
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"history_list_is_closing": true,
-							"sublime_auto_complete": true,
-							"syntax": "Packages/XML/XML.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2003,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								564,
-								564
-							]
-						],
-						"settings":
-						{
-							"codeintel": true,
-							"codeintel_config":
-							{
-								"JavaScript":
-								{
-									"codeintel_max_recursive_dir_depth": 2,
-									"codeintel_scan_files_in_project": false,
-									"javascriptExtraPaths":
-									[
-									]
-								},
-								"PHP":
-								{
-									"codeintel_max_recursive_dir_depth": 5,
-									"codeintel_scan_files_in_project": false,
-									"phpExtraPaths":
-									[
-									]
-								},
-								"Python":
-								{
-									"env":
-									{
-									}
-								}
-							},
-							"codeintel_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_live": true,
-							"codeintel_live_enabled_languages":
-							[
-								"JavaScript",
-								"Mason",
-								"XBL",
-								"XUL",
-								"RHTML",
-								"SCSS",
-								"Python",
-								"HTML",
-								"Ruby",
-								"Python3",
-								"XML",
-								"Sass",
-								"XSLT",
-								"Django",
-								"HTML5",
-								"Perl",
-								"CSS",
-								"Twig",
-								"Less",
-								"Smarty",
-								"Node.js",
-								"Tcl",
-								"TemplateToolkit",
-								"PHP"
-							],
-							"codeintel_max_recursive_dir_depth": 10,
-							"codeintel_scan_exclude_dir":
-							{
-								"JavaScript":
-								[
-									"/build/",
-									"/min/"
-								]
-							},
-							"codeintel_scan_files_in_project": true,
-							"codeintel_selected_catalogs":
-							[
-								"PyWin32",
-								"jQuery",
-								"Rails"
-							],
-							"codeintel_snippets": true,
-							"codeintel_syntax_map":
-							{
-								"Python Django": "Python"
-							},
-							"codeintel_tooltips": "popup",
-							"sublime_auto_complete": true,
-							"syntax": "Packages/Java/Java.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				}
 			]
 		}
 	],
@@ -1691,18 +482,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.5,
 			1.0
 		],
 		"rows":
@@ -1728,6 +512,58 @@
 		"selected_items":
 		[
 			[
+				"strings",
+				"app/src/main/res/values/strings.xml"
+			],
+			[
+				"string",
+				"app/src/main/res/values/strings.xml"
+			],
+			[
+				"chec",
+				"app/src/main/java/com/yeleman/snisidroid/CheckedFormActivity.java"
+			],
+			[
+				"urenamdata",
+				"app/src/main/java/com/yeleman/nutrition/NutritionURENAMReportData.java"
+			],
+			[
+				"monhlh",
+				"app/src/main/java/com/yeleman/nutrition/NutritionMonthlyHome.java"
+			],
+			[
+				"weekl",
+				"app/src/main/java/com/yeleman/nutrition/NutritionWeeklyReport.java"
+			],
+			[
+				"weekreportd",
+				"app/src/main/java/com/yeleman/nutrition/NutritionWeeklyReportData.java"
+			],
+			[
+				"urenireport",
+				"app/src/main/java/com/yeleman/nutrition/NutritionURENIReportData.java"
+			],
+			[
+				"urenasreportd",
+				"app/src/main/java/com/yeleman/nutrition/NutritionURENASReportData.java"
+			],
+			[
+				"urenamreportd",
+				"app/src/main/java/com/yeleman/nutrition/NutritionURENAMReportData.java"
+			],
+			[
+				"reportdata",
+				"app/src/main/java/com/yeleman/nutrition/NutritionInputsReportData.java"
+			],
+			[
+				"pop",
+				"app/src/main/java/com/yeleman/snisidroid/Popups.java"
+			],
+			[
+				"nutriotion",
+				"app/src/main/java/com/yeleman/nutrition/NutritionHome.java"
+			],
+			[
 				"nutritionreport",
 				"app/src/main/java/com/yeleman/nutrition/NutritionWeeklyReport.java"
 			],
@@ -1738,10 +574,6 @@
 			[
 				"week",
 				"app/src/main/res/layouts/snisi/layout/nutrition_weekly_report.xml"
-			],
-			[
-				"weekl",
-				"app/src/main/res/layouts/snisi/menu/nutrition_weekly_report.xml"
 			],
 			[
 				"homejava",
@@ -1762,14 +594,6 @@
 			[
 				"manifes",
 				"app/src/main/AndroidManifest.xml"
-			],
-			[
-				"pop",
-				"app/src/main/java/com/yeleman/snisidroid/Popups.java"
-			],
-			[
-				"string",
-				"app/src/main/res/values/strings.xml"
 			],
 			[
 				"resource",
@@ -1814,10 +638,6 @@
 			[
 				"snisi.j",
 				"app/src/main/java/com/yeleman/snisidroid/SNISI.java"
-			],
-			[
-				"strings",
-				"app/src/main/res/values/strings.xml"
 			],
 			[
 				"strin",
@@ -2202,42 +1022,6 @@
 			[
 				"vaccmodel",
 				"snisi_vacc/models.py"
-			],
-			[
-				"malariamode",
-				"snisi_malaria/models.py"
-			],
-			[
-				"reprodai",
-				"snisi_reprohealth/management/commands/snisi_reprohealth_daily.py"
-			],
-			[
-				"reportin",
-				"snisi_core/models/Reporting.py"
-			],
-			[
-				"edit",
-				"snisi_web/templates/validation_edit.html"
-			],
-			[
-				"reproxls",
-				"snisi_reprohealth/xls_export.py"
-			],
-			[
-				"malariaxls",
-				"snisi_malaria/xls_export.py"
-			],
-			[
-				"valida",
-				"snisi_web/views/validation.py"
-			],
-			[
-				"upload",
-				"snisi_web/views/upload.py"
-			],
-			[
-				"reprointeg",
-				"snisi_reprohealth/integrity.py"
 			]
 		],
 		"width": 0.0
