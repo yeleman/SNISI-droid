@@ -78,9 +78,10 @@ public class NutritionURENAMReportData extends ReportData {
     // Former SAM
     int exsam_total_start_m = -1;
     int exsam_total_start_f = -1;
-    // int exsam_total_out_m = -1;
-    // int exsam_total_out_f = -1;
-    int exsam_referred = -1;
+
+    int exsam_grand_total_in = -1;
+    int exsam_grand_total_out = -1;
+
     int exsam_total_end_m = -1;
     int exsam_total_end_f = -1;
     boolean exsam_is_complete = false;
@@ -190,7 +191,8 @@ public class NutritionURENAMReportData extends ReportData {
                Constants.stringFromInteger(pw_total_end_f) + Constants.SUB_SPACER +
                Constants.stringFromInteger(exsam_total_start_m) + Constants.SUB_SPACER +
                Constants.stringFromInteger(exsam_total_start_f) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(exsam_referred) + Constants.SUB_SPACER +
+               Constants.stringFromInteger(exsam_grand_total_in) + Constants.SUB_SPACER +
+               Constants.stringFromInteger(exsam_grand_total_out) + Constants.SUB_SPACER +
                Constants.stringFromInteger(exsam_total_end_m) + Constants.SUB_SPACER +
                Constants.stringFromInteger(exsam_total_end_f);
     }
@@ -233,7 +235,8 @@ public class NutritionURENAMReportData extends ReportData {
     public int totalTransferred() { return 0; }
 
     public int grandTotalIn() {
-        return totalIn() + totalTransferred();
+        return totalIn() + totalTransferred()
+               + Constants.integerFromReport(exsam_grand_total_in);
     }
 
     public int totalOutM() {
@@ -261,7 +264,8 @@ public class NutritionURENAMReportData extends ReportData {
     }
 
     public int grandTotalOut() {
-        return totalOut() + totalReferred();
+        return totalOut() + totalReferred()
+               + Constants.integerFromReport(exsam_grand_total_out);
     }
 
     public int totalEndM() {

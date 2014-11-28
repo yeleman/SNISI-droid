@@ -51,6 +51,10 @@ public class NutritionURENIO59Report extends NutritionURENForm implements Nutrit
         transferredLabel.setText(getString(R.string.nutrition_transfer_label_ureni));
         transferredField = (EditText) findViewById(R.id.transferredField);
         transferredField.setHint(getString(R.string.nutrition_transfer_label_ureni));
+
+        LinearLayout grand_total_in_parent = (LinearLayout) findViewById(R.id.grandTotalInLinearLayout);
+        grand_total_in_parent.setVisibility(View.GONE);
+
         healedField = (EditText) findViewById(R.id.healedField);
         healedField.setHint(getString(R.string.nutrition_healed_label_ureni));
         deceasedField = (EditText) findViewById(R.id.deceasedField);
@@ -63,6 +67,10 @@ public class NutritionURENIO59Report extends NutritionURENForm implements Nutrit
         referredLabel.setText(getString(R.string.nutrition_referred_label_ureni));
         referredField = (EditText) findViewById(R.id.referredField);
         referredField.setHint(getString(R.string.nutrition_referred_label_ureni));
+
+        LinearLayout grand_total_out_parent = (LinearLayout) findViewById(R.id.grandTotalOutLinearLayout);
+        grand_total_out_parent.setVisibility(View.GONE);
+
         totalEndMField = (EditText) findViewById(R.id.totalEndMField);
         totalEndFField = (EditText) findViewById(R.id.totalEndFField);
 

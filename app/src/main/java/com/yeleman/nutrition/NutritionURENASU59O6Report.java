@@ -47,6 +47,10 @@ public class NutritionURENASU59O6Report extends NutritionURENForm implements Nut
         returnedField = (EditText) findViewById(R.id.returnedField);
         totalInMField = (EditText) findViewById(R.id.totalInMField);
         totalInFField = (EditText) findViewById(R.id.totalInFField);
+
+        LinearLayout grand_total_in_parent = (LinearLayout) findViewById(R.id.grandTotalInLinearLayout);
+        grand_total_in_parent.setVisibility(View.GONE);
+
         healedField = (EditText) findViewById(R.id.healedField);
         transferredLabel = (TextView) findViewById(R.id.totalTransferredLabel);
         transferredLabel.setText(getString(R.string.nutrition_transfer_label_urenas));
@@ -61,6 +65,10 @@ public class NutritionURENASU59O6Report extends NutritionURENForm implements Nut
         referredLabel.setText(getString(R.string.nutrition_referred_label_urenas));
         referredField = (EditText) findViewById(R.id.referredField);
         referredField.setHint(getString(R.string.nutrition_referred_label_urenas));
+
+        LinearLayout grand_total_out_parent = (LinearLayout) findViewById(R.id.grandTotalOutLinearLayout);
+        grand_total_out_parent.setVisibility(View.GONE);
+
         totalEndMField = (EditText) findViewById(R.id.totalEndMField);
         totalEndFField = (EditText) findViewById(R.id.totalEndFField);
 

@@ -27,6 +27,8 @@ public class NutritionURENForm extends CheckedFormActivity {
 
     protected TextView transferredLabel;
     protected TextView referredLabel;
+    protected TextView grandTotalInLabel;
+    protected TextView grandTotalOutLabel;
 
     protected EditText totalStartMField;
     protected EditText totalStartFField;
@@ -35,12 +37,14 @@ public class NutritionURENForm extends CheckedFormActivity {
     protected EditText totalInMField;
     protected EditText totalInFField;
     protected EditText transferredField;
+    protected EditText grandTotalInField;
     protected EditText healedField;
     protected EditText deceasedField;
     protected EditText abandonField;
     protected EditText notRespondingField;
     protected EditText totalOutMField;
     protected EditText totalOutFField;
+    protected EditText grandTotalOutField;
     protected EditText referredField;
     protected EditText totalEndMField;
     protected EditText totalEndFField;
@@ -127,6 +131,9 @@ public class NutritionURENForm extends CheckedFormActivity {
         return integerFromField(totalOutFField);
     }
     protected int getReferred() {
+        if (getAge() == EXSAM) {
+            return 0;
+        }
         return integerFromField(referredField);
     }
     protected int getTotalEndM() {
@@ -147,12 +154,18 @@ public class NutritionURENForm extends CheckedFormActivity {
         return getTotalInM() + getTotalInF();
     }
     protected int getGrandTotalIn() {
+        if (getAge() == EXSAM) {
+            return integerFromField(grandTotalInField);
+        }
         return getTotalIn() + getTransferred();
     }
     protected int getTotalOut() {
         return getTotalOutM() + getTotalOutF();
     }
     protected int getGrandTotalOut() {
+        if (getAge() == EXSAM) {
+            return integerFromField(grandTotalOutField);
+        }
         return getTotalOut() + getReferred();
     }
     protected int getTotalEnd() {

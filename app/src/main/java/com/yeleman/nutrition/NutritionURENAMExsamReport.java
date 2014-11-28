@@ -35,12 +35,13 @@ public class NutritionURENAMExsamReport extends NutritionURENForm implements Nut
         setupUI();
     }
 
-
     protected void setupUI() {
         Log.d(TAG, "setupUI NutritionURENAMExsamReport");
 
         LinearLayout transferred_parent = (LinearLayout) findViewById(R.id.transferredLinearLayout);
         transferred_parent.setVisibility(View.GONE);
+        LinearLayout referred_parent = (LinearLayout) findViewById(R.id.referredlinearLayout);
+        referred_parent.setVisibility(View.GONE);
         LinearLayout in_parent = (LinearLayout) findViewById(R.id.inLinearLayout);
         in_parent.setVisibility(View.GONE);
         LinearLayout out_parent = (LinearLayout) findViewById(R.id.outLinearLayout);
@@ -48,10 +49,19 @@ public class NutritionURENAMExsamReport extends NutritionURENForm implements Nut
 
         totalStartMField = (EditText) findViewById(R.id.totalStartMField);
         totalStartFField = (EditText) findViewById(R.id.totalStartFField);
-        referredLabel = (TextView) findViewById(R.id.referredLabel);
-        referredLabel.setText(getString(R.string.nutrition_referred_label_urenam));
-        referredField = (EditText) findViewById(R.id.referredField);
-        referredField.setHint(getString(R.string.nutrition_referred_label_urenam));
+
+        // Grand Total In
+        grandTotalInLabel = (TextView) findViewById(R.id.grandTotalInLabel);
+        grandTotalInLabel.setText(getString(R.string.nutrition_grand_total_in_label));
+        grandTotalInField = (EditText) findViewById(R.id.grandTotalInField);
+        grandTotalInField.setHint(getString(R.string.nutrition_grand_total_in_label));
+
+        // Grand Total Out
+        grandTotalOutLabel = (TextView) findViewById(R.id.grandTotalOutLabel);
+        grandTotalOutLabel.setText(getString(R.string.nutrition_grand_total_out_label));
+        grandTotalOutField = (EditText) findViewById(R.id.grandTotalOutField);
+        grandTotalOutField.setHint(getString(R.string.nutrition_grand_total_out_label));
+
         totalEndMField = (EditText) findViewById(R.id.totalEndMField);
         totalEndFField = (EditText) findViewById(R.id.totalEndFField);
 
@@ -86,7 +96,8 @@ public class NutritionURENAMExsamReport extends NutritionURENForm implements Nut
 
         report.exsam_total_start_m = integerFromField(totalStartMField);
         report.exsam_total_start_f = integerFromField(totalStartFField);
-        report.exsam_referred = integerFromField(referredField);
+        report.exsam_grand_total_in = integerFromField(grandTotalInField);
+        report.exsam_grand_total_out = integerFromField(grandTotalOutField);
         report.exsam_total_end_m = integerFromField(totalEndMField);
         report.exsam_total_end_f = integerFromField(totalEndFField);
         report.exsam_is_complete = true;
@@ -102,7 +113,8 @@ public class NutritionURENAMExsamReport extends NutritionURENForm implements Nut
 
         setTextOnField(totalStartMField, report.exsam_total_start_m);
         setTextOnField(totalStartFField, report.exsam_total_start_f);
-        setTextOnField(referredField, report.exsam_referred);
+        setTextOnField(grandTotalInField, report.exsam_grand_total_in);
+        setTextOnField(grandTotalOutField, report.exsam_grand_total_out);
         setTextOnField(totalEndMField, report.exsam_total_end_m);
         setTextOnField(totalEndFField, report.exsam_total_end_f);
     }
@@ -111,7 +123,8 @@ public class NutritionURENAMExsamReport extends NutritionURENForm implements Nut
 
         setAssertPositiveInteger(totalStartMField);
         setAssertPositiveInteger(totalStartFField);
-        setAssertPositiveInteger(referredField);
+        setAssertPositiveInteger(grandTotalInField);
+        setAssertPositiveInteger(grandTotalOutField);
         setAssertPositiveInteger(totalEndMField);
         setAssertPositiveInteger(totalEndFField);
     }

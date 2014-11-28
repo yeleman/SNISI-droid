@@ -111,7 +111,7 @@
 
     <string name="u6">moins de 6 mois (0-6m)</string>
     <string name="u23o6">6 à 23 mois (6-23m)</string>
-    <string name="u59o23">23 à 59 mois (23-59m)</string>
+    <string name="u59o23">24 à 59 mois (24-59m)</string>
     <string name="u59o6">6 à 59 mois (6-59m)</string>
     <string name="o59">plus de 59 mois (59m+)</string>
     <string name="pw">femmes enceintes ou allaitantes (FE/FA)</string>
