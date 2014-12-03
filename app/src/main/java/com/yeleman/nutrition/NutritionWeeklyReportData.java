@@ -65,14 +65,14 @@ public class NutritionWeeklyReportData extends ReportData {
     }
 
     public String buildSMSText() {
-        return Constants.stringFromInteger(mam_screening) + Constants.SPACER +
-               Constants.stringFromInteger(mam_cases) + Constants.SPACER +
-               Constants.stringFromInteger(mam_deaths) + Constants.SPACER +
-               Constants.stringFromInteger(sam_screening) + Constants.SPACER +
-               Constants.stringFromInteger(sam_cases) + Constants.SPACER +
-               Constants.stringFromInteger(sam_deaths) + Constants.SPACER +
-               Constants.stringFromInteger(samc_screening) + Constants.SPACER +
-               Constants.stringFromInteger(samc_cases) + Constants.SPACER +
-               Constants.stringFromInteger(samc_deaths);
+        return Constants.stringFromReport(mam_screening) + Constants.SPACER +
+               Constants.stringFromReport(mam_cases) + Constants.SPACER +
+               Constants.stringFromReport(mam_deaths) + Constants.SPACER +
+               Constants.stringFromReport(sam_screening) + Constants.SPACER +
+               Constants.stringFromReport(sam_cases) + Constants.SPACER +
+               Constants.stringFromReport(sam_deaths) + Constants.SPACER +
+               Constants.stringFromReport(samc_screening) + Constants.SPACER +
+               Constants.stringFromReport(samc_cases) + Constants.SPACER +
+               Constants.stringFromReport(samc_deaths);
     }
 }

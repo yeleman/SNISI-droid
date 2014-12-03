@@ -86,6 +86,8 @@ public class NutritionHome extends ActionBarActivity {
         if (reportMonthly.has_urenam != is_urenam) {
             Log.i(TAG, "URENAM has change in preference");
             NutritionURENAMReportData reportURENAM = NutritionURENAMReportData.get();
+            NutritionInputsReportData reportInput = NutritionInputsReportData.get();
+            reportInput.deleteAll(reportInput.getClass());
             if (!is_urenam){
               try {
                 reportURENAM.deleteAll(reportURENAM.getClass());
@@ -109,11 +111,11 @@ public class NutritionHome extends ActionBarActivity {
             Log.i(TAG, "URENI has change in preference");
             NutritionURENIReportData reportURENI = NutritionURENIReportData.get();
             NutritionInputsReportData reportInput = NutritionInputsReportData.get();
+            reportInput.deleteAll(reportInput.getClass());
             if (!is_ureni){
               try {
                   Log.d(TAG, "DELETING URENI/INPUT Reports");
                   reportURENI.deleteAll(reportURENI.getClass());
-                  reportInput.deleteAll(reportInput.getClass());
               } catch (Exception e){
                   Log.i(TAG, String.valueOf(e));
               }

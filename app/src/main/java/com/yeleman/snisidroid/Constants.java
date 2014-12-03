@@ -129,4 +129,12 @@ public class Constants {
         }
         return data;
     }
+
+    public static String stringFromReport(int data){
+        return stringFromInteger(integerFromReport(data));
+    }
+
+    public static String stringFromReport(float data){
+        return stringFromFloat(floatFromReport(data));
+    }
 }

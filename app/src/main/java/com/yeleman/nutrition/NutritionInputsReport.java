@@ -78,6 +78,7 @@ public class NutritionInputsReport extends CheckedFormActivity {
 
     protected Button saveButton;
     private boolean is_ureni;
+    private boolean is_urenam;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -103,6 +104,7 @@ public class NutritionInputsReport extends CheckedFormActivity {
         SharedPreferences sharedPrefs =
                 PreferenceManager.getDefaultSharedPreferences(this);
         is_ureni = sharedPrefs.getBoolean("hc_is_ureni", false);
+        is_urenam = sharedPrefs.getBoolean("hc_is_urenam", false);
 
         plumpyNutInitialField = (EditText) findViewById(R.id.plumpyNutInitialField);
         plumpyNutReceivedField = (EditText) findViewById(R.id.plumpyNutReceivedField);
@@ -151,6 +153,18 @@ public class NutritionInputsReport extends CheckedFormActivity {
         oilReceivedField = (EditText) findViewById(R.id.oilReceivedField);
         oilUsedField = (EditText) findViewById(R.id.oilUsedField);
         oilLostField = (EditText) findViewById(R.id.oilLostField);
+        if (!is_urenam) {
+            LinearLayout plumpySupParent = (LinearLayout) findViewById(R.id.plumpySupLinearLayout);
+            plumpySupParent.setVisibility(View.GONE);
+            LinearLayout supercerealParent = (LinearLayout) findViewById(R.id.supercerealLinearLayout);
+            supercerealParent.setVisibility(View.GONE);
+            LinearLayout supercerealPlusParent = (LinearLayout) findViewById(R.id.supercerealPlusLinearLayout);
+            supercerealPlusParent.setVisibility(View.GONE);
+            LinearLayout oilParent = (LinearLayout) findViewById(R.id.oilLinearLayout);
+            oilParent.setVisibility(View.GONE);
+            LinearLayout ironFolicAcidParent = (LinearLayout) findViewById(R.id.ironFolicAcidLinearLayout);
+            ironFolicAcidParent.setVisibility(View.GONE);
+        }
         // Amoxycilline 125mg Vials
         amoxycilline125VialsInitialField = (EditText) findViewById(R.id.amoxycilline125VialsInitialField);
         amoxycilline125VialsReceivedField = (EditText) findViewById(R.id.amoxycilline125VialsReceivedField);
@@ -214,7 +228,7 @@ public class NutritionInputsReport extends CheckedFormActivity {
         report.plumpy_nut_received = integerFromField(plumpyNutReceivedField);
         report.plumpy_nut_used = integerFromField(plumpyNutUsedField);
         report.plumpy_nut_lost = integerFromField(plumpyNutLostField);
-        if(is_ureni){
+        if(is_ureni) {
             report.milk_f75_initial = integerFromField(milkF75InitialField);
             report.milk_f75_received = integerFromField(milkF75ReceivedField);
             report.milk_f75_used = integerFromField(milkF75UsedField);
@@ -228,22 +242,28 @@ public class NutritionInputsReport extends CheckedFormActivity {
             report.resomal_used = integerFromField(resomalUsedField);
             report.resomal_lost = integerFromField(resomalLostField);
         }
-        report.plumpy_sup_initial = integerFromField(plumpySupInitialField);
-        report.plumpy_sup_received = integerFromField(plumpySupReceivedField);
-        report.plumpy_sup_used = integerFromField(plumpySupUsedField);
-        report.plumpy_sup_lost = integerFromField(plumpySupLostField);
-        report.supercereal_initial = floatFromField(supercerealInitialField);
-        report.supercereal_received = floatFromField(supercerealReceivedField);
-        report.supercereal_used = floatFromField(supercerealUsedField);
-        report.supercereal_lost = floatFromField(supercerealLostField);
-        report.supercereal_plus_initial = integerFromField(supercerealPlusInitialField);
-        report.supercereal_plus_received = integerFromField(supercerealPlusReceivedField);
-        report.supercereal_plus_used = integerFromField(supercerealPlusUsedField);
-        report.supercereal_plus_lost = integerFromField(supercerealPlusLostField);
-        report.oil_initial = integerFromField(oilInitialField);
-        report.oil_received = integerFromField(oilReceivedField);
-        report.oil_used = integerFromField(oilUsedField);
-        report.oil_lost = integerFromField(oilLostField);
+        if(is_urenam) {
+            report.plumpy_sup_initial = integerFromField(plumpySupInitialField);
+            report.plumpy_sup_received = integerFromField(plumpySupReceivedField);
+            report.plumpy_sup_used = integerFromField(plumpySupUsedField);
+            report.plumpy_sup_lost = integerFromField(plumpySupLostField);
+            report.supercereal_initial = floatFromField(supercerealInitialField);
+            report.supercereal_received = floatFromField(supercerealReceivedField);
+            report.supercereal_used = floatFromField(supercerealUsedField);
+            report.supercereal_lost = floatFromField(supercerealLostField);
+            report.supercereal_plus_initial = integerFromField(supercerealPlusInitialField);
+            report.supercereal_plus_received = integerFromField(supercerealPlusReceivedField);
+            report.supercereal_plus_used = integerFromField(supercerealPlusUsedField);
+            report.supercereal_plus_lost = integerFromField(supercerealPlusLostField);
+            report.oil_initial = integerFromField(oilInitialField);
+            report.oil_received = integerFromField(oilReceivedField);
+            report.oil_used = integerFromField(oilUsedField);
+            report.oil_lost = integerFromField(oilLostField);
+            report.iron_folic_acid_initial = integerFromField(ironFolicAcidInitialField);
+            report.iron_folic_acid_received = integerFromField(ironFolicAcidReceivedField);
+            report.iron_folic_acid_used = integerFromField(ironFolicAcidUsedField);
+            report.iron_folic_acid_lost = integerFromField(ironFolicAcidLostField);
+        }
         report.amoxycilline_125_vials_initial = integerFromField(amoxycilline125VialsInitialField);
         report.amoxycilline_125_vials_received = integerFromField(amoxycilline125VialsReceivedField);
         report.amoxycilline_125_vials_used = integerFromField(amoxycilline125VialsUsedField);
@@ -264,10 +284,6 @@ public class NutritionInputsReport extends CheckedFormActivity {
         report.vita_200_injectable_received = integerFromField(vita200InjectableReceivedField);
         report.vita_200_injectable_used = integerFromField(vita200InjectableUsedField);
         report.vita_200_injectable_lost = integerFromField(vita200InjectableLostField);
-        report.iron_folic_acid_initial = integerFromField(ironFolicAcidInitialField);
-        report.iron_folic_acid_received = integerFromField(ironFolicAcidReceivedField);
-        report.iron_folic_acid_used = integerFromField(ironFolicAcidUsedField);
-        report.iron_folic_acid_lost = integerFromField(ironFolicAcidLostField);
         report.input_is_complete = true;
         report.safeSave();
         Log.d(TAG, "storeReportData -- end");
@@ -295,22 +311,28 @@ public class NutritionInputsReport extends CheckedFormActivity {
             setTextOnField(resomalUsedField, report.resomal_used);
             setTextOnField(resomalLostField, report.resomal_lost);
         }
-        setTextOnField(plumpySupInitialField, report.plumpy_sup_initial);
-        setTextOnField(plumpySupReceivedField, report.plumpy_sup_received);
-        setTextOnField(plumpySupUsedField, report.plumpy_sup_used);
-        setTextOnField(plumpySupLostField, report.plumpy_sup_lost);
-        setTextOnField(supercerealInitialField, report.supercereal_initial);
-        setTextOnField(supercerealReceivedField, report.supercereal_received);
-        setTextOnField(supercerealUsedField, report.supercereal_used);
-        setTextOnField(supercerealLostField, report.supercereal_lost);
-        setTextOnField(supercerealPlusInitialField, report.supercereal_plus_initial);
-        setTextOnField(supercerealPlusReceivedField, report.supercereal_plus_received);
-        setTextOnField(supercerealPlusUsedField, report.supercereal_plus_used);
-        setTextOnField(supercerealPlusLostField, report.supercereal_plus_lost);
-        setTextOnField(oilInitialField, report.oil_initial);
-        setTextOnField(oilReceivedField, report.oil_received);
-        setTextOnField(oilUsedField, report.oil_used);
-        setTextOnField(oilLostField, report.oil_lost);
+        if (is_urenam) {
+            setTextOnField(plumpySupInitialField, report.plumpy_sup_initial);
+            setTextOnField(plumpySupReceivedField, report.plumpy_sup_received);
+            setTextOnField(plumpySupUsedField, report.plumpy_sup_used);
+            setTextOnField(plumpySupLostField, report.plumpy_sup_lost);
+            setTextOnField(supercerealInitialField, report.supercereal_initial);
+            setTextOnField(supercerealReceivedField, report.supercereal_received);
+            setTextOnField(supercerealUsedField, report.supercereal_used);
+            setTextOnField(supercerealLostField, report.supercereal_lost);
+            setTextOnField(supercerealPlusInitialField, report.supercereal_plus_initial);
+            setTextOnField(supercerealPlusReceivedField, report.supercereal_plus_received);
+            setTextOnField(supercerealPlusUsedField, report.supercereal_plus_used);
+            setTextOnField(supercerealPlusLostField, report.supercereal_plus_lost);
+            setTextOnField(oilInitialField, report.oil_initial);
+            setTextOnField(oilReceivedField, report.oil_received);
+            setTextOnField(oilUsedField, report.oil_used);
+            setTextOnField(oilLostField, report.oil_lost);
+            setTextOnField(ironFolicAcidInitialField, report.iron_folic_acid_initial);
+            setTextOnField(ironFolicAcidReceivedField, report.iron_folic_acid_received);
+            setTextOnField(ironFolicAcidUsedField, report.iron_folic_acid_used);
+            setTextOnField(ironFolicAcidLostField, report.iron_folic_acid_lost);
+        }
         setTextOnField(amoxycilline125VialsInitialField, report.amoxycilline_125_vials_initial);
         setTextOnField(amoxycilline125VialsReceivedField, report.amoxycilline_125_vials_received);
         setTextOnField(amoxycilline125VialsUsedField, report.amoxycilline_125_vials_used);
@@ -331,10 +353,6 @@ public class NutritionInputsReport extends CheckedFormActivity {
         setTextOnField(vita200InjectableReceivedField, report.vita_200_injectable_received);
         setTextOnField(vita200InjectableUsedField, report.vita_200_injectable_used);
         setTextOnField(vita200InjectableLostField, report.vita_200_injectable_lost);
-        setTextOnField(ironFolicAcidInitialField, report.iron_folic_acid_initial);
-        setTextOnField(ironFolicAcidReceivedField, report.iron_folic_acid_received);
-        setTextOnField(ironFolicAcidUsedField, report.iron_folic_acid_used);
-        setTextOnField(ironFolicAcidLostField, report.iron_folic_acid_lost);
     }
 
     protected void setupInvalidInputChecks() {
@@ -357,22 +375,28 @@ public class NutritionInputsReport extends CheckedFormActivity {
             setAssertPositiveInteger(resomalUsedField);
             setAssertPositiveInteger(resomalLostField);
         }
-        setAssertPositiveInteger(plumpySupInitialField);
-        setAssertPositiveInteger(plumpySupReceivedField);
-        setAssertPositiveInteger(plumpySupUsedField);
-        setAssertPositiveInteger(plumpySupLostField);
-        setAssertPositiveFloat(supercerealInitialField);
-        setAssertPositiveFloat(supercerealReceivedField);
-        setAssertPositiveFloat(supercerealUsedField);
-        setAssertPositiveFloat(supercerealLostField);
-        setAssertPositiveInteger(supercerealPlusInitialField);
-        setAssertPositiveInteger(supercerealPlusReceivedField);
-        setAssertPositiveInteger(supercerealPlusUsedField);
-        setAssertPositiveInteger(supercerealPlusLostField);
-        setAssertPositiveInteger(oilInitialField);
-        setAssertPositiveInteger(oilReceivedField);
-        setAssertPositiveInteger(oilUsedField);
-        setAssertPositiveInteger(oilLostField);
+        if (is_urenam) {
+            setAssertPositiveInteger(plumpySupInitialField);
+            setAssertPositiveInteger(plumpySupReceivedField);
+            setAssertPositiveInteger(plumpySupUsedField);
+            setAssertPositiveInteger(plumpySupLostField);
+            setAssertPositiveFloat(supercerealInitialField);
+            setAssertPositiveFloat(supercerealReceivedField);
+            setAssertPositiveFloat(supercerealUsedField);
+            setAssertPositiveFloat(supercerealLostField);
+            setAssertPositiveInteger(supercerealPlusInitialField);
+            setAssertPositiveInteger(supercerealPlusReceivedField);
+            setAssertPositiveInteger(supercerealPlusUsedField);
+            setAssertPositiveInteger(supercerealPlusLostField);
+            setAssertPositiveInteger(oilInitialField);
+            setAssertPositiveInteger(oilReceivedField);
+            setAssertPositiveInteger(oilUsedField);
+            setAssertPositiveInteger(oilLostField);
+            setAssertPositiveInteger(ironFolicAcidInitialField);
+            setAssertPositiveInteger(ironFolicAcidReceivedField);
+            setAssertPositiveInteger(ironFolicAcidUsedField);
+            setAssertPositiveInteger(ironFolicAcidLostField);
+        }
         setAssertPositiveInteger(amoxycilline125VialsInitialField);
         setAssertPositiveInteger(amoxycilline125VialsReceivedField);
         setAssertPositiveInteger(amoxycilline125VialsUsedField);
@@ -393,10 +417,6 @@ public class NutritionInputsReport extends CheckedFormActivity {
         setAssertPositiveInteger(vita200InjectableReceivedField);
         setAssertPositiveInteger(vita200InjectableUsedField);
         setAssertPositiveInteger(vita200InjectableLostField);
-        setAssertPositiveInteger(ironFolicAcidInitialField);
-        setAssertPositiveInteger(ironFolicAcidReceivedField);
-        setAssertPositiveInteger(ironFolicAcidUsedField);
-        setAssertPositiveInteger(ironFolicAcidLostField);
     }
 
     protected boolean ensureDataCoherence() {
@@ -406,22 +426,6 @@ public class NutritionInputsReport extends CheckedFormActivity {
                                        plumpyNutReceivedField,
                                        plumpyNutUsedField,
                                        plumpyNutLostField) &&
-               mustMatchStockCoherence(plumpySupInitialField,
-                                       plumpySupReceivedField,
-                                       plumpySupUsedField,
-                                       plumpySupLostField) &&
-               mustMatchStockCoherence(supercerealInitialField,
-                                       supercerealReceivedField,
-                                       supercerealUsedField,
-                                       supercerealLostField, true) &&
-               mustMatchStockCoherence(supercerealPlusInitialField,
-                                       supercerealPlusReceivedField,
-                                       supercerealPlusUsedField,
-                                       supercerealPlusLostField)&&
-               mustMatchStockCoherence(oilInitialField,
-                                       oilReceivedField,
-                                       oilUsedField,
-                                       oilLostField) &&
                mustMatchStockCoherence(amoxycilline125VialsInitialField,
                                        amoxycilline125VialsReceivedField,
                                        amoxycilline125VialsUsedField,
@@ -441,11 +445,7 @@ public class NutritionInputsReport extends CheckedFormActivity {
                mustMatchStockCoherence(vita200InjectableInitialField,
                                        vita200InjectableReceivedField,
                                        vita200InjectableUsedField,
-                                       vita200InjectableLostField) &&
-               mustMatchStockCoherence(ironFolicAcidInitialField,
-                                       ironFolicAcidReceivedField,
-                                       ironFolicAcidUsedField,
-                                       ironFolicAcidLostField);
+                                       vita200InjectableLostField);
         if (is_ureni) {
             isEnsureDataCoherence = isEnsureDataCoherence &&
                                     mustMatchStockCoherence(milkF75InitialField,
@@ -460,6 +460,29 @@ public class NutritionInputsReport extends CheckedFormActivity {
                                             resomalReceivedField,
                                             resomalUsedField,
                                             resomalLostField);
+        }
+        if (is_urenam) {
+            isEnsureDataCoherence = isEnsureDataCoherence &&
+                    mustMatchStockCoherence(plumpySupInitialField,
+                            plumpySupReceivedField,
+                            plumpySupUsedField,
+                            plumpySupLostField) &&
+                    mustMatchStockCoherence(supercerealInitialField,
+                            supercerealReceivedField,
+                            supercerealUsedField,
+                            supercerealLostField, true) &&
+                    mustMatchStockCoherence(supercerealPlusInitialField,
+                            supercerealPlusReceivedField,
+                            supercerealPlusUsedField,
+                            supercerealPlusLostField)&&
+                    mustMatchStockCoherence(oilInitialField,
+                            oilReceivedField,
+                            oilUsedField,
+                            oilLostField) &&
+                    mustMatchStockCoherence(ironFolicAcidInitialField,
+                            ironFolicAcidReceivedField,
+                            ironFolicAcidUsedField,
+                            ironFolicAcidLostField);
         }
         return isEnsureDataCoherence;
     }

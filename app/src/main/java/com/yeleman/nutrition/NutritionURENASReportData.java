@@ -84,38 +84,38 @@ public class NutritionURENASReportData extends ReportData {
 
     @Override
     public String buildSMSText() {
-        return Constants.stringFromInteger(u59o6_total_start_m) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(u59o6_total_start_f) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(u59o6_new_cases) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(u59o6_returned) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(u59o6_total_in_m) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(u59o6_total_in_f) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(u59o6_transferred) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(u59o6_healed) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(u59o6_deceased) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(u59o6_abandon) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(u59o6_not_responding) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(u59o6_total_out_m) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(u59o6_total_out_f) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(u59o6_referred) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(u59o6_total_end_m) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(u59o6_total_end_f) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(o59_total_start_m) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(o59_total_start_f) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(o59_new_cases) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(o59_returned) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(o59_total_in_m) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(o59_total_in_f) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(o59_transferred) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(o59_healed) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(o59_deceased) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(o59_abandon) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(o59_not_responding) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(o59_total_out_m) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(o59_total_out_f) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(o59_referred) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(o59_total_end_m) + Constants.SUB_SPACER +
-               Constants.stringFromInteger(o59_total_end_f);
+        return Constants.stringFromReport(u59o6_total_start_m) + Constants.SUB_SPACER +
+               Constants.stringFromReport(u59o6_total_start_f) + Constants.SUB_SPACER +
+               Constants.stringFromReport(u59o6_new_cases) + Constants.SUB_SPACER +
+               Constants.stringFromReport(u59o6_returned) + Constants.SUB_SPACER +
+               Constants.stringFromReport(u59o6_total_in_m) + Constants.SUB_SPACER +
+               Constants.stringFromReport(u59o6_total_in_f) + Constants.SUB_SPACER +
+               Constants.stringFromReport(u59o6_transferred) + Constants.SUB_SPACER +
+               Constants.stringFromReport(u59o6_healed) + Constants.SUB_SPACER +
+               Constants.stringFromReport(u59o6_deceased) + Constants.SUB_SPACER +
+               Constants.stringFromReport(u59o6_abandon) + Constants.SUB_SPACER +
+               Constants.stringFromReport(u59o6_not_responding) + Constants.SUB_SPACER +
+               Constants.stringFromReport(u59o6_total_out_m) + Constants.SUB_SPACER +
+               Constants.stringFromReport(u59o6_total_out_f) + Constants.SUB_SPACER +
+               Constants.stringFromReport(u59o6_referred) + Constants.SUB_SPACER +
+               Constants.stringFromReport(u59o6_total_end_m) + Constants.SUB_SPACER +
+               Constants.stringFromReport(u59o6_total_end_f) + Constants.SUB_SPACER +
+               Constants.stringFromReport(o59_total_start_m) + Constants.SUB_SPACER +
+               Constants.stringFromReport(o59_total_start_f) + Constants.SUB_SPACER +
+               Constants.stringFromReport(o59_new_cases) + Constants.SUB_SPACER +
+               Constants.stringFromReport(o59_returned) + Constants.SUB_SPACER +
+               Constants.stringFromReport(o59_total_in_m) + Constants.SUB_SPACER +
+               Constants.stringFromReport(o59_total_in_f) + Constants.SUB_SPACER +
+               Constants.stringFromReport(o59_transferred) + Constants.SUB_SPACER +
+               Constants.stringFromReport(o59_healed) + Constants.SUB_SPACER +
+               Constants.stringFromReport(o59_deceased) + Constants.SUB_SPACER +
+               Constants.stringFromReport(o59_abandon) + Constants.SUB_SPACER +
+               Constants.stringFromReport(o59_not_responding) + Constants.SUB_SPACER +
+               Constants.stringFromReport(o59_total_out_m) + Constants.SUB_SPACER +
+               Constants.stringFromReport(o59_total_out_f) + Constants.SUB_SPACER +
+               Constants.stringFromReport(o59_referred) + Constants.SUB_SPACER +
+               Constants.stringFromReport(o59_total_end_m) + Constants.SUB_SPACER +
+               Constants.stringFromReport(o59_total_end_f);
     }
 
     public int totalStartM() {
