@@ -159,7 +159,5 @@ public class NutritionHome extends ActionBarActivity {
                 Popups.startIntentIfOnline(activity, intent);
             }
         });
-
-
     }
 }

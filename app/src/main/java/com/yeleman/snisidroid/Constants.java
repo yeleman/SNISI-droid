@@ -108,6 +108,7 @@ public class Constants {
 
     public static String stringFromFloat(float data) {
         NumberFormat nf = NumberFormat.getNumberInstance(Locale.ENGLISH);
+        nf.setGroupingUsed(false);
         nf.setMaximumFractionDigits(2);
         return nf.format(data);
     }
