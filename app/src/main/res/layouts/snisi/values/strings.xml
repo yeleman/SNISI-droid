@@ -1,3 +1,51 @@
 <resources>
 
+    <string name="app_name">SNISI</string>
+    <string name="label_tmpl">%1$s/%2$s</string>
+    <string name="app_market_url">market://details?id=com.yeleman.snisidroid</string>
+    <string name="notif_sms_sent">Rapport envoyé par SMS. Une réponse vous parviendra bientôt.</string>
+    <string name="notif_sms_failed">Échec de l\'envoi du rapport par SMS. Veuillez réessayer dans quelques minutes.</string>
+    <string name="version_button_default_label">Vérifier mises à jour</string>
+    <string name="version_button_label">Version %1$s (vérifier mises à jour)</string>
+
+    <!-- Common Strings -->
+    <string name="standard_dialog_ok">OK</string>
+
+    <string name="sms_timeout_dialog_title">Pas de réponse du serveur</string>
+    <string name="sms_timeout_dialog_body">L\'application SNISI n\'a pas reçue de réponse du serveur.\nLa réponse peut parfois prendre du temps avant d\'arriver.\nVérifiez vos SMS pendant 5mn puis appelez la Hotline.</string>
+
+    <string name="resume_report_title">Continuer le rapport ?</string>
+    <string name="resume_report_body">Voulez-vous continuer avec les données du rapport %1$s déjà renseignées ?</string>
+    <string name="resume_report_ok_label">Continuer rapport</string>
+    <string name="resume_report_cancel_label">Reprendre à zéro</string>
+
+    <string name="server_sms_received_title">Réponse du serveur</string>
+
+    <string name="sending_sms_report_title">Envoi en cours</string>
+    <string name="sending_sms_report_body">Votre demande a été envoyée par SMS.\nVeuillez attendre la réponse du serveur pour vérifier qu\'il a bien été enregistré.\nVous recevrez alors un numéro de reçu.</string>
+
+    <string name="required_connexion_title">Connexion requise</string>
+    <string name="required_connexion_body">Cette action nécessite une connexion à Internet. Activez les données mobiles ou le WiFi puis réessayez.</string>
+    <string name="required_connexion_cancel">Annuler</string>
+    <string name="required_connexion_retry">Réessayer</string>
+
+    <string name="go_to_preferences">Aller aux paramètres</string>
+
+    <!-- Home -->
+    <string name="app_name_long">Système Numérique d\'Information Sanitaire Intégré</string>
+    <string name="website_goto_label">Accèder au SNISI (en ligne)</string>
+
+    <!-- Change Password -->
+    <string name="oldpassword">Ancien mot de passe</string>
+    <string name="newpassword">Nouveau mot de passe</string>
+    <string name="changePasswordButtonText">Envoyer la demande</string>
+
+    <!-- Password Dialog -->
+    <string name="username">Identifiant</string>
+    <string name="password">Mot de passe</string>
+    <string name="submit">Envoyer</string>
+    <string name="cancel">Retour</string>
+    <string name="password_dialog_title">Identification</string>
+    <string name="password_dialog_text">Merci de renseigner vos identifiants SNISI pour transmettre le rapport %1$s</string>
+
 </resources>

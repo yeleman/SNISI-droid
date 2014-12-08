@@ -24,6 +24,7 @@ android {
             res.srcDirs =
                     [
                             'src/main/res/layouts/snisi',
+                            'src/main/res/layouts/malaria',
                             'src/main/res/layouts/nutrition',
                             'src/main/res/layouts/smir',
                             'src/main/res/layouts',

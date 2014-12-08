@@ -14,6 +14,7 @@ import android.widget.Button;
 
 import com.yeleman.nutrition.NutritionHome;
 import com.yeleman.smir.SMIRHome;
+import com.yeleman.malaria.MalariaHome;
 
 
 public class SNISIHome extends ActionBarActivity {
@@ -22,6 +23,7 @@ public class SNISIHome extends ActionBarActivity {
 
 	private Button nutritionButton;
 	private Button smirButton;
+	private Button pnlpButton;
 	private Button webSiteButton;
 
 
@@ -36,6 +38,7 @@ public class SNISIHome extends ActionBarActivity {
         nutritionButton = (Button) findViewById(R.id.nutritionButton);
         smirButton = (Button) findViewById(R.id.smirButton);
         webSiteButton = (Button) findViewById(R.id.webSiteButton);
+        pnlpButton = (Button) findViewById(R.id.pnlpButton);
 
         final Activity activity = this;
 
@@ -65,6 +68,16 @@ public class SNISIHome extends ActionBarActivity {
             	Intent intent = new Intent(
                 	getApplicationContext(),
                 	SMIRHome.class);
+                startActivity(intent);
+            }
+        });
+
+        pnlpButton.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v) {
+            	Intent intent = new Intent(
+                	getApplicationContext(),
+                    MalariaHome.class);
                 startActivity(intent);
             }
         });

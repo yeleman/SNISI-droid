@@ -1,0 +1,41 @@
+<resources>
+    <!-- Paludisme -->
+    <string name="malaria_app_label">Paludisme</string>
+    <string name="malaria_submit_button">Envoyer</string>
+    <string name="malaria_monthly_save">Enregistrer</string>
+    <string name="malaria_consultation_label">Consultations</string>
+    <string name="malaria_inpatient_label">Hospitalisations</string>
+    <string name="malaria_o5">5ans +</string>
+    <string name="malaria_u5"><![CDATA[< 5ans]]></string>
+    <string name="malaria_pw">FE</string>
+    <string name="malaria_death_label">Dècès</string>
+    <string name="malaria_stockout_label">Rupture de stock</string>
+    <string name="malaria_total_consultation">Total consultations toutes causes</string>
+    <string name="malaria_total_malaria_cases">Cas de paludisme suspectés</string>
+    <string name="malaria_total_simple_malaria_cases">Cas de paludisme simple</string>
+    <string name="malaria_total_severe_malaria_cases">Cas de paludisme grave</string>
+    <string name="malaria_total_tested_malaria_cases">Cas de paludisme testés</string>
+    <string name="malaria_total_confirmed_malaria_cases">Cas de paludisme confirmés</string>
+    <string name="malaria_total_acttreated_malaria_cases">Cas de paludisme traités CTA</string>
+    <string name="malaria_total_inpatient">Hospitalisations toutes causes</string>
+    <string name="malaria_total_malaria_inpatient">Hospitalisations Palu</string>
+    <string name="malaria_total_death">Décès toutes causes</string>
+    <string name="malaria_total_malaria_death">Décès Palu</string>
+    <string name="malaria_total_distributed_bednets">Nombre de moustiquaires distribuées</string>
+    <string name="malaria_distributed_bednets_label">MILD distribuées</string>
+    <string name="malaria_stockout_act_children">CTA Nourrisson - Enfant</string>
+    <string name="malaria_stockout_act_youth">CTA Adolescent</string>
+    <string name="malaria_stockout_act_adult">CTA Adulte</string>
+    <string name="malaria_stockout_artemether">Artéméther injectable</string>
+    <string name="malaria_stockout_quinine">Quinine Injectable</string>
+    <string name="malaria_stockout_serum">Sérum</string>
+    <string name="malaria_stockout_bednet">MILD</string>
+    <string name="malaria_stockout_rdt">TDR</string>
+    <string name="malaria_stockout_sp">SP</string>
+    <string name="malaria_total_anc_1">CPN 1</string>
+    <string name="malaria_total_sp_1">SP 1</string>
+    <string name="malaria_total_sp_2">SP 2</string>
+    <string name="malaria_monthly_report_label">Rapport Mensuel</string>
+    <string name="malaria_weekly_report_label">Rapport Hebdomadaire</string>
+    <string name="malaria_website_label">Consulter mes données (en ligne)</string>
+</resources>

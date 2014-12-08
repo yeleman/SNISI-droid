@@ -1,0 +1,361 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/malaria_total_consultation"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:nextFocusRight="@+id/consultationO5Field"
+                android:nextFocusDown="@+id/consultationO5Field"
+                android:id="@+id/consultationU5Field"
+                android:imeOptions="actionNext"
+                android:hint="@string/malaria_u5"
+                android:singleLine="false"
+                android:editable="true"
+                android:layout_weight="0.50" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:nextFocusRight="@+id/consultationPwField"
+                android:nextFocusDown="@+id/consultationPwField"
+                android:id="@+id/consultationO5Field"
+                android:imeOptions="actionNext"
+                android:hint="@string/malaria_o5"
+                android:singleLine="false"
+                android:editable="true"
+                android:layout_weight="0.50" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:nextFocusRight="@+id/totalCasesU5Field"
+                android:nextFocusDown="@+id/totalCasesU5Field"
+                android:id="@+id/consultationPwField"
+                android:imeOptions="actionNext"
+                android:hint="@string/malaria_pw"
+                android:singleLine="false"
+                android:editable="true"
+                android:layout_weight="0.50" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/malaria_total_malaria_cases"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:nextFocusRight="@+id/totalCasesO5Field"
+                android:nextFocusDown="@+id/totalCasesO5Field"
+                android:id="@+id/totalCasesU5Field"
+                android:imeOptions="actionNext"
+                android:hint="@string/malaria_u5"
+                android:singleLine="false"
+                android:editable="true"
+                android:layout_weight="0.50" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:nextFocusRight="@+id/totalCasesPwField"
+                android:nextFocusDown="@+id/totalCasesPwField"
+                android:id="@+id/totalCasesO5Field"
+                android:imeOptions="actionNext"
+                android:hint="@string/malaria_o5"
+                android:singleLine="false"
+                android:editable="true"
+                android:layout_weight="0.50" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:nextFocusRight="@+id/testedCaseU5Field"
+                android:nextFocusDown="@+id/testedCaseU5Field"
+                android:id="@+id/totalCasesPwField"
+                android:imeOptions="actionNext"
+                android:hint="@string/malaria_pw"
+                android:singleLine="false"
+                android:editable="true"
+                android:layout_weight="0.50" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/malaria_total_tested_malaria_cases"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:nextFocusRight="@+id/testedCaseO5Field"
+                android:nextFocusDown="@+id/testedCaseO5Field"
+                android:id="@+id/testedCaseU5Field"
+                android:imeOptions="actionNext"
+                android:hint="@string/malaria_u5"
+                android:singleLine="false"
+                android:editable="true"
+                android:layout_weight="0.50" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:nextFocusRight="@+id/testedCasePwField"
+                android:nextFocusDown="@+id/testedCasePwField"
+                android:id="@+id/testedCaseO5Field"
+                android:imeOptions="actionNext"
+                android:hint="@string/malaria_o5"
+                android:singleLine="false"
+                android:editable="true"
+                android:layout_weight="0.50" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:nextFocusRight="@+id/confirmedCaseU5Field"
+                android:nextFocusDown="@+id/confirmedCaseU5Field"
+                android:id="@+id/testedCasePwField"
+                android:imeOptions="actionNext"
+                android:hint="@string/malaria_pw"
+                android:singleLine="false"
+                android:editable="true"
+                android:layout_weight="0.50" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/malaria_total_confirmed_malaria_cases"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:nextFocusRight="@+id/confirmedCaseO5Field"
+                android:nextFocusDown="@+id/confirmedCaseO5Field"
+                android:id="@+id/confirmedCaseU5Field"
+                android:imeOptions="actionNext"
+                android:hint="@string/malaria_u5"
+                android:singleLine="false"
+                android:editable="true"
+                android:layout_weight="0.50" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:nextFocusRight="@+id/confirmedCasePwField"
+                android:nextFocusDown="@+id/confirmedCasePwField"
+                android:id="@+id/confirmedCaseO5Field"
+                android:imeOptions="actionNext"
+                android:hint="@string/malaria_o5"
+                android:singleLine="false"
+                android:editable="true"
+                android:layout_weight="0.50" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:nextFocusRight="@+id/simpleCaseU5Field"
+                android:nextFocusDown="@+id/simpleCaseU5Field"
+                android:id="@+id/confirmedCasePwField"
+                android:imeOptions="actionNext"
+                android:hint="@string/malaria_pw"
+                android:singleLine="false"
+                android:editable="true"
+                android:layout_weight="0.50" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/malaria_total_simple_malaria_cases"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:nextFocusRight="@+id/simpleCaseO5Field"
+                android:nextFocusDown="@+id/simpleCaseO5Field"
+                android:id="@+id/simpleCaseU5Field"
+                android:imeOptions="actionNext"
+                android:hint="@string/malaria_u5"
+                android:singleLine="false"
+                android:editable="true"
+                android:layout_weight="0.50" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:nextFocusRight="@+id/severeCaseU5Field"
+                android:nextFocusDown="@+id/severeCaseU5Field"
+                android:id="@+id/simpleCaseO5Field"
+                android:imeOptions="actionNext"
+                android:hint="@string/malaria_o5"
+                android:singleLine="false"
+                android:editable="true"
+                android:layout_weight="0.50" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/malaria_total_severe_malaria_cases"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:nextFocusRight="@+id/severeCaseO5Field"
+                android:nextFocusDown="@+id/severeCaseO5Field"
+                android:id="@+id/severeCaseU5Field"
+                android:imeOptions="actionNext"
+                android:hint="@string/malaria_u5"
+                android:singleLine="false"
+                android:editable="true"
+                android:layout_weight="0.50" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:nextFocusRight="@+id/severeCasePwField"
+                android:nextFocusDown="@+id/severeCasePwField"
+                android:id="@+id/severeCaseO5Field"
+                android:imeOptions="actionNext"
+                android:hint="@string/malaria_o5"
+                android:singleLine="false"
+                android:editable="true"
+                android:layout_weight="0.50" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:nextFocusRight="@+id/acttreatedCaseU5Field"
+                android:nextFocusDown="@+id/acttreatedCaseU5Field"
+                android:id="@+id/severeCasePwField"
+                android:imeOptions="actionNext"
+                android:hint="@string/malaria_pw"
+                android:singleLine="false"
+                android:editable="true"
+                android:layout_weight="0.50" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/malaria_total_acttreated_malaria_cases"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="10dp">
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:nextFocusRight="@+id/acttreatedCaseO5Field"
+                android:nextFocusDown="@+id/acttreatedCaseO5Field"
+                android:id="@+id/acttreatedCaseU5Field"
+                android:imeOptions="actionNext"
+                android:hint="@string/malaria_u5"
+                android:singleLine="false"
+                android:editable="true"
+                android:layout_weight="0.50" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:nextFocusRight="@+id/acttreatedCasePwField"
+                android:nextFocusDown="@+id/acttreatedCasePwField"
+                android:id="@+id/acttreatedCaseO5Field"
+                android:imeOptions="actionNext"
+                android:hint="@string/malaria_o5"
+                android:singleLine="false"
+                android:editable="true"
+                android:layout_weight="0.50" />
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:id="@+id/acttreatedCasePwField"
+                android:imeOptions="actionDone"
+                android:hint="@string/malaria_pw"
+                android:singleLine="false"
+                android:editable="true"
+                android:layout_weight="0.50" />
+        </LinearLayout>
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/malaria_monthly_save"
+            android:id="@+id/saveButton"
+            android:layout_margin="10dp" />
+    </LinearLayout>
+</ScrollView>

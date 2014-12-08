@@ -55,6 +55,42 @@
             android:configChanges="keyboardHidden|orientation" />
 
         <activity
+            android:name="com.yeleman.malaria.MalariaHome"
+            android:label="@string/malaria_app_label"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.yeleman.malaria.MalariaMonthlyHome"
+            android:label="@string/malaria_monthly_report_label"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.yeleman.malaria.MalariaConsultationReport"
+            android:label="@string/malaria_consultation_label"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.yeleman.malaria.MalariaInpatientReport"
+            android:label="@string/malaria_app_label"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.yeleman.malaria.MalariaDeathReport"
+            android:label="@string/malaria_app_label"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.yeleman.malaria.MalariaMonthlyInputsReport"
+            android:label="@string/malaria_app_label"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
+            android:name="com.yeleman.malaria.MalariaStockoutReport"
+            android:label="@string/malaria_app_label"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation" />
+
+        <activity
             android:name="com.yeleman.nutrition.NutritionHome"
             android:label="@string/nutrition_app_label"
             android:screenOrientation="portrait"
