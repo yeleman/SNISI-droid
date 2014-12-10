@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.TextView;
@@ -31,37 +32,19 @@ public class MalariaStockoutReport extends MalariaForm {
     public void seputUI(){
         Log.d(TAG, "setupUI MalariaStockoutReport");
 
-
-        // int r = radioGroupChildren.getMeasuredState();
-        
-        // View.OnClickListener listener = new View.OnClickListener() {
-        //     @Override
-        //     public void onClick(View v) {
-        //         RadioButton rb = (RadioButton) v;
-        //         Toast.makeText(MalariaStockoutReport.this, rb.getText(),
-        //                 Toast.LENGTH_SHORT).show();
-
-        //         // get selected radio button from radioGroup
-        //         int selectedId = radioGroupChildren.getCheckedRadioButtonId();
-
-        //         // find the radiobutton by returned id
-        //         rBNoChildren = (RadioButton) findViewById(selectedId);
-
-        //         Toast.makeText(MalariaStockoutReport.this,
-        //                 rBNoChildren.getText(), Toast.LENGTH_SHORT).show();
-        //     }
-        // };
-
-        // rBNoChildren = (RadioButton) findViewById(R.id.radioButtonNoChildren);
-        // rBNoChildren.setOnClickListener(listener);
-        // rBYesChildren = (RadioButton) findViewById(R.id.radioButtonYesChildren);
-        // rBYesChildren.setOnClickListener(listener);
-
+        textView = (TextView) findViewById(R.id.children);
+        textView.setFocusableInTouchMode(true);
+        textView.setFocusable(true);
         radioButtonYesChildren = (RadioButton) findViewById(R.id.radioButtonYesChildren);
-        radioButtonYesChildren.setHint("cd");
         radioButtonNoChildren = (RadioButton) findViewById(R.id.radioButtonNoChildren);
+
+        actYouthLabel = (TextView) findViewById(R.id.actYouthLabel);
+        actYouthLabel.setFocusableInTouchMode(true);
+        actYouthLabel.setFocusable(true);
+        // actYouthYesField
         radioButtonYesYouth = (RadioButton) findViewById(R.id.radioButtonYesYouth);
         radioButtonNoYouth = (RadioButton) findViewById(R.id.radioButtonNoYouth);
+
         radioButtonYesAdult = (RadioButton) findViewById(R.id.radioButtonYesAdult);
         radioButtonNoAdult = (RadioButton) findViewById(R.id.radioButtonNoAdult);
         radioButtonYesArtemether = (RadioButton) findViewById(R.id.radioButtonYesArtemether);
@@ -82,6 +65,8 @@ public class MalariaStockoutReport extends MalariaForm {
         radioButtonNoSp1 = (RadioButton) findViewById(R.id.radioButtonNoSp1);
         radioButtonYesSp2 = (RadioButton) findViewById(R.id.radioButtonYesSp2);
         radioButtonNoSp2 = (RadioButton) findViewById(R.id.radioButtonNoSp2);
+
+        setupInvalidInputChecks();
 
 
         MalariaReportData report = MalariaReportData.get();
@@ -106,20 +91,29 @@ public class MalariaStockoutReport extends MalariaForm {
         });
     }
 
+
+
     protected boolean checkInputsAndCoherence() {
         // remove focus so to remove
         removeFocusFromFields();
 
-        RadioGroup radioGroupChildren = (RadioGroup) findViewById(R.id.radioGroupChildren);
-        radioButtonNoChildren.setError("AHHH");
-        radioGroupChildren.requestFocus();
-
-        setupInvalidInputChecks();
-        // check radio button
-        if (!ensureValidInputs(true)) {
-            Log.d(TAG, "Invalid inputs");
-            return false;
+        // if aucun des deux checked
+        if (!assertAtLeastOneSelected(radioButtonYesChildren, radioButtonNoChildren, textView) ||
+            !assertAtLeastOneSelected(radioButtonYesYouth, radioButtonNoYouth, actYouthLabel) ||
+            !assertAtLeastOneSelected(radioButtonYesAdult, radioButtonNoAdult, textView) ||
+            !assertAtLeastOneSelected(radioButtonYesArtemether, radioButtonNoArtemether, textView) ||
+            !assertAtLeastOneSelected(radioButtonYesQuinine, radioButtonNoQuinine, textView) ||
+            !assertAtLeastOneSelected(radioButtonYesSurum, radioButtonNoSurum, textView) ||
+            !assertAtLeastOneSelected(radioButtonYesBednet, radioButtonNoBednet, textView) ||
+            !assertAtLeastOneSelected(radioButtonYesRdt, radioButtonNoRdt, textView) ||
+            !assertAtLeastOneSelected(radioButtonYesSp, radioButtonNoSp, textView) ||
+            !assertAtLeastOneSelected(radioButtonYesAnc1, radioButtonNoAnc1, textView) ||
+            !assertAtLeastOneSelected(radioButtonYesSp1, radioButtonNoSp1, textView) ||
+            !assertAtLeastOneSelected(radioButtonYesSp2, radioButtonNoSp2, textView)) {
+                Log.d(TAG, "Invalid inputs, radio button check missing");
+                return false;
         }
+
         if (!ensureDataCoherence()) {
             Log.d(TAG, "Not coherent inputs");
             return false;
@@ -133,19 +127,18 @@ public class MalariaStockoutReport extends MalariaForm {
 
         MalariaReportData report = MalariaReportData.get();
         report.updateMetaData();
-
-        report.malaria_stockout_act_children = getValue(radioButtonYesChildren, radioButtonNoChildren);
-        report.malaria_stockout_act_youth = getValue(radioButtonYesYouth, radioButtonNoYouth);
-        report.malaria_stockout_act_adult = getValue(radioButtonYesAdult, radioButtonNoAdult);
-        report.malaria_stockout_artemether = getValue(radioButtonYesArtemether, radioButtonNoArtemether);
-        report.malaria_stockout_quinine = getValue(radioButtonYesQuinine, radioButtonNoQuinine);
-        report.malaria_stockout_serum = getValue(radioButtonYesSurum, radioButtonNoSurum);
-        report.malaria_stockout_bednet = getValue(radioButtonYesBednet, radioButtonNoBednet);
-        report.malaria_stockout_rdt = getValue(radioButtonYesRdt, radioButtonNoRdt);
-        report.malaria_stockout_sp = getValue(radioButtonYesSp, radioButtonNoSp);
-        report.malaria_total_anc_1 = getValue(radioButtonYesAnc1, radioButtonNoAnc1);
-        report.malaria_total_sp_1 = getValue(radioButtonYesSp1, radioButtonNoSp1);
-        report.malaria_total_sp_2 = getValue(radioButtonYesSp2, radioButtonNoSp2);
+        report.malaria_stockout_act_children = integerFromRadioButtons(radioButtonYesChildren, radioButtonNoChildren);
+        report.malaria_stockout_act_youth = integerFromRadioButtons(radioButtonYesYouth, radioButtonNoYouth);
+        report.malaria_stockout_act_adult = integerFromRadioButtons(radioButtonYesAdult, radioButtonNoAdult);
+        report.malaria_stockout_artemether = integerFromRadioButtons(radioButtonYesArtemether, radioButtonNoArtemether);
+        report.malaria_stockout_quinine = integerFromRadioButtons(radioButtonYesQuinine, radioButtonNoQuinine);
+        report.malaria_stockout_serum = integerFromRadioButtons(radioButtonYesSurum, radioButtonNoSurum);
+        report.malaria_stockout_bednet = integerFromRadioButtons(radioButtonYesBednet, radioButtonNoBednet);
+        report.malaria_stockout_rdt = integerFromRadioButtons(radioButtonYesRdt, radioButtonNoRdt);
+        report.malaria_stockout_sp = integerFromRadioButtons(radioButtonYesSp, radioButtonNoSp);
+        report.malaria_total_anc_1 = integerFromRadioButtons(radioButtonYesAnc1, radioButtonNoAnc1);
+        report.malaria_total_sp_1 = integerFromRadioButtons(radioButtonYesSp1, radioButtonNoSp1);
+        report.malaria_total_sp_2 = integerFromRadioButtons(radioButtonYesSp2, radioButtonNoSp2);
         report.stockout_is_complete = true;
         report.safeSave();
         Log.d(TAG, "storeReportData -- end");
@@ -154,37 +147,30 @@ public class MalariaStockoutReport extends MalariaForm {
     protected void restoreReportData() {
         Log.d(TAG, "restoreReportData");
         MalariaReportData report = MalariaReportData.get();
-
-        setCheckOnRadioButton(radioButtonYesChildren, radioButtonNoChildren, report.malaria_stockout_act_children);
-        setCheckOnRadioButton(radioButtonYesYouth, radioButtonNoYouth, report.malaria_stockout_act_youth);
-        setCheckOnRadioButton(radioButtonYesAdult, radioButtonNoAdult, report.malaria_stockout_act_adult);
-        setCheckOnRadioButton(radioButtonYesArtemether, radioButtonNoArtemether, report.malaria_stockout_artemether);
-        setCheckOnRadioButton(radioButtonYesQuinine, radioButtonNoQuinine, report.malaria_stockout_quinine);
-        setCheckOnRadioButton(radioButtonYesSurum, radioButtonNoSurum, report.malaria_stockout_serum);
-        setCheckOnRadioButton(radioButtonYesBednet, radioButtonNoBednet, report.malaria_stockout_bednet);
-        setCheckOnRadioButton(radioButtonYesRdt, radioButtonNoRdt, report.malaria_stockout_rdt);
-        setCheckOnRadioButton(radioButtonYesSp, radioButtonNoSp, report.malaria_stockout_sp);
-        setCheckOnRadioButton(radioButtonYesAnc1, radioButtonNoAnc1, report.malaria_total_anc_1);
-        setCheckOnRadioButton(radioButtonYesSp1, radioButtonNoSp1, report.malaria_total_sp_1);
-        setCheckOnRadioButton(radioButtonYesSp2, radioButtonNoSp2, report.malaria_total_sp_2);
+        checkRadioButtonFromReportData(radioButtonYesChildren, radioButtonNoChildren, report.malaria_stockout_act_children);
+        checkRadioButtonFromReportData(radioButtonYesYouth, radioButtonNoYouth, report.malaria_stockout_act_youth);
+        checkRadioButtonFromReportData(radioButtonYesAdult, radioButtonNoAdult, report.malaria_stockout_act_adult);
+        checkRadioButtonFromReportData(radioButtonYesArtemether, radioButtonNoArtemether, report.malaria_stockout_artemether);
+        checkRadioButtonFromReportData(radioButtonYesQuinine, radioButtonNoQuinine, report.malaria_stockout_quinine);
+        checkRadioButtonFromReportData(radioButtonYesSurum, radioButtonNoSurum, report.malaria_stockout_serum);
+        checkRadioButtonFromReportData(radioButtonYesBednet, radioButtonNoBednet, report.malaria_stockout_bednet);
+        checkRadioButtonFromReportData(radioButtonYesRdt, radioButtonNoRdt, report.malaria_stockout_rdt);
+        checkRadioButtonFromReportData(radioButtonYesSp, radioButtonNoSp, report.malaria_stockout_sp);
+        checkRadioButtonFromReportData(radioButtonYesAnc1, radioButtonNoAnc1, report.malaria_total_anc_1);
+        checkRadioButtonFromReportData(radioButtonYesSp1, radioButtonNoSp1, report.malaria_total_sp_1);
+        checkRadioButtonFromReportData(radioButtonYesSp2, radioButtonNoSp2, report.malaria_total_sp_2);
     }
     
     public void setupInvalidInputChecks() {
-        assertAtLeastOneSelected(radioButtonYesChildren, radioButtonNoChildren);
-        assertAtLeastOneSelected(radioButtonYesYouth, radioButtonNoYouth);
-        assertAtLeastOneSelected(radioButtonYesAdult, radioButtonNoAdult);
-        assertAtLeastOneSelected(radioButtonYesArtemether, radioButtonNoArtemether);
-        assertAtLeastOneSelected(radioButtonYesQuinine, radioButtonNoQuinine);
-        assertAtLeastOneSelected(radioButtonYesSurum, radioButtonNoSurum);
-        assertAtLeastOneSelected(radioButtonYesBednet, radioButtonNoBednet);
-        assertAtLeastOneSelected(radioButtonYesRdt, radioButtonNoRdt);
-        assertAtLeastOneSelected(radioButtonYesSp, radioButtonNoSp);
-        assertAtLeastOneSelected(radioButtonYesAnc1, radioButtonNoAnc1);
-        assertAtLeastOneSelected(radioButtonYesSp1, radioButtonNoSp1);
-        assertAtLeastOneSelected(radioButtonYesSp2, radioButtonNoSp2);
+        // ACT CHILDREN
+        radioButtonNoChildren.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(textView));
+        radioButtonYesChildren.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(textView));
+
+        radioButtonNoYouth.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(actYouthLabel));
+        radioButtonYesYouth.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(actYouthLabel));
     }
 
-    protected int getValue(RadioButton buttonYes, RadioButton buttonNo) {
+    protected int integerFromRadioButtons(RadioButton buttonYes, RadioButton buttonNo) {
         if (buttonNo.isChecked()) {
             return 0;
         }
@@ -194,9 +180,10 @@ public class MalariaStockoutReport extends MalariaForm {
         return -1;
     }
 
-    protected boolean assertAtLeastOneSelected (RadioButton buttonYes, RadioButton buttonNo) {
-        if (getValue(buttonYes, buttonNo) == -1) {
-            buttonNo.setError("Selectionner au mois un");
+    protected boolean assertAtLeastOneSelected (RadioButton buttonYes, RadioButton buttonNo, TextView textView) {
+        if (integerFromRadioButtons(buttonYes, buttonNo) == -1) {
+            textView.setError("requis");
+            textView.requestFocus();
             return false;
         }
         return true;
@@ -206,13 +193,14 @@ public class MalariaStockoutReport extends MalariaForm {
         return true;
     };
 
-    protected void setCheckOnRadioButton(RadioButton radioButtonYes,
-                                         RadioButton radioButtonNo, int data){
-        Log.d(TAG, String.valueOf(data));
-        if (data == 1){
+    protected void checkRadioButtonFromReportData(RadioButton radioButtonYes,
+                                                  RadioButton radioButtonNo,
+                                                  int reportDataValue){
+        Log.d(TAG, String.valueOf(reportDataValue));
+        if (reportDataValue == 1){
             radioButtonYes.setChecked(true);
         }
-        if (data == 0) {
+        if (reportDataValue == 0) {
             radioButtonNo.setChecked(true);
         }
     }

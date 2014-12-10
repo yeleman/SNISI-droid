@@ -3,9 +3,12 @@ package com.yeleman.malaria;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.TextView;
 
 import com.yeleman.snisidroid.CheckedFormActivity;
 import com.yeleman.snisidroid.Constants;
+
+import org.w3c.dom.Text;
 
 /**
  * Created by fad on 08/12/14.
@@ -26,7 +29,9 @@ public class MalariaForm extends CheckedFormActivity {
     protected EditText malariaTotalDeathField;
     protected EditText malariaTotalMalariaDeathField;
     protected EditText malariaTotalDistributedBednetsField;
-    
+
+    protected TextView textView;
+    protected TextView actYouthLabel;
     protected RadioButton radioButtonYesChildren;
     protected RadioButton radioButtonNoChildren;
     protected RadioButton radioButtonYesYouth;

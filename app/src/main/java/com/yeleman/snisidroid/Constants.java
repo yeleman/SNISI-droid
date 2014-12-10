@@ -3,7 +3,9 @@ package com.yeleman.snisidroid;
 import android.graphics.Color;
 import android.util.Log;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.EditText;
+import android.widget.TextView;
 
 import java.text.NumberFormat;
 import java.util.Locale;
@@ -137,5 +139,16 @@ public class Constants {
 
     public static String stringFromReport(float data){
         return stringFromFloat(floatFromReport(data));
+    }
+
+    public static CompoundButton.OnCheckedChangeListener getResetTextViewCheckListener(final TextView textView) {
+        Log.d(TAG, "recorded check listener");
+        return new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                Log.d(TAG, "checkeddddd");
+                textView.setError(null);
+            }
+        };
     }
 }
