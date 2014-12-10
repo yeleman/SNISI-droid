@@ -17,10 +17,9 @@ public class MalariaMonthlyHome extends CheckedFormActivity implements View.OnCl
 
     private final static String TAG = Constants.getLogTag("MalariaMonthlyHome");
 
-    private Button consultationReportButton;
-    private Button inpatientReportButton;
-    private Button distributedBednetsReportButton;
-    private Button deathReportButton;
+    private Button u5ReportButton;
+    private Button o5ReportButton;
+    private Button pwReportButton;
     private Button stockoutReportButton;
 
     @Override
@@ -48,18 +47,15 @@ public class MalariaMonthlyHome extends CheckedFormActivity implements View.OnCl
         Log.d(TAG, "setupUI NutritionMonthlyHome");
 
         MalariaReportData malariaReport = MalariaReportData.get();
-        consultationReportButton = (Button) findViewById(R.id.consultationReportButton);
-        consultationReportButton.setOnClickListener(this);
-        Constants.updateButtonCompletion(consultationReportButton, malariaReport.consultation_is_complete);
-        inpatientReportButton = (Button) findViewById(R.id.inpatientReportButton);
-        inpatientReportButton.setOnClickListener(this);
-        Constants.updateButtonCompletion(inpatientReportButton, malariaReport.impatient_is_complete);
-        deathReportButton = (Button) findViewById(R.id.deathReportButton);
-        deathReportButton.setOnClickListener(this);
-        Constants.updateButtonCompletion(deathReportButton, malariaReport.death_is_comple);
-        distributedBednetsReportButton = (Button) findViewById(R.id.distributedBednetsReportButton);
-        distributedBednetsReportButton.setOnClickListener(this);
-        Constants.updateButtonCompletion(distributedBednetsReportButton, malariaReport.mild_is_complete);
+        u5ReportButton = (Button) findViewById(R.id.u5ReportButton);
+        u5ReportButton.setOnClickListener(this);
+        Constants.updateButtonCompletion(u5ReportButton, malariaReport.u5_is_complete);
+        o5ReportButton = (Button) findViewById(R.id.o5ReportButton);
+        o5ReportButton.setOnClickListener(this);
+        Constants.updateButtonCompletion(o5ReportButton, malariaReport.o5_is_complete);
+        pwReportButton = (Button) findViewById(R.id.pwReportButton);
+        pwReportButton.setOnClickListener(this);
+        Constants.updateButtonCompletion(pwReportButton, malariaReport.pw_is_complete);
         stockoutReportButton = (Button) findViewById(R.id.stockoutReportButton);
         stockoutReportButton.setOnClickListener(this);
         Constants.updateButtonCompletion(stockoutReportButton, malariaReport.stockout_is_complete);
@@ -77,17 +73,14 @@ public class MalariaMonthlyHome extends CheckedFormActivity implements View.OnCl
         Object activity = null;
 
         switch (view.getId()) {
-            case R.id.consultationReportButton:
-                activity = MalariaConsultationReport.class;
+            case R.id.u5ReportButton:
+                activity = MalariaU5Report.class;
                 break;
-            case R.id.inpatientReportButton:
-                activity = MalariaInpatientReport.class;
+            case R.id.o5ReportButton:
+                activity = MalariaO5Report.class;
                 break;
-            case R.id.deathReportButton:
-                activity = MalariaDeathReport.class;
-                break;
-            case R.id.distributedBednetsReportButton:
-                activity = MalariaMonthlyInputsReport.class;
+            case R.id.pwReportButton:
+                activity = MalariaPwReport.class;
                 break;
             case R.id.stockoutReportButton:
                 activity = MalariaStockoutReport.class;

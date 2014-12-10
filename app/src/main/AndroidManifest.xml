@@ -65,28 +65,23 @@
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.yeleman.malaria.MalariaConsultationReport"
-            android:label="@string/malaria_consultation_label"
+            android:name="com.yeleman.malaria.MalariaO5Report"
+            android:label="@string/malaria_o5_label"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.yeleman.malaria.MalariaInpatientReport"
-            android:label="@string/malaria_app_label"
+            android:name="com.yeleman.malaria.MalariaU5Report"
+            android:label="@string/malaria_u5_label"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation" />
         <activity
-            android:name="com.yeleman.malaria.MalariaDeathReport"
-            android:label="@string/malaria_app_label"
-            android:screenOrientation="portrait"
-            android:configChanges="keyboardHidden|orientation" />
-        <activity
-            android:name="com.yeleman.malaria.MalariaMonthlyInputsReport"
-            android:label="@string/malaria_app_label"
+            android:name="com.yeleman.malaria.MalariaPwReport"
+            android:label="@string/malaria_pw_label"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation" />
         <activity
             android:name="com.yeleman.malaria.MalariaStockoutReport"
-            android:label="@string/malaria_app_label"
+            android:label="@string/malaria_stockout_label"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation" />
 

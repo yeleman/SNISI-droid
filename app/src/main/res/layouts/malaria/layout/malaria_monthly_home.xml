@@ -15,32 +15,24 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/malaria_consultation_label"
-            android:id="@+id/consultationReportButton"
+            android:text="@string/malaria_u5_label"
+            android:id="@+id/u5ReportButton"
             android:padding="10dp"
             android:layout_margin="10dp" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/malaria_inpatient_label"
-            android:id="@+id/inpatientReportButton"
+            android:text="@string/malaria_o5_label"
+            android:id="@+id/o5ReportButton"
             android:padding="10dp"
             android:layout_margin="10dp" />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/malaria_death_label"
-            android:id="@+id/deathReportButton"
-            android:padding="10dp"
-            android:layout_margin="10dp" />
-
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/malaria_distributed_bednets_label"
-            android:id="@+id/distributedBednetsReportButton"
+            android:text="@string/malaria_pw_label"
+            android:id="@+id/pwReportButton"
             android:padding="10dp"
             android:layout_margin="10dp" />
 

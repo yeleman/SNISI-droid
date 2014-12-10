@@ -18,27 +18,30 @@
                 android:text="@string/malaria_stockout_act_children"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_marginLeft="10dp"
+                android:id="@+id/children"
                 android:layout_marginRight="10dp" />
             <RadioGroup
                 android:id="@+id/radioGroupChildren"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:gravity="center"
                 android:layout_margin="15dp">
+
+                <RadioButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="OUI"
+                    android:id="@+id/radioButtonYesChildren"
+                    android:checked="false"
+                    android:layout_weight="0.50" />
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Non"
-                    android:id="@+id/radioButtonYesChildren"
-                    android:checked="false"
-                    android:layout_marginRight="20dp" />
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Oui"
                     android:id="@+id/radioButtonNoChildren"
-                    android:layout_marginLeft="20dp" />
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="0.50" />
+
             </RadioGroup>
         </LinearLayout>
         <LinearLayout
@@ -57,20 +60,20 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:gravity="center"
                 android:layout_margin="15dp">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Oui"
-                    android:id="@+id/radioButtonYesYouth" 
-                    android:layout_marginRight="20dp" />
+                    android:id="@+id/radioButtonYesYouth"
+                    android:layout_weight="0.50" />
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Non"
                     android:id="@+id/radioButtonNoYouth" 
-                    android:layout_marginLeft="20dp" />
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="0.50" />
             </RadioGroup>
         </LinearLayout>
         <LinearLayout
@@ -89,21 +92,21 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:gravity="center"
                 android:layout_margin="15dp">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Oui"
-                    android:id="@+id/radioButtonYesAdult" 
-                    android:layout_marginRight="20dp" />
+                    android:id="@+id/radioButtonYesAdult"
+                    android:layout_weight="0.50" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Non"
                     android:id="@+id/radioButtonNoAdult" 
-                    android:layout_marginLeft="20dp" />
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="0.50"  />
             </RadioGroup>
         </LinearLayout>
         <LinearLayout
@@ -122,21 +125,21 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:gravity="center"
                 android:layout_margin="15dp">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Oui"
                     android:id="@+id/radioButtonYesArtemether"
-                    android:layout_marginRight="20dp" />
+                    android:layout_weight="0.50"  />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Non"
                     android:id="@+id/radioButtonNoArtemether"
-                    android:layout_marginLeft="20dp" />
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="0.50" />
             </RadioGroup>
         </LinearLayout>
         <LinearLayout
@@ -155,21 +158,21 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:gravity="center"
                 android:layout_margin="15dp">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Oui"
                     android:id="@+id/radioButtonYesQuinine"
-                    android:layout_marginRight="20dp" />
+                    android:layout_weight="0.50" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Non"
                     android:id="@+id/radioButtonNoQuinine"
-                    android:layout_marginLeft="20dp" />
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="0.50" />
             </RadioGroup>
         </LinearLayout>
         <LinearLayout
@@ -187,7 +190,6 @@
                 android:id="@+id/radioGroupSerum"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:orientation="horizontal"
                 android:layout_margin="15dp">
                 <RadioButton
@@ -195,14 +197,15 @@
                     android:layout_height="wrap_content"
                     android:text="Oui"
                     android:id="@+id/radioButtonYesSurum"
-                    android:layout_marginRight="20dp" />
+                    android:layout_weight="0.50" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Non"
                     android:id="@+id/radioButtonNoSurum"
-                    android:layout_marginLeft="20dp" />
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="0.50"  />
             </RadioGroup>
         </LinearLayout>
         <LinearLayout
@@ -221,21 +224,21 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:gravity="center"
                 android:layout_margin="15dp">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Oui"
                     android:id="@+id/radioButtonYesBednet"
-                    android:layout_marginRight="20dp" />
+                    android:layout_weight="0.50"  />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Non"
                     android:id="@+id/radioButtonNoBednet"
-                    android:layout_marginLeft="20dp" />
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="0.50" />
             </RadioGroup>
         </LinearLayout>
         <LinearLayout
@@ -253,7 +256,6 @@
                 android:id="@+id/radioGroupRdt"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
                 android:orientation="horizontal"
                 android:layout_margin="15dp">
                 <RadioButton
@@ -261,14 +263,15 @@
                     android:layout_height="wrap_content"
                     android:text="Oui"
                     android:id="@+id/radioButtonYesRdt"
-                    android:layout_marginRight="20dp" />
+                    android:layout_weight="0.50"  />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Non"
                     android:id="@+id/radioButtonNoRdt"
-                    android:layout_marginLeft="20dp" />
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="0.50"  />
             </RadioGroup>
         </LinearLayout>
         <LinearLayout
@@ -287,21 +290,21 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:gravity="center"
                 android:layout_margin="15dp">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Oui"
                     android:id="@+id/radioButtonYesSp"
-                    android:layout_marginRight="20dp" />
+                    android:layout_weight="0.50" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Non"
                     android:id="@+id/radioButtonNoSp"
-                    android:layout_marginLeft="20dp" />
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="0.50" />
             </RadioGroup>
         </LinearLayout>
         <LinearLayout
@@ -320,21 +323,21 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:gravity="center"
                 android:layout_margin="15dp">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Oui"
                     android:id="@+id/radioButtonYesAnc1"
-                    android:layout_marginRight="20dp" />
+                    android:layout_weight="0.50"  />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Non"
                     android:id="@+id/radioButtonNoAnc1"
-                    android:layout_marginLeft="20dp" />
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="0.50" />
             </RadioGroup>
         </LinearLayout>
         <LinearLayout
@@ -353,21 +356,21 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:gravity="center"
                 android:layout_margin="15dp">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Oui"
                     android:id="@+id/radioButtonYesSp1"
-                    android:layout_marginRight="20dp" />
+                    android:layout_weight="0.50"  />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Non"
                     android:id="@+id/radioButtonNoSp1"
-                    android:layout_marginLeft="20dp" />
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="0.50"  />
             </RadioGroup>
         </LinearLayout>
         <LinearLayout
@@ -386,21 +389,21 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:gravity="center"
                 android:layout_margin="15dp">
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Oui"
                     android:id="@+id/radioButtonYesSp2"
-                    android:layout_marginRight="20dp" />
+                    android:layout_weight="0.50" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Non"
                     android:id="@+id/radioButtonNoSp2"
-                    android:layout_marginLeft="20dp" />
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="0.50" />
             </RadioGroup>
         </LinearLayout>
         <Button
