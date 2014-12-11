@@ -32,39 +32,67 @@ public class MalariaStockoutReport extends MalariaForm {
     public void seputUI(){
         Log.d(TAG, "setupUI MalariaStockoutReport");
 
-        textView = (TextView) findViewById(R.id.children);
-        textView.setFocusableInTouchMode(true);
-        textView.setFocusable(true);
-        radioButtonYesChildren = (RadioButton) findViewById(R.id.radioButtonYesChildren);
-        radioButtonNoChildren = (RadioButton) findViewById(R.id.radioButtonNoChildren);
-
+        actChildrenLabel = (TextView) findViewById(R.id.actChildrenLabel);
+        actChildrenLabel.setFocusableInTouchMode(true);
+        actChildrenLabel.setFocusable(true);
         actYouthLabel = (TextView) findViewById(R.id.actYouthLabel);
         actYouthLabel.setFocusableInTouchMode(true);
         actYouthLabel.setFocusable(true);
-        // actYouthYesField
-        radioButtonYesYouth = (RadioButton) findViewById(R.id.radioButtonYesYouth);
-        radioButtonNoYouth = (RadioButton) findViewById(R.id.radioButtonNoYouth);
+        adultLabel = (TextView) findViewById(R.id.adultLabel);
+        adultLabel.setFocusableInTouchMode(true);
+        adultLabel.setFocusable(true);
+        artemetherLabel = (TextView) findViewById(R.id.artemetherLabel);
+        artemetherLabel.setFocusableInTouchMode(true);
+        artemetherLabel.setFocusable(true);
+        quinineLabel = (TextView) findViewById(R.id.quinineLabel);
+        quinineLabel.setFocusableInTouchMode(true);
+        quinineLabel.setFocusable(true);
+        serumLabel = (TextView) findViewById(R.id.serumLabel);
+        serumLabel.setFocusableInTouchMode(true);
+        serumLabel.setFocusable(true);
+        bednetLabel = (TextView) findViewById(R.id.bednetLabel);
+        bednetLabel.setFocusableInTouchMode(true);
+        bednetLabel.setFocusable(true);
+        rdtLabel = (TextView) findViewById(R.id.rdtLabel);
+        rdtLabel.setFocusableInTouchMode(true);
+        rdtLabel.setFocusable(true);
+        spLabel = (TextView) findViewById(R.id.spLabel);
+        spLabel.setFocusableInTouchMode(true);
+        spLabel.setFocusable(true);
+        anc1Label = (TextView) findViewById(R.id.anc1Label);
+        anc1Label.setFocusableInTouchMode(true);
+        anc1Label.setFocusable(true);
+        sp1Label = (TextView) findViewById(R.id.sp1Label);
+        sp1Label.setFocusableInTouchMode(true);
+        sp1Label.setFocusable(true);
+        sp2Label = (TextView) findViewById(R.id.sp2Label);
+        sp2Label.setFocusableInTouchMode(true);
+        sp2Label.setFocusable(true);
 
-        radioButtonYesAdult = (RadioButton) findViewById(R.id.radioButtonYesAdult);
-        radioButtonNoAdult = (RadioButton) findViewById(R.id.radioButtonNoAdult);
-        radioButtonYesArtemether = (RadioButton) findViewById(R.id.radioButtonYesArtemether);
-        radioButtonNoArtemether = (RadioButton) findViewById(R.id.radioButtonNoArtemether);
-        radioButtonYesQuinine = (RadioButton) findViewById(R.id.radioButtonYesQuinine);
-        radioButtonNoQuinine = (RadioButton) findViewById(R.id.radioButtonNoQuinine);
-        radioButtonYesSurum = (RadioButton) findViewById(R.id.radioButtonYesSurum);
-        radioButtonNoSurum = (RadioButton) findViewById(R.id.radioButtonNoSurum);
-        radioButtonYesBednet = (RadioButton) findViewById(R.id.radioButtonYesBednet);
-        radioButtonNoBednet = (RadioButton) findViewById(R.id.radioButtonNoBednet);
-        radioButtonYesRdt = (RadioButton) findViewById(R.id.radioButtonYesRdt);
-        radioButtonNoRdt = (RadioButton) findViewById(R.id.radioButtonNoRdt);
-        radioButtonYesSp = (RadioButton) findViewById(R.id.radioButtonYesSp);
-        radioButtonNoSp = (RadioButton) findViewById(R.id.radioButtonNoSp);
-        radioButtonYesAnc1 = (RadioButton) findViewById(R.id.radioButtonYesAnc1);
-        radioButtonNoAnc1 = (RadioButton) findViewById(R.id.radioButtonNoAnc1);
-        radioButtonYesSp1 = (RadioButton) findViewById(R.id.radioButtonYesSp1);
-        radioButtonNoSp1 = (RadioButton) findViewById(R.id.radioButtonNoSp1);
-        radioButtonYesSp2 = (RadioButton) findViewById(R.id.radioButtonYesSp2);
-        radioButtonNoSp2 = (RadioButton) findViewById(R.id.radioButtonNoSp2);
+        actChildrenYesField = (RadioButton) findViewById(R.id.actChildrenYesField);
+        actChildrenNoField = (RadioButton) findViewById(R.id.actChildrenNoField);
+        actYouthYesField = (RadioButton) findViewById(R.id.actYouthYesField);
+        actYouthNoField = (RadioButton) findViewById(R.id.actYouthNoField);
+        adultYesField = (RadioButton) findViewById(R.id.adultYesField);
+        adultNoField = (RadioButton) findViewById(R.id.adultNoField);
+        artemetherYesField = (RadioButton) findViewById(R.id.artemetherYesField);
+        artemetherNoField = (RadioButton) findViewById(R.id.artemetherNoField);
+        quinineYesField = (RadioButton) findViewById(R.id.quinineYesField);
+        quinineNoField = (RadioButton) findViewById(R.id.quinineNoField);
+        serumYesField = (RadioButton) findViewById(R.id.serumYesField);
+        serumNoField = (RadioButton) findViewById(R.id.serumNoField);
+        bednetYesField = (RadioButton) findViewById(R.id.bednetYesField);
+        bednetNoField = (RadioButton) findViewById(R.id.bednetNoField);
+        rdtYesField = (RadioButton) findViewById(R.id.rdtYesField);
+        rdtNoField = (RadioButton) findViewById(R.id.rdtNoField);
+        spYesField = (RadioButton) findViewById(R.id.spYesField);
+        spNoField = (RadioButton) findViewById(R.id.spNoField);
+        anc1YesField = (RadioButton) findViewById(R.id.anc1YesField);
+        anc1NoField = (RadioButton) findViewById(R.id.anc1NoField);
+        sp1YesField = (RadioButton) findViewById(R.id.sp1YesField);
+        sp1NoField = (RadioButton) findViewById(R.id.sp1NoField);
+        sp2YesField = (RadioButton) findViewById(R.id.sp2YesField);
+        sp2NoField = (RadioButton) findViewById(R.id.sp2NoField);
 
         setupInvalidInputChecks();
 
@@ -92,24 +120,23 @@ public class MalariaStockoutReport extends MalariaForm {
     }
 
 
-
     protected boolean checkInputsAndCoherence() {
         // remove focus so to remove
         removeFocusFromFields();
 
         // if aucun des deux checked
-        if (!assertAtLeastOneSelected(radioButtonYesChildren, radioButtonNoChildren, textView) ||
-            !assertAtLeastOneSelected(radioButtonYesYouth, radioButtonNoYouth, actYouthLabel) ||
-            !assertAtLeastOneSelected(radioButtonYesAdult, radioButtonNoAdult, textView) ||
-            !assertAtLeastOneSelected(radioButtonYesArtemether, radioButtonNoArtemether, textView) ||
-            !assertAtLeastOneSelected(radioButtonYesQuinine, radioButtonNoQuinine, textView) ||
-            !assertAtLeastOneSelected(radioButtonYesSurum, radioButtonNoSurum, textView) ||
-            !assertAtLeastOneSelected(radioButtonYesBednet, radioButtonNoBednet, textView) ||
-            !assertAtLeastOneSelected(radioButtonYesRdt, radioButtonNoRdt, textView) ||
-            !assertAtLeastOneSelected(radioButtonYesSp, radioButtonNoSp, textView) ||
-            !assertAtLeastOneSelected(radioButtonYesAnc1, radioButtonNoAnc1, textView) ||
-            !assertAtLeastOneSelected(radioButtonYesSp1, radioButtonNoSp1, textView) ||
-            !assertAtLeastOneSelected(radioButtonYesSp2, radioButtonNoSp2, textView)) {
+        if (!assertAtLeastOneSelected(actChildrenYesField, actChildrenNoField, actChildrenLabel) ||
+            !assertAtLeastOneSelected(actYouthYesField, actYouthNoField, actYouthLabel) ||
+            !assertAtLeastOneSelected(adultYesField, adultNoField, adultLabel) ||
+            !assertAtLeastOneSelected(artemetherYesField, artemetherNoField, artemetherLabel) ||
+            !assertAtLeastOneSelected(quinineYesField, quinineNoField, quinineLabel) ||
+            !assertAtLeastOneSelected(serumYesField, serumNoField, serumLabel) ||
+            !assertAtLeastOneSelected(bednetYesField, bednetNoField, bednetLabel) ||
+            !assertAtLeastOneSelected(rdtYesField, rdtNoField, rdtLabel) ||
+            !assertAtLeastOneSelected(spYesField, spNoField, spLabel) ||
+            !assertAtLeastOneSelected(anc1YesField, anc1NoField, anc1Label) ||
+            !assertAtLeastOneSelected(sp1YesField, sp1NoField, sp1Label) ||
+            !assertAtLeastOneSelected(sp2YesField, sp2NoField, sp2Label)) {
                 Log.d(TAG, "Invalid inputs, radio button check missing");
                 return false;
         }
@@ -127,18 +154,19 @@ public class MalariaStockoutReport extends MalariaForm {
 
         MalariaReportData report = MalariaReportData.get();
         report.updateMetaData();
-        report.malaria_stockout_act_children = integerFromRadioButtons(radioButtonYesChildren, radioButtonNoChildren);
-        report.malaria_stockout_act_youth = integerFromRadioButtons(radioButtonYesYouth, radioButtonNoYouth);
-        report.malaria_stockout_act_adult = integerFromRadioButtons(radioButtonYesAdult, radioButtonNoAdult);
-        report.malaria_stockout_artemether = integerFromRadioButtons(radioButtonYesArtemether, radioButtonNoArtemether);
-        report.malaria_stockout_quinine = integerFromRadioButtons(radioButtonYesQuinine, radioButtonNoQuinine);
-        report.malaria_stockout_serum = integerFromRadioButtons(radioButtonYesSurum, radioButtonNoSurum);
-        report.malaria_stockout_bednet = integerFromRadioButtons(radioButtonYesBednet, radioButtonNoBednet);
-        report.malaria_stockout_rdt = integerFromRadioButtons(radioButtonYesRdt, radioButtonNoRdt);
-        report.malaria_stockout_sp = integerFromRadioButtons(radioButtonYesSp, radioButtonNoSp);
-        report.malaria_total_anc_1 = integerFromRadioButtons(radioButtonYesAnc1, radioButtonNoAnc1);
-        report.malaria_total_sp_1 = integerFromRadioButtons(radioButtonYesSp1, radioButtonNoSp1);
-        report.malaria_total_sp_2 = integerFromRadioButtons(radioButtonYesSp2, radioButtonNoSp2);
+
+        report.malaria_stockout_act_children = integerFromRadioButtons(actChildrenYesField, actChildrenNoField);
+        report.malaria_stockout_act_youth = integerFromRadioButtons(actYouthYesField, actYouthNoField);
+        report.malaria_stockout_act_adult = integerFromRadioButtons(adultYesField, adultNoField);
+        report.malaria_stockout_artemether = integerFromRadioButtons(artemetherYesField, artemetherNoField);
+        report.malaria_stockout_quinine = integerFromRadioButtons(quinineYesField, quinineNoField);
+        report.malaria_stockout_serum = integerFromRadioButtons(serumYesField, serumNoField);
+        report.malaria_stockout_bednet = integerFromRadioButtons(bednetYesField, bednetNoField);
+        report.malaria_stockout_rdt = integerFromRadioButtons(rdtYesField, rdtNoField);
+        report.malaria_stockout_sp = integerFromRadioButtons(spYesField, spNoField);
+        report.malaria_total_anc_1 = integerFromRadioButtons(anc1YesField, anc1NoField);
+        report.malaria_total_sp_1 = integerFromRadioButtons(sp1YesField, sp1NoField);
+        report.malaria_total_sp_2 = integerFromRadioButtons(sp2YesField, sp2NoField);
         report.stockout_is_complete = true;
         report.safeSave();
         Log.d(TAG, "storeReportData -- end");
@@ -147,27 +175,48 @@ public class MalariaStockoutReport extends MalariaForm {
     protected void restoreReportData() {
         Log.d(TAG, "restoreReportData");
         MalariaReportData report = MalariaReportData.get();
-        checkRadioButtonFromReportData(radioButtonYesChildren, radioButtonNoChildren, report.malaria_stockout_act_children);
-        checkRadioButtonFromReportData(radioButtonYesYouth, radioButtonNoYouth, report.malaria_stockout_act_youth);
-        checkRadioButtonFromReportData(radioButtonYesAdult, radioButtonNoAdult, report.malaria_stockout_act_adult);
-        checkRadioButtonFromReportData(radioButtonYesArtemether, radioButtonNoArtemether, report.malaria_stockout_artemether);
-        checkRadioButtonFromReportData(radioButtonYesQuinine, radioButtonNoQuinine, report.malaria_stockout_quinine);
-        checkRadioButtonFromReportData(radioButtonYesSurum, radioButtonNoSurum, report.malaria_stockout_serum);
-        checkRadioButtonFromReportData(radioButtonYesBednet, radioButtonNoBednet, report.malaria_stockout_bednet);
-        checkRadioButtonFromReportData(radioButtonYesRdt, radioButtonNoRdt, report.malaria_stockout_rdt);
-        checkRadioButtonFromReportData(radioButtonYesSp, radioButtonNoSp, report.malaria_stockout_sp);
-        checkRadioButtonFromReportData(radioButtonYesAnc1, radioButtonNoAnc1, report.malaria_total_anc_1);
-        checkRadioButtonFromReportData(radioButtonYesSp1, radioButtonNoSp1, report.malaria_total_sp_1);
-        checkRadioButtonFromReportData(radioButtonYesSp2, radioButtonNoSp2, report.malaria_total_sp_2);
+        checkRadioButtonFromReportData(actChildrenYesField, actChildrenNoField, report.malaria_stockout_act_children);
+        checkRadioButtonFromReportData(actYouthYesField, actYouthNoField, report.malaria_stockout_act_youth);
+        checkRadioButtonFromReportData(adultYesField, adultNoField, report.malaria_stockout_act_adult);
+        checkRadioButtonFromReportData(artemetherYesField, artemetherNoField, report.malaria_stockout_artemether);
+        checkRadioButtonFromReportData(quinineYesField, quinineNoField, report.malaria_stockout_quinine);
+        checkRadioButtonFromReportData(serumYesField, serumNoField, report.malaria_stockout_serum);
+        checkRadioButtonFromReportData(bednetYesField, bednetNoField, report.malaria_stockout_bednet);
+        checkRadioButtonFromReportData(rdtYesField, rdtNoField, report.malaria_stockout_rdt);
+        checkRadioButtonFromReportData(spYesField, spNoField, report.malaria_stockout_sp);
+        checkRadioButtonFromReportData(anc1YesField, anc1NoField, report.malaria_total_anc_1);
+        checkRadioButtonFromReportData(sp1YesField, sp1NoField, report.malaria_total_sp_1);
+        checkRadioButtonFromReportData(sp2YesField, sp2NoField, report.malaria_total_sp_2);
     }
-    
+
     public void setupInvalidInputChecks() {
         // ACT CHILDREN
-        radioButtonNoChildren.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(textView));
-        radioButtonYesChildren.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(textView));
+        actChildrenYesField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(actChildrenLabel));
+        actChildrenNoField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(actChildrenLabel));
 
-        radioButtonNoYouth.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(actYouthLabel));
-        radioButtonYesYouth.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(actYouthLabel));
+        actYouthYesField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(actYouthLabel));
+        actYouthNoField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(actYouthLabel));
+        adultYesField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(adultLabel));
+        adultNoField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(adultLabel));
+        artemetherYesField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(artemetherLabel));
+        artemetherNoField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(artemetherLabel));
+        quinineYesField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(quinineLabel));
+        quinineNoField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(quinineLabel));
+        serumYesField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(serumLabel));
+        serumNoField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(serumLabel));
+        bednetYesField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(bednetLabel));
+        bednetNoField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(bednetLabel));
+        rdtYesField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(rdtLabel));
+        rdtNoField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(rdtLabel));
+        spYesField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(spLabel));
+        spNoField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(spLabel));
+        anc1YesField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(anc1Label));
+        anc1NoField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(anc1Label));
+        sp1YesField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(sp1Label));
+        sp1NoField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(sp1Label));
+        sp2YesField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(sp2Label));
+        sp2NoField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(sp2Label));
+
     }
 
     protected int integerFromRadioButtons(RadioButton buttonYes, RadioButton buttonNo) {
@@ -196,7 +245,6 @@ public class MalariaStockoutReport extends MalariaForm {
     protected void checkRadioButtonFromReportData(RadioButton radioButtonYes,
                                                   RadioButton radioButtonNo,
                                                   int reportDataValue){
-        Log.d(TAG, String.valueOf(reportDataValue));
         if (reportDataValue == 1){
             radioButtonYes.setChecked(true);
         }

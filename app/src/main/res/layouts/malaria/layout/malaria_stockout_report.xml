@@ -18,7 +18,7 @@
                 android:text="@string/malaria_stockout_act_children"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_marginLeft="10dp"
-                android:id="@+id/children"
+                android:id="@+id/actChildrenLabel"
                 android:layout_marginRight="10dp" />
             <RadioGroup
                 android:id="@+id/radioGroupChildren"
@@ -31,14 +31,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="OUI"
-                    android:id="@+id/radioButtonYesChildren"
+                    android:id="@+id/actChildrenYesField"
                     android:checked="false"
                     android:layout_weight="0.50" />
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Non"
-                    android:id="@+id/radioButtonNoChildren"
+                    android:id="@+id/actChildrenNoField"
                     android:layout_marginLeft="20dp"
                     android:layout_weight="0.50" />
 
@@ -66,13 +66,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Oui"
-                    android:id="@+id/radioButtonYesYouth"
+                    android:id="@+id/actYouthYesField"
                     android:layout_weight="0.50" />
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Non"
-                    android:id="@+id/radioButtonNoYouth" 
+                    android:id="@+id/actYouthNoField"
                     android:layout_marginLeft="20dp"
                     android:layout_weight="0.50" />
             </RadioGroup>
@@ -82,6 +82,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
+                android:id="@+id/adultLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/malaria_stockout_act_adult"
@@ -98,14 +99,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Oui"
-                    android:id="@+id/radioButtonYesAdult"
+                    android:id="@+id/adultYesField"
                     android:layout_weight="0.50" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Non"
-                    android:id="@+id/radioButtonNoAdult" 
+                    android:id="@+id/adultNoField"
                     android:layout_marginLeft="20dp"
                     android:layout_weight="0.50"  />
             </RadioGroup>
@@ -115,6 +116,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
+                android:id="@+id/artemetherLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/malaria_stockout_artemether"
@@ -131,14 +133,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Oui"
-                    android:id="@+id/radioButtonYesArtemether"
+                    android:id="@+id/artemetherYesField"
                     android:layout_weight="0.50"  />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Non"
-                    android:id="@+id/radioButtonNoArtemether"
+                    android:id="@+id/artemetherNoField"
                     android:layout_marginLeft="20dp"
                     android:layout_weight="0.50" />
             </RadioGroup>
@@ -148,6 +150,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
+                android:id="@+id/quinineLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/malaria_stockout_quinine"
@@ -164,14 +167,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Oui"
-                    android:id="@+id/radioButtonYesQuinine"
+                    android:id="@+id/quinineYesField"
                     android:layout_weight="0.50" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Non"
-                    android:id="@+id/radioButtonNoQuinine"
+                    android:id="@+id/quinineNoField"
                     android:layout_marginLeft="20dp"
                     android:layout_weight="0.50" />
             </RadioGroup>
@@ -181,6 +184,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
+                android:id="@+id/serumLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/malaria_stockout_serum"
@@ -197,14 +201,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Oui"
-                    android:id="@+id/radioButtonYesSurum"
+                    android:id="@+id/serumYesField"
                     android:layout_weight="0.50" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Non"
-                    android:id="@+id/radioButtonNoSurum"
+                    android:id="@+id/serumNoField"
                     android:layout_marginLeft="20dp"
                     android:layout_weight="0.50"  />
             </RadioGroup>
@@ -214,6 +218,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
+                android:id="@+id/bednetLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/malaria_stockout_bednet"
@@ -230,14 +235,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Oui"
-                    android:id="@+id/radioButtonYesBednet"
+                    android:id="@+id/bednetYesField"
                     android:layout_weight="0.50"  />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Non"
-                    android:id="@+id/radioButtonNoBednet"
+                    android:id="@+id/bednetNoField"
                     android:layout_marginLeft="20dp"
                     android:layout_weight="0.50" />
             </RadioGroup>
@@ -247,6 +252,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
+                android:id="@+id/rdtLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/malaria_stockout_rdt"
@@ -263,14 +269,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Oui"
-                    android:id="@+id/radioButtonYesRdt"
+                    android:id="@+id/rdtYesField"
                     android:layout_weight="0.50"  />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Non"
-                    android:id="@+id/radioButtonNoRdt"
+                    android:id="@+id/rdtNoField"
                     android:layout_marginLeft="20dp"
                     android:layout_weight="0.50"  />
             </RadioGroup>
@@ -280,6 +286,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
+                android:id="@+id/spLabel"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/malaria_stockout_sp"
@@ -296,14 +303,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Oui"
-                    android:id="@+id/radioButtonYesSp"
+                    android:id="@+id/spYesField"
                     android:layout_weight="0.50" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Non"
-                    android:id="@+id/radioButtonNoSp"
+                    android:id="@+id/spNoField"
                     android:layout_marginLeft="20dp"
                     android:layout_weight="0.50" />
             </RadioGroup>
@@ -313,6 +320,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
+                android:id="@+id/anc1Label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/malaria_total_anc_1"
@@ -329,14 +337,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Oui"
-                    android:id="@+id/radioButtonYesAnc1"
+                    android:id="@+id/anc1YesField"
                     android:layout_weight="0.50"  />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Non"
-                    android:id="@+id/radioButtonNoAnc1"
+                    android:id="@+id/anc1NoField"
                     android:layout_marginLeft="20dp"
                     android:layout_weight="0.50" />
             </RadioGroup>
@@ -346,6 +354,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
+                android:id="@+id/sp1Label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/malaria_total_sp_1"
@@ -362,14 +371,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Oui"
-                    android:id="@+id/radioButtonYesSp1"
+                    android:id="@+id/sp1YesField"
                     android:layout_weight="0.50"  />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Non"
-                    android:id="@+id/radioButtonNoSp1"
+                    android:id="@+id/sp1NoField"
                     android:layout_marginLeft="20dp"
                     android:layout_weight="0.50"  />
             </RadioGroup>
@@ -379,6 +388,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
+                android:id="@+id/sp2Label"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="@string/malaria_total_sp_2"
@@ -395,14 +405,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Oui"
-                    android:id="@+id/radioButtonYesSp2"
+                    android:id="@+id/sp2YesField"
                     android:layout_weight="0.50" />
 
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Non"
-                    android:id="@+id/radioButtonNoSp2"
+                    android:id="@+id/sp2NoField"
                     android:layout_marginLeft="20dp"
                     android:layout_weight="0.50" />
             </RadioGroup>
