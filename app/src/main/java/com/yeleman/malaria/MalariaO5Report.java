@@ -3,6 +3,7 @@ package com.yeleman.malaria;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -41,6 +42,7 @@ public class MalariaO5Report extends MalariaForm {
         malariaTotalMalariaInpatientField = (EditText) findViewById(R.id.malariaTotalMalariaInpatientField);
         malariaTotalDeathField = (EditText) findViewById(R.id.malariaTotalDeathField);
         malariaTotalMalariaDeathField = (EditText) findViewById(R.id.malariaTotalMalariaDeathField);
+        malariaTotalMalariaDeathField.setImeOptions(EditorInfo.IME_ACTION_DONE);
         LinearLayout distributed_bednetsLinearLayout = (LinearLayout) findViewById(R.id.distributed_bednetsLinearLayout);
         distributed_bednetsLinearLayout.setVisibility(View.GONE);
 
