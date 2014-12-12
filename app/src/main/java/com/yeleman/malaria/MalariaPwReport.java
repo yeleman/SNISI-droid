@@ -17,6 +17,10 @@ public class MalariaPwReport  extends MalariaForm {
 
     private final static String TAG = Constants.getLogTag("MalariaPwReport");
 
+    public String getAge() { return PW; }
+
+    protected boolean ensureDataCoherence() { return ensureMalariaCoherence(); }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -123,8 +127,4 @@ public class MalariaPwReport  extends MalariaForm {
         setAssertPositiveInteger(malariaTotalMalariaDeathField);
         setAssertPositiveInteger(malariaTotalDistributedBednetsField);
     }
-
-    protected boolean ensureDataCoherence() {
-        return true;
-    };
 }

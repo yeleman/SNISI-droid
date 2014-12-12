@@ -13,6 +13,8 @@ public class MalariaU5Report extends MalariaForm {
 
     private final static String TAG = Constants.getLogTag("MalariaU5Report");
 
+    protected boolean ensureDataCoherence() {return ensureMalariaCoherence();}
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -119,8 +121,4 @@ public class MalariaU5Report extends MalariaForm {
         setAssertPositiveInteger(malariaTotalMalariaDeathField);
         setAssertPositiveInteger(malariaTotalDistributedBednetsField);
     }
-
-    protected boolean ensureDataCoherence() {
-        return true;
-    };
 }

@@ -10,12 +10,12 @@ import android.widget.LinearLayout;
 import com.yeleman.snisidroid.Constants;
 import com.yeleman.snisidroid.R;
 
-/**
- * Created by fad on 09/12/14.
- */
+
 public class MalariaO5Report extends MalariaForm {
 
     private final static String TAG = Constants.getLogTag("MalariaO5Report");
+
+    protected boolean ensureDataCoherence() {return ensureMalariaCoherence();}
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +60,6 @@ public class MalariaO5Report extends MalariaForm {
                 if (!checkInputsAndCoherence()) {
                     return;
                 }
-
                 // save data to DB
                 storeReportData();
 
@@ -122,7 +121,4 @@ public class MalariaO5Report extends MalariaForm {
         setAssertPositiveInteger(malariaTotalMalariaDeathField);
     }
 
-    protected boolean ensureDataCoherence() {
-        return true;
-    };
 }
