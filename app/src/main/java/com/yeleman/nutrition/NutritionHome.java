@@ -82,15 +82,17 @@ public class NutritionHome extends ActionBarActivity {
         setUrenLevels();
 
         NutritionMonthlyReportData reportMonthly = NutritionMonthlyReportData.get();
+        NutritionWeeklyReportData reportWeekly =  NutritionWeeklyReportData.get();
 
         if (reportMonthly.has_urenam != is_urenam) {
             Log.i(TAG, "URENAM has change in preference");
             NutritionURENAMReportData reportURENAM = NutritionURENAMReportData.get();
             NutritionInputsReportData reportInput = NutritionInputsReportData.get();
             reportInput.deleteAll(reportInput.getClass());
+            reportWeekly.deleteAll(reportWeekly.getClass());
             if (!is_urenam){
-              try {
-                reportURENAM.deleteAll(reportURENAM.getClass());
+                try {
+                  reportURENAM.deleteAll(reportURENAM.getClass());
               } catch (Exception e){
                   Log.i(TAG, String.valueOf(e));
               }
@@ -99,9 +101,10 @@ public class NutritionHome extends ActionBarActivity {
         if (reportMonthly.has_urenas != is_urenas){
             Log.i(TAG, "URENAS has change in preference");
             NutritionURENASReportData reportURENAS = NutritionURENASReportData.get();
+            reportWeekly.deleteAll(reportWeekly.getClass());
             if (!is_urenas){
-              try {
-                    reportURENAS.deleteAll(reportURENAS.getClass());
+                try {
+                  reportURENAS.deleteAll(reportURENAS.getClass());
               } catch (Exception e){
                   Log.i(TAG, String.valueOf(e));
               }
@@ -112,8 +115,9 @@ public class NutritionHome extends ActionBarActivity {
             NutritionURENIReportData reportURENI = NutritionURENIReportData.get();
             NutritionInputsReportData reportInput = NutritionInputsReportData.get();
             reportInput.deleteAll(reportInput.getClass());
+            reportWeekly.deleteAll(reportWeekly.getClass());
             if (!is_ureni){
-              try {
+                try {
                   Log.d(TAG, "DELETING URENI/INPUT Reports");
                   reportURENI.deleteAll(reportURENI.getClass());
               } catch (Exception e){
