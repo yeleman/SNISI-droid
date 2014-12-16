@@ -31,6 +31,9 @@ public class Constants {
     public static final String SMS_KEYWORD_NUT_WEEKLY = "nut w";
     public static final String SMS_KEYWORD_NUT_MONTHLY = "nut m";
 
+    public static final String SMS_KEYWORD_MALARIA_WEEKLY = "palu2 w";
+    public static final String SMS_KEYWORD_MALIRIA_MONTHLY = "palu2 m";
+
     public static final String SMS_SENT_INTENT = "com.yeleman.snisidroid.SMS_SENT";
     public static final String SMS_DELIVERED_INTENT = "com.yeleman.snisidroid.SMS_DELIVERED";
 

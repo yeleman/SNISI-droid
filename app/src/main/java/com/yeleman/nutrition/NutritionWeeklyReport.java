@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -60,12 +61,15 @@ public class NutritionWeeklyReport extends CheckedFormActivity {
         mamScreeningField = (EditText) findViewById(R.id.screeningURENAMField);
         mamCasesField = (EditText) findViewById(R.id.casesURENAMField);
         mamDeathsField = (EditText) findViewById(R.id.deathsURENAMField);
+        mamDeathsField.setImeOptions(EditorInfo.IME_ACTION_DONE);
         samScreeningField = (EditText) findViewById(R.id.screeningURENASField);
         samCasesField = (EditText) findViewById(R.id.casesURENASField);
         samDeathsField = (EditText) findViewById(R.id.deathsURENASField);
+        samDeathsField.setImeOptions(EditorInfo.IME_ACTION_DONE);
         samcScreeningField = (EditText) findViewById(R.id.screeningURENIField);
         samcCasesField = (EditText) findViewById(R.id.casesURENIField);
         samcDeathsField = (EditText) findViewById(R.id.deathsURENIField);
+        samcDeathsField.setImeOptions(EditorInfo.IME_ACTION_DONE);
 
         if (!is_urenam) {
             LinearLayout linearLayoutURENAM = (LinearLayout) findViewById(R.id.linearLayoutURENAM);
@@ -74,10 +78,15 @@ public class NutritionWeeklyReport extends CheckedFormActivity {
         if (!is_urenas) {
             LinearLayout linearLayoutURENAS = (LinearLayout) findViewById(R.id.linearLayoutURENAS);
             linearLayoutURENAS.setVisibility(View.GONE);
+        } else {
+            mamDeathsField.setImeOptions(EditorInfo.IME_ACTION_NEXT);
         }
         if (!is_ureni) {
             LinearLayout linearLayoutURENI = (LinearLayout) findViewById(R.id.linearLayoutURENI);
             linearLayoutURENI.setVisibility(View.GONE);
+        } else {
+            mamDeathsField.setImeOptions(EditorInfo.IME_ACTION_NEXT);
+            samDeathsField.setImeOptions(EditorInfo.IME_ACTION_NEXT);
         }
 
         // setup invalid inputs checks

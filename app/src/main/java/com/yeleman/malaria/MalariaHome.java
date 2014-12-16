@@ -54,7 +54,7 @@ public class MalariaHome extends ActionBarActivity {
         webSiteButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String malariaDataUrl = String.format("%1$s/pnlp/dashboard/", Constants.server_url);
+                String malariaDataUrl = String.format("%1$s/palu/dashboard/", Constants.server_url);
                 Intent intent = new Intent(
                         Intent.ACTION_VIEW,
                         Uri.parse(malariaDataUrl));

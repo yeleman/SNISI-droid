@@ -21,6 +21,8 @@ public class MalariaMonthlyHome extends CheckedFormActivity implements View.OnCl
     private Button o5ReportButton;
     private Button pwReportButton;
     private Button stockoutReportButton;
+    private Button SubmitButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,6 +61,24 @@ public class MalariaMonthlyHome extends CheckedFormActivity implements View.OnCl
         stockoutReportButton = (Button) findViewById(R.id.stockoutReportButton);
         stockoutReportButton.setOnClickListener(this);
         Constants.updateButtonCompletion(stockoutReportButton, malariaReport.stockout_is_complete);
+
+        SubmitButton = (Button) findViewById(R.id.SubmitButton);
+        SubmitButton.setEnabled(false);
+
+        // Submit Button
+        final CheckedFormActivity activity = this;
+        SubmitButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // transmit SMS
+                requestPasswordAndTransmitSMS(activity, MalariaReportData.get().getName(),
+                        Constants.SMS_KEYWORD_MALIRIA_MONTHLY, buildSMSText());
+            }
+        });
+        MalariaReportData monthlyReport = MalariaReportData.get();
+        if (monthlyReport.isComplete()) {
+            SubmitButton.setEnabled(true);
+        }
     }
 
     protected void resetReportData(){

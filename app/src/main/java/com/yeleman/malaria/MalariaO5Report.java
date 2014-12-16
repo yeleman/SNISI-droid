@@ -3,6 +3,7 @@ package com.yeleman.malaria;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
@@ -10,12 +11,12 @@ import android.widget.LinearLayout;
 import com.yeleman.snisidroid.Constants;
 import com.yeleman.snisidroid.R;
 
-/**
- * Created by fad on 09/12/14.
- */
+
 public class MalariaO5Report extends MalariaForm {
 
     private final static String TAG = Constants.getLogTag("MalariaO5Report");
+
+    protected boolean ensureDataCoherence() {return ensureMalariaCoherence();}
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +42,7 @@ public class MalariaO5Report extends MalariaForm {
         malariaTotalMalariaInpatientField = (EditText) findViewById(R.id.malariaTotalMalariaInpatientField);
         malariaTotalDeathField = (EditText) findViewById(R.id.malariaTotalDeathField);
         malariaTotalMalariaDeathField = (EditText) findViewById(R.id.malariaTotalMalariaDeathField);
+        malariaTotalMalariaDeathField.setImeOptions(EditorInfo.IME_ACTION_DONE);
         LinearLayout distributed_bednetsLinearLayout = (LinearLayout) findViewById(R.id.distributed_bednetsLinearLayout);
         distributed_bednetsLinearLayout.setVisibility(View.GONE);
 
@@ -60,7 +62,6 @@ public class MalariaO5Report extends MalariaForm {
                 if (!checkInputsAndCoherence()) {
                     return;
                 }
-
                 // save data to DB
                 storeReportData();
 
@@ -122,7 +123,4 @@ public class MalariaO5Report extends MalariaForm {
         setAssertPositiveInteger(malariaTotalMalariaDeathField);
     }
 
-    protected boolean ensureDataCoherence() {
-        return true;
-    };
 }
