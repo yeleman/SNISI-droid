@@ -60,6 +60,11 @@
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation" />
         <activity
+            android:name="com.yeleman.malaria.MalariaWeeklyReport"
+            android:label="@string/malaria_app_label"
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation" />
+        <activity
             android:name="com.yeleman.malaria.MalariaMonthlyHome"
             android:label="@string/malaria_monthly_report_label"
             android:screenOrientation="portrait"

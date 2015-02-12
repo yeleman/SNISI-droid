@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
 
     <string name="app_name">SNISI</string>
@@ -49,3 +50,4 @@
     <string name="password_dialog_text">Merci de renseigner vos identifiants SNISI pour transmettre le rapport %1$s</string>
 
 </resources>
+

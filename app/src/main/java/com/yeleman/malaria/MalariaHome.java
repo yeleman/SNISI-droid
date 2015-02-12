@@ -35,12 +35,22 @@ public class MalariaHome extends ActionBarActivity {
         Log.d(TAG, "setupUI Malaria");
 
         weeklyReportButton = (Button) findViewById(R.id.weeklyReportButton);
-        weeklyReportButton.setEnabled(false);
+        //weeklyReportButton.setEnabled(false);
         monthlyReportButton = (Button) findViewById(R.id.monthlyReportButton);
         webSiteButton = (Button) findViewById(R.id.webSiteButton);
 
         final Activity activity = this;
 
+        weeklyReportButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(
+                        getApplicationContext(),
+                        MalariaWeeklyReport.class);
+                startActivity(intent);
+            }
+        });
+        
         monthlyReportButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

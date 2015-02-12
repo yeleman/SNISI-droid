@@ -100,7 +100,7 @@ public class MalariaReportData extends ReportData {
                this.pw_is_complete ||
                this.stockout_is_complete;
     }
-    
+
     protected void resetReportData() {
         MalariaReportData report = MalariaReportData.get();
         report.u5_is_complete = false;

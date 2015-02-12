@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Nutrition -->
+    <string name="sub_app_name_nut">Nutrition/%1$s</string>
+    <string name="nutrition_app_label">Nutrition</string>
+    <string name="nutrition_monthly_report_label">Rapport Mensuel</string>
+    <string name="nutrition_weekly_report_label">Rapport Hebdomadaire</string>
+    <string name="nutrition_website_label">Consulter mes données (en ligne)</string>
+    <string name="nutrition_weekly_screening">Dépistage</string>
+    <string name="nutrition_weekly_cases">Cas PEC</string>
+    <string name="nutrition_weekly_deaths">Décès PEC</string>
+    <string name="nutrition_weekly_urenam">URENAM</string>
+    <string name="nutrition_weekly_urenas">URENAS</string>
+    <string name="nutrition_weekly_ureni">URENI</string>
+    <string name="nutrition_weekly_save_submit">Enregister et transmettre</string>
+    <string name="nutrition_level_missing_title">Unité nutrition manquante</string>
+    <string name="nutrition_level_missing_body">Votre profil n\'indique aucune unité de nutrition pour votre unité sanitaire.\nAllez remplir les niveaux d\'UREN pour lesquelles vous faîtes la PEC dans les paramètres.</string>
+    <string name="nutrition_instructions_incomplete">Remplissez les sections du rapport pour chaque tranche d\'âge. En vert, les sections déjà remplies. Vous pouvez toujours les modifier.</string>
+    <string name="nutrition_instructions_complete">Ce rapport est complet. Vous pouvez cependant le modifier. Ensuite, revenez en arrière pour remplir les autres rapports et les envoyer.</string>
+    <string name="nutrition_summary_report_label">Resumé / chiffres clés</string>
+    <string name="nutrition_summary_report_label_short">Resumé</string>
+    <string name="urenam">URENAM</string>
+    <string name="ureni">URENI</string>
+    <string name="urenas">URENAS</string>
+    <string name="inputs">Intrants</string>
+
+    <string name="u6">moins de 6 mois (0-6m)</string>
+    <string name="u23o6">6 à 23 mois (6-23m)</string>
+    <string name="u59o23">24 à 59 mois (24-59m)</string>
+    <string name="u59o6">6 à 59 mois (6-59m)</string>
+    <string name="o59">plus de 59 mois (59m+)</string>
+    <string name="pw">femmes enceintes ou allaitantes (FE/FA)</string>
+    <string name="exsam">Ex. MAS</string>
+
+    <string name="nutrition_total_start">Total début du mois</string>
+    <string name="nutrition_total_end">Total fin du mois</string>
+    <string name="nutrition_admission">Admissions</string>
+    <string name="nutrition_total_adm">Total admissions</string>
+    <string name="nutrition_out">Sorties</string>
+    <string name="nutrition_all_out">Toutes sorties</string>
+    <string name="nutrition_total_out">Total sorties</string>
+    <string name="nutrition_m">Homme</string>
+    <string name="nutrition_f">Femme</string>
+
+    <string name="nutrition_new_cases">Nouveau cas</string>
+    <string name="nutrition_returned">Réadmission</string>
+    <string name="nutrition_transferred">Transf. URENI vers URENAS</string>
+    <string name="nutrition_healed">Guéris</string>
+    <string name="nutrition_deceased">Décès</string>
+    <string name="nutrition_abandon">Abandons</string>
+    <string name="nutrition_not_responding">Non répondant</string>
+    <string name="nutrition_referred">Réf. %1$s</string>
+    <string name="nutrition_monthly_save">Enregister</string>
+    <!-- Menu -->
+    <string name="nutrition_fillout_report">Rapport %1$s</string>
+    <string name="nutrition_fillout_section">Section %1$s</string>
+
+    <!-- Stok -->
+    <string name="nutrition_sachet">sachet</string>
+    <string name="nutrition_litre">litre</string>
+    <string name="nutrition_kilo">kilo</string>
+    <string name="nutrition_flacon">flacon</string>
+    <string name="nutrition_comprimé">comprimé</string>
+
+    <string name="nutrition_initial">Qté initiale</string>
+    <string name="nutrition_received">Qté reçue</string>
+    <string name="nutrition_used">Qté utilisée</string>
+    <string name="nutrition_lost">Qté perdue</string>
+
+    <string name="nutrition_plumpy_nut">Plumpy Nut (sachet)</string>
+    <string name="nutrition_milk_f75">Lait F75 (sachet)</string>
+    <string name="nutrition_milk_f100">Lait F100 (sachet)</string>
+    <string name="nutrition_resomal">Resomal (sachet)</string>
+    <string name="nutrition_plumpy_sup">Plumpy sup (sachet)</string>
+    <string name="nutrition_supercereal">Supercereal (kilo)</string>
+    <string name="nutrition_supercereal_plus">Supercereal + (sachet 1,5Kg)</string>
+    <string name="nutrition_oil">Huile (litre)</string>
+    <string name="nutrition_amoxycilline_125mg_vials">Amoxycilline 125mg (flacon)</string>
+    <string name="nutrition_amoxycilline_250mg_caps">Amoxycilline 250mg (cp)</string>
+    <string name="nutrition_albendazole_400mg">Albendazole 400mg (cp)</string>
+    <string name="nutrition_vita_100K_ui_injectable">Vit A 100.000 UI (capsule)</string>
+    <string name="nutrition_vita_200K_ui_injectable">Vit A 200.000 UI (capsule)</string>
+    <string name="nutrition_iron_folic_acid">Fer /acide folique (cp)</string>
+
+    <string name="nutrition_transfer_label_urenas">Transf. URENI vers URENAS</string>
+    <string name="nutrition_transfer_label_ureni">Référence vers URENI</string>
+    <string name="nutrition_referred_label_urenam">Référence NUT</string>
+    <string name="nutrition_referred_label_urenas">Réf. vers URENI / Transf. vers URENAS</string>
+    <string name="nutrition_referred_label_ureni">Transfert vers URENI</string>
+
+    <string name="nutrition_healed_label_ureni">Traités avec succès</string>
+    <string name="nutrition_not_responding_label_ureni">Non répondant/Transf. Médical</string>
+
+    <string name="nutrition_grand_total_in_label">Total admiss. général</string>
+    <string name="nutrition_grand_total_out_label">Total sorties général</string>
+
+</resources>
+

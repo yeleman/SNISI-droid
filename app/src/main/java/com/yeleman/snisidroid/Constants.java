@@ -24,6 +24,7 @@ public class Constants {
     public static final String resource_url = "%1$s/resources";
     public static final String SPACER = " ";
     public static final String SUB_SPACER = "-";
+    public static final String SHARP_SPACER = "#";
     public static final int MIN_CHARS_PASSWORD = 4;
     public static final int MIN_CHARS_USERNAME = 3;
     public static final String SMS_FORMAT = "%1$s %2$s %3$s %4$s";

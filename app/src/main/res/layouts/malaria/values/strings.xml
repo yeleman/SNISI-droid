@@ -1,5 +1,6 @@
 <resources>
     <!-- Paludisme -->
+    <string name="malaria_week_label" formatted="false">Jour %s</string>
     <string name="malaria_app_label">Paludisme</string>
     <string name="malaria_submit_button">Envoyer</string>
     <string name="malaria_monthly_save">Enregistrer</string>

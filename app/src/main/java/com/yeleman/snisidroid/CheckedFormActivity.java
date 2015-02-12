@@ -34,7 +34,7 @@ import java.util.Map;
 
 public class CheckedFormActivity extends Activity implements SMSUpdater {
 
-    private final static String TAG = "SNISILog-CheckedFormActivity";
+    private final static String TAG = Constants.getLogTag("CheckedFormActivity");
 
     /* progress dialog */
     private ProgressDialog progressDialog;
@@ -346,7 +346,7 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
         } catch (Exception e) {
             value_str = default_str;
         }
-        Log.d(TAG, value_str);
+        //Log.d(TAG, value_str);
         editText.setText(value_str);
     }
 
