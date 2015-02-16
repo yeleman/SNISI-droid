@@ -7,7 +7,7 @@
     <string name="malaria_consultation_label">Consultations</string>
     <string name="malaria_inpatient_label">Hospitalisations</string>
     <string name="malaria_o5_label">5 ans et plus</string>
-    <string name="malaria_u5_label">Mois de 5 ans</string>
+    <string name="malaria_u5_label">Moins de 5 ans</string>
     <string name="malaria_pw_label">Femmes enceintes</string>
     <string name="value">Nombre</string>
     <string name="malaria_death_label">Dècès</string>

@@ -13,9 +13,7 @@ import com.yeleman.snisidroid.CheckedFormActivity;
 import com.yeleman.snisidroid.Constants;
 import com.yeleman.snisidroid.R;
 
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
 import java.util.Locale;
 
 /**
@@ -123,12 +121,12 @@ public class MalariaWeeklyReport extends CheckedFormActivity {
         malariaPWD3Field = (EditText) findViewById(R.id.malariaPwD3Field);
         if (dayOfMonth > 28) {
             malariaPWD3Field.setImeOptions(EditorInfo.IME_ACTION_DONE);
-            linearLytD4.setVisibility(View.INVISIBLE);
-            linearLytD5.setVisibility(View.INVISIBLE);
-            linearLytD6.setVisibility(View.INVISIBLE);
-            linearLytD7.setVisibility(View.INVISIBLE);
+            linearLytD4.setVisibility(View.GONE);
+            linearLytD5.setVisibility(View.GONE);
+            linearLytD6.setVisibility(View.GONE);
+            linearLytD7.setVisibility(View.GONE);
             if (dayMaxiOfMonth < 31) {
-                linearLytD3.setVisibility(View.INVISIBLE);
+                linearLytD3.setVisibility(View.GONE);
                 malariaPWD2Field.setImeOptions(EditorInfo.IME_ACTION_DONE);
             }
         } else {
