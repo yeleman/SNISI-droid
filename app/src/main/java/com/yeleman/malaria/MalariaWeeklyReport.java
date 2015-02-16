@@ -227,6 +227,9 @@ public class MalariaWeeklyReport extends CheckedFormActivity {
         setTextOnField(malariaU5D2Field, report.u5_total_confirmed_malaria_cases_d2);
         setTextOnField(malariaPWD2Field, report.pw_total_confirmed_malaria_cases_d2);
         if (dayOfMonth <= 28) {
+            setTextOnField(malariaO5D3Field, report.o5_total_confirmed_malaria_cases_d3);
+            setTextOnField(malariaU5D3Field, report.u5_total_confirmed_malaria_cases_d3);
+            setTextOnField(malariaPWD3Field, report.pw_total_confirmed_malaria_cases_d3);
             setTextOnField(malariaO5D4Field, report.o5_total_confirmed_malaria_cases_d4);
             setTextOnField(malariaU5D4Field, report.u5_total_confirmed_malaria_cases_d4);
             setTextOnField(malariaPWD4Field, report.pw_total_confirmed_malaria_cases_d4);
@@ -255,6 +258,9 @@ public class MalariaWeeklyReport extends CheckedFormActivity {
         setAssertPositiveInteger(malariaO5D2Field);
         setAssertPositiveInteger(malariaPWD2Field);
         if (dayOfMonth <= 28) {
+            setAssertPositiveInteger(malariaU5D3Field);
+            setAssertPositiveInteger(malariaO5D3Field);
+            setAssertPositiveInteger(malariaPWD3Field);
             setAssertPositiveInteger(malariaU5D4Field);
             setAssertPositiveInteger(malariaO5D4Field);
             setAssertPositiveInteger(malariaPWD4Field);
