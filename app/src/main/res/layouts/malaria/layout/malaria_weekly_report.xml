@@ -4,8 +4,7 @@
     xmlns:ui="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    tools:context=".MalariaHome" >
+    android:layout_height="fill_parent">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -44,7 +43,7 @@
                 android:linksClickable="false"
                 android:text="@string/malaria_week_label"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_vertical|center_horizontal" />
+                android:gravity="center_horizontal" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -101,7 +100,7 @@
                 android:linksClickable="false"
                 android:text="@string/malaria_week_label"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_vertical|center_horizontal" />
+                android:gravity="center_horizontal" />
 
             <LinearLayout
                 android:layout_width="match_parent"

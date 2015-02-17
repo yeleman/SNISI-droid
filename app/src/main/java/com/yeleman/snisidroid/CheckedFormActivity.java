@@ -323,7 +323,11 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
     protected int integerFromField(EditText editText, int fallback) {
         String text = stringFromField(editText);
         if (text.length() > 0) {
-            return Integer.parseInt(text);
+            try {
+                return Integer.parseInt(text);
+            } catch (Exception e){
+                Log.d(TAG, e.toString());
+            }
         }
         return fallback;
     }

@@ -28,6 +28,7 @@ public class MalariaHome extends ActionBarActivity {
         super.onCreate(savedInstanceState);
         Log.d(TAG, "onCreate Malaria");
         setContentView(R.layout.malaria_home);
+        setTitle(getString(R.string.malaria_app_label));
         seputUI();
     }
 

@@ -25,6 +25,8 @@ public class MalariaStockoutReport extends MalariaForm {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.malaria_stockout_report);
+        setTitle(String.format(getString(R.string.sub_app_name_malaria),
+                getString(R.string.malaria_stockout_label)));
         Log.d(TAG, "onCreate MalariaStockoutReport");
         seputUI();
     }

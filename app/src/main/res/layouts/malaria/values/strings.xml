@@ -2,6 +2,7 @@
     <!-- Paludisme -->
     <string name="malaria_week_label" formatted="false">Jour %s</string>
     <string name="malaria_app_label">Paludisme</string>
+    <string name="sub_app_name_malaria">Palu./%1$s</string>
     <string name="malaria_submit_button">Envoyer</string>
     <string name="malaria_monthly_save">Enregistrer</string>
     <string name="malaria_consultation_label">Consultations</string>

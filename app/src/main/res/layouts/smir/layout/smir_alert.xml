@@ -24,7 +24,8 @@
             android:layout_alignParentStart="true"
             android:layout_above="@+id/Cas"
             android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp" />
+            android:layout_marginRight="10dp"
+            android:gravity="center_horizontal" />
 
         <Spinner
             android:id="@+id/spinner"
