@@ -6,65 +6,483 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     tools:context=".SNISI" >
-
-
+    
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/scrollView1"
         android:orientation="vertical">
-
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/labelEbola"
+            android:linksClickable="false"
+            android:text="@string/ebola"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_margin="10dp" />
         <LinearLayout
-            android:orientation="vertical"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Cas"
-                android:id="@+id/Cas"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="10dp" />
-
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayoutEbola"
+            android:orientation="horizontal">
             <EditText
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="10"
-                android:id="@+id/editText"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceSmall"
-                android:text="Décès"
-                android:id="@+id/textView"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp" />
-
+                android:id="@+id/confirmedEbolaField"
+                android:nextFocusRight="@+id/deathEbolaField"
+                android:nextFocusDown="@+id/deathEbolaField"
+                android:imeOptions="actionNext"
+                android:hint="@string/labelconfirmed"
+                android:singleLine="false"
+                android:layout_weight="0.50"
+                android:layout_marginLeft="10dp" />
             <EditText
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:inputType="number"
                 android:ems="10"
-                android:id="@+id/editText2"
-                android:layout_marginLeft="10dp"
+                android:id="@+id/deathEbolaField"
+                android:nextFocusRight="@+id/confirmedAcuteFlaccidParalysisField"
+                android:nextFocusDown="@+id/confirmedAcuteFlaccidParalysisField"
+                android:imeOptions="actionNext"
+                android:hint="@string/labeldeath"
+                android:singleLine="false"
+                android:layout_weight="0.50"
                 android:layout_marginRight="10dp" />
-
-            <Button
-                style="?android:attr/buttonStyleSmall"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Envoyer"
-                android:id="@+id/button"
-                android:layout_margin="10dp" />
         </LinearLayout>
-    </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/labelAcuteFlaccidParalysis"
+            android:linksClickable="false"
+            android:text="@string/acute_flaccid_paralysis"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_marginLeft="10dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayoutAcuteFlaccidParalysis"
+            android:orientation="horizontal">
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/confirmedAcuteFlaccidParalysisField"
+                android:nextFocusRight="@+id/deathAcuteFlaccidParalysisField"
+                android:nextFocusDown="@+id/deathAcuteFlaccidParalysisField"
+                android:imeOptions="actionNext"
+                android:hint="@string/labelconfirmed"
+                android:singleLine="false"
+                android:layout_weight="0.50"
+                android:layout_marginLeft="10dp" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/deathAcuteFlaccidParalysisField"
+                android:nextFocusRight="@+id/confirmedInfluenzaAH1n1Field"
+                android:nextFocusDown="@+id/confirmedInfluenzaAH1n1Field"
+                android:imeOptions="actionNext"
+                android:hint="@string/labeldeath"
+                android:singleLine="false"
+                android:layout_weight="0.50"
+                android:layout_marginRight="10dp" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/labelInfluenzaAH1n1"
+            android:linksClickable="false"
+            android:text="@string/influenza_a_h1n1"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_margin="10dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayoutInfluenzaAH1n1"
+            android:orientation="horizontal">
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/confirmedInfluenzaAH1n1Field"
+                android:nextFocusRight="@+id/deathInfluenzaAH1n1Field"
+                android:nextFocusDown="@+id/deathInfluenzaAH1n1Field"
+                android:imeOptions="actionNext"
+                android:hint="@string/labelconfirmed"
+                android:singleLine="false"
+                android:layout_weight="0.50"
+                android:layout_marginLeft="10dp" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/deathInfluenzaAH1n1Field"
+                android:nextFocusRight="@+id/confirmedCholeraField"
+                android:nextFocusDown="@+id/confirmedCholeraField"
+                android:imeOptions="actionNext"
+                android:hint="@string/labeldeath"
+                android:singleLine="false"
+                android:layout_weight="0.50"
+                android:layout_marginRight="10dp" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/labelCholera"
+            android:linksClickable="false"
+            android:text="@string/cholera"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_margin="10dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayoutCholera"
+            android:orientation="horizontal">
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/confirmedCholeraField"
+                android:nextFocusRight="@+id/deathCholeraField"
+                android:nextFocusDown="@+id/deathCholeraField"
+                android:imeOptions="actionNext"
+                android:hint="@string/labelconfirmed"
+                android:singleLine="false"
+                android:layout_weight="0.50"
+                android:layout_marginLeft="10dp" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/deathCholeraField"
+                android:nextFocusRight="@+id/confirmedRedDiarrheaField"
+                android:nextFocusDown="@+id/confirmedRedDiarrheaField"
+                android:imeOptions="actionNext"
+                android:hint="@string/labeldeath"
+                android:singleLine="false"
+                android:layout_weight="0.50"
+                android:layout_marginRight="10dp" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/labelRedDiarrhea"
+            android:linksClickable="false"
+            android:text="@string/red_diarrhea"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_margin="10dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayoutRedDiarrhea"
+            android:orientation="horizontal">
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/confirmedRedDiarrheaField"
+                android:nextFocusRight="@+id/deathRedDiarrheaField"
+                android:nextFocusDown="@+id/deathRedDiarrheaField"
+                android:imeOptions="actionNext"
+                android:hint="@string/labelconfirmed"
+                android:singleLine="false"
+                android:layout_weight="0.50"
+                android:layout_marginLeft="10dp" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/deathRedDiarrheaField"
+                android:nextFocusRight="@+id/confirmedRedDiarrheaField"
+                android:nextFocusDown="@+id/confirmedRedDiarrheaField"
+                android:imeOptions="actionNext"
+                android:hint="@string/labeldeath"
+                android:singleLine="false"
+                android:layout_weight="0.50"
+                android:layout_marginRight="10dp" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/labelMeasles"
+            android:linksClickable="false"
+            android:text="@string/measles"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_margin="10dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayoutMeasles"
+            android:orientation="horizontal">
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/confirmedMeaslesField"
+                android:nextFocusRight="@+id/deathMeaslesField"
+                android:nextFocusDown="@+id/deathMeaslesField"
+                android:imeOptions="actionNext"
+                android:hint="@string/labelconfirmed"
+                android:singleLine="false"
+                android:layout_weight="0.50"
+                android:layout_marginLeft="10dp" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/deathMeaslesField"
+                android:nextFocusRight="@+id/confirmedYellowFeverField"
+                android:nextFocusDown="@+id/confirmedYellowFeverField"
+                android:imeOptions="actionNext"
+                android:hint="@string/labeldeath"
+                android:singleLine="false"
+                android:layout_weight="0.50"
+                android:layout_marginRight="10dp" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/labelYellowFever"
+            android:linksClickable="false"
+            android:text="@string/yellow_fever"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_margin="10dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayoutYellowFever"
+            android:orientation="horizontal">
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/confirmedYellowFeverField"
+                android:nextFocusRight="@+id/deathYellowFeverField"
+                android:nextFocusDown="@+id/deathYellowFeverField"
+                android:imeOptions="actionNext"
+                android:hint="@string/labelconfirmed"
+                android:singleLine="false"
+                android:layout_weight="0.50"
+                android:layout_marginLeft="10dp" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/deathYellowFeverField"
+                android:nextFocusRight="@+id/confirmedNeonatalTetanusField"
+                android:nextFocusDown="@+id/confirmedNeonatalTetanusField"
+                android:imeOptions="actionNext"
+                android:hint="@string/labeldeath"
+                android:singleLine="false"
+                android:layout_weight="0.50"
+                android:layout_marginRight="10dp" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/labelNeonatalTetanus"
+            android:linksClickable="false"
+            android:text="@string/neonatal_tetanus"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_margin="10dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayoutNeonatalTetanus"
+            android:orientation="horizontal">
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/confirmedNeonatalTetanusField"
+                android:nextFocusRight="@+id/deathNeonatalTetanusField"
+                android:nextFocusDown="@+id/deathNeonatalTetanusField"
+                android:imeOptions="actionNext"
+                android:hint="@string/labelconfirmed"
+                android:singleLine="false"
+                android:layout_weight="0.50"
+                android:layout_marginLeft="10dp" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/deathNeonatalTetanusField"
+                android:nextFocusRight="@+id/confirmedNeonatalTetanusField"
+                android:nextFocusDown="@+id/confirmedNeonatalTetanusField"
+                android:imeOptions="actionNext"
+                android:hint="@string/labeldeath"
+                android:singleLine="false"
+                android:layout_weight="0.50"
+                android:layout_marginRight="10dp" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/labelMeningitis"
+            android:linksClickable="false"
+            android:text="@string/meningitis"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_margin="10dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayoutMeningitis"
+            android:orientation="horizontal">
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/confirmedMeningitisField"
+                android:nextFocusRight="@+id/deathMeningitisField"
+                android:nextFocusDown="@+id/deathMeningitisField"
+                android:imeOptions="actionNext"
+                android:hint="@string/labelconfirmed"
+                android:singleLine="false"
+                android:layout_weight="0.50"
+                android:layout_marginLeft="10dp" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/deathMeningitisField"
+                android:nextFocusRight="@+id/confirmedRabiesField"
+                android:nextFocusDown="@+id/confirmedRabiesField"
+                android:imeOptions="actionNext"
+                android:hint="@string/labeldeath"
+                android:singleLine="false"
+                android:layout_weight="0.50"
+                android:layout_marginRight="10dp" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/labelRabies"
+            android:linksClickable="false"
+            android:text="@string/rabies"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_margin="10dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayoutRabies"
+            android:orientation="horizontal">
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/confirmedRabiesField"
+                android:nextFocusRight="@+id/deathRabiesField"
+                android:nextFocusDown="@+id/deathRabiesField"
+                android:imeOptions="actionNext"
+                android:hint="@string/labelconfirmed"
+                android:singleLine="false"
+                android:layout_weight="0.50"
+                android:layout_marginLeft="10dp" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/deathRabiesField"
+                android:nextFocusRight="@+id/confirmedacuteMeaslesDiarrheaField"
+                android:nextFocusDown="@+id/confirmedacuteMeaslesDiarrheaField"
+                android:imeOptions="actionNext"
+                android:hint="@string/labeldeath"
+                android:singleLine="false"
+                android:layout_weight="0.50"
+                android:layout_marginRight="10dp" />
+        </LinearLayout>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/labelacuteMeaslesDiarrhea"
+            android:linksClickable="false"
+            android:text="@string/acute_measles_diarrhea"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:gravity="center_vertical|center_horizontal"
+            android:layout_margin="10dp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayoutacuteMeaslesDiarrhea"
+            android:orientation="horizontal">
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/confirmedacuteMeaslesDiarrheaField"
+                android:nextFocusRight="@+id/deathacuteMeaslesDiarrheaField"
+                android:nextFocusDown="@+id/deathacuteMeaslesDiarrheaField"
+                android:imeOptions="actionNext"
+                android:hint="@string/labelconfirmed"
+                android:singleLine="false"
+                android:layout_weight="0.50"
+                android:layout_marginLeft="10dp" />
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="number"
+                android:ems="10"
+                android:id="@+id/deathacuteMeaslesDiarrheaField"
+                android:imeOptions="actionDone"
+                android:hint="@string/labeldeath"
+                android:singleLine="false"
+                android:layout_weight="0.50"
+                android:layout_marginRight="10dp" />
+        </LinearLayout>
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="Fin de la semaine (date du vendredi)."
+            android:id="@+id/labelDate"
+            android:layout_margin="10dp" />
+
+        <DatePicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/datePicker"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="10dp" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/sendbtt"
+            android:id="@+id/submitButton"
+            android:layout_margin="10dp" />
+    </LinearLayout>
 </ScrollView>

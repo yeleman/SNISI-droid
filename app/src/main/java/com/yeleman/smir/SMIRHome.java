@@ -25,271 +25,228 @@ import android.content.SharedPreferences;
 import android.preference.PreferenceManager;
 import android.widget.ScrollView;
 
+import com.yeleman.snisidroid.CheckedFormActivity;
 import com.yeleman.snisidroid.Popups;
-import com.yeleman.snisidroid.Preferences;
 import com.yeleman.snisidroid.R;
+import com.yeleman.snisidroid.Constants;
 
-import static java.lang.String.format;
 
+public class SMIRHome extends CheckedFormActivity {
 
-public class SMIRHome extends Activity {
+    private final static String TAG = Constants.getLogTag("SMIRHome");
 
-    //protected TextView label_disease;
-    protected TextView label_cas;
-    protected EditText input_cas;
-    protected TextView label_deces;
-    protected EditText input_deces;
-	// end-of-week
-	protected TextView label_end_date;
-	protected DatePicker input_end_date;
-	// password
-	protected TextView label_password;
-	protected EditText input_password;
-
-	private static final String[] order_diseases = {
-        Constants.ebola, Constants.acute_flaccid_paralysis,
-        Constants.influenza_a_h1n1, Constants.cholera,
-        Constants.red_diarrhea, Constants.measles, Constants.yellow_fever,
-        Constants.neonatal_tetanus, Constants.meningitis,
-        Constants.rabies, Constants.acute_measles_diarrhea,
-        Constants.other_notifiable_disease
-    };
-
-    private Hashtable<String, String> disease_list;
-	private Hashtable<String, Hashtable<String, EditText>> cap_fields;
-    private Hashtable<String, EditText> indiv_fields;
+    protected EditText confirmedEbolaField;
+    protected EditText deathEbolaField;
+    protected EditText confirmedAcuteFlaccidParalysisField;
+    protected EditText deathAcuteFlaccidParalysisField;
+    protected EditText confirmedInfluenzaAH1n1Field;
+    protected EditText deathInfluenzaAH1n1Field;
+    protected EditText confirmedCholeraField;
+    protected EditText deathCholeraField;
+    protected EditText confirmedRedDiarrheaField;
+    protected EditText deathRedDiarrheaField;
+    protected EditText confirmedMeaslesField;
+    protected EditText deathMeaslesField;
+    protected EditText confirmedYellowFeverField;
+    protected EditText deathYellowFeverField;
+    protected EditText confirmedNeonatalTetanusField;
+    protected EditText deathNeonatalTetanusField;
+    protected EditText confirmedMeningitisField;
+    protected EditText deathMeningitisField;
+    protected EditText confirmedRabiesField;
+    protected EditText deathRabiesField;
+    protected EditText confirmedacuteMeaslesDiarrheaField;
+    protected EditText deathacuteMeaslesDiarrheaField;
+    private TextView labelDate;
+    protected DatePicker datePicker;
+    protected Button  submitButton;
 
     @Override
-	protected void onCreate(Bundle savedInstanceState) {
-		super.onCreate(savedInstanceState);
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.smir_home);
 
-		//setContentView(R.layout.activity_main);
-		ScrollView scrollv = new ScrollView(this);
-        LinearLayout layout = new LinearLayout(this);
-        layout.setOrientation(LinearLayout.VERTICAL);
-        layout.setPadding(20, 0, 20, 0);
+        setupSMSReceiver();
+        setupUI();
 
-        scrollv.addView(layout);
-        setContentView(scrollv);
+//         // DATE END OF WEEK
+//         label_end_date = new TextView(this);
+//         label_end_date.setText("Fin de la semaine (date du vendredi).");
+//         input_end_date = new DatePicker(this);
+// //        input_end_date.setCalendarViewShown(false);
+// //        GregorianCalendar min_date = new GregorianCalendar(2014, 1, 1);
+// //        GregorianCalendar max_date = new GregorianCalendar(2020, 12, 31);
+// //        input_end_date.setMaxDate(max_date.getTimeInMillis());
+// //        input_end_date.setMinDate(min_date.getTimeInMillis());
+//         layout.addView(label_end_date);
+//         layout.addView(input_end_date);
 
-        disease_list = new Hashtable<String, String>();
-        disease_list.put(Constants.ebola, "EBOLA");
-        disease_list.put(Constants.acute_flaccid_paralysis, "PFA");
-        disease_list.put(Constants.influenza_a_h1n1, "Grippe A H1N1");
-        disease_list.put(Constants.cholera, "Choléra");
-        disease_list.put(Constants.red_diarrhea, "Diarrhée rouge");
-        disease_list.put(Constants.measles, "Rougeole");
-        disease_list.put(Constants.yellow_fever, "Fièvre jaune");
-        disease_list.put(Constants.neonatal_tetanus, "TNN");
-        disease_list.put(Constants.meningitis, "Méningite");
-        disease_list.put(Constants.rabies, "Rage");
-        disease_list.put(Constants.acute_measles_diarrhea, "Diarrhée sévère rougeole");
-        disease_list.put(Constants.other_notifiable_disease, "Autres MADOs");
+//         // SUBMIT BUTTON
+//         Button button_submit = new Button(this);
+//         button_submit.setText("Envoyer");
+//         button_submit.setOnClickListener(new OnClickListener() {
+//          @Override
+//          public void onClick(View v) {
+//              if (checkAllDataOK()) {
+//                  String sms_str = getSMSString();
+//                  Log.i("SMIR SMS-OUT", sms_str);
+//                  boolean succeeded = submitText(sms_str);
+//                  if (succeeded) {
+//                      resetAllFields();
+//                  }
+//              }
+//          }
+//          });
+//          layout.addView(button_submit);
+   }
 
-        cap_fields = new Hashtable<String, Hashtable<String, EditText>>();
-        for(int i=0;i<order_diseases.length;i++) {
-            String code = order_diseases[i];
-            indiv_fields = new Hashtable<String, EditText>();
-            Spanned namefield = Html.fromHtml("<b>" + (String)disease_list.get(code) + "</b>");
-            label_cas = new TextView(this);
-            label_cas.setText("Cas");
-            input_cas = new EditText(this);
-            input_cas.setInputType(InputType.TYPE_CLASS_NUMBER);
-            label_deces = new TextView(this);
-            label_deces.setText("Décès");
-            input_deces = new EditText(this);
-            input_deces.setInputType(InputType.TYPE_CLASS_NUMBER);
-            layout.addView(TextView(namefield));
-            layout.addView(label_cas);
-            layout.addView(input_cas);
-            layout.addView(label_deces);
-            layout.addView(input_deces);
-            indiv_fields.put("cas", input_cas);
-            indiv_fields.put("deces", input_deces);
-            cap_fields.put(code, indiv_fields);
-        }
+    protected void setupUI() {
+        Log.d(TAG, "setupUI SMIRHome");
 
-        // PASSWORD
-        label_password = new TextView(this);
-        label_password.setText("Mot de passe SNISI");
-        input_password = new EditText(this);
-        input_password.setInputType(InputType.TYPE_TEXT_VARIATION_PASSWORD);
-//        input_password.setHint("insensible à la casse.");
-//        input_password.setError("Trop court!");
-        layout.addView(label_password);
-        layout.addView(input_password);
+        confirmedEbolaField = (EditText) findViewById(R.id.confirmedEbolaField);
+        deathEbolaField = (EditText) findViewById(R.id.deathEbolaField);
+        confirmedAcuteFlaccidParalysisField = (EditText) findViewById(R.id.confirmedAcuteFlaccidParalysisField);
+        deathAcuteFlaccidParalysisField = (EditText) findViewById(R.id.deathAcuteFlaccidParalysisField);
+        confirmedInfluenzaAH1n1Field = (EditText) findViewById(R.id.confirmedInfluenzaAH1n1Field);
+        deathInfluenzaAH1n1Field = (EditText) findViewById(R.id.deathInfluenzaAH1n1Field);
+        confirmedCholeraField = (EditText) findViewById(R.id.confirmedCholeraField);
+        deathCholeraField = (EditText) findViewById(R.id.deathCholeraField);
+        confirmedRedDiarrheaField = (EditText) findViewById(R.id.confirmedRedDiarrheaField);
+        deathRedDiarrheaField = (EditText) findViewById(R.id.deathRedDiarrheaField);
+        confirmedMeaslesField = (EditText) findViewById(R.id.confirmedMeaslesField);
+        deathMeaslesField = (EditText) findViewById(R.id.deathMeaslesField);
+        confirmedYellowFeverField = (EditText) findViewById(R.id.confirmedYellowFeverField);
+        deathYellowFeverField = (EditText) findViewById(R.id.deathYellowFeverField);
+        confirmedNeonatalTetanusField = (EditText) findViewById(R.id.confirmedNeonatalTetanusField);
+        deathNeonatalTetanusField = (EditText) findViewById(R.id.deathNeonatalTetanusField);
+        confirmedMeningitisField = (EditText) findViewById(R.id.confirmedMeningitisField);
+        deathMeningitisField = (EditText) findViewById(R.id.deathMeningitisField);
+        confirmedRabiesField = (EditText) findViewById(R.id.confirmedRabiesField);
+        deathRabiesField = (EditText) findViewById(R.id.deathRabiesField);
+        confirmedacuteMeaslesDiarrheaField = (EditText) findViewById(R.id.confirmedacuteMeaslesDiarrheaField);
+        deathacuteMeaslesDiarrheaField = (EditText) findViewById(R.id.deathacuteMeaslesDiarrheaField);
+        labelDate = (TextView) findViewById(R.id.labelDate);
+        datePicker = (DatePicker) findViewById(R.id.datePicker);
 
-        // DATE END OF WEEK
-        label_end_date = new TextView(this);
-        label_end_date.setText("Fin de la semaine (date du vendredi).");
-        input_end_date = new DatePicker(this);
-//        input_end_date.setCalendarViewShown(false);
-//        GregorianCalendar min_date = new GregorianCalendar(2014, 1, 1);
-//        GregorianCalendar max_date = new GregorianCalendar(2020, 12, 31);
-//        input_end_date.setMaxDate(max_date.getTimeInMillis());
-//        input_end_date.setMinDate(min_date.getTimeInMillis());
-        layout.addView(label_end_date);
-        layout.addView(input_end_date);
+        // setup invalid inputs checks
+        setupInvalidInputChecks();
 
-        // SUBMIT BUTTON
-        Button button_submit = new Button(this);
-        button_submit.setText("Envoyer");
-        button_submit.setOnClickListener(new OnClickListener() {
-        	@Override
-			public void onClick(View v) {
-				if (checkAllDataOK()) {
-					String sms_str = getSMSString();
-					Log.i("SMIR SMS-OUT", sms_str);
-					boolean succeeded = submitText(sms_str);
-					if (succeeded) {
-						resetAllFields();
-					}
-				}
-			}
-         });
-         layout.addView(button_submit);
-	}
+        final CheckedFormActivity activity = this;
+        submitButton = (Button) findViewById(R.id.submitButton);
+        submitButton.setOnClickListener(new View.OnClickListener() {
 
-    private View TextView(Spanned spanned) {
-        final View label;
-        label = new TextView(this);
-        ((android.widget.TextView) label).setText(spanned);
-        return label;
+            @Override
+            public void onClick(View v) {
+                // ensure data is OK
+                if (!checkInputsAndCoherence()) { return; }
+
+                // transmit SMS
+                requestPasswordAndTransmitSMS(activity, "SMIR",
+                        Constants.SMIR_KEYWORD, buildSMSText());
+            }
+        });
+    }
+    protected void setupInvalidInputChecks() {
+        
+        setAssertPositiveInteger(confirmedEbolaField);
+        setAssertPositiveInteger(deathEbolaField);
+        setAssertPositiveInteger(confirmedAcuteFlaccidParalysisField);
+        setAssertPositiveInteger(deathAcuteFlaccidParalysisField);
+        setAssertPositiveInteger(confirmedInfluenzaAH1n1Field);
+        setAssertPositiveInteger(deathInfluenzaAH1n1Field);
+        setAssertPositiveInteger(confirmedCholeraField);
+        setAssertPositiveInteger(deathCholeraField);
+        setAssertPositiveInteger(confirmedRedDiarrheaField);
+        setAssertPositiveInteger(deathRedDiarrheaField);
+        setAssertPositiveInteger(confirmedMeaslesField);
+        setAssertPositiveInteger(deathMeaslesField);
+        setAssertPositiveInteger(confirmedYellowFeverField);
+        setAssertPositiveInteger(deathYellowFeverField);
+        setAssertPositiveInteger(confirmedNeonatalTetanusField);
+        setAssertPositiveInteger(deathNeonatalTetanusField);
+        setAssertPositiveInteger(confirmedMeningitisField);
+        setAssertPositiveInteger(deathMeningitisField);
+        setAssertPositiveInteger(confirmedRabiesField);
+        setAssertPositiveInteger(deathRabiesField);
+        setAssertPositiveInteger(confirmedacuteMeaslesDiarrheaField);
+        setAssertPositiveInteger(deathacuteMeaslesDiarrheaField);
     }
 
-    private View TextView(final String namefield2) {
-        final View label;
-        label = new TextView(this);
-        ((android.widget.TextView) label).setText(namefield2);
-        return label;
+    protected boolean ensureDataCoherence(){
+        boolean isEnsureDataCoherence;
+        
+        isEnsureDataCoherence =
+            mustBeInferiorOrEqual(confirmedEbolaField, 
+                           deathEbolaField, confirmedEbolaField) &&
+            mustBeInferiorOrEqual(confirmedAcuteFlaccidParalysisField, 
+                           deathAcuteFlaccidParalysisField, confirmedAcuteFlaccidParalysisField) &&
+            mustBeInferiorOrEqual(confirmedInfluenzaAH1n1Field, 
+                           deathInfluenzaAH1n1Field, confirmedInfluenzaAH1n1Field) &&
+            mustBeInferiorOrEqual(confirmedCholeraField, 
+                           deathCholeraField, confirmedCholeraField) &&
+            mustBeInferiorOrEqual(confirmedRedDiarrheaField, 
+                           deathRedDiarrheaField, confirmedRedDiarrheaField) &&
+            mustBeInferiorOrEqual(confirmedMeaslesField, 
+                           deathMeaslesField, confirmedMeaslesField) &&
+            mustBeInferiorOrEqual(confirmedYellowFeverField, 
+                           deathYellowFeverField, confirmedYellowFeverField) &&
+            mustBeInferiorOrEqual(confirmedNeonatalTetanusField, 
+                           deathNeonatalTetanusField, confirmedNeonatalTetanusField) &&
+            mustBeInferiorOrEqual(confirmedMeningitisField, 
+                           deathMeningitisField, confirmedMeningitisField) &&
+            mustBeInferiorOrEqual(confirmedRabiesField, 
+                           deathRabiesField, confirmedRabiesField) &&
+            mustBeInferiorOrEqual(confirmedacuteMeaslesDiarrheaField, 
+                           deathacuteMeaslesDiarrheaField, confirmedacuteMeaslesDiarrheaField) &&
+            _check_date_is_not_friday(datePicker, labelDate);
+        ;
+        return isEnsureDataCoherence;
+    }
+    public String buildSMSText() {
+        return datePicker.getDayOfMonth() + Constants.DATE_SPACER +
+               datePicker.getMonth() + 1 + Constants.DATE_SPACER +
+               datePicker.getYear() + Constants.SPACER +
+               Constants.stringFromReport(integerFromField(confirmedEbolaField)) + Constants.SPACER +
+               Constants.stringFromReport(integerFromField(deathEbolaField)) + Constants.SPACER +
+               Constants.stringFromReport(integerFromField(confirmedAcuteFlaccidParalysisField)) + Constants.SPACER +
+               Constants.stringFromReport(integerFromField(deathAcuteFlaccidParalysisField)) + Constants.SPACER +
+               Constants.stringFromReport(integerFromField(confirmedInfluenzaAH1n1Field)) + Constants.SPACER +
+               Constants.stringFromReport(integerFromField(deathInfluenzaAH1n1Field)) + Constants.SPACER +
+               Constants.stringFromReport(integerFromField(confirmedCholeraField)) + Constants.SPACER +
+               Constants.stringFromReport(integerFromField(deathCholeraField)) + Constants.SPACER +
+               Constants.stringFromReport(integerFromField(confirmedRedDiarrheaField)) + Constants.SPACER +
+               Constants.stringFromReport(integerFromField(deathRedDiarrheaField)) + Constants.SPACER +
+               Constants.stringFromReport(integerFromField(confirmedMeaslesField)) + Constants.SPACER +
+               Constants.stringFromReport(integerFromField(deathMeaslesField)) + Constants.SPACER +
+               Constants.stringFromReport(integerFromField(confirmedYellowFeverField)) + Constants.SPACER +
+               Constants.stringFromReport(integerFromField(deathYellowFeverField)) + Constants.SPACER +
+               Constants.stringFromReport(integerFromField(confirmedNeonatalTetanusField)) + Constants.SPACER +
+               Constants.stringFromReport(integerFromField(deathNeonatalTetanusField)) + Constants.SPACER +
+               Constants.stringFromReport(integerFromField(confirmedMeningitisField)) + Constants.SPACER +
+               Constants.stringFromReport(integerFromField(deathMeningitisField)) + Constants.SPACER +
+               Constants.stringFromReport(integerFromField(confirmedRabiesField)) + Constants.SPACER +
+               Constants.stringFromReport(integerFromField(deathRabiesField)) + Constants.SPACER +
+               Constants.stringFromReport(integerFromField(confirmedacuteMeaslesDiarrheaField)) + Constants.SPACER +
+               Constants.stringFromReport(integerFromField(deathacuteMeaslesDiarrheaField));
     }
 
-	protected void resetAllFields() {
-		// this.input_ebola.setText(null);
-//		Date d = new Date(); // today
-//		this.input_end_date.updateDate(d.getYear(), d.getMonth(), d.getDay());
-		this.input_password.setText(null);
-        for(int i=0;i<order_diseases.length;i++) {
-            String code = order_diseases[i];
-            indiv_fields = (Hashtable<String, EditText>)cap_fields.get(code);
-            EditText casfield = (EditText)indiv_fields.get("cas");
-            EditText decesfield = (EditText)indiv_fields.get("deces");
-            casfield.setText(null);
-            decesfield.setText(null);
-        }
-	}
-
-
-	protected boolean checkAllDataOK() {
-
-		Vector<String> errors = new Vector<String>();
-
-        // USERNAME
-		SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-        String username = sharedPrefs.getString("username", null);
-        if (username == null || username.isEmpty()){
-        	errors.add("L'identifiant doit être renseigné dans le paramètre.");
-        }
-        // DISEASES
-        for(int i=0;i<order_diseases.length;i++) {
-            String code = order_diseases[i];
-            indiv_fields = (Hashtable<String, EditText>)cap_fields.get(code);
-
-			String namefield = (String)disease_list.get(code);
-            EditText casfield = (EditText)indiv_fields.get("cas");
-            EditText decesfield = (EditText)indiv_fields.get("deces");
-
-            SharedChecks._check_not_empty_message(casfield, namefield + Constants.SPACER + "cas", errors);
-            SharedChecks._check_not_empty_message(decesfield, namefield + Constants.SPACER + "décès", errors);
-            try{
-            	SharedChecks._check_isValid_message(casfield, decesfield, namefield, errors);
-            } catch(NumberFormatException dashi) {
-    		}
-        }
-
-		// END DATE
-		SharedChecks._check_date_is_friday_message(this.input_end_date,
-									  label_end_date.getText().toString(),
-									  errors);
-		// PASSWORD 4 chars min.
-		SharedChecks._check_min_characters_message(this.input_password, 4,
-									  label_password.getText().toString(),
-									  errors);
-		if (errors.size() > 0) {
-			// display Error Message
-            Popups displayPopupBuilder = new Popups.displayErrorPopup(this, errors.get(0));
-			return false;
-		} else {
-			return true;
-		}
-	}
-
-	protected String getSMSString() {
-		SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-		String username = sharedPrefs.getString("username", null);
-
-
-		String sms_text = Constants.KEYWORD;
-		sms_text += Constants.SPACER;
-
-		// USERNAME
-		sms_text += username;
-		sms_text += Constants.SPACER;
-
-		// PASSWORD
-		sms_text += this.input_password.getText().toString();
-		sms_text += Constants.SPACER;
-
-        // Date DD/MM/YYYY
-        sms_text += this.input_end_date.getDayOfMonth() + "/" +
-        			this.input_end_date.getMonth() + "/" +
-        			this.input_end_date.getYear();
-
-        // Diseases
-        for(int i=0;i<order_diseases.length;i++) {
-            String code = order_diseases[i];
-            indiv_fields = (Hashtable<String, EditText>)cap_fields.get(code);
-            EditText casfield = (EditText)indiv_fields.get("cas");
-            EditText decesfield = (EditText)indiv_fields.get("deces");
-            sms_text += Constants.SPACER + casfield.getText().toString() +
-                        Constants.SPACER + decesfield.getText().toString();
-        }
-		return sms_text.trim();
-	}
-
-	protected boolean submitText(String message) {
-		// preferences
-		SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
-		String phoneNumber = sharedPrefs.getString("serverPhoneNumber", null);
-		try {
-			SmsManager sms = SmsManager.getDefault();
-			sms.sendTextMessage(phoneNumber, null, message, null, null);
-			Toast.makeText(getApplicationContext(), getString(R.string.notif_sms_sent), Toast.LENGTH_LONG).show();
-		  } catch (Exception e) {
-			Toast.makeText(getApplicationContext(), getString(R.string.notif_sms_sent), Toast.LENGTH_LONG).show();
-			e.printStackTrace();
-			return false;
-		  }
-		return true;
-	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		// required for settings to work
-		getMenuInflater().inflate(R.menu.smir, menu);
-		return true;
-	}
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // required for settings to work
+        getMenuInflater().inflate(R.menu.smir, menu);
+        return true;
+    }
 
 
     @Override
-	public boolean onOptionsItemSelected(MenuItem item) {
-		// Android HW button for settings
-		switch (item.getItemId()) {
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Android HW button for settings
+        switch (item.getItemId()) {
             case R.id.menu_alert:
                 Intent a = new Intent(SMIRHome.this, SMIRAlert.class);
                 startActivity(a);
                 break;
         }
-		return true;
-	}
+        return true;
+    }
 }

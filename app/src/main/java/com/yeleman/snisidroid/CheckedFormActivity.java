@@ -21,13 +21,17 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.LinkedHashMap;
 import java.util.Locale;
 import java.util.Map;
@@ -258,7 +262,18 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
     	}
         return true;
     }
-
+    protected static boolean _check_date_is_friday(DatePicker widget) {
+        GregorianCalendar adate = new GregorianCalendar(widget.getYear(), widget.getMonth(), widget.getDayOfMonth());
+        return adate.get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY;
+    }
+    protected boolean _check_date_is_not_friday(DatePicker widget, TextView fieldName) {
+        if (!_check_date_is_friday(widget)) {
+            widget.requestFocus();
+            fireErrorDialog(this, "«" + fieldName.getText() + "» doit être un vendredi.", null);
+            return false;
+        }
+        return true;
+    }
     protected boolean mustBeInferiorOrEqual(EditText fieldToReturnTo, EditText fieldA, EditText fieldB) {
         int valueA = integerFromField(fieldA);
         int valueB = integerFromField(fieldB);

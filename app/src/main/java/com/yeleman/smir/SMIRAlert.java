@@ -1,5 +1,6 @@
 package com.yeleman.smir;
 
+import com.yeleman.snisidroid.Constants;
 import com.yeleman.snisidroid.R;
 import android.app.Activity;
 import android.telephony.SmsManager;
@@ -224,7 +225,7 @@ public class SMIRAlert extends Activity {
       final EditText input_password = (EditText) findViewById(R.id.input_password);
 
       // smir alert username password code suspected confirmed deaths
-      String sms_text = Constants.KEYWORD;
+      String sms_text = Constants.SMIR_KEYWORD;
       sms_text += Constants.SPACER;
 
       sms_text += Constants.KEYALERT;

@@ -37,15 +37,4 @@
     <string name="error_sms_not_sent_title">Erreur d\'envoi du SMS</string>
     <string name="error_sms_not_sent_body">Le SMS n\'a pas pu être envoyé correctement. Vérifiez que vous avez du réseau et du crédit puis réessayez.\n%1$s</string>
 
-    <!-- SMIR -->
-    <string name="smir_app_label">SMIR</string>
-    <string name="menu_alert">Alerte</string>
-    <string name="disease">Maladie</string>
-    <string name="labelcas">Cas suspect</string>
-    <string name="labelconfirmed">Cas confirmé</string>
-    <string name="labeldeath">Cas Décès</string>
-    <string name="sendbtt">Envoyer</string>
-    <string name="disease_prompt">les maladies</string>
-    <string name="label_password">Mot de passe</string>
-
 </resources>

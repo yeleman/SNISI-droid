@@ -42,6 +42,25 @@ public class Constants {
     public static final String SMS_CHANGE_PASSWRD = "passwd %1$s %2$s %3$s";
     public static final String SMS_NUTRITION_MONTHLY_REPORT = "nut-%1$s-%2$s-%3$s-%4$s-%5$s-%6$s-%7$s-%8$s";
 
+    public static final int RESULT_SETTINGS = 1;
+    public static final String SMIR_KEYWORD = "smir";
+    public static final String KEYALERT= "alert";
+
+    public static final String ebola = "ebola";
+    public static final String acute_flaccid_paralysis = "acute_flaccid_paralysis";
+    public static final String influenza_a_h1n1 = "influenza_a_h1n1";
+    public static final String cholera = "cholera";
+    public static final String red_diarrhea = "red_diarrhea";
+    public static final String measles = "measles";
+    public static final String yellow_fever = "yellow_fever";
+    public static final String neonatal_tetanus = "neonatal_tetanus";
+    public static final String meningitis = "meningitis";
+    public static final String rabies = "rabies";
+    public static final String acute_measles_diarrhea = "acute_measles_diarrhea";
+    public static final String other_notifiable_disease = "other_notifiable_disease";
+    public static final String DATE_SPACER = "/" ;
+
+
     public static final String getLogTag(String activity) {
     	return String.format("SNISILog-%s", activity);
     }
