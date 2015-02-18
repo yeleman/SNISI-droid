@@ -5,8 +5,8 @@
     <string name="smir_app_label">SMIR</string>
     <string name="menu_alert">Alerte</string>
     <string name="disease">Maladie</string>
-    <string name="labelcas">Cas suspect</string>
-    <string name="labelconfirmed">Cas confirmé</string>
+    <string name="labelcas">Cas suspects</string>
+    <string name="labelconfirmed">Cas confirmés</string>
     <string name="labeldeath">Décès</string>
     <string name="sendbtt">Envoyer</string>
     <string name="disease_prompt">les maladies</string>

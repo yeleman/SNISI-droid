@@ -10,122 +10,55 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/scrollView2"
+        android:id="@+id/linearLayoutAlert"
         android:orientation="vertical"
         android:padding="0dp">
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/disease"
-            android:id="@+id/textView"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_above="@+id/Cas"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:gravity="center_horizontal" />
 
         <Spinner
             android:id="@+id/spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/labelcas"
-            android:id="@+id/Cas"
-            android:layout_toStartOf="@+id/input_case"
-            android:layout_above="@+id/textView2"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp" />
+            android:layout_margin="10dp" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/input_case"
+            android:id="@+id/inputCase"
+            android:nextFocusRight="@+id/inputConfirmed"
+            android:nextFocusDown="@+id/inputConfirmed"
+            android:imeOptions="actionNext"
+            android:hint="@string/labelcas"
             android:layout_gravity="center_horizontal"
             android:inputType="number"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp" />
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/labelconfirmed"
-            android:id="@+id/confirmed"
-            android:layout_toEndOf="@+id/input_confirmed"
-            android:layout_below="@+id/input_case"
-            android:layout_alignParentLeft="false"
-            android:layout_alignParentStart="true"
-            android:layout_toStartOf="@+id/input_case"
-            android:layout_alignBottom="@+id/input_confirmed"
-            android:layout_toLeftOf="@+id/input_case"
-            android:layout_alignParentTop="false"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp" />
-
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/input_confirmed"
+            android:id="@+id/inputConfirmed"
+            android:nextFocusRight="@+id/inputDeath"
+            android:nextFocusDown="@+id/inputDeath"
+            android:imeOptions="actionNext"
+            android:hint="@string/labelconfirmed"
             android:inputType="none|number"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/labeldeath"
-            android:id="@+id/textView2"
-            android:layout_toStartOf="@+id/input_confirmed"
-            android:layout_alignTop="@+id/input_death"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp" />
+            android:layout_margin="10dp" />
 
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/input_death"
+            android:id="@+id/inputDeath"
+            android:imeOptions="actionDone"
+            android:hint="@string/labeldeath"
             android:inputType="number"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp" />
-
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/label_password"
-            android:id="@+id/label_password"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp" />
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/input_password"
-            android:inputType="none"
-            android:password="true"
-            android:layout_marginRight="10dp"
-            android:layout_marginLeft="10dp" />
+            android:layout_margin="10dp" />
 
         <Button
             style="?android:attr/buttonStyleSmall"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/sendbtt"
-            android:id="@+id/button"
+            android:id="@+id/submitButton"
             android:layout_gravity="right"
             android:layout_margin="10dp" />
     </LinearLayout>

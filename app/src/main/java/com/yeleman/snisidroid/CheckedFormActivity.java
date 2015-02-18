@@ -262,18 +262,19 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
     	}
         return true;
     }
-    protected static boolean _check_date_is_friday(DatePicker widget) {
+    protected static boolean checkDateIsFriday(DatePicker widget) {
         GregorianCalendar adate = new GregorianCalendar(widget.getYear(), widget.getMonth(), widget.getDayOfMonth());
         return adate.get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY;
     }
-    protected boolean _check_date_is_not_friday(DatePicker widget, TextView fieldName) {
-        if (!_check_date_is_friday(widget)) {
+    protected boolean checkDateIsNotFriday(DatePicker widget, TextView fieldName) {
+        if (!checkDateIsFriday(widget)) {
             widget.requestFocus();
             fireErrorDialog(this, "«" + fieldName.getText() + "» doit être un vendredi.", null);
             return false;
         }
         return true;
     }
+    
     protected boolean mustBeInferiorOrEqual(EditText fieldToReturnTo, EditText fieldA, EditText fieldB) {
         int valueA = integerFromField(fieldA);
         int valueB = integerFromField(fieldB);
@@ -287,6 +288,16 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
         return true;
     }
 
+    protected boolean allIsNotZero(EditText fielA, EditText fieldB, EditText fieldC) {
+        if (integerFromField(fielA) == 0 &&
+                integerFromField(fieldB) == 0 &&
+                integerFromField(fieldC) == 0){
+            fireErrorDialog(this, "Tout est à zero", null);
+            return false;
+        }
+        return true;
+    }
+    
     protected boolean mustBeEqual(EditText fieldToReturnTo, EditText fieldA, EditText fieldB) {
         int valueA = integerFromField(fieldA);
         int valueB = integerFromField(fieldB);

@@ -1,32 +1,16 @@
 package com.yeleman.smir;
 
-import java.util.Vector;
-import java.util.Hashtable;
-
-import android.app.Activity;
 import android.os.Bundle;
-import android.telephony.SmsManager;
-import android.text.Html;
-import android.text.Spanned;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.LinearLayout;
-import android.widget.Toast;
-import android.text.InputType;
 import android.util.Log;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
-import android.widget.ScrollView;
-
 import com.yeleman.snisidroid.CheckedFormActivity;
-import com.yeleman.snisidroid.Popups;
 import com.yeleman.snisidroid.R;
 import com.yeleman.snisidroid.Constants;
 
@@ -57,7 +41,7 @@ public class SMIRHome extends CheckedFormActivity {
     protected EditText deathRabiesField;
     protected EditText confirmedacuteMeaslesDiarrheaField;
     protected EditText deathacuteMeaslesDiarrheaField;
-    private TextView labelDate;
+    protected TextView labelDate;
     protected DatePicker datePicker;
     protected Button  submitButton;
 
@@ -68,36 +52,6 @@ public class SMIRHome extends CheckedFormActivity {
 
         setupSMSReceiver();
         setupUI();
-
-//         // DATE END OF WEEK
-//         label_end_date = new TextView(this);
-//         label_end_date.setText("Fin de la semaine (date du vendredi).");
-//         input_end_date = new DatePicker(this);
-// //        input_end_date.setCalendarViewShown(false);
-// //        GregorianCalendar min_date = new GregorianCalendar(2014, 1, 1);
-// //        GregorianCalendar max_date = new GregorianCalendar(2020, 12, 31);
-// //        input_end_date.setMaxDate(max_date.getTimeInMillis());
-// //        input_end_date.setMinDate(min_date.getTimeInMillis());
-//         layout.addView(label_end_date);
-//         layout.addView(input_end_date);
-
-//         // SUBMIT BUTTON
-//         Button button_submit = new Button(this);
-//         button_submit.setText("Envoyer");
-//         button_submit.setOnClickListener(new OnClickListener() {
-//          @Override
-//          public void onClick(View v) {
-//              if (checkAllDataOK()) {
-//                  String sms_str = getSMSString();
-//                  Log.i("SMIR SMS-OUT", sms_str);
-//                  boolean succeeded = submitText(sms_str);
-//                  if (succeeded) {
-//                      resetAllFields();
-//                  }
-//              }
-//          }
-//          });
-//          layout.addView(button_submit);
    }
 
     protected void setupUI() {
@@ -146,6 +100,7 @@ public class SMIRHome extends CheckedFormActivity {
             }
         });
     }
+    
     protected void setupInvalidInputChecks() {
         
         setAssertPositiveInteger(confirmedEbolaField);
@@ -171,7 +126,7 @@ public class SMIRHome extends CheckedFormActivity {
         setAssertPositiveInteger(confirmedacuteMeaslesDiarrheaField);
         setAssertPositiveInteger(deathacuteMeaslesDiarrheaField);
     }
-
+    
     protected boolean ensureDataCoherence(){
         boolean isEnsureDataCoherence;
         
@@ -198,10 +153,10 @@ public class SMIRHome extends CheckedFormActivity {
                            deathRabiesField, confirmedRabiesField) &&
             mustBeInferiorOrEqual(confirmedacuteMeaslesDiarrheaField, 
                            deathacuteMeaslesDiarrheaField, confirmedacuteMeaslesDiarrheaField) &&
-            _check_date_is_not_friday(datePicker, labelDate);
-        ;
+            checkDateIsNotFriday(datePicker, labelDate);
         return isEnsureDataCoherence;
     }
+    
     public String buildSMSText() {
         return datePicker.getDayOfMonth() + Constants.DATE_SPACER +
                datePicker.getMonth() + 1 + Constants.DATE_SPACER +
@@ -236,7 +191,6 @@ public class SMIRHome extends CheckedFormActivity {
         getMenuInflater().inflate(R.menu.smir, menu);
         return true;
     }
-
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
