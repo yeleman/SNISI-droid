@@ -8,17 +8,18 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_margin="10dp">
+        <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/malaria_consultation_label"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:gravity="center_horizontal"
+                android:layout_margin="5dp"
+            android:background="@drawable/abc_ab_share_pack_holo_light" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <!-- <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/malaria_total_consultation"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_horizontal"
-                android:layout_margin="5dp" /> -->
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -37,13 +38,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <!-- <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/malaria_total_malaria_cases"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_horizontal"
-                android:layout_margin="5dp" /> -->
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -62,13 +56,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:id="@+id/malariaTotalTestedMalariaCasesLinearLayout">
-            <!-- <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/malaria_total_tested_malaria_cases"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_horizontal"
-                android:layout_margin="5dp" /> -->
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -87,13 +74,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:id="@+id/malariaTotalConfirmedMalariaCasesLinearLayout">
-            <!-- <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/malaria_total_confirmed_malaria_cases"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_horizontal"
-                android:layout_margin="5dp" /> -->
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -112,13 +92,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:id="@+id/malariaTotalSimpleMalariaCasesLinearLayout">
-            <!-- <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/malaria_total_simple_malaria_cases"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_horizontal"
-                android:layout_margin="5dp" /> -->
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -137,13 +110,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:id="@+id/malariaTotalSevereMalariaCasesLinearLayout">
-            <!-- <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/malaria_total_severe_malaria_cases"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_horizontal"
-                android:layout_margin="5dp"/>-->
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -162,13 +128,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:id="@+id/malariaTotalActtreatedMalariaCasesLinearLayout">
-            <!-- <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/malaria_total_acttreated_malaria_cases"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_horizontal"
-                android:layout_margin="5dp" /> -->
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -182,19 +141,20 @@
                 android:editable="true"
                 android:layout_margin="5dp" />
         </LinearLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/malaria_inpatient_label"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:gravity="center_horizontal"
+            android:layout_margin="5dp"
+            android:background="@drawable/abc_ab_share_pack_holo_light" />
         <!-- hospitalisation -->    
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-<!-- 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/malaria_total_inpatient"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_horizontal"
-                android:layout_margin="5dp" /> -->
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -212,14 +172,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-<!-- 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/malaria_total_malaria_inpatient"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_horizontal"
-                android:layout_margin="5dp" />-->
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -234,18 +186,18 @@
                 android:layout_margin="5dp" />
         </LinearLayout>
         <!-- Décès -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/malaria_death_label"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:gravity="center_horizontal"
+            android:layout_margin="5dp"
+            android:background="@drawable/abc_ab_share_pack_holo_light" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-<!-- 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/malaria_total_death"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_horizontal"
-                android:layout_margin="5dp" />-->
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -263,14 +215,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-<!-- 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/malaria_total_malaria_death"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_margin="5dp"
-                android:gravity="center_horizontal" />-->
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -290,14 +234,6 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:id="@+id/distributed_bednetsLinearLayout">
-<!-- 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/malaria_total_distributed_bednets"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_horizontal"
-                android:layout_margin="5dp" />-->
             <EditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
