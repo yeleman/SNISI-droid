@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- SMIR -->
+    <string name="smir_app_label">SMIR</string>
+    <string name="menu_alert">Alerte</string>
+    <string name="disease">Maladie</string>
+    <string name="labelcas">Cas suspects</string>
+    <string name="labelconfirmed">Cas confirmés</string>
+    <string name="labeldeath">Décès</string>
+    <string name="sendbtt">Envoyer</string>
+    <string name="disease_prompt">les maladies</string>
+    <string name="label_password">Mot de passe</string>
+
+    <string name="ebola">EBOLA</string>
+    <string name="acute_flaccid_paralysis">PFA</string>
+    <string name="influenza_a_h1n1">Grippe A H1N1</string>
+    <string name="cholera">Choléra</string>
+    <string name="red_diarrhea">Diarrhée rouge</string>
+    <string name="measles">Rougeole</string>
+    <string name="yellow_fever">Fièvre jaune</string>
+    <string name="neonatal_tetanus">TNN</string>
+    <string name="meningitis">Méningite</string>
+    <string name="rabies">Rage</string>
+    <string name="acute_measles_diarrhea">Diarrhée sévère rougeole</string>
+    <string name="other_notifiable_disease">Autres MADOs</string>
+
+</resources>
+

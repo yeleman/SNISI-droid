@@ -21,20 +21,24 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.GregorianCalendar;
 import java.util.LinkedHashMap;
 import java.util.Locale;
 import java.util.Map;
 
 public class CheckedFormActivity extends Activity implements SMSUpdater {
 
-    private final static String TAG = "SNISILog-CheckedFormActivity";
+    private final static String TAG = Constants.getLogTag("CheckedFormActivity");
 
     /* progress dialog */
     private ProgressDialog progressDialog;
@@ -258,7 +262,19 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
     	}
         return true;
     }
-
+    protected static boolean checkDateIsFriday(DatePicker widget) {
+        GregorianCalendar adate = new GregorianCalendar(widget.getYear(), widget.getMonth(), widget.getDayOfMonth());
+        return adate.get(Calendar.DAY_OF_WEEK) == Calendar.FRIDAY;
+    }
+    protected boolean checkDateIsNotFriday(DatePicker widget, TextView fieldName) {
+        if (!checkDateIsFriday(widget)) {
+            widget.requestFocus();
+            fireErrorDialog(this, "«" + fieldName.getText() + "» doit être un vendredi.", null);
+            return false;
+        }
+        return true;
+    }
+    
     protected boolean mustBeInferiorOrEqual(EditText fieldToReturnTo, EditText fieldA, EditText fieldB) {
         int valueA = integerFromField(fieldA);
         int valueB = integerFromField(fieldB);
@@ -272,6 +288,16 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
         return true;
     }
 
+    protected boolean allIsNotZero(EditText fielA, EditText fieldB, EditText fieldC) {
+        if (integerFromField(fielA) == 0 &&
+                integerFromField(fieldB) == 0 &&
+                integerFromField(fieldC) == 0){
+            fireErrorDialog(this, "Tout est à zero", null);
+            return false;
+        }
+        return true;
+    }
+    
     protected boolean mustBeEqual(EditText fieldToReturnTo, EditText fieldA, EditText fieldB) {
         int valueA = integerFromField(fieldA);
         int valueB = integerFromField(fieldB);
@@ -323,7 +349,11 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
     protected int integerFromField(EditText editText, int fallback) {
         String text = stringFromField(editText);
         if (text.length() > 0) {
-            return Integer.parseInt(text);
+            try {
+                return Integer.parseInt(text);
+            } catch (Exception e){
+                Log.d(TAG, e.toString());
+            }
         }
         return fallback;
     }
@@ -346,7 +376,7 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
         } catch (Exception e) {
             value_str = default_str;
         }
-        Log.d(TAG, value_str);
+        //Log.d(TAG, value_str);
         editText.setText(value_str);
     }
 
