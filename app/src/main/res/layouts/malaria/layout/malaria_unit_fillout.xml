@@ -9,29 +9,20 @@
         android:orientation="vertical"
         android:layout_margin="10dp">
         <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/malaria_consultation_label"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_horizontal"
-                android:layout_margin="5dp"
+            style="@style/textViewLabel"
+            android:text="@string/malaria_consultation_label"
             android:background="@drawable/abc_ab_share_pack_holo_light" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
+                style="@style/editNumberText"
                 android:nextFocusRight="@+id/malariaTotalMalariaCasesField"
                 android:nextFocusDown="@+id/malariaTotalMalariaCasesField"
                 android:id="@+id/malariaTotalConsultationField"
                 android:imeOptions="actionNext"
-                android:hint="@string/malaria_total_consultation"
-                android:singleLine="false"
-                android:editable="true"
-                android:layout_margin="5dp" />
+                android:hint="@string/malaria_total_consultation"/>
         </LinearLayout>
 
         <LinearLayout
@@ -39,17 +30,12 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
+                style="@style/editNumberText"
                 android:nextFocusRight="@+id/malariaTotalTestedMalariaCasesField"
                 android:nextFocusDown="@+id/malariaTotalTestedMalariaCasesField"
                 android:id="@+id/malariaTotalMalariaCasesField"
                 android:imeOptions="actionNext"
-                android:hint="@string/malaria_total_malaria_cases"
-                android:singleLine="false"
-                android:editable="true"
-                android:layout_margin="5dp" />
+                android:hint="@string/malaria_total_malaria_cases" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -57,17 +43,12 @@
             android:orientation="vertical"
             android:id="@+id/malariaTotalTestedMalariaCasesLinearLayout">
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
+                style="@style/editNumberText"
                 android:nextFocusRight="@+id/malariaTotalConfirmedMalariaCasesField"
                 android:nextFocusDown="@+id/malariaTotalConfirmedMalariaCasesField"
                 android:id="@+id/malariaTotalTestedMalariaCasesField"
                 android:imeOptions="actionNext"
-                android:hint="@string/malaria_total_tested_malaria_cases"
-                android:singleLine="false"
-                android:editable="true"
-                android:layout_margin="5dp" />
+                android:hint="@string/malaria_total_tested_malaria_cases" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -75,17 +56,12 @@
             android:orientation="vertical"
             android:id="@+id/malariaTotalConfirmedMalariaCasesLinearLayout">
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
+                style="@style/editNumberText"
                 android:nextFocusRight="@+id/malariaTotalSimpleMalariaCasesField"
                 android:nextFocusDown="@+id/malariaTotalSimpleMalariaCasesField"
                 android:id="@+id/malariaTotalConfirmedMalariaCasesField"
                 android:imeOptions="actionNext"
-                android:hint="@string/malaria_total_confirmed_malaria_cases"
-                android:singleLine="false"
-                android:editable="true"
-                android:layout_margin="5dp" />
+                android:hint="@string/malaria_total_confirmed_malaria_cases"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -93,17 +69,12 @@
             android:orientation="vertical"
             android:id="@+id/malariaTotalSimpleMalariaCasesLinearLayout">
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
+                style="@style/editNumberText"
                 android:nextFocusRight="@+id/malariaTotalSevereMalariaCasesField"
                 android:nextFocusDown="@+id/malariaTotalSevereMalariaCasesField"
                 android:id="@+id/malariaTotalSimpleMalariaCasesField"
                 android:imeOptions="actionNext"
-                android:hint="@string/malaria_total_simple_malaria_cases"
-                android:singleLine="false"
-                android:editable="true"
-                android:layout_margin="5dp" />
+                android:hint="@string/malaria_total_simple_malaria_cases"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -111,17 +82,12 @@
             android:orientation="vertical"
             android:id="@+id/malariaTotalSevereMalariaCasesLinearLayout">
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
+                style="@style/editNumberText"
                 android:nextFocusRight="@+id/malariaTotalActtreatedMalariaCasesField"
                 android:nextFocusDown="@+id/malariaTotalActtreatedMalariaCasesField"
                 android:id="@+id/malariaTotalSevereMalariaCasesField"
                 android:imeOptions="actionNext"
-                android:hint="@string/malaria_total_severe_malaria_cases"
-                android:singleLine="false"
-                android:editable="true"
-                android:layout_margin="5dp" />
+                android:hint="@string/malaria_total_severe_malaria_cases" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -129,26 +95,17 @@
             android:orientation="vertical"
             android:id="@+id/malariaTotalActtreatedMalariaCasesLinearLayout">
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
+                style="@style/editNumberText"
                 android:id="@+id/malariaTotalActtreatedMalariaCasesField"
                 android:nextFocusRight="@+id/malariaTotalInpatientField"
                 android:nextFocusDown="@+id/malariaTotalInpatientField"
                 android:imeOptions="actionNext"
-                android:hint="@string/malaria_total_acttreated_malaria_cases"
-                android:singleLine="false"
-                android:editable="true"
-                android:layout_margin="5dp" />
+                android:hint="@string/malaria_total_acttreated_malaria_cases"/>
         </LinearLayout>
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/textViewLabel"
             android:text="@string/malaria_inpatient_label"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:gravity="center_horizontal"
-            android:layout_margin="5dp"
             android:background="@drawable/abc_ab_share_pack_holo_light" />
         <!-- hospitalisation -->    
         <LinearLayout
@@ -156,77 +113,53 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
+                style="@style/editNumberText"
                 android:id="@+id/malariaTotalInpatientField"
                 android:nextFocusRight="@+id/malariaTotalMalariaInpatientField"
                 android:nextFocusDown="@+id/malariaTotalMalariaInpatientField"
                 android:imeOptions="actionNext"
-                android:hint="@string/malaria_total_inpatient"
-                android:singleLine="false"
-                android:editable="true"
-                android:layout_margin="5dp" />
+                android:hint="@string/malaria_total_inpatient"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
+                style="@style/editNumberText"
                 android:id="@+id/malariaTotalMalariaInpatientField"
                 android:nextFocusRight="@+id/malariaTotalDeathField"
                 android:nextFocusDown="@+id/malariaTotalDeathField"
                 android:imeOptions="actionNext"
-                android:hint="@string/malaria_total_malaria_inpatient"
-                android:singleLine="false"
-                android:editable="true"
-                android:layout_margin="5dp" />
+                android:hint="@string/malaria_total_malaria_inpatient" />
         </LinearLayout>
         <!-- Décès -->
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/textViewLabel"
             android:text="@string/malaria_death_label"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:gravity="center_horizontal"
-            android:layout_margin="5dp"
             android:background="@drawable/abc_ab_share_pack_holo_light" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
+                style="@style/editNumberText"
                 android:id="@+id/malariaTotalDeathField"
                 android:nextFocusRight="@+id/malariaTotalMalariaDeathField"
                 android:nextFocusDown="@+id/malariaTotalMalariaDeathField"
                 android:imeOptions="actionNext"
-                android:hint="@string/malaria_total_death"
-                android:singleLine="false"
-                android:editable="true"
-                android:layout_margin="5dp" />
+                android:hint="@string/malaria_total_death" />
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
+                style="@style/editNumberText"
                 android:id="@+id/malariaTotalMalariaDeathField"
                 android:nextFocusRight="@+id/malariaTotalDistributedBednetsField"
                 android:nextFocusDown="@+id/malariaTotalDistributedBednetsField"
                 android:imeOptions="actionNext"
-                android:hint="@string/malaria_total_malaria_death"
-                android:singleLine="false"
-                android:editable="true"
-                android:layout_margin="5dp" />
+                android:hint="@string/malaria_total_malaria_death"/>
         </LinearLayout>
         <!-- MILD -->
         <LinearLayout
@@ -235,17 +168,12 @@
             android:orientation="vertical"
             android:id="@+id/distributed_bednetsLinearLayout">
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
+                style="@style/editNumberText"
                 android:nextFocusRight="@+id/totalMILDPwField"
                 android:nextFocusDown="@+id/totalMILDPwField"
                 android:id="@+id/malariaTotalDistributedBednetsField"
                 android:imeOptions="actionDone"
-                android:hint="@string/malaria_total_distributed_bednets"
-                android:singleLine="false"
-                android:editable="true"
-                android:layout_margin="5dp" />
+                android:hint="@string/malaria_total_distributed_bednets" />
         </LinearLayout>
         <Button
             android:layout_width="match_parent"

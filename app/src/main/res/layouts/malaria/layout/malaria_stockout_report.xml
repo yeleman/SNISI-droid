@@ -13,16 +13,10 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/malaria_stockout_act_children"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_marginLeft="10dp"
+                style="@style/textViewLabel"
                 android:id="@+id/actChildrenLabel"
-                android:layout_marginRight="10dp"
-                android:gravity="center_horizontal"
-                android:background="@drawable/abc_ab_share_pack_holo_light"
-                android:layout_marginTop="10dp" />
+                android:text="@string/malaria_stockout_act_children"
+                android:background="@drawable/abc_ab_share_pack_holo_light"/>
             <RadioGroup
                 android:id="@+id/radioGroupChildren"
                 android:layout_width="wrap_content"
@@ -52,14 +46,9 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
+                style="@style/textViewLabel"
                 android:id="@+id/actYouthLabel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:text="@string/malaria_stockout_act_youth"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:gravity="center_horizontal"
                 android:background="@drawable/abc_ab_share_pack_holo_light" />
             <RadioGroup
                 android:id="@+id/radioGroupYouth"
@@ -88,14 +77,9 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
+                style="@style/textViewLabel"
                 android:id="@+id/adultLabel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:text="@string/malaria_stockout_act_adult"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:gravity="center_horizontal"
                 android:background="@drawable/abc_ab_share_pack_holo_light" />
             <RadioGroup
                 android:id="@+id/radioGroupAdult"
@@ -125,14 +109,9 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
+                style="@style/textViewLabel"
                 android:id="@+id/artemetherLabel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:text="@string/malaria_stockout_artemether"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:gravity="center_horizontal"
                 android:background="@drawable/abc_ab_share_pack_holo_light" />
             <RadioGroup
                 android:id="@+id/radioGroupArtemether"
@@ -162,14 +141,9 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
+                style="@style/textViewLabel"
                 android:id="@+id/quinineLabel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:text="@string/malaria_stockout_quinine"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:gravity="center_horizontal"
                 android:background="@drawable/abc_ab_share_pack_holo_light" />
             <RadioGroup
                 android:id="@+id/radioGroupQuinine"
@@ -199,14 +173,9 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
+                style="@style/textViewLabel"
                 android:id="@+id/serumLabel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:text="@string/malaria_stockout_serum"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:gravity="center_horizontal"
                 android:background="@drawable/abc_ab_share_pack_holo_light" />
             <RadioGroup
                 android:id="@+id/radioGroupSerum"
@@ -236,14 +205,9 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
+                style="@style/textViewLabel"
                 android:id="@+id/bednetLabel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:text="@string/malaria_stockout_bednet"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:gravity="center_horizontal"
                 android:background="@drawable/abc_ab_share_pack_holo_light" />
             <RadioGroup
                 android:id="@+id/radioGroupBednet"
@@ -273,14 +237,9 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
+                style="@style/textViewLabel"
                 android:id="@+id/rdtLabel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:text="@string/malaria_stockout_rdt"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:gravity="center_horizontal"
                 android:background="@drawable/abc_ab_share_pack_holo_light" />
             <RadioGroup
                 android:id="@+id/radioGroupRdt"
@@ -306,14 +265,9 @@
             </RadioGroup>
 
             <TextView
+                style="@style/textViewLabel"
                 android:id="@+id/spLabel"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:text="@string/malaria_stockout_sp"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:gravity="center_horizontal"
                 android:background="@drawable/abc_ab_share_pack_holo_light" />
         </LinearLayout>
         <LinearLayout
@@ -335,7 +289,6 @@
                     android:id="@+id/spYesField"
                     android:layout_weight="0.50"
                     android:layout_marginRight="70dp" />
-
                 <RadioButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -349,14 +302,9 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
+                style="@style/textViewLabel"
                 android:id="@+id/anc1Label"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:text="@string/malaria_total_anc_1"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:gravity="center_horizontal"
                 android:background="@drawable/abc_ab_share_pack_holo_light" />
             <RadioGroup
                 android:id="@+id/radioGroupAnc1"
@@ -386,14 +334,9 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
+                style="@style/textViewLabel"
                 android:id="@+id/sp1Label"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:text="@string/malaria_total_sp_1"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:gravity="center_horizontal"
                 android:background="@drawable/abc_ab_share_pack_holo_light" />
             <RadioGroup
                 android:id="@+id/radioGroupSp1"
@@ -423,14 +366,9 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
             <TextView
+                style="@style/textViewLabel"
                 android:id="@+id/sp2Label"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
                 android:text="@string/malaria_total_sp_2"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:gravity="center_horizontal"
                 android:background="@drawable/abc_ab_share_pack_holo_light" />
             <RadioGroup
                 android:id="@+id/radioGroupSp2"

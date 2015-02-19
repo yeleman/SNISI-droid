@@ -8,7 +8,7 @@
     <string name="labelcas">Cas suspects</string>
     <string name="labelconfirmed">Cas confirmés</string>
     <string name="labeldeath">Décès</string>
-    <string name="sendbtt">Envoyer</string>
+    <string name="sendButton">Envoyer</string>
     <string name="disease_prompt">les maladies</string>
     <string name="label_password">Mot de passe</string>
 

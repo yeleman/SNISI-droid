@@ -14,13 +14,9 @@
         android:layout_margin="10dp">
 
         <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/textViewLabel"
             android:id="@+id/periodLabel"
-            android:linksClickable="false"
-            android:text="Semaine x"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:gravity="center_vertical|center_horizontal" />
+            android:text="Semaine x" />
 
         <TextView
             android:layout_width="match_parent"
@@ -37,13 +33,9 @@
             android:orientation="vertical"
             android:layout_margin="5dp">
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/textViewLabel"
                 android:id="@+id/levelLabelD1"
-                android:linksClickable="false"
-                android:text="@string/malaria_week_label"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_horizontal" />
+                android:text="@string/malaria_week_label"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -52,35 +44,22 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:ems="10"
+                    style="@style/editNumberText050"
                     android:id="@+id/malariaU5D1Field"
                     android:nextFocusRight="@+id/malariaO5D1Field"
                     android:nextFocusDown="@+id/malariaO5D1Field"
                     android:imeOptions="actionNext"
-                    android:hint="@string/malaria_u5_label"
-                    android:singleLine="false"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/malaria_u5_label" />
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:ems="10"
+                    style="@style/editNumberText050"
                     android:id="@+id/malariaO5D1Field"
                     android:nextFocusRight="@+id/malariaPwD1Field"
                     android:nextFocusDown="@+id/malariaPwD1Field"
                     android:imeOptions="actionNext"
-                    android:hint="@string/malaria_o5_label"
-                    android:singleLine="false"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/malaria_o5_label"/>
             </LinearLayout>
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:ems="10"
+                style="@style/editNumberText"
                 android:id="@+id/malariaPwD1Field"
                 android:imeOptions="actionNext"
                 android:hint="@string/malaria_pw_label"
@@ -94,13 +73,10 @@
             android:orientation="vertical"
             android:layout_margin="5dp">
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/textViewLabel"
                 android:id="@+id/levelLabelD2"
                 android:linksClickable="false"
-                android:text="@string/malaria_week_label"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_horizontal" />
+                android:text="@string/malaria_week_label"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -109,35 +85,22 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:ems="10"
+                    style="@style/editNumberText050"
                     android:id="@+id/malariaU5D2Field"
                     android:nextFocusRight="@+id/malariaO5D2Field"
                     android:nextFocusDown="@+id/malariaO5D2Field"
                     android:imeOptions="actionNext"
-                    android:hint="@string/malaria_u5_label"
-                    android:singleLine="false"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/malaria_u5_label"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:ems="10"
+                    style="@style/editNumberText050"
                     android:id="@+id/malariaO5D2Field"
                     android:nextFocusRight="@+id/malariaPwD2Field"
                     android:nextFocusDown="@+id/malariaPwD2Field"
                     android:imeOptions="actionNext"
-                    android:hint="@string/malaria_o5_label"
-                    android:singleLine="false"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/malaria_o5_label"/>
             </LinearLayout>
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:ems="10"
+                style="@style/editNumberText"
                 android:id="@+id/malariaPwD2Field"
                 android:imeOptions="actionNext"
                 android:hint="@string/malaria_pw_label"
@@ -150,13 +113,10 @@
             android:orientation="vertical"
             android:layout_margin="5dp">
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/textViewLabel"
                 android:id="@+id/levelLabelD3"
                 android:linksClickable="false"
-                android:text="@string/malaria_week_label"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_vertical|center_horizontal" />
+                android:text="@string/malaria_week_label"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -165,35 +125,22 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:ems="10"
+                    style="@style/editNumberText050"
                     android:id="@+id/malariaU5D3Field"
                     android:nextFocusRight="@+id/malariaO5D3Field"
                     android:nextFocusDown="@+id/malariaO5D3Field"
                     android:imeOptions="actionNext"
-                    android:hint="@string/malaria_u5_label"
-                    android:singleLine="false"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/malaria_u5_label"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:ems="10"
+                    style="@style/editNumberText050"
                     android:id="@+id/malariaO5D3Field"
                     android:nextFocusRight="@+id/malariaPwD3Field"
                     android:nextFocusDown="@+id/malariaPwD3Field"
                     android:imeOptions="actionNext"
-                    android:hint="@string/malaria_o5_label"
-                    android:singleLine="false"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/malaria_o5_label"/>
             </LinearLayout>
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:ems="10"
+                style="@style/editNumberText"
                 android:id="@+id/malariaPwD3Field"
                 android:imeOptions="actionNext"
                 android:hint="@string/malaria_pw_label"
@@ -206,13 +153,10 @@
             android:orientation="vertical"
             android:layout_margin="5dp">
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/textViewLabel"
                 android:id="@+id/levelLabelD4"
                 android:linksClickable="false"
-                android:text="@string/malaria_week_label"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_vertical|center_horizontal" />
+                android:text="@string/malaria_week_label"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -221,35 +165,22 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:ems="10"
+                    style="@style/editNumberText050"
                     android:id="@+id/malariaU5D4Field"
                     android:nextFocusRight="@+id/malariaO5D4Field"
                     android:nextFocusDown="@+id/malariaO5D4Field"
                     android:imeOptions="actionNext"
-                    android:hint="@string/malaria_u5_label"
-                    android:singleLine="false"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/malaria_u5_label"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:ems="10"
+                    style="@style/editNumberText050"
                     android:id="@+id/malariaO5D4Field"
                     android:nextFocusRight="@+id/malariaPwD4Field"
                     android:nextFocusDown="@+id/malariaPwD4Field"
                     android:imeOptions="actionNext"
-                    android:hint="@string/malaria_o5_label"
-                    android:singleLine="false"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/malaria_o5_label"/>
             </LinearLayout>
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:ems="10"
+                style="@style/editNumberText"
                 android:id="@+id/malariaPwD4Field"
                 android:imeOptions="actionNext"
                 android:hint="@string/malaria_pw_label"
@@ -262,13 +193,10 @@
             android:orientation="vertical"
             android:layout_margin="5dp">
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/textViewLabel"
                 android:id="@+id/levelLabelD5"
                 android:linksClickable="false"
-                android:text="@string/malaria_week_label"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_vertical|center_horizontal" />
+                android:text="@string/malaria_week_label" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -277,35 +205,22 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:ems="10"
+                    style="@style/editNumberText050"
                     android:id="@+id/malariaU5D5Field"
                     android:nextFocusRight="@+id/malariaO5D5Field"
                     android:nextFocusDown="@+id/malariaO5D5Field"
                     android:imeOptions="actionNext"
-                    android:hint="@string/malaria_u5_label"
-                    android:singleLine="false"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/malaria_u5_label"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:ems="10"
+                    style="@style/editNumberText050"
                     android:id="@+id/malariaO5D5Field"
                     android:nextFocusRight="@+id/malariaPwD5Field"
                     android:nextFocusDown="@+id/malariaPwD5Field"
                     android:imeOptions="actionNext"
-                    android:hint="@string/malaria_o5_label"
-                    android:singleLine="false"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/malaria_o5_label"/>
             </LinearLayout>
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:ems="10"
+                style="@style/editNumberText"
                 android:id="@+id/malariaPwD5Field"
                 android:imeOptions="actionNext"
                 android:hint="@string/malaria_pw_label"
@@ -318,13 +233,10 @@
             android:orientation="vertical"
             android:layout_margin="5dp">
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/textViewLabel"
                 android:id="@+id/levelLabelD6"
                 android:linksClickable="false"
-                android:text="@string/malaria_week_label"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_vertical|center_horizontal" />
+                android:text="@string/malaria_week_label" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -333,35 +245,22 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:ems="10"
+                    style="@style/editNumberText050"
                     android:id="@+id/malariaU5D6Field"
                     android:nextFocusRight="@+id/malariaO5D6Field"
                     android:nextFocusDown="@+id/malariaO5D6Field"
                     android:imeOptions="actionNext"
-                    android:hint="@string/malaria_u5_label"
-                    android:singleLine="false"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/malaria_u5_label"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:ems="10"
+                    style="@style/editNumberText050"
                     android:id="@+id/malariaO5D6Field"
                     android:nextFocusRight="@+id/malariaPwD6Field"
                     android:nextFocusDown="@+id/malariaPwD6Field"
                     android:imeOptions="actionNext"
-                    android:hint="@string/malaria_o5_label"
-                    android:singleLine="false"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/malaria_o5_label"/>
             </LinearLayout>
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:ems="10"
+                style="@style/editNumberText"
                 android:id="@+id/malariaPwD6Field"
                 android:imeOptions="actionNext"
                 android:hint="@string/malaria_pw_label"
@@ -374,13 +273,10 @@
             android:orientation="vertical"
             android:layout_margin="5dp">
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/textViewLabel"
                 android:id="@+id/levelLabelD7"
                 android:linksClickable="false"
-                android:text="@string/malaria_week_label"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_vertical|center_horizontal" />
+                android:text="@string/malaria_week_label"/>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -389,35 +285,22 @@
                 android:orientation="horizontal">
 
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:ems="10"
+                    style="@style/editNumberText050"
                     android:id="@+id/malariaU5D7Field"
                     android:nextFocusRight="@+id/malariaO5D7Field"
                     android:nextFocusDown="@+id/malariaO5D7Field"
                     android:imeOptions="actionNext"
-                    android:hint="@string/malaria_u5_label"
-                    android:singleLine="false"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/malaria_u5_label"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
-                    android:ems="10"
+                    style="@style/editNumberText050"
                     android:id="@+id/malariaO5D7Field"
                     android:nextFocusRight="@+id/malariaPwD7Field"
                     android:nextFocusDown="@+id/malariaPwD7Field"
                     android:imeOptions="actionNext"
-                    android:hint="@string/malaria_o5_label"
-                    android:singleLine="false"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/malaria_o5_label"/>
             </LinearLayout>
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"
-                android:ems="10"
+                style="@style/editNumberText"
                 android:id="@+id/malariaPwD7Field"
                 android:imeOptions="actionDone"
                 android:hint="@string/malaria_pw_label"

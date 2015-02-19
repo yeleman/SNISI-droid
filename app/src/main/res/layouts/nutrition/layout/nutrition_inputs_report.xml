@@ -18,13 +18,10 @@
             android:weightSum="1"
             android:layout_margin="10dp">
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/textViewLabel"
                 android:id="@+id/plumpyLabel"
                 android:linksClickable="false"
-                android:text="@string/nutrition_plumpy_nut"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_horizontal" />
+                android:text="@string/nutrition_plumpy_nut"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -32,33 +29,19 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/plumpyNutReceivedField"
                     android:nextFocusDown="@+id/plumpyNutReceivedField"
                     android:id="@+id/plumpyNutInitialField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_initial"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_initial"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/plumpyNutUsedField"
                     android:nextFocusDown="@+id/plumpyNutUsedField"
                     android:id="@+id/plumpyNutReceivedField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_received"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_received"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -67,33 +50,19 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/plumpyNutLostField"
                     android:nextFocusDown="@+id/plumpyNutLostField"
                     android:id="@+id/plumpyNutUsedField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_used"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_used"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/milkF75InitialField"
                     android:nextFocusDown="@+id/milkF75InitialField"
                     android:id="@+id/plumpyNutLostField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_lost"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_lost"/>
             </LinearLayout>
         </LinearLayout>
         <!-- Milk_F75 -->
@@ -105,13 +74,10 @@
             android:weightSum="1"
             android:layout_margin="10dp">
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/textViewLabel"
                 android:id="@+id/milkf75Label"
                 android:linksClickable="false"
-                android:text="@string/nutrition_milk_f75"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_horizontal" />
+                android:text="@string/nutrition_milk_f75"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -119,33 +85,19 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/milkF75ReceivedField"
                     android:nextFocusDown="@+id/milkF75ReceivedField"
                     android:id="@+id/milkF75InitialField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_initial"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_initial"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/milkF75UsedField"
                     android:nextFocusDown="@+id/milkF75UsedField"
                     android:id="@+id/milkF75ReceivedField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_received"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_received"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -154,33 +106,19 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/milkF75LostField"
                     android:nextFocusDown="@+id/milkF75LostField"
                     android:id="@+id/milkF75UsedField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_used"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_used"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/milkF100InitialField"
                     android:nextFocusDown="@+id/milkF100InitialField"
                     android:id="@+id/milkF75LostField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_lost"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_lost"/>
             </LinearLayout>
         </LinearLayout>
         <!-- Milk_F100 -->
@@ -192,13 +130,10 @@
             android:weightSum="1"
             android:layout_margin="10dp">
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/textViewLabel"
                 android:id="@+id/milkF100Label"
                 android:linksClickable="false"
-                android:text="@string/nutrition_milk_f100"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_horizontal" />
+                android:text="@string/nutrition_milk_f100"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -206,33 +141,19 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/milkF100ReceivedField"
                     android:nextFocusDown="@+id/milkF100ReceivedField"
                     android:id="@+id/milkF100InitialField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_initial"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_initial"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/milkF100UsedField"
                     android:nextFocusDown="@+id/milkF100UsedField"
                     android:id="@+id/milkF100ReceivedField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_received"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_received"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -241,33 +162,19 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/milkF100LostField"
                     android:nextFocusDown="@+id/milkF100LostField"
                     android:id="@+id/milkF100UsedField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_used"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_used"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/resomalInitialField"
                     android:nextFocusDown="@+id/resomalInitialField"
                     android:id="@+id/milkF100LostField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_lost"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_lost"/>
             </LinearLayout>
         </LinearLayout>
          <!-- Resomal -->
@@ -279,13 +186,10 @@
             android:weightSum="1"
             android:layout_margin="10dp">
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/textViewLabel"
                 android:id="@+id/resomalLabel"
                 android:linksClickable="false"
-                android:text="@string/nutrition_resomal"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_horizontal" />
+                android:text="@string/nutrition_resomal"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -293,33 +197,19 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/resomalReceivedField"
                     android:nextFocusDown="@+id/resomalReceivedField"
                     android:id="@+id/resomalInitialField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_initial"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_initial"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/resomalUsedField"
                     android:nextFocusDown="@+id/resomalUsedField"
                     android:id="@+id/resomalReceivedField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_received"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_received"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -328,33 +218,19 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/resomalLostField"
                     android:nextFocusDown="@+id/resomalLostField"
                     android:id="@+id/resomalUsedField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_used"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_used"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/plumpySupInitialField"
                     android:nextFocusDown="@+id/plumpySupInitialField"
                     android:id="@+id/resomalLostField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_lost"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_lost"/>
             </LinearLayout>
         </LinearLayout>
         <!-- Plumpy_Sup -->
@@ -366,13 +242,10 @@
             android:weightSum="1"
             android:layout_margin="10dp">
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/textViewLabel"
                 android:id="@+id/plumpySupLabel"
                 android:linksClickable="false"
-                android:text="@string/nutrition_plumpy_sup"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_horizontal" />
+                android:text="@string/nutrition_plumpy_sup"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -380,33 +253,19 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/plumpySupReceivedField"
                     android:nextFocusDown="@+id/plumpySupReceivedField"
                     android:id="@+id/plumpySupInitialField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_initial"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_initial"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/plumpySupUsedField"
                     android:nextFocusDown="@+id/plumpySupUsedField"
                     android:id="@+id/plumpySupReceivedField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_received"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_received"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -415,33 +274,19 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/plumpySupLostField"
                     android:nextFocusDown="@+id/plumpySupLostField"
                     android:id="@+id/plumpySupUsedField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_used"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_used"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/supercerealInitialField"
                     android:nextFocusDown="@+id/supercerealInitialField"
                     android:id="@+id/plumpySupLostField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_lost"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_lost"/>
             </LinearLayout>
         </LinearLayout>
         <!-- Supercereal -->
@@ -453,13 +298,10 @@
             android:weightSum="1"
             android:layout_margin="10dp">
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/textViewLabel"
                 android:id="@+id/supercerealLabel"
                 android:linksClickable="false"
-                android:text="@string/nutrition_supercereal"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_horizontal" />
+                android:text="@string/nutrition_supercereal"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -467,33 +309,20 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/editNumberDecimalText050"
                     android:nextFocusRight="@+id/supercerealReceivedField"
                     android:nextFocusDown="@+id/supercerealReceivedField"
                     android:id="@+id/supercerealInitialField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_initial"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50"
-                    android:inputType="numberDecimal" />
+                    android:hint="@string/nutrition_initial"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    style="@style/editNumberDecimalText050"
                     android:inputType="numberDecimal"
                     android:nextFocusRight="@+id/supercerealUsedField"
                     android:nextFocusDown="@+id/supercerealUsedField"
                     android:id="@+id/supercerealReceivedField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_received"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_received"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -502,33 +331,19 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberDecimal"
+                    style="@style/editNumberDecimalText050"
                     android:nextFocusRight="@+id/supercerealLostField"
                     android:nextFocusDown="@+id/supercerealLostField"
                     android:id="@+id/supercerealUsedField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_used"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_used"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="numberDecimal"
+                    style="@style/editNumberDecimalText050"
                     android:nextFocusRight="@+id/supercerealPlusInitialField"
                     android:nextFocusDown="@+id/supercerealPlusInitialField"
                     android:id="@+id/supercerealLostField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_lost"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_lost"/>
             </LinearLayout>
         </LinearLayout>
         <!-- Supercereal_Plus -->
@@ -540,13 +355,10 @@
             android:weightSum="1"
             android:layout_margin="10dp">
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/textViewLabel"
                 android:id="@+id/supercerealPlusLabel"
                 android:linksClickable="false"
-                android:text="@string/nutrition_supercereal_plus"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_horizontal" />
+                android:text="@string/nutrition_supercereal_plus"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -554,33 +366,19 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/supercerealPlusReceivedField"
                     android:nextFocusDown="@+id/supercerealPlusReceivedField"
                     android:id="@+id/supercerealPlusInitialField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_initial"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_initial"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/supercerealPlusUsedField"
                     android:nextFocusDown="@+id/supercerealPlusUsedField"
                     android:id="@+id/supercerealPlusReceivedField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_received"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_received"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -589,33 +387,19 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/supercerealPlusLostField"
                     android:nextFocusDown="@+id/supercerealPlusLostField"
                     android:id="@+id/supercerealPlusUsedField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_used"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_used"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/oilInitialField"
                     android:nextFocusDown="@+id/oilInitialField"
                     android:id="@+id/supercerealPlusLostField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_lost"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_lost"/>
             </LinearLayout>
         </LinearLayout>
         <!-- Oil -->
@@ -627,13 +411,10 @@
             android:weightSum="1"
             android:layout_margin="10dp">
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/textViewLabel"
                 android:id="@+id/oilLabel"
                 android:linksClickable="false"
-                android:text="@string/nutrition_oil"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_horizontal" />
+                android:text="@string/nutrition_oil"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -641,33 +422,19 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/oilReceivedField"
                     android:nextFocusDown="@+id/oilReceivedField"
                     android:id="@+id/oilInitialField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_initial"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_initial"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/oilUsedField"
                     android:nextFocusDown="@+id/oilUsedField"
                     android:id="@+id/oilReceivedField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_received"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_received"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -676,33 +443,19 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/oilLostField"
                     android:nextFocusDown="@+id/oilLostField"
                     android:id="@+id/oilUsedField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_used"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_used"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/amoxycilline125VialsInitialField"
                     android:nextFocusDown="@+id/amoxycilline125VialsInitialField"
                     android:id="@+id/oilLostField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_lost"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_lost"/>
             </LinearLayout>
         </LinearLayout>
         <!-- Amoxycilline 125mg Vials -->
@@ -714,13 +467,10 @@
             android:weightSum="1"
             android:layout_margin="10dp">
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/textViewLabel"
                 android:id="@+id/amoxycilline125VialsLabel"
                 android:linksClickable="false"
-                android:text="@string/nutrition_amoxycilline_125mg_vials"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_horizontal" />
+                android:text="@string/nutrition_amoxycilline_125mg_vials"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -728,33 +478,19 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/amoxycilline125VialsReceivedField"
                     android:nextFocusDown="@+id/amoxycilline125VialsReceivedField"
                     android:id="@+id/amoxycilline125VialsInitialField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_initial"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_initial"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/amoxycilline125VialsUsedField"
                     android:nextFocusDown="@+id/amoxycilline125VialsUsedField"
                     android:id="@+id/amoxycilline125VialsReceivedField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_received"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_received"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -763,33 +499,19 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/amoxycilline125VialsLostField"
                     android:nextFocusDown="@+id/amoxycilline125VialsLostField"
                     android:id="@+id/amoxycilline125VialsUsedField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_used"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_used"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/amoxycilline250CapsInitialField"
                     android:nextFocusDown="@+id/amoxycilline250CapsInitialField"
                     android:id="@+id/amoxycilline125VialsLostField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_lost"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_lost"/>
             </LinearLayout>
         </LinearLayout>
         <!-- Amoxycilline 250mg Caps -->
@@ -801,13 +523,10 @@
             android:weightSum="1"
             android:layout_margin="10dp">
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/textViewLabel"
                 android:id="@+id/amoxycilline250CapsLabel"
                 android:linksClickable="false"
-                android:text="@string/nutrition_amoxycilline_250mg_caps"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_horizontal" />
+                android:text="@string/nutrition_amoxycilline_250mg_caps"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -815,33 +534,19 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/amoxycilline250CapsReceivedField"
                     android:nextFocusDown="@+id/amoxycilline250CapsReceivedField"
                     android:id="@+id/amoxycilline250CapsInitialField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_initial"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_initial"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/amoxycilline250CapsUsedField"
                     android:nextFocusDown="@+id/amoxycilline250CapsUsedField"
                     android:id="@+id/amoxycilline250CapsReceivedField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_received"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_received"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -850,33 +555,19 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/amoxycilline250CapsLostField"
                     android:nextFocusDown="@+id/amoxycilline250CapsLostField"
                     android:id="@+id/amoxycilline250CapsUsedField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_used"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_used"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/albendazole400InitialField"
                     android:nextFocusDown="@+id/albendazole400InitialField"
                     android:id="@+id/amoxycilline250CapsLostField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_lost"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_lost"/>
             </LinearLayout>
         </LinearLayout>
         <!-- Albendazole 400mg -->
@@ -888,13 +579,10 @@
             android:weightSum="1"
             android:layout_margin="10dp">
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/textViewLabel"
                 android:id="@+id/albendazole400Label"
                 android:linksClickable="false"
-                android:text="@string/nutrition_albendazole_400mg"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_horizontal" />
+                android:text="@string/nutrition_albendazole_400mg"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -902,33 +590,19 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/albendazole400ReceivedField"
                     android:nextFocusDown="@+id/albendazole400ReceivedField"
                     android:id="@+id/albendazole400InitialField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_initial"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_initial"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/albendazole400UsedField"
                     android:nextFocusDown="@+id/albendazole400UsedField"
                     android:id="@+id/albendazole400ReceivedField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_received"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_received"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -937,33 +611,19 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/albendazole400LostField"
                     android:nextFocusDown="@+id/albendazole400LostField"
                     android:id="@+id/albendazole400UsedField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_used"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_used"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/vita100InjectableInitialField"
                     android:nextFocusDown="@+id/vita100InjectableInitialField"
                     android:id="@+id/albendazole400LostField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_lost"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_lost"/>
             </LinearLayout>
         </LinearLayout>
         <!-- VitA 100K UI Injectable -->
@@ -975,13 +635,10 @@
             android:weightSum="1"
             android:layout_margin="10dp">
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/textViewLabel"
                 android:id="@+id/vita100InjectableLabel"
                 android:linksClickable="false"
-                android:text="@string/nutrition_vita_100K_ui_injectable"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_horizontal" />
+                android:text="@string/nutrition_vita_100K_ui_injectable"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -989,33 +646,19 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/vita100InjectableReceivedField"
                     android:nextFocusDown="@+id/vita100InjectableReceivedField"
                     android:id="@+id/vita100InjectableInitialField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_initial"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_initial"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/vita100InjectableUsedField"
                     android:nextFocusDown="@+id/vita100InjectableUsedField"
                     android:id="@+id/vita100InjectableReceivedField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_received"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_received"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -1024,33 +667,19 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/vita100InjectableLostField"
                     android:nextFocusDown="@+id/vita100InjectableLostField"
                     android:id="@+id/vita100InjectableUsedField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_used"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_used"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/vita200InjectableInitialField"
                     android:nextFocusDown="@+id/vita200InjectableInitialField"
                     android:id="@+id/vita100InjectableLostField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_lost"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_lost"/>
             </LinearLayout>
         </LinearLayout>
         <!-- VitA 200K UI Injectable -->
@@ -1062,13 +691,10 @@
             android:weightSum="1"
             android:layout_margin="10dp">
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/textViewLabel"
                 android:id="@+id/vita200InjectableLabel"
                 android:linksClickable="false"
-                android:text="@string/nutrition_vita_200K_ui_injectable"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_horizontal" />
+                android:text="@string/nutrition_vita_200K_ui_injectable"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -1076,33 +702,19 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/vita200InjectableReceivedField"
                     android:nextFocusDown="@+id/vita200InjectableReceivedField"
                     android:id="@+id/vita200InjectableInitialField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_initial"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_initial"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/vita200InjectableUsedField"
                     android:nextFocusDown="@+id/vita200InjectableUsedField"
                     android:id="@+id/vita200InjectableReceivedField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_received"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_received"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -1111,33 +723,19 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/vita200InjectableLostField"
                     android:nextFocusDown="@+id/vita200InjectableLostField"
                     android:id="@+id/vita200InjectableUsedField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_used"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_used"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/ironFolicAcidInitialField"
                     android:nextFocusDown="@+id/ironFolicAcidInitialField"
                     android:id="@+id/vita200InjectableLostField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_lost"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_lost"/>
             </LinearLayout>
         </LinearLayout>
         <!-- Iron_Folic_Acid -->
@@ -1149,13 +747,10 @@
             android:weightSum="1"
             android:layout_margin="10dp">
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                style="@style/textViewLabel"
                 android:id="@+id/ironFolicAcidLabel"
                 android:linksClickable="false"
-                android:text="@string/nutrition_iron_folic_acid"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:gravity="center_horizontal" />
+                android:text="@string/nutrition_iron_folic_acid"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -1163,33 +758,19 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/ironFolicAcidReceivedField"
                     android:nextFocusDown="@+id/ironFolicAcidReceivedField"
                     android:id="@+id/ironFolicAcidInitialField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_initial"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_initial"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/ironFolicAcidUsedField"
                     android:nextFocusDown="@+id/ironFolicAcidUsedField"
                     android:id="@+id/ironFolicAcidReceivedField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_received"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_received"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -1198,33 +779,19 @@
                 android:orientation="horizontal"
                 android:weightSum="1">
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/ironFolicAcidLostField"
                     android:nextFocusDown="@+id/ironFolicAcidLostField"
                     android:id="@+id/ironFolicAcidUsedField"
                     android:imeOptions="actionNext"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_used"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_used"/>
                 <EditText
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:inputType="number"
+                    style="@style/editNumberText050"
                     android:nextFocusRight="@+id/buttonSave"
                     android:nextFocusDown="@+id/buttonSave"
                     android:id="@+id/ironFolicAcidLostField"
                     android:imeOptions="actionDone"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:hint="@string/nutrition_lost"
-                    android:singleLine="false"
-                    android:editable="true"
-                    android:layout_weight="0.50" />
+                    android:hint="@string/nutrition_lost"/>
             </LinearLayout>
         </LinearLayout>
         <Button

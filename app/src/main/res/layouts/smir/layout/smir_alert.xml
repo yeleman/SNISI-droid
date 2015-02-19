@@ -18,48 +18,33 @@
             android:id="@+id/spinner"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp" />
+            android:layout_margin="5dp" />
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/editNumberText"
             android:id="@+id/inputCase"
             android:nextFocusRight="@+id/inputConfirmed"
             android:nextFocusDown="@+id/inputConfirmed"
             android:imeOptions="actionNext"
-            android:hint="@string/labelcas"
-            android:layout_gravity="center_horizontal"
-            android:inputType="number"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp" />
+            android:hint="@string/labelcas"/>
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/editNumberText"
             android:id="@+id/inputConfirmed"
             android:nextFocusRight="@+id/inputDeath"
             android:nextFocusDown="@+id/inputDeath"
             android:imeOptions="actionNext"
-            android:hint="@string/labelconfirmed"
-            android:inputType="none|number"
-            android:layout_margin="10dp" />
+            android:hint="@string/labelconfirmed"/>
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            style="@style/editNumberText"
             android:id="@+id/inputDeath"
             android:imeOptions="actionDone"
-            android:hint="@string/labeldeath"
-            android:inputType="number"
-            android:layout_margin="10dp" />
+            android:hint="@string/labeldeath"/>
 
         <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/sendbtt"
-            android:id="@+id/submitButton"
-            android:layout_gravity="right"
-            android:layout_margin="10dp" />
+            style="@style/sendButton"
+            android:text="@string/sendButton"
+            android:id="@+id/submitButton"/>
     </LinearLayout>
 </ScrollView>
