@@ -72,12 +72,13 @@ public class NutritionURENAMPWReport extends NutritionURENForm implements Nutrit
         totalEndMField.setVisibility(View.GONE);
         totalEndFField = (EditText) findViewById(R.id.totalEndFField);
 
+        // setup invalid inputs checks
+        setupInvalidInputChecks();
+
         NutritionURENAMReportData report = NutritionURENAMReportData.get();
         if (report.pw_is_complete){
             restoreReportData();
         }
-        // setup invalid inputs checks
-        setupInvalidInputChecks();
 
         saveButton = (Button) findViewById(R.id.saveButton);
         saveButton.setOnClickListener(new View.OnClickListener() {
@@ -99,7 +100,6 @@ public class NutritionURENAMPWReport extends NutritionURENForm implements Nutrit
         Log.d(TAG, "storeReportData");
         NutritionURENAMReportData report = NutritionURENAMReportData.get();
         report.updateMetaData();
-
         report.pw_total_start_f = integerFromField(totalStartFField);
         report.pw_new_cases = integerFromField(newCasesField);
         report.pw_returned = integerFromField(returnedField);

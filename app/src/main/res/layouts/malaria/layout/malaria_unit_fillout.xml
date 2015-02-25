@@ -10,8 +10,7 @@
         android:layout_margin="10dp">
         <TextView
             style="@style/textViewLabel"
-            android:text="@string/malaria_consultation_label"
-            android:background="@drawable/abc_ab_share_pack_holo_light" />
+            android:text="@string/malaria_consultation_label" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -105,8 +104,7 @@
 
         <TextView
             style="@style/textViewLabel"
-            android:text="@string/malaria_inpatient_label"
-            android:background="@drawable/abc_ab_share_pack_holo_light" />
+            android:text="@string/malaria_inpatient_label" />
         <!-- hospitalisation -->    
         <LinearLayout
             android:layout_width="match_parent"
@@ -135,8 +133,7 @@
         <!-- Décès -->
         <TextView
             style="@style/textViewLabel"
-            android:text="@string/malaria_death_label"
-            android:background="@drawable/abc_ab_share_pack_holo_light" />
+            android:text="@string/malaria_death_label" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

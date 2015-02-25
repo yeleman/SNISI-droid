@@ -10,14 +10,15 @@
         <item name="android:textAppearance">?android:attr/textAppearanceLarge</item>
         <item name="android:gravity">center_horizontal</item>
         <item name="android:layout_margin">5dp</item>
-        <!-- <item name="android:background">@color/abc_search_url_text_normal</item> -->
+          <!-- <item name="android:background">@drawable/abc_ab_share_pack_holo_light</item>-->
     </style>
     <style name="editText">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:ems">10</item>
-        <item name="android:layout_margin">5dp</item>
-        <item name="android:singleLine">false</item>
+        <item name="android:layout_marginLeft">5dp</item>
+        <item name="android:layout_marginRight">5dp</item>
+        <item name="android:singleLine">true</item>
         <item name="android:editable">true</item>
         <!-- <item name="android:background">@color/abc_search_url_text_pressed</item> -->
     </style>
@@ -46,7 +47,7 @@
     <style name="sendButton">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:layout_margin">5dp</item>
+        <item name="android:layout_margin">10dp</item>
     </style>
     <style name="summaryTableLayout">
         <item name="android:layout_width">match_parent</item>

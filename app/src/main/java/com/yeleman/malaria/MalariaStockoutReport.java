@@ -98,7 +98,6 @@ public class MalariaStockoutReport extends MalariaForm {
 
         setupInvalidInputChecks();
 
-
         MalariaReportData report = MalariaReportData.get();
         if (report.stockout_is_complete) {
             restoreReportData();

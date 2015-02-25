@@ -13,6 +13,7 @@ import com.yeleman.snisidroid.CheckedFormActivity;
 import com.yeleman.snisidroid.Constants;
 import com.yeleman.snisidroid.R;
 
+
 /**
  * Created by fad on 29/10/14.
  */
@@ -356,7 +357,6 @@ public class NutritionInputsReport extends CheckedFormActivity {
     }
 
     protected void setupInvalidInputChecks() {
-        
         setAssertPositiveInteger(plumpyNutInitialField);
         setAssertPositiveInteger(plumpyNutReceivedField);
         setAssertPositiveInteger(plumpyNutUsedField);
