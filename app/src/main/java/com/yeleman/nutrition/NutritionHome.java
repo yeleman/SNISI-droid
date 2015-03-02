@@ -22,7 +22,7 @@ import com.yeleman.snisidroid.Preferences;
 import com.yeleman.snisidroid.R;
 
 
-public class NutritionHome extends ActionBarActivity {
+public class NutritionHome extends Activity {
 
     private final static String TAG = Constants.getLogTag("NutritionHome");
 	private Button weeklyReportButton;

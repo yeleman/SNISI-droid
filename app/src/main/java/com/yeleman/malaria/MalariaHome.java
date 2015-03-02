@@ -16,7 +16,7 @@ import com.yeleman.snisidroid.R;
 /**
  * Created by fad on 04/12/14.
  */
-public class MalariaHome extends ActionBarActivity {
+public class MalariaHome extends Activity {
 
     private final static String TAG = Constants.getLogTag("Malaria");
     private Button weeklyReportButton;

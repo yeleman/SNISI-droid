@@ -17,7 +17,7 @@ import com.yeleman.smir.SMIRHome;
 import com.yeleman.malaria.MalariaHome;
 
 
-public class SNISIHome extends ActionBarActivity {
+public class SNISIHome extends Activity {
 
 	private final static String TAG = Constants.getLogTag("Home");
 
@@ -39,7 +39,7 @@ public class SNISIHome extends ActionBarActivity {
         smirButton = (Button) findViewById(R.id.smirButton);
         webSiteButton = (Button) findViewById(R.id.webSiteButton);
         pnlpButton = (Button) findViewById(R.id.pnlpButton);
-       // pnlpButton.setEnabled(false);
+        pnlpButton.setEnabled(false);
 
         final Activity activity = this;
 
