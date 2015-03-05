@@ -1,13 +1,17 @@
 package com.yeleman.snisidroid;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.preference.PreferenceManager;
-
+import android.util.Log;
 
 public class Preferences extends PreferenceActivity {
 
+    private final static String TAG = Constants.getLogTag("Preferences");
+    
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,8 +27,22 @@ public class Preferences extends PreferenceActivity {
             editor.putString("serverPhoneNumber", Constants.server_number);
             editor.apply();
         }
-
-        addPreferencesFromResource(R.layout.snisi_preferences);
+        addPreferencesFromResource(R.xml.snisi_preferences);
+        Preference button = (Preference)findPreference("magic");
+        button.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
+            int counter = 0;
+            @Override
+            public boolean onPreferenceClick(Preference arg0) {
+                counter++;
+                Log.d(TAG, counter + " clique");
+                if (counter == 10){
+                    counter = 0;
+                    Intent a = new Intent(getApplicationContext(), DBManager.class);
+                    startActivity(a);
+                }
+                return true;
+            }
+        });
     }
 
 }

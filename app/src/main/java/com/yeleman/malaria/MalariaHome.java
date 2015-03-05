@@ -35,6 +35,7 @@ public class MalariaHome extends Activity {
     protected void seputUI() {
         Log.d(TAG, "setupUI Malaria");
 
+       // Log.d("Sugar", com.orm.util.NamingHelper.toSQLNameDefault("MalariaStockoutReport"));
         weeklyReportButton = (Button) findViewById(R.id.weeklyReportButton);
         //weeklyReportButton.setEnabled(false);
         monthlyReportButton = (Button) findViewById(R.id.monthlyReportButton);

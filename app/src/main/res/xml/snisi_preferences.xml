@@ -2,7 +2,12 @@
 <PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content">
+
+    <Preference android:title="@string/menu_settings"
+        android:key="magic"
+        android:summary=""/>
     <PreferenceCategory android:title="@string/app_name"
+        android:key="snisi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         <EditTextPreference
@@ -36,4 +41,5 @@
             android:summary="@string/pref_is_ureni_summary"
             android:key="hc_is_ureni"/>
     </PreferenceCategory>
+
 </PreferenceScreen>

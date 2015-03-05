@@ -22,6 +22,7 @@ public class SNISIApp extends SugarApp {
         Log.i(TAG, "DB inited");
         ReportData x = ReportData.findById(ReportData.class, 1);
     }
+
     @Override
     public void onTerminate() {
         SugarContext.terminate();
