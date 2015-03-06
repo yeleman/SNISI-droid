@@ -37,7 +37,8 @@ public class MalariaWeeklyReportData extends ReportData {
     int o5_total_confirmed_malaria_cases_d7 = -1;
     int pw_total_confirmed_malaria_cases_d7 = -1;
     boolean is_complete = false;
-
+    
+    public MalariaWeeklyReportData() {}
 
     public static MalariaWeeklyReportData get() {
         MalariaWeeklyReportData report = getUniqueRecord(MalariaWeeklyReportData.class);

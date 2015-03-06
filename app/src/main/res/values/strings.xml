@@ -12,7 +12,11 @@
     <string name="pref_is_urenas_summary">L\'unité sanitaire fait la PEC URENAS</string>
     <string name="pref_is_ureni">URENI ?</string>
     <string name="pref_is_ureni_summary">L\'unité sanitaire fait la PEC URENI</string>
-    
+
+    <string name="rest_database">Suppression des données.</string>
+    <string name="rest_confermed">"Êtes-vous certain?"</string>
+    <string name="advanced">Paramètres avancés</string>
+    <string name="summary_reset_db">Appui %d fois pour supprimer la base de données.</string>
     <!-- About -->
     <string name="about_long_description">Le SNISI est un outil numérique du Ministère de la Santé (MSHP) du Mali.\nSes principales composantes sont une Flotte Mobile, des formulaires et applications de collecte de données au niveau primaire (CSCom, CSRéf), des procedures standardisées de suivi et de validation, un système d\'agrégation et de désagrégation et un site web de consultation des donées brutes, indicateurs et visualisations cartographique.\n\nLa gestion opérationnelle du système est opérée par l\'ANTIM. La gestion sanitaire du système est opérée par les différents programes et divisions.\n\nLe système est ouvert à toutes les données de routine et à tous les projets.</string>
 

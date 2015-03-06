@@ -10,13 +10,4 @@
         android:text="Exporter la base de données"
         android:id="@+id/exportDB"
         android:layout_margin="10dp" />
-
-    <Button
-        style="?android:attr/buttonStyleSmall"
-        android:text="Vider la base de données"
-        android:id="@+id/resetDB"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp" />
-
 </LinearLayout>

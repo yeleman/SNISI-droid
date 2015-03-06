@@ -41,5 +41,11 @@
             android:summary="@string/pref_is_ureni_summary"
             android:key="hc_is_ureni"/>
     </PreferenceCategory>
-
+    <PreferenceCategory android:title="@string/advanced"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <Preference android:title="@string/rest_database"
+            android:key="restDB"
+            android:summary="@string/summary_reset_db"/>
+    </PreferenceCategory>
 </PreferenceScreen>

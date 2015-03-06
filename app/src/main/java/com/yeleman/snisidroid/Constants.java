@@ -60,6 +60,7 @@ public class Constants {
     public static final String other_notifiable_disease = "other_notifiable_disease";
     public static final String DATE_SPACER = "/" ;
 
+    public static final String databaseName = "snisi.db";
 
     public static final String getLogTag(String activity) {
     	return String.format("SNISILog-%s", activity);

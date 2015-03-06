@@ -22,7 +22,6 @@ import com.orm.SugarContext;
 public class DBManager extends Activity {
     private static final String TAG = Constants.getLogTag("DBManager");
     private String packageName;
-    private String databaseName = "snisi.db";
     private Button exportBtt;
     private Button resetBtt;
     private File currentDB;
@@ -38,7 +37,7 @@ public class DBManager extends Activity {
         if (!sd.canWrite()) {
             return;
         }
-        currentDB = getApplicationContext().getDatabasePath(databaseName);
+        currentDB = getApplicationContext().getDatabasePath(Constants.databaseName);
         packageName = getPackageName();
 
         backupDir = new File(sd.getAbsolutePath()+ "/" + packageName);
@@ -49,31 +48,9 @@ public class DBManager extends Activity {
         exportBtt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                exportDatabase(databaseName);
+                exportDatabase(Constants.databaseName);
             }
         });
-        resetBtt = (Button) findViewById(R.id.resetDB);
-        resetBtt.setOnClickListener(new View.OnClickListener() {
-            int counter = 0;
-            @Override
-            public void onClick(View v) {
-                counter ++;
-                if(counter == 2) {
-                    restDatabase();
-                }
-            }
-        });
-    }
-    public void restDatabase (){
-        SugarContext.terminate();
-        getApplicationContext().deleteDatabase(databaseName);
-        SugarContext.init(DBManager.this);
-        Intent i = getBaseContext().getPackageManager()
-                .getLaunchIntentForPackage( getBaseContext().getPackageName() );
-        i.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-        startActivity(i);
-        Toast.makeText(getBaseContext(), databaseName +
-                       " a été supprimée avec succès", Toast.LENGTH_LONG).show();
     }
     //exporting database
     public void exportDatabase(String databaseName) {
