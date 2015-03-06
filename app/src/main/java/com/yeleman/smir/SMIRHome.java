@@ -49,6 +49,8 @@ public class SMIRHome extends CheckedFormActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.smir_home);
+        setTitle(String.format(getString(R.string.sub_app_name_smir),
+                getString(R.string.smir_weekly_report_label)));
 
         setupSMSReceiver();
         setupUI();

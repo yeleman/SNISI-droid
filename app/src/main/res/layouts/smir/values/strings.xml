@@ -4,6 +4,7 @@
     <!-- SMIR -->
     <string name="smir_app_label">SMIR</string>
     <string name="menu_alert">Alerte</string>
+    <string name="smir_weekly_report_label">Rapport Hebdomadaire</string>
     <string name="disease">Maladie</string>
     <string name="labelcas">Cas suspects</string>
     <string name="labelconfirmed">Cas confirmés</string>
