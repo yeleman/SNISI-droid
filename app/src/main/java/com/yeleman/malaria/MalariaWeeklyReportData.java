@@ -54,7 +54,7 @@ public class MalariaWeeklyReportData extends ReportData {
 
     @Override
     protected String buildName() {
-        return "Hebdo Malaria";
+        return "Hebdo PALU";
     }
 
     protected Boolean isComplete(){

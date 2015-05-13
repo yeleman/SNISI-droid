@@ -70,6 +70,7 @@ public class MalariaWeeklyReport extends CheckedFormActivity {
     }
     
     public String getPeriodFromWeekNumber(int day, int dayMaxi) {
+        Log.i(TAG, "Day: " + day + " dayMaxi: " + dayMaxi);
         if (day >= 1 && day <= 7)
             return "1-7";
         if (day >= 8 && day <= 14)

@@ -72,11 +72,11 @@ public class MalariaForm extends CheckedFormActivity {
     protected Button saveButton;
 
     public String getAge() { return ""; }
-    
+
     protected int getTotalSimpleMalariaCases() {
-        if (getAge() == PW){
+        /*if (getAge() == PW){
             return 0;
-        }
+        }*/
         return integerFromField(malariaTotalSimpleMalariaCasesField);
     }
 
@@ -89,7 +89,7 @@ public class MalariaForm extends CheckedFormActivity {
                 malariaTotalConsultationField)) {
             return false;
         }
-        if (getAge() != PW) {
+        /* if (getAge() != PW) {
             // Cas de Palu simple supérieur au total toutes causes"
             if (!mustBeInferiorOrEqual(malariaTotalSimpleMalariaCasesField,
                     malariaTotalSimpleMalariaCasesField,
@@ -102,6 +102,18 @@ public class MalariaForm extends CheckedFormActivity {
                     malariaTotalMalariaCasesField)) {
                 return false;
             }
+        }*/
+        // Cas de Palu simple supérieur au total toutes causes
+        if (!mustBeInferiorOrEqual(malariaTotalSimpleMalariaCasesField,
+                                          malariaTotalSimpleMalariaCasesField,
+                                          malariaTotalConsultationField)) {
+            return false;
+        }
+        // Cas de Palu simple supérieur au total suspectés
+        if (!mustBeInferiorOrEqual(malariaTotalSimpleMalariaCasesField,
+                                          malariaTotalSimpleMalariaCasesField,
+                                          malariaTotalMalariaCasesField)) {
+            return false;
         }
         // Cas de Palu grave supérieur au total toutes causes
         if (!mustBeInferiorOrEqual(malariaTotalSevereMalariaCasesField,
@@ -132,7 +144,7 @@ public class MalariaForm extends CheckedFormActivity {
                 integerFromField(malariaTotalSevereMalariaCasesField);
         int totalMalariaCases = integerFromField(malariaTotalMalariaCasesField);
         if (totalSimpleCaseAndServerCase > totalMalariaCases) {
-            String errorMsg =  String.format("Cas de Palu simple + grave supérieurs (%d)" +
+            String errorMsg =  String.format("Cas de Palu simple + grave (%d) supérieurs" +
                             " au total suspectés (%d).",
                     totalSimpleCaseAndServerCase, totalMalariaCases);
             fireErrorDialog(this, errorMsg, malariaTotalMalariaCasesField);
@@ -147,7 +159,7 @@ public class MalariaForm extends CheckedFormActivity {
         // Cas de Palu simple + grave supérieurs au total confirmés
         int totalConfirmedMalariaCases = integerFromField(malariaTotalConfirmedMalariaCasesField);
         if (totalSimpleCaseAndServerCase > totalConfirmedMalariaCases) {
-            String errorMsg =  String.format("Cas de Palu simple + grave supérieurs (%d)" +
+            String errorMsg =  String.format("Cas de Palu simple + grave (%d) supérieurs" +
                             " au total confirmés (%d).",
                     totalSimpleCaseAndServerCase, totalConfirmedMalariaCases);
             fireErrorDialog(this, errorMsg, malariaTotalConfirmedMalariaCasesField);

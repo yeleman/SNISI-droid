@@ -39,7 +39,7 @@ public class SNISIHome extends Activity {
         smirButton = (Button) findViewById(R.id.smirButton);
         webSiteButton = (Button) findViewById(R.id.webSiteButton);
         pnlpButton = (Button) findViewById(R.id.pnlpButton);
-        pnlpButton.setEnabled(false);
+        //pnlpButton.setEnabled(false);
 
         final Activity activity = this;
 

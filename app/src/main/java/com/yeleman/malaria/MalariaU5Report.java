@@ -20,7 +20,7 @@ public class MalariaU5Report extends MalariaForm {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.malaria_unit_fillout);
         setTitle(String.format(getString(R.string.sub_app_name_malaria),
-                getString(R.string.malaria_o5_label)));
+                getString(R.string.malaria_u5_label)));
         Log.d(TAG, "onCreate MalariaU5Report");
         seputUI();
     }

@@ -38,8 +38,9 @@ public class MalariaPwReport  extends MalariaForm {
         malariaTotalMalariaCasesField = (EditText) findViewById(R.id.malariaTotalMalariaCasesField);
         malariaTotalTestedMalariaCasesField = (EditText) findViewById(R.id.malariaTotalTestedMalariaCasesField);
         malariaTotalConfirmedMalariaCasesField = (EditText) findViewById(R.id.malariaTotalConfirmedMalariaCasesField);
-        LinearLayout malariaTotalSimpleMalariaCasesLinearLayout = (LinearLayout) findViewById(R.id.malariaTotalSimpleMalariaCasesLinearLayout);
-        malariaTotalSimpleMalariaCasesLinearLayout.setVisibility(View.GONE);
+        malariaTotalSimpleMalariaCasesField = (EditText) findViewById(R.id.malariaTotalSimpleMalariaCasesField);
+//        LinearLayout malariaTotalSimpleMalariaCasesLinearLayout = (LinearLayout) findViewById(R.id.malariaTotalSimpleMalariaCasesLinearLayout);
+//        malariaTotalSimpleMalariaCasesLinearLayout.setVisibility(View.GONE);
         malariaTotalSevereMalariaCasesField = (EditText) findViewById(R.id.malariaTotalSevereMalariaCasesField);
         malariaTotalActtreatedMalariaCasesField = (EditText) findViewById(R.id.malariaTotalActtreatedMalariaCasesField);
         malariaTotalInpatientField = (EditText) findViewById(R.id.malariaTotalInpatientField);
@@ -80,7 +81,7 @@ public class MalariaPwReport  extends MalariaForm {
         report.pw_total_malaria_cases = integerFromField(malariaTotalMalariaCasesField);
         report.pw_total_tested_malaria_cases = integerFromField(malariaTotalTestedMalariaCasesField);
         report.pw_total_confirmed_malaria_cases = integerFromField(malariaTotalConfirmedMalariaCasesField);
-        // report.pw_total_simple_malaria_cases = integerFromField(malariaTotalSimpleMalariaCasesField);
+        report.pw_total_simple_malaria_cases = integerFromField(malariaTotalSimpleMalariaCasesField);
         report.pw_total_severe_malaria_cases = integerFromField(malariaTotalSevereMalariaCasesField);
         report.pw_total_acttreated_malaria_cases = integerFromField(malariaTotalActtreatedMalariaCasesField);
         report.pw_total_inpatient = integerFromField(malariaTotalInpatientField);
@@ -102,7 +103,7 @@ public class MalariaPwReport  extends MalariaForm {
         setTextOnField(malariaTotalMalariaCasesField, report.pw_total_malaria_cases);
         setTextOnField(malariaTotalTestedMalariaCasesField, report.pw_total_tested_malaria_cases);
         setTextOnField(malariaTotalConfirmedMalariaCasesField, report.pw_total_confirmed_malaria_cases);
-        // setTextOnField(malariaTotalSimpleMalariaCasesField, report.pw_total_simple_malaria_cases);
+        setTextOnField(malariaTotalSimpleMalariaCasesField, report.pw_total_simple_malaria_cases);
         setTextOnField(malariaTotalSevereMalariaCasesField, report.pw_total_severe_malaria_cases);
         setTextOnField(malariaTotalActtreatedMalariaCasesField, report.pw_total_acttreated_malaria_cases);
         setTextOnField(malariaTotalInpatientField, report.pw_total_inpatient);
@@ -118,7 +119,7 @@ public class MalariaPwReport  extends MalariaForm {
         setAssertPositiveInteger(malariaTotalMalariaCasesField);
         setAssertPositiveInteger(malariaTotalTestedMalariaCasesField);
         setAssertPositiveInteger(malariaTotalConfirmedMalariaCasesField);
-        // setAssertPositiveInteger(malariaTotalSimpleMalariaCasesField);
+        setAssertPositiveInteger(malariaTotalSimpleMalariaCasesField);
         setAssertPositiveInteger(malariaTotalSevereMalariaCasesField);
         setAssertPositiveInteger(malariaTotalActtreatedMalariaCasesField);
         setAssertPositiveInteger(malariaTotalInpatientField);

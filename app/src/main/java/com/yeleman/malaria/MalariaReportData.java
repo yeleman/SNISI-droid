@@ -44,6 +44,7 @@ public class MalariaReportData extends ReportData {
     int pw_total_malaria_cases = -1;
     int pw_total_tested_malaria_cases = -1;
     int pw_total_confirmed_malaria_cases = -1;
+    int pw_total_simple_malaria_cases = -1;
     int pw_total_severe_malaria_cases = -1;
     int pw_total_acttreated_malaria_cases = -1;
     int pw_total_inpatient = -1;
@@ -84,7 +85,7 @@ public class MalariaReportData extends ReportData {
 
     @Override
     protected String buildName() {
-        return "Situation Stocks";
+        return "Mensuel PALU";
     }
 
     protected Boolean isComplete(){
@@ -138,6 +139,7 @@ public class MalariaReportData extends ReportData {
                Constants.stringFromReport(pw_total_malaria_cases) + Constants.SUB_SPACER +
                Constants.stringFromReport(pw_total_tested_malaria_cases) + Constants.SUB_SPACER +
                Constants.stringFromReport(pw_total_confirmed_malaria_cases) + Constants.SUB_SPACER +
+               Constants.stringFromReport(pw_total_simple_malaria_cases) + Constants.SUB_SPACER +
                Constants.stringFromReport(pw_total_severe_malaria_cases) + Constants.SUB_SPACER +
                Constants.stringFromReport(pw_total_acttreated_malaria_cases) + Constants.SUB_SPACER +
                Constants.stringFromReport(pw_total_inpatient) + Constants.SUB_SPACER +
