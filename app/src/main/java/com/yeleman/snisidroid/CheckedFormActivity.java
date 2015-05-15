@@ -225,7 +225,6 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
     }
 
     protected void setAssertPositiveInteger(final EditText editText) {
-
     	updateFieldCheckedStatus(editText, false);
     	editText.addTextChangedListener(new TextWatcher() {
             public void afterTextChanged(Editable s) {

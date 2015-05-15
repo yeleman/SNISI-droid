@@ -40,9 +40,6 @@ public class MalariaForm extends CheckedFormActivity {
     protected TextView bednetLabel;
     protected TextView rdtLabel;
     protected TextView spLabel;
-    protected TextView anc1Label;
-    protected TextView sp1Label;
-    protected TextView sp2Label;
 
     protected RadioButton actChildrenYesField;
     protected RadioButton actChildrenNoField;
@@ -62,12 +59,9 @@ public class MalariaForm extends CheckedFormActivity {
     protected RadioButton rdtNoField;
     protected RadioButton spYesField;
     protected RadioButton spNoField;
-    protected RadioButton anc1YesField;
-    protected RadioButton anc1NoField;
-    protected RadioButton sp1YesField;
-    protected RadioButton sp1NoField;
-    protected RadioButton sp2YesField;
-    protected RadioButton sp2NoField;
+    protected EditText anc1Field;
+    protected EditText sp1Field;
+    protected EditText sp2Field;
 
     protected Button saveButton;
 

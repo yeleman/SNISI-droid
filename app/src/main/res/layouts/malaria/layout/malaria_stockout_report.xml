@@ -301,97 +301,33 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
-            <TextView
-                style="@style/textViewLabel"
-                android:id="@+id/anc1Label"
-                android:text="@string/malaria_total_anc_1"
-                android:background="@drawable/abc_ab_share_pack_holo_light" />
-            <RadioGroup
-                android:id="@+id/radioGroupAnc1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="15dp"
-                android:layout_gravity="center_horizontal">
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Oui"
-                    android:id="@+id/anc1YesField"
-                    android:layout_weight="0.50"
-                    android:layout_marginRight="70dp" />
 
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Non"
-                    android:id="@+id/anc1NoField"
-                    android:layout_weight="0.50" />
-            </RadioGroup>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
             <TextView
                 style="@style/textViewLabel"
                 android:id="@+id/sp1Label"
-                android:text="@string/malaria_total_sp_1"
+                android:text="@string/malaria_total_anc1_sp1"
                 android:background="@drawable/abc_ab_share_pack_holo_light" />
-            <RadioGroup
-                android:id="@+id/radioGroupSp1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="15dp"
-                android:layout_gravity="center_horizontal">
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Oui"
-                    android:id="@+id/sp1YesField"
-                    android:layout_weight="0.50"
-                    android:layout_marginRight="70dp" />
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Non"
-                    android:id="@+id/sp1NoField"
-                    android:layout_weight="0.50"  />
-            </RadioGroup>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <TextView
-                style="@style/textViewLabel"
-                android:id="@+id/sp2Label"
-                android:text="@string/malaria_total_sp_2"
-                android:background="@drawable/abc_ab_share_pack_holo_light" />
-            <RadioGroup
-                android:id="@+id/radioGroupSp2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_margin="15dp"
-                android:layout_gravity="center_horizontal">
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Oui"
-                    android:id="@+id/sp2YesField"
-                    android:layout_weight="0.50"
-                    android:layout_marginRight="70dp" />
-
-                <RadioButton
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Non"
-                    android:id="@+id/sp2NoField"
-                    android:layout_weight="0.50" />
-            </RadioGroup>
+            <EditText
+                style="@style/editNumberText"
+                android:nextFocusRight="@+id/malariaTotalMalariaCasesField"
+                android:nextFocusDown="@+id/malariaTotalMalariaCasesField"
+                android:id="@+id/anc1Field"
+                android:imeOptions="actionNext"
+                android:hint="@string/malaria_total_anc_1"/>
+            <EditText
+                style="@style/editNumberText"
+                android:nextFocusRight="@+id/malariaTotalMalariaCasesField"
+                android:nextFocusDown="@+id/malariaTotalMalariaCasesField"
+                android:id="@+id/sp1Field"
+                android:imeOptions="actionNext"
+                android:hint="@string/malaria_total_sp_1"/>
+            <EditText
+                style="@style/editNumberText"
+                android:nextFocusRight="@+id/malariaTotalMalariaCasesField"
+                android:nextFocusDown="@+id/malariaTotalMalariaCasesField"
+                android:id="@+id/sp2Field"
+                android:imeOptions="actionDone"
+                android:hint="@string/malaria_total_sp_2"/>
         </LinearLayout>
         <Button
             android:layout_width="match_parent"

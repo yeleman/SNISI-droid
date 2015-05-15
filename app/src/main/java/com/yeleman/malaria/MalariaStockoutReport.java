@@ -1,19 +1,15 @@
 package com.yeleman.malaria;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.yeleman.snisidroid.Constants;
 import com.yeleman.snisidroid.R;
-import com.yeleman.snisidroid.ReportData;
 
 /**
  * Created by fad on 05/12/14.
@@ -61,15 +57,6 @@ public class MalariaStockoutReport extends MalariaForm {
         spLabel = (TextView) findViewById(R.id.spLabel);
         spLabel.setFocusableInTouchMode(true);
         spLabel.setFocusable(true);
-        anc1Label = (TextView) findViewById(R.id.anc1Label);
-        anc1Label.setFocusableInTouchMode(true);
-        anc1Label.setFocusable(true);
-        sp1Label = (TextView) findViewById(R.id.sp1Label);
-        sp1Label.setFocusableInTouchMode(true);
-        sp1Label.setFocusable(true);
-        sp2Label = (TextView) findViewById(R.id.sp2Label);
-        sp2Label.setFocusableInTouchMode(true);
-        sp2Label.setFocusable(true);
 
         actChildrenYesField = (RadioButton) findViewById(R.id.actChildrenYesField);
         actChildrenNoField = (RadioButton) findViewById(R.id.actChildrenNoField);
@@ -89,12 +76,9 @@ public class MalariaStockoutReport extends MalariaForm {
         rdtNoField = (RadioButton) findViewById(R.id.rdtNoField);
         spYesField = (RadioButton) findViewById(R.id.spYesField);
         spNoField = (RadioButton) findViewById(R.id.spNoField);
-        anc1YesField = (RadioButton) findViewById(R.id.anc1YesField);
-        anc1NoField = (RadioButton) findViewById(R.id.anc1NoField);
-        sp1YesField = (RadioButton) findViewById(R.id.sp1YesField);
-        sp1NoField = (RadioButton) findViewById(R.id.sp1NoField);
-        sp2YesField = (RadioButton) findViewById(R.id.sp2YesField);
-        sp2NoField = (RadioButton) findViewById(R.id.sp2NoField);
+        anc1Field = (EditText) findViewById(R.id.anc1Field);
+        sp1Field = (EditText) findViewById(R.id.sp1Field);
+        sp2Field = (EditText) findViewById(R.id.sp2Field);
 
         setupInvalidInputChecks();
 
@@ -108,7 +92,6 @@ public class MalariaStockoutReport extends MalariaForm {
             @Override
             public void onClick(View v) {
                 // ensure data is OK
-
                 if (!checkInputsAndCoherence()) {
                     return;
                 }
@@ -134,12 +117,14 @@ public class MalariaStockoutReport extends MalariaForm {
             !assertAtLeastOneSelected(serumYesField, serumNoField, serumLabel) ||
             !assertAtLeastOneSelected(bednetYesField, bednetNoField, bednetLabel) ||
             !assertAtLeastOneSelected(rdtYesField, rdtNoField, rdtLabel) ||
-            !assertAtLeastOneSelected(spYesField, spNoField, spLabel) ||
-            !assertAtLeastOneSelected(anc1YesField, anc1NoField, anc1Label) ||
-            !assertAtLeastOneSelected(sp1YesField, sp1NoField, sp1Label) ||
-            !assertAtLeastOneSelected(sp2YesField, sp2NoField, sp2Label)) {
+            !assertAtLeastOneSelected(spYesField, spNoField, spLabel)) {
                 Log.d(TAG, "Invalid inputs, radio button check missing");
                 return false;
+        }
+
+        if (!ensureValidInputs(true)) {
+            Log.d(TAG, "Invalid inputs");
+            return false;
         }
 
         if (!ensureDataCoherence()) {
@@ -165,9 +150,9 @@ public class MalariaStockoutReport extends MalariaForm {
         report.malaria_stockout_bednet = integerFromRadioButtons(bednetYesField, bednetNoField);
         report.malaria_stockout_rdt = integerFromRadioButtons(rdtYesField, rdtNoField);
         report.malaria_stockout_sp = integerFromRadioButtons(spYesField, spNoField);
-        report.malaria_total_anc_1 = integerFromRadioButtons(anc1YesField, anc1NoField);
-        report.malaria_total_sp_1 = integerFromRadioButtons(sp1YesField, sp1NoField);
-        report.malaria_total_sp_2 = integerFromRadioButtons(sp2YesField, sp2NoField);
+        report.malaria_total_anc_1 = integerFromField(anc1Field);
+        report.malaria_total_sp_1 = integerFromField(sp1Field);
+        report.malaria_total_sp_2 = integerFromField(sp2Field);
         report.stockout_is_complete = true;
         report.safeSave();
         Log.d(TAG, "storeReportData -- end");
@@ -185,16 +170,15 @@ public class MalariaStockoutReport extends MalariaForm {
         checkRadioButtonFromReportData(bednetYesField, bednetNoField, report.malaria_stockout_bednet);
         checkRadioButtonFromReportData(rdtYesField, rdtNoField, report.malaria_stockout_rdt);
         checkRadioButtonFromReportData(spYesField, spNoField, report.malaria_stockout_sp);
-        checkRadioButtonFromReportData(anc1YesField, anc1NoField, report.malaria_total_anc_1);
-        checkRadioButtonFromReportData(sp1YesField, sp1NoField, report.malaria_total_sp_1);
-        checkRadioButtonFromReportData(sp2YesField, sp2NoField, report.malaria_total_sp_2);
+        setTextOnField(anc1Field, report.malaria_total_anc_1);
+        setTextOnField(sp1Field, report.malaria_total_sp_1);
+        setTextOnField(sp2Field, report.malaria_total_sp_2);
     }
 
     public void setupInvalidInputChecks() {
         // ACT CHILDREN
         actChildrenYesField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(actChildrenLabel));
         actChildrenNoField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(actChildrenLabel));
-
         actYouthYesField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(actYouthLabel));
         actYouthNoField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(actYouthLabel));
         adultYesField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(adultLabel));
@@ -211,13 +195,9 @@ public class MalariaStockoutReport extends MalariaForm {
         rdtNoField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(rdtLabel));
         spYesField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(spLabel));
         spNoField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(spLabel));
-        anc1YesField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(anc1Label));
-        anc1NoField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(anc1Label));
-        sp1YesField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(sp1Label));
-        sp1NoField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(sp1Label));
-        sp2YesField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(sp2Label));
-        sp2NoField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(sp2Label));
-
+        setAssertPositiveInteger(anc1Field);
+        setAssertPositiveInteger(sp1Field);
+        setAssertPositiveInteger(sp2Field);
     }
 
     protected int integerFromRadioButtons(RadioButton buttonYes, RadioButton buttonNo) {
