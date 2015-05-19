@@ -27,6 +27,8 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.yeleman.malaria.MalariaMonthlyHome;
+
 import java.text.DecimalFormat;
 import java.text.NumberFormat;
 import java.util.ArrayList;
@@ -640,7 +642,7 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
     }
 
     /* Data Restore Dialog */
-    public void requestForResumeReport(Activity activity, ReportData report) {
+    public void requestForResumeReport(Activity activity,  ReportData report) {
 
         Log.d(TAG, "report.id: " + String.valueOf(report.getId()));
 

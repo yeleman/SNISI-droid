@@ -35,6 +35,7 @@ public class MalariaMonthlyHome extends CheckedFormActivity implements View.OnCl
         MalariaReportData monthlyReport = MalariaReportData.get();
         if (monthlyReport.atLeastOneIsComplete()) {
             requestForResumeReport(this, MalariaReportData.get());
+
         }
         setupSMSReceiver();
         setupUI();
@@ -46,7 +47,7 @@ public class MalariaMonthlyHome extends CheckedFormActivity implements View.OnCl
         setupUI();
     }
 
-    protected void setupUI() {
+    public void setupUI() {
         Log.d(TAG, "setupUI NutritionMonthlyHome");
 
         MalariaReportData malariaReport = MalariaReportData.get();

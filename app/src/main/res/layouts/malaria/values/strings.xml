@@ -42,5 +42,5 @@
     <string name="malaria_weekly_report_label">Rapport Hebdomadaire</string>
     <string name="malaria_website_label">Consulter mes données (en ligne)</string>
     <string name="malaria_cpn_sp_label">CPN/SP</string>
-
+    <string name="malaria_total_anc1_sp1">CPN/SP</string>
 </resources>
