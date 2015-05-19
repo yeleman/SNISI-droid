@@ -1,15 +1,19 @@
 package com.yeleman.malaria;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.RadioGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.yeleman.snisidroid.Constants;
 import com.yeleman.snisidroid.R;
+import com.yeleman.snisidroid.ReportData;
 
 /**
  * Created by fad on 05/12/14.
@@ -92,7 +96,6 @@ public class MalariaStockoutReport extends MalariaForm {
                 if (!checkInputsAndCoherence()) {
                     return;
                 }
-                //isInvalide();
                 // save data to DB
                 storeReportData();
                 finish();
