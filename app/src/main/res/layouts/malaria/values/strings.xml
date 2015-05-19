@@ -37,8 +37,10 @@
     <string name="malaria_stockout_sp">SP</string>
     <string name="malaria_total_anc_1">CPN 1</string>
     <string name="malaria_total_sp_1">SP 1</string>
-    <string name="malaria_total_sp_2">SP 2</string>
+    <string name="malaria_total_sp_2">SP 2 et +</string>
     <string name="malaria_monthly_report_label">Rapport Mensuel</string>
     <string name="malaria_weekly_report_label">Rapport Hebdomadaire</string>
     <string name="malaria_website_label">Consulter mes données (en ligne)</string>
+    <string name="malaria_cpn_sp_label">CPN/SP</string>
+
 </resources>

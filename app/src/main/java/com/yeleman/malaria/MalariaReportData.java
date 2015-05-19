@@ -64,10 +64,12 @@ public class MalariaReportData extends ReportData {
     int malaria_stockout_bednet = -1;
     int malaria_stockout_rdt = -1;
     int malaria_stockout_sp = -1;
+    boolean stockout_is_complete = false;
+    // CPN/SP
     int malaria_total_anc_1 = -1;
     int malaria_total_sp_1 = -1;
     int malaria_total_sp_2 = -1;
-    boolean stockout_is_complete = false;
+    boolean cpn_sp_is_complete = false;
 
     public MalariaReportData() {}
 
@@ -92,14 +94,16 @@ public class MalariaReportData extends ReportData {
         return this.u5_is_complete &&
                 this.o5_is_complete &&
                 this.pw_is_complete &&
-                this.stockout_is_complete;
+                this.stockout_is_complete &&
+                this.cpn_sp_is_complete;
     }
 
     protected Boolean atLeastOneIsComplete(){
         return this.u5_is_complete ||
                this.o5_is_complete ||
                this.pw_is_complete ||
-               this.stockout_is_complete;
+               this.stockout_is_complete ||
+               this.cpn_sp_is_complete;
     }
 
     protected void resetReportData() {
@@ -108,6 +112,7 @@ public class MalariaReportData extends ReportData {
         report.o5_is_complete = false;
         report.pw_is_complete = false;
         report.stockout_is_complete = false;
+        report.cpn_sp_is_complete = false;
         report.safeSave();
     }
 

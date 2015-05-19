@@ -24,7 +24,7 @@
             android:value="snisi.db" />
         <meta-data
             android:name="VERSION"
-            android:value="2" />
+            android:value="3" />
         <meta-data
             android:name="QUERY_LOG"
             android:value="true" />
@@ -91,6 +91,10 @@
             android:label="@string/malaria_stockout_label"
             android:screenOrientation="portrait"
             android:configChanges="keyboardHidden|orientation" />
+        <activity android:name="com.yeleman.malaria.MalariaCPNSPReport"
+            android:label=""
+            android:screenOrientation="portrait"
+            android:configChanges="keyboardHidden|orientation"/>
 
         <activity
             android:name="com.yeleman.nutrition.NutritionHome"

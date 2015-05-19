@@ -46,6 +46,14 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:text="@string/malaria_cpn_sp_label"
+            android:id="@+id/cpnSpReportButton"
+            android:padding="10dp"
+            android:layout_margin="10dp" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:text="@string/malaria_submit_button"
             android:id="@+id/SubmitButton"
             android:padding="10dp"

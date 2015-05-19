@@ -164,6 +164,9 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:id="@+id/distributed_bednetsLinearLayout">
+        <TextView
+            style="@style/textViewLabel"
+            android:text="@string/malaria_distributed_bednets_label" />
             <EditText
                 style="@style/editNumberText"
                 android:nextFocusRight="@+id/totalMILDPwField"

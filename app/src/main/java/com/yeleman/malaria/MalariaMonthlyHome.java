@@ -21,6 +21,7 @@ public class MalariaMonthlyHome extends CheckedFormActivity implements View.OnCl
     private Button o5ReportButton;
     private Button pwReportButton;
     private Button stockoutReportButton;
+    private Button cpnSpReportButton;
     private Button SubmitButton;
 
 
@@ -61,6 +62,10 @@ public class MalariaMonthlyHome extends CheckedFormActivity implements View.OnCl
         stockoutReportButton = (Button) findViewById(R.id.stockoutReportButton);
         stockoutReportButton.setOnClickListener(this);
         Constants.updateButtonCompletion(stockoutReportButton, malariaReport.stockout_is_complete);
+
+        cpnSpReportButton = (Button) findViewById(R.id.cpnSpReportButton);
+        cpnSpReportButton.setOnClickListener(this);
+        Constants.updateButtonCompletion(cpnSpReportButton, malariaReport.cpn_sp_is_complete);
 
         SubmitButton = (Button) findViewById(R.id.SubmitButton);
         SubmitButton.setEnabled(false);
@@ -104,6 +109,9 @@ public class MalariaMonthlyHome extends CheckedFormActivity implements View.OnCl
                 break;
             case R.id.stockoutReportButton:
                 activity = MalariaStockoutReport.class;
+                break;
+            case R.id.cpnSpReportButton:
+                activity = MalariaCPNSPReport.class;
                 break;
         }
         Intent intent = new Intent(

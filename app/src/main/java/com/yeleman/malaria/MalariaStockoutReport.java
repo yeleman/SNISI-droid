@@ -76,9 +76,6 @@ public class MalariaStockoutReport extends MalariaForm {
         rdtNoField = (RadioButton) findViewById(R.id.rdtNoField);
         spYesField = (RadioButton) findViewById(R.id.spYesField);
         spNoField = (RadioButton) findViewById(R.id.spNoField);
-        anc1Field = (EditText) findViewById(R.id.anc1Field);
-        sp1Field = (EditText) findViewById(R.id.sp1Field);
-        sp2Field = (EditText) findViewById(R.id.sp2Field);
 
         setupInvalidInputChecks();
 
@@ -122,11 +119,6 @@ public class MalariaStockoutReport extends MalariaForm {
                 return false;
         }
 
-        if (!ensureValidInputs(true)) {
-            Log.d(TAG, "Invalid inputs");
-            return false;
-        }
-
         if (!ensureDataCoherence()) {
             Log.d(TAG, "Not coherent inputs");
             return false;
@@ -150,9 +142,6 @@ public class MalariaStockoutReport extends MalariaForm {
         report.malaria_stockout_bednet = integerFromRadioButtons(bednetYesField, bednetNoField);
         report.malaria_stockout_rdt = integerFromRadioButtons(rdtYesField, rdtNoField);
         report.malaria_stockout_sp = integerFromRadioButtons(spYesField, spNoField);
-        report.malaria_total_anc_1 = integerFromField(anc1Field);
-        report.malaria_total_sp_1 = integerFromField(sp1Field);
-        report.malaria_total_sp_2 = integerFromField(sp2Field);
         report.stockout_is_complete = true;
         report.safeSave();
         Log.d(TAG, "storeReportData -- end");
@@ -170,13 +159,9 @@ public class MalariaStockoutReport extends MalariaForm {
         checkRadioButtonFromReportData(bednetYesField, bednetNoField, report.malaria_stockout_bednet);
         checkRadioButtonFromReportData(rdtYesField, rdtNoField, report.malaria_stockout_rdt);
         checkRadioButtonFromReportData(spYesField, spNoField, report.malaria_stockout_sp);
-        setTextOnField(anc1Field, report.malaria_total_anc_1);
-        setTextOnField(sp1Field, report.malaria_total_sp_1);
-        setTextOnField(sp2Field, report.malaria_total_sp_2);
     }
 
     public void setupInvalidInputChecks() {
-        // ACT CHILDREN
         actChildrenYesField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(actChildrenLabel));
         actChildrenNoField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(actChildrenLabel));
         actYouthYesField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(actYouthLabel));
@@ -195,9 +180,6 @@ public class MalariaStockoutReport extends MalariaForm {
         rdtNoField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(rdtLabel));
         spYesField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(spLabel));
         spNoField.setOnCheckedChangeListener(Constants.getResetTextViewCheckListener(spLabel));
-        setAssertPositiveInteger(anc1Field);
-        setAssertPositiveInteger(sp1Field);
-        setAssertPositiveInteger(sp2Field);
     }
 
     protected int integerFromRadioButtons(RadioButton buttonYes, RadioButton buttonNo) {
