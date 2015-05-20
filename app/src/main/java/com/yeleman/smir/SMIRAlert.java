@@ -84,7 +84,7 @@ public class SMIRAlert extends CheckedFormActivity {
 
                 // transmit SMS
                 requestPasswordAndTransmitSMS(activity, "Alert",
-                        Constants.KEYALERT, buildSMSText());
+                        Constants.SMIR_ALERT, buildSMSText());
             }
         });
     }

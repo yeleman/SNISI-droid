@@ -44,7 +44,8 @@ public class Constants {
 
     public static final int RESULT_SETTINGS = 1;
     public static final String SMIR_KEYWORD = "smir";
-    public static final String KEYALERT= "alert";
+    public static final String SMIR_ALERT = SMIR_KEYWORD + SPACER + "alert";
+    public static final String SMIR_WEEK = SMIR_KEYWORD + SPACER + "w";
 
     public static final String ebola = "ebola";
     public static final String acute_flaccid_paralysis = "acute_flaccid_paralysis";

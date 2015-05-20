@@ -44,6 +44,8 @@ public class SMIRHome extends CheckedFormActivity {
     protected TextView labelDate;
     protected DatePicker datePicker;
     protected Button  submitButton;
+    private EditText confirmedOtherNotifiableDiseaseField;
+    private EditText deathOtherNotifiableDiseaseField;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,6 +83,8 @@ public class SMIRHome extends CheckedFormActivity {
         deathRabiesField = (EditText) findViewById(R.id.deathRabiesField);
         confirmedacuteMeaslesDiarrheaField = (EditText) findViewById(R.id.confirmedacuteMeaslesDiarrheaField);
         deathacuteMeaslesDiarrheaField = (EditText) findViewById(R.id.deathacuteMeaslesDiarrheaField);
+        confirmedOtherNotifiableDiseaseField = (EditText) findViewById(R.id.confirmedOtherNotifiableDiseaseField);
+        deathOtherNotifiableDiseaseField = (EditText) findViewById(R.id.deathOtherNotifiableDiseaseField);
         labelDate = (TextView) findViewById(R.id.labelDate);
         datePicker = (DatePicker) findViewById(R.id.datePicker);
 
@@ -98,7 +102,7 @@ public class SMIRHome extends CheckedFormActivity {
 
                 // transmit SMS
                 requestPasswordAndTransmitSMS(activity, "SMIR",
-                        Constants.SMIR_KEYWORD, buildSMSText());
+                        Constants.SMIR_WEEK, buildSMSText());
             }
         });
     }
@@ -127,6 +131,8 @@ public class SMIRHome extends CheckedFormActivity {
         setAssertPositiveInteger(deathRabiesField);
         setAssertPositiveInteger(confirmedacuteMeaslesDiarrheaField);
         setAssertPositiveInteger(deathacuteMeaslesDiarrheaField);
+        setAssertPositiveInteger(confirmedOtherNotifiableDiseaseField);
+        setAssertPositiveInteger(deathOtherNotifiableDiseaseField);
     }
     
     protected boolean ensureDataCoherence(){
@@ -155,6 +161,8 @@ public class SMIRHome extends CheckedFormActivity {
                            deathRabiesField, confirmedRabiesField) &&
             mustBeInferiorOrEqual(confirmedacuteMeaslesDiarrheaField, 
                            deathacuteMeaslesDiarrheaField, confirmedacuteMeaslesDiarrheaField) &&
+            mustBeInferiorOrEqual(confirmedOtherNotifiableDiseaseField,
+                           deathOtherNotifiableDiseaseField, confirmedOtherNotifiableDiseaseField) &&
             checkDateIsNotFriday(datePicker, labelDate);
         return isEnsureDataCoherence;
     }
@@ -184,7 +192,9 @@ public class SMIRHome extends CheckedFormActivity {
                Constants.stringFromReport(integerFromField(confirmedRabiesField)) + Constants.SPACER +
                Constants.stringFromReport(integerFromField(deathRabiesField)) + Constants.SPACER +
                Constants.stringFromReport(integerFromField(confirmedacuteMeaslesDiarrheaField)) + Constants.SPACER +
-               Constants.stringFromReport(integerFromField(deathacuteMeaslesDiarrheaField));
+               Constants.stringFromReport(integerFromField(deathacuteMeaslesDiarrheaField)) + Constants.SPACER +
+               Constants.stringFromReport(integerFromField(deathOtherNotifiableDiseaseField)) + Constants.SPACER +
+               Constants.stringFromReport(integerFromField(confirmedOtherNotifiableDiseaseField));
     }
 
     @Override

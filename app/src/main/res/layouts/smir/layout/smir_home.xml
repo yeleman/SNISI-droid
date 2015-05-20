@@ -271,6 +271,28 @@
             <EditText
                 style="@style/editNumberText050"
                 android:id="@+id/deathacuteMeaslesDiarrheaField"
+                android:imeOptions="actionNext"
+                android:hint="@string/labeldeath"/>
+        </LinearLayout>
+        <TextView
+            style="@style/textViewLabel"
+            android:id="@+id/labelOtherNotifiableDisease"
+            android:text="@string/other_notifiable_disease"/>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/linearLayoutOtherNotifiableDisease"
+            android:orientation="horizontal">
+            <EditText
+                style="@style/editNumberText050"
+                android:id="@+id/confirmedOtherNotifiableDiseaseField"
+                android:nextFocusRight="@+id/deathacuteMeaslesDiarrheaField"
+                android:nextFocusDown="@+id/deathacuteMeaslesDiarrheaField"
+                android:imeOptions="actionNext"
+                android:hint="@string/labelconfirmed" />
+            <EditText
+                style="@style/editNumberText050"
+                android:id="@+id/deathOtherNotifiableDiseaseField"
                 android:imeOptions="actionDone"
                 android:hint="@string/labeldeath"/>
         </LinearLayout>
