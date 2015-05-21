@@ -75,7 +75,7 @@ public class ChangePassword extends CheckedFormActivity {
     }
    
 	protected String buildSMSText() {
-		// snisi passwd username oldpassword newpassword
+		// passwd username oldpassword newpassword
 		return String.format(Constants.SMS_CHANGE_PASSWRD,
 							 stringFromField(usernameText),
 							 stringFromField(oldPasswordText),

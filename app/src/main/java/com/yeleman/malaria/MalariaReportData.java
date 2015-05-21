@@ -117,52 +117,52 @@ public class MalariaReportData extends ReportData {
     }
 
     public String buildSMSText() {
-        return Constants.stringFromReport(u5_total_consultation) + Constants.SUB_SPACER +
-               Constants.stringFromReport(u5_total_malaria_cases) + Constants.SUB_SPACER +
-               Constants.stringFromReport(u5_total_tested_malaria_cases) + Constants.SUB_SPACER +
-               Constants.stringFromReport(u5_total_confirmed_malaria_cases) + Constants.SUB_SPACER +
-               Constants.stringFromReport(u5_total_simple_malaria_cases) + Constants.SUB_SPACER +
-               Constants.stringFromReport(u5_total_severe_malaria_cases) + Constants.SUB_SPACER +
-               Constants.stringFromReport(u5_total_acttreated_malaria_cases) + Constants.SUB_SPACER +
-               Constants.stringFromReport(u5_total_inpatient) + Constants.SUB_SPACER +
-               Constants.stringFromReport(u5_total_malaria_impatient) + Constants.SUB_SPACER +
-               Constants.stringFromReport(u5_total_death) + Constants.SUB_SPACER +
-               Constants.stringFromReport(u5_total_malaria_death) + Constants.SUB_SPACER +
-               Constants.stringFromReport(u5_malaria_total_distributed_bednets) + Constants.SUB_SPACER +
-               Constants.stringFromReport(o5_total_consultation) + Constants.SUB_SPACER +
-               Constants.stringFromReport(o5_total_malaria_cases) + Constants.SUB_SPACER +
-               Constants.stringFromReport(o5_total_tested_malaria_cases) + Constants.SUB_SPACER +
-               Constants.stringFromReport(o5_total_confirmed_malaria_cases) + Constants.SUB_SPACER +
-               Constants.stringFromReport(o5_total_simple_malaria_cases) + Constants.SUB_SPACER +
-               Constants.stringFromReport(o5_total_severe_malaria_cases) + Constants.SUB_SPACER +
-               Constants.stringFromReport(o5_total_acttreated_malaria_cases) + Constants.SUB_SPACER +
-               Constants.stringFromReport(o5_total_inpatient) + Constants.SUB_SPACER +
-               Constants.stringFromReport(o5_total_malaria_impatient) + Constants.SUB_SPACER +
-               Constants.stringFromReport(o5_total_death) + Constants.SUB_SPACER +
-               Constants.stringFromReport(o5_total_malaria_death) + Constants.SUB_SPACER +
-               Constants.stringFromReport(pw_total_consultation) + Constants.SUB_SPACER +
-               Constants.stringFromReport(pw_total_malaria_cases) + Constants.SUB_SPACER +
-               Constants.stringFromReport(pw_total_tested_malaria_cases) + Constants.SUB_SPACER +
-               Constants.stringFromReport(pw_total_confirmed_malaria_cases) + Constants.SUB_SPACER +
-               Constants.stringFromReport(pw_total_simple_malaria_cases) + Constants.SUB_SPACER +
-               Constants.stringFromReport(pw_total_severe_malaria_cases) + Constants.SUB_SPACER +
-               Constants.stringFromReport(pw_total_acttreated_malaria_cases) + Constants.SUB_SPACER +
-               Constants.stringFromReport(pw_total_inpatient) + Constants.SUB_SPACER +
-               Constants.stringFromReport(pw_total_malaria_impatient) + Constants.SUB_SPACER +
-               Constants.stringFromReport(pw_total_death) + Constants.SUB_SPACER +
-               Constants.stringFromReport(pw_total_malaria_death) + Constants.SUB_SPACER +
+        return Constants.stringFromReport(u5_total_consultation) + Constants.SPACER +
+               Constants.stringFromReport(u5_total_malaria_cases) + Constants.SPACER +
+               Constants.stringFromReport(u5_total_tested_malaria_cases) + Constants.SPACER +
+               Constants.stringFromReport(u5_total_confirmed_malaria_cases) + Constants.SPACER +
+               Constants.stringFromReport(u5_total_simple_malaria_cases) + Constants.SPACER +
+               Constants.stringFromReport(u5_total_severe_malaria_cases) + Constants.SPACER +
+               Constants.stringFromReport(u5_total_acttreated_malaria_cases) + Constants.SPACER +
+               Constants.stringFromReport(u5_total_inpatient) + Constants.SPACER +
+               Constants.stringFromReport(u5_total_malaria_impatient) + Constants.SPACER +
+               Constants.stringFromReport(u5_total_death) + Constants.SPACER +
+               Constants.stringFromReport(u5_total_malaria_death) + Constants.SPACER +
+               Constants.stringFromReport(u5_malaria_total_distributed_bednets) + Constants.SPACER +
+               Constants.stringFromReport(o5_total_consultation) + Constants.SPACER +
+               Constants.stringFromReport(o5_total_malaria_cases) + Constants.SPACER +
+               Constants.stringFromReport(o5_total_tested_malaria_cases) + Constants.SPACER +
+               Constants.stringFromReport(o5_total_confirmed_malaria_cases) + Constants.SPACER +
+               Constants.stringFromReport(o5_total_simple_malaria_cases) + Constants.SPACER +
+               Constants.stringFromReport(o5_total_severe_malaria_cases) + Constants.SPACER +
+               Constants.stringFromReport(o5_total_acttreated_malaria_cases) + Constants.SPACER +
+               Constants.stringFromReport(o5_total_inpatient) + Constants.SPACER +
+               Constants.stringFromReport(o5_total_malaria_impatient) + Constants.SPACER +
+               Constants.stringFromReport(o5_total_death) + Constants.SPACER +
+               Constants.stringFromReport(o5_total_malaria_death) + Constants.SPACER +
+               Constants.stringFromReport(pw_total_consultation) + Constants.SPACER +
+               Constants.stringFromReport(pw_total_malaria_cases) + Constants.SPACER +
+               Constants.stringFromReport(pw_total_tested_malaria_cases) + Constants.SPACER +
+               Constants.stringFromReport(pw_total_confirmed_malaria_cases) + Constants.SPACER +
+               Constants.stringFromReport(pw_total_simple_malaria_cases) + Constants.SPACER +
+               Constants.stringFromReport(pw_total_severe_malaria_cases) + Constants.SPACER +
+               Constants.stringFromReport(pw_total_acttreated_malaria_cases) + Constants.SPACER +
+               Constants.stringFromReport(pw_total_inpatient) + Constants.SPACER +
+               Constants.stringFromReport(pw_total_malaria_impatient) + Constants.SPACER +
+               Constants.stringFromReport(pw_total_death) + Constants.SPACER +
+               Constants.stringFromReport(pw_total_malaria_death) + Constants.SPACER +
                Constants.stringFromReport(pw_malaria_total_distributed_bednets) + Constants.SPACER +
-               Constants.stringFromReport(malaria_stockout_act_children) + Constants.SUB_SPACER +
-               Constants.stringFromReport(malaria_stockout_act_youth) + Constants.SUB_SPACER +
-               Constants.stringFromReport(malaria_stockout_act_adult) + Constants.SUB_SPACER +
-               Constants.stringFromReport(malaria_stockout_artemether) + Constants.SUB_SPACER +
-               Constants.stringFromReport(malaria_stockout_quinine) + Constants.SUB_SPACER +
-               Constants.stringFromReport(malaria_stockout_serum) + Constants.SUB_SPACER +
-               Constants.stringFromReport(malaria_stockout_bednet) + Constants.SUB_SPACER +
-               Constants.stringFromReport(malaria_stockout_rdt) + Constants.SUB_SPACER +
-               Constants.stringFromReport(malaria_stockout_sp) + Constants.SUB_SPACER +
-               Constants.stringFromReport(malaria_total_anc_1) + Constants.SUB_SPACER +
-               Constants.stringFromReport(malaria_total_sp_1) + Constants.SUB_SPACER +
+               Constants.stringFromReport(malaria_stockout_act_children) + Constants.SPACER +
+               Constants.stringFromReport(malaria_stockout_act_youth) + Constants.SPACER +
+               Constants.stringFromReport(malaria_stockout_act_adult) + Constants.SPACER +
+               Constants.stringFromReport(malaria_stockout_artemether) + Constants.SPACER +
+               Constants.stringFromReport(malaria_stockout_quinine) + Constants.SPACER +
+               Constants.stringFromReport(malaria_stockout_serum) + Constants.SPACER +
+               Constants.stringFromReport(malaria_stockout_bednet) + Constants.SPACER +
+               Constants.stringFromReport(malaria_stockout_rdt) + Constants.SPACER +
+               Constants.stringFromReport(malaria_stockout_sp) + Constants.SPACER +
+               Constants.stringFromReport(malaria_total_anc_1) + Constants.SPACER +
+               Constants.stringFromReport(malaria_total_sp_1) + Constants.SPACER +
                Constants.stringFromReport(malaria_total_sp_2);
     }
 }

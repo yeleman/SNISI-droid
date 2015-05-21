@@ -433,6 +433,10 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
 		// retrieve server number
 		SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
 		String serverNumber = sharedPrefs.getString("serverPhoneNumber", Constants.server_number);
+        if(serverNumber.equals("")){
+            serverNumber = Constants.server_number;
+        }
+        Log.d(TAG, "serverPhoneNumber: " + serverNumber);
 		try {
 			// Find out how many parts required
     		SmsManager sms = SmsManager.getDefault();
