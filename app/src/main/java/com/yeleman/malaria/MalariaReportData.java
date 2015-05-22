@@ -152,6 +152,9 @@ public class MalariaReportData extends ReportData {
                Constants.stringFromReport(pw_total_death) + Constants.SPACER +
                Constants.stringFromReport(pw_total_malaria_death) + Constants.SPACER +
                Constants.stringFromReport(pw_malaria_total_distributed_bednets) + Constants.SPACER +
+               Constants.stringFromReport(malaria_total_anc_1) + Constants.SPACER +
+               Constants.stringFromReport(malaria_total_sp_1) + Constants.SPACER +
+               Constants.stringFromReport(malaria_total_sp_2) + Constants.SPACER +
                Constants.stringFromReport(malaria_stockout_act_children) + Constants.SPACER +
                Constants.stringFromReport(malaria_stockout_act_youth) + Constants.SPACER +
                Constants.stringFromReport(malaria_stockout_act_adult) + Constants.SPACER +
@@ -160,9 +163,6 @@ public class MalariaReportData extends ReportData {
                Constants.stringFromReport(malaria_stockout_serum) + Constants.SPACER +
                Constants.stringFromReport(malaria_stockout_bednet) + Constants.SPACER +
                Constants.stringFromReport(malaria_stockout_rdt) + Constants.SPACER +
-               Constants.stringFromReport(malaria_stockout_sp) + Constants.SPACER +
-               Constants.stringFromReport(malaria_total_anc_1) + Constants.SPACER +
-               Constants.stringFromReport(malaria_total_sp_1) + Constants.SPACER +
-               Constants.stringFromReport(malaria_total_sp_2);
+               Constants.stringFromReport(malaria_stockout_sp);
     }
 }
