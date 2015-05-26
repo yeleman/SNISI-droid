@@ -275,7 +275,7 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
         }
         return true;
     }
-    
+
     protected boolean mustBeInferiorOrEqual(EditText fieldToReturnTo, EditText fieldA, EditText fieldB) {
         int valueA = integerFromField(fieldA);
         int valueB = integerFromField(fieldB);
@@ -298,7 +298,7 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
         }
         return true;
     }
-    
+
     protected boolean mustBeEqual(EditText fieldToReturnTo, EditText fieldA, EditText fieldB) {
         int valueA = integerFromField(fieldA);
         int valueB = integerFromField(fieldB);
@@ -323,13 +323,13 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
 
 		String sms_text = buildSMSText();
         Log.d(TAG, sms_text);
-		
+
 		finish();
 	}
 
     protected void checkAndSubmitSMSAction() {
     	if (!checkInputsAndCoherence()) { return; }
-        
+
         String sms_text = buildSMSText();
         Log.d(TAG, sms_text);
 
@@ -437,6 +437,7 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
             serverNumber = Constants.server_number;
         }
         Log.d(TAG, "serverPhoneNumber: " + serverNumber);
+        Log.d(TAG, "Msg: " + message);
 		try {
 			// Find out how many parts required
     		SmsManager sms = SmsManager.getDefault();
@@ -494,7 +495,7 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
             	progressDialog.dismiss();
             }
 
-        } 
+        }
         return wasShowing;
     }
 
@@ -502,7 +503,7 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
         final Activity activity = this;
         new Handler().postDelayed(new Runnable() {
             public void run() {
-            	// if dialog was one, that's an error and we need to 
+            	// if dialog was one, that's an error and we need to
             	// display timeout message
 				if (!closeProgressDialogIfShowing()) {
 					return;
@@ -630,7 +631,7 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
             textToDisplay += smsText;
         }
         final int finalResponseStatus = responseStatus;
-        
+
         // display SMS message
         int textColor = Constants.getColorForStatus(responseStatus);
         AlertDialog smsMessageDialog = Popups.getStandardDialog(

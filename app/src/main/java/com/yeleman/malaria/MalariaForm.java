@@ -152,9 +152,9 @@ public class MalariaForm extends CheckedFormActivity {
         }
         // Cas de Palu simple + grave supérieurs au total confirmés
         int totalConfirmedMalariaCases = integerFromField(malariaTotalConfirmedMalariaCasesField);
-        if (totalSimpleCaseAndServerCase > totalConfirmedMalariaCases) {
-            String errorMsg =  String.format("Cas de Palu simple + grave (%d) supérieurs" +
-                            " au total confirmés (%d).",
+        if (totalSimpleCaseAndServerCase != totalConfirmedMalariaCases) {
+            String errorMsg =  String.format("Cas de Palu simple + grave (%d) différents" +
+                            " du total confirmés (%d).",
                     totalSimpleCaseAndServerCase, totalConfirmedMalariaCases);
             fireErrorDialog(this, errorMsg, malariaTotalConfirmedMalariaCasesField);
             return false;
