@@ -4,11 +4,14 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
-        <TextView
-            style="@style/textViewLabel"
-            android:id="@+id/sp1Label"
-            android:text="@string/malaria_total_anc1_sp1"
-            android:background="@drawable/abc_ab_share_pack_holo_light" />
+    <TextView
+        style="@style/textViewLabel"
+        android:id="@+id/sp1Label"
+        android:text="@string/malaria_total_anc1_sp1" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
         <EditText
             style="@style/editNumberText"
             android:nextFocusRight="@+id/malariaTotalMalariaCasesField"
@@ -16,6 +19,7 @@
             android:id="@+id/anc1Field"
             android:imeOptions="actionNext"
             android:hint="@string/malaria_total_anc_1"/>
+    </LinearLayout>
         <EditText
             style="@style/editNumberText"
             android:nextFocusRight="@+id/malariaTotalMalariaCasesField"
