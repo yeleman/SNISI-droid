@@ -168,8 +168,9 @@ public class SMIRHome extends CheckedFormActivity {
     }
     
     public String buildSMSText() {
+        int month = datePicker.getMonth() + 1;
         return datePicker.getDayOfMonth() + Constants.DATE_SPACER +
-               datePicker.getMonth() + 1 + Constants.DATE_SPACER +
+               month + Constants.DATE_SPACER +
                datePicker.getYear() + Constants.SPACER +
                Constants.stringFromReport(integerFromField(confirmedEbolaField)) + Constants.SPACER +
                Constants.stringFromReport(integerFromField(deathEbolaField)) + Constants.SPACER +
