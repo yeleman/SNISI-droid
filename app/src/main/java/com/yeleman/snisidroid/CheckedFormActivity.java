@@ -718,6 +718,13 @@ public class CheckedFormActivity extends Activity implements SMSUpdater {
         return true;
     }
 
+    protected void setIntegerOnField(EditText edittext, Object obj)
+    {
+        if (Integer.parseInt(String.valueOf(obj)) != -1)
+        {
+            setTextOnField(edittext, obj);
+        }
+    }
     protected String stringFromInteger(int data) {
         return Constants.stringFromInteger(data);
     }

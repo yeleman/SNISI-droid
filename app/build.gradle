@@ -9,7 +9,7 @@ android {
         minSdkVersion 10
         targetSdkVersion 21
         versionCode 20
-        versionName "2.9"
+        versionName "6.0"
     }
 
     sourceSets {

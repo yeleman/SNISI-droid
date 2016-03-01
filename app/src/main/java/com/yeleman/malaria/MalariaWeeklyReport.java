@@ -8,13 +8,16 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-
 import com.yeleman.snisidroid.CheckedFormActivity;
 import com.yeleman.snisidroid.Constants;
 import com.yeleman.snisidroid.R;
 
+import java.util.Arrays;
 import java.util.Calendar;
+import java.util.GregorianCalendar;
+import java.util.List;
 import java.util.Locale;
+
 
 /**
  * Created by fad on 10/02/15.
@@ -22,7 +25,7 @@ import java.util.Locale;
 public class MalariaWeeklyReport extends CheckedFormActivity {
 
     private final static String TAG = Constants.getLogTag("MalariaWeeklyReport");
-    
+
     protected EditText malariaO5D1Field;
     protected EditText malariaU5D1Field;
     protected EditText malariaPWD1Field;
@@ -68,7 +71,7 @@ public class MalariaWeeklyReport extends CheckedFormActivity {
         setupSMSReceiver();
         setupUI();
     }
-    
+
     public String getPeriodFromWeekNumber(int day, int dayMaxi) {
         Log.i(TAG, "Day: " + day + " dayMaxi: " + dayMaxi);
         if (day >= 1 && day <= 7)
@@ -83,32 +86,67 @@ public class MalariaWeeklyReport extends CheckedFormActivity {
             return "29-" + String.valueOf(dayMaxi);
         return null;
     }
-    
+
     protected void setupUI() {
         Log.d(TAG, "setupUI MalariaWeeklyReport");
 
-        Calendar c = Calendar.getInstance();
-        c.add(Calendar.DAY_OF_YEAR, -7);
-        dayOfMonth = c.get(Calendar.DAY_OF_MONTH);
-        dayMaxiOfMonth = c.getActualMaximum(Calendar.DAY_OF_MONTH);
-        
+        GregorianCalendar gcal = new GregorianCalendar();
+        int i;
+        if (gcal.get(Calendar.DAY_OF_MONTH) <= 7)
+        {
+            int previousMonth = gcal.get(Calendar.MONTH) - 1;
+            i = previousMonth;
+            if (previousMonth == 0) {
+                i = 12;
+            }
+            int[] monthWith31Days = {1, 3, 5, 7, 8, 10, 12};
+            if (Arrays.asList(monthWith31Days).contains(i)) {
+                i = 3;
+            } else {
+                if (i == 1) {
+                    GregorianCalendar gcal2 = new GregorianCalendar();
+                    gcal2.set(gcal.get(Calendar.YEAR), 1, 1);
+                    // check bisextil (29 feb)
+                    if (gcal2.getActualMaximum(Calendar.DAY_OF_MONTH) == 29) {
+                        i = 1;
+                    } else {
+                        i = 0;
+                    }
+                } else {
+                    i = 2;
+                }
+            }
+        } else {
+            i = 0;
+        }
+        int j = 7;
+        Calendar cal = Calendar.getInstance();
+        if (i != 0) {
+            j = cal.get(Calendar.DAY_OF_MONTH);
+        }
+        cal.add(Calendar.DAY_OF_YEAR, -j);
+        dayOfMonth = cal.get(Calendar.DAY_OF_MONTH);
+        dayMaxiOfMonth = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
+        Log.d(TAG, String.valueOf(dayMaxiOfMonth));
+
         periodLabel = (TextView) findViewById(R.id.periodLabel);
         periodLabel.setText(String.format("Semaine du %s %s",
                 getPeriodFromWeekNumber(dayOfMonth, dayMaxiOfMonth),
-                String.format(Locale.FRENCH,"%tB",c) ));
+                String.format(Locale.FRENCH,"%tB", cal) ));
 
         labelD1 = (TextView) findViewById(R.id.levelLabelD1);
         labelD1.setText(String.format(getString(R.string.malaria_week_label), "1"));
         malariaO5D1Field = (EditText) findViewById(R.id.malariaO5D1Field);
         malariaU5D1Field = (EditText) findViewById(R.id.malariaU5D1Field);
         malariaPWD1Field = (EditText) findViewById(R.id.malariaPwD1Field);
-        
+
         labelD2 = (TextView) findViewById(R.id.levelLabelD2);
         labelD2.setText(String.format(getString(R.string.malaria_week_label), "2"));
         malariaO5D2Field = (EditText) findViewById(R.id.malariaO5D2Field);
         malariaU5D2Field = (EditText) findViewById(R.id.malariaU5D2Field);
         malariaPWD2Field = (EditText) findViewById(R.id.malariaPwD2Field);
 
+        LinearLayout linearLytD2 = (LinearLayout) findViewById(R.id.linearLayoutD2);
         LinearLayout linearLytD3 = (LinearLayout) findViewById(R.id.linearLayoutD3);
         LinearLayout linearLytD4 = (LinearLayout) findViewById(R.id.linearLayoutD4);
         LinearLayout linearLytD5 = (LinearLayout) findViewById(R.id.linearLayoutD5);
@@ -126,6 +164,11 @@ public class MalariaWeeklyReport extends CheckedFormActivity {
             linearLytD5.setVisibility(View.GONE);
             linearLytD6.setVisibility(View.GONE);
             linearLytD7.setVisibility(View.GONE);
+            if (dayMaxiOfMonth < 30) {
+                // linearLytD3
+                linearLytD2.setVisibility(View.GONE);
+                malariaPWD1Field.setImeOptions(EditorInfo.IME_ACTION_DONE);
+            }
             if (dayMaxiOfMonth < 31) {
                 linearLytD3.setVisibility(View.GONE);
                 malariaPWD2Field.setImeOptions(EditorInfo.IME_ACTION_DONE);
@@ -181,82 +224,126 @@ public class MalariaWeeklyReport extends CheckedFormActivity {
     }
     protected void storeReportData() {
         Log.d(TAG, "storeReportData");
-        MalariaWeeklyReportData report = MalariaWeeklyReportData.get();
-        report.updateMetaData();
-        report.o5_total_confirmed_malaria_cases_d1 = integerFromField(malariaO5D1Field);
-        report.u5_total_confirmed_malaria_cases_d1 = integerFromField(malariaU5D1Field);
-        report.pw_total_confirmed_malaria_cases_d1 = integerFromField(malariaPWD1Field);
-        report.o5_total_confirmed_malaria_cases_d2 = integerFromField(malariaO5D2Field);
-        report.u5_total_confirmed_malaria_cases_d2 = integerFromField(malariaU5D2Field);
-        report.pw_total_confirmed_malaria_cases_d2 = integerFromField(malariaPWD2Field);
+        MalariaWeeklyReportData malariaweeklyreportdata;
+        malariaweeklyreportdata = MalariaWeeklyReportData.get();
+        malariaweeklyreportdata.updateMetaData();
+        malariaweeklyreportdata.o5_total_confirmed_malaria_cases_d1 = -1;
+        malariaweeklyreportdata.u5_total_confirmed_malaria_cases_d1 = -1;
+        malariaweeklyreportdata.pw_total_confirmed_malaria_cases_d1 = -1;
+        malariaweeklyreportdata.o5_total_confirmed_malaria_cases_d2 = -1;
+        malariaweeklyreportdata.u5_total_confirmed_malaria_cases_d2 = -1;
+        malariaweeklyreportdata.pw_total_confirmed_malaria_cases_d2 = -1;
+        malariaweeklyreportdata.o5_total_confirmed_malaria_cases_d3 = -1;
+        malariaweeklyreportdata.u5_total_confirmed_malaria_cases_d3 = -1;
+        malariaweeklyreportdata.pw_total_confirmed_malaria_cases_d3 = -1;
+        malariaweeklyreportdata.o5_total_confirmed_malaria_cases_d4 = -1;
+        malariaweeklyreportdata.u5_total_confirmed_malaria_cases_d4 = -1;
+        malariaweeklyreportdata.pw_total_confirmed_malaria_cases_d4 = -1;
+        malariaweeklyreportdata.o5_total_confirmed_malaria_cases_d5 = -1;
+        malariaweeklyreportdata.u5_total_confirmed_malaria_cases_d5 = -1;
+        malariaweeklyreportdata.pw_total_confirmed_malaria_cases_d5 = -1;
+        malariaweeklyreportdata.o5_total_confirmed_malaria_cases_d6 = -1;
+        malariaweeklyreportdata.u5_total_confirmed_malaria_cases_d6 = -1;
+        malariaweeklyreportdata.pw_total_confirmed_malaria_cases_d6 = -1;
+        malariaweeklyreportdata.o5_total_confirmed_malaria_cases_d7 = -1;
+        malariaweeklyreportdata.u5_total_confirmed_malaria_cases_d7 = -1;
+        malariaweeklyreportdata.pw_total_confirmed_malaria_cases_d7 = -1;
+        malariaweeklyreportdata.o5_total_confirmed_malaria_cases_d1 = integerFromField(malariaO5D1Field);
+        malariaweeklyreportdata.u5_total_confirmed_malaria_cases_d1 = integerFromField(malariaU5D1Field);
+        malariaweeklyreportdata.pw_total_confirmed_malaria_cases_d1 = integerFromField(malariaPWD1Field);
         if (dayOfMonth <= 28) {
-            report.o5_total_confirmed_malaria_cases_d3 = integerFromField(malariaO5D3Field);
-            report.u5_total_confirmed_malaria_cases_d3 = integerFromField(malariaU5D3Field);
-            report.pw_total_confirmed_malaria_cases_d3 = integerFromField(malariaPWD3Field);
-            report.o5_total_confirmed_malaria_cases_d4 = integerFromField(malariaO5D4Field);
-            report.u5_total_confirmed_malaria_cases_d4 = integerFromField(malariaU5D4Field);
-            report.pw_total_confirmed_malaria_cases_d4 = integerFromField(malariaPWD4Field);
-            report.o5_total_confirmed_malaria_cases_d5 = integerFromField(malariaO5D5Field);
-            report.u5_total_confirmed_malaria_cases_d5 = integerFromField(malariaU5D5Field);
-            report.pw_total_confirmed_malaria_cases_d5 = integerFromField(malariaPWD5Field);
-            report.o5_total_confirmed_malaria_cases_d6 = integerFromField(malariaO5D6Field);
-            report.u5_total_confirmed_malaria_cases_d6 = integerFromField(malariaU5D6Field);
-            report.pw_total_confirmed_malaria_cases_d6 = integerFromField(malariaPWD6Field);
-            report.o5_total_confirmed_malaria_cases_d7 = integerFromField(malariaO5D7Field);
-            report.u5_total_confirmed_malaria_cases_d7 = integerFromField(malariaU5D7Field);
-            report.pw_total_confirmed_malaria_cases_d7 = integerFromField(malariaPWD7Field);
+            malariaweeklyreportdata.o5_total_confirmed_malaria_cases_d2 = integerFromField(malariaO5D2Field);
+            malariaweeklyreportdata.u5_total_confirmed_malaria_cases_d2 = integerFromField(malariaU5D2Field);
+            malariaweeklyreportdata.pw_total_confirmed_malaria_cases_d2 = integerFromField(malariaPWD2Field);
+            malariaweeklyreportdata.o5_total_confirmed_malaria_cases_d3 = integerFromField(malariaO5D3Field);
+            malariaweeklyreportdata.u5_total_confirmed_malaria_cases_d3 = integerFromField(malariaU5D3Field);
+            malariaweeklyreportdata.pw_total_confirmed_malaria_cases_d3 = integerFromField(malariaPWD3Field);
+            malariaweeklyreportdata.o5_total_confirmed_malaria_cases_d4 = integerFromField(malariaO5D4Field);
+            malariaweeklyreportdata.u5_total_confirmed_malaria_cases_d4 = integerFromField(malariaU5D4Field);
+            malariaweeklyreportdata.pw_total_confirmed_malaria_cases_d4 = integerFromField(malariaPWD4Field);
+            malariaweeklyreportdata.o5_total_confirmed_malaria_cases_d5 = integerFromField(malariaO5D5Field);
+            malariaweeklyreportdata.u5_total_confirmed_malaria_cases_d5 = integerFromField(malariaU5D5Field);
+            malariaweeklyreportdata.pw_total_confirmed_malaria_cases_d5 = integerFromField(malariaPWD5Field);
+            malariaweeklyreportdata.o5_total_confirmed_malaria_cases_d6 = integerFromField(malariaO5D6Field);
+            malariaweeklyreportdata.u5_total_confirmed_malaria_cases_d6 = integerFromField(malariaU5D6Field);
+            malariaweeklyreportdata.pw_total_confirmed_malaria_cases_d6 = integerFromField(malariaPWD6Field);
+            malariaweeklyreportdata.o5_total_confirmed_malaria_cases_d7 = integerFromField(malariaO5D7Field);
+            malariaweeklyreportdata.u5_total_confirmed_malaria_cases_d7 = integerFromField(malariaU5D7Field);
+            malariaweeklyreportdata.pw_total_confirmed_malaria_cases_d7 = integerFromField(malariaPWD7Field);
+
         } else {
-            if (dayMaxiOfMonth == 31) {
-                report.o5_total_confirmed_malaria_cases_d3 = integerFromField(malariaO5D3Field);
-                report.u5_total_confirmed_malaria_cases_d3 = integerFromField(malariaU5D3Field);
-                report.pw_total_confirmed_malaria_cases_d3 = integerFromField(malariaPWD3Field);
+            if (dayMaxiOfMonth >= 30)
+            {
+                malariaweeklyreportdata.o5_total_confirmed_malaria_cases_d2 = integerFromField(malariaO5D2Field);
+                malariaweeklyreportdata.u5_total_confirmed_malaria_cases_d2 = integerFromField(malariaU5D2Field);
+                malariaweeklyreportdata.pw_total_confirmed_malaria_cases_d2 = integerFromField(malariaPWD2Field);
+            }
+            if (dayMaxiOfMonth == 31)
+            {
+                malariaweeklyreportdata.o5_total_confirmed_malaria_cases_d3 = integerFromField(malariaO5D3Field);
+                malariaweeklyreportdata.u5_total_confirmed_malaria_cases_d3 = integerFromField(malariaU5D3Field);
+                malariaweeklyreportdata.pw_total_confirmed_malaria_cases_d3 = integerFromField(malariaPWD3Field);
             }
         }
-        report.safeSave();
+        malariaweeklyreportdata.safeSave();
         Log.d(TAG, "storeReportData -- end");
     }
     protected void restoreReportData() {
+
         Log.d(TAG, "restoreReportData");
-        MalariaWeeklyReportData report = MalariaWeeklyReportData.get();
-        
-        setTextOnField(malariaO5D1Field, report.o5_total_confirmed_malaria_cases_d1);
-        setTextOnField(malariaU5D1Field, report.u5_total_confirmed_malaria_cases_d1);
-        setTextOnField(malariaPWD1Field, report.pw_total_confirmed_malaria_cases_d1);
-        setTextOnField(malariaO5D2Field, report.o5_total_confirmed_malaria_cases_d2);
-        setTextOnField(malariaU5D2Field, report.u5_total_confirmed_malaria_cases_d2);
-        setTextOnField(malariaPWD2Field, report.pw_total_confirmed_malaria_cases_d2);
-        if (dayOfMonth <= 28) {
-            setTextOnField(malariaO5D3Field, report.o5_total_confirmed_malaria_cases_d3);
-            setTextOnField(malariaU5D3Field, report.u5_total_confirmed_malaria_cases_d3);
-            setTextOnField(malariaPWD3Field, report.pw_total_confirmed_malaria_cases_d3);
-            setTextOnField(malariaO5D4Field, report.o5_total_confirmed_malaria_cases_d4);
-            setTextOnField(malariaU5D4Field, report.u5_total_confirmed_malaria_cases_d4);
-            setTextOnField(malariaPWD4Field, report.pw_total_confirmed_malaria_cases_d4);
-            setTextOnField(malariaO5D5Field, report.o5_total_confirmed_malaria_cases_d5);
-            setTextOnField(malariaU5D5Field, report.u5_total_confirmed_malaria_cases_d5);
-            setTextOnField(malariaPWD5Field, report.pw_total_confirmed_malaria_cases_d5);
-            setTextOnField(malariaO5D6Field, report.o5_total_confirmed_malaria_cases_d6);
-            setTextOnField(malariaU5D6Field, report.u5_total_confirmed_malaria_cases_d6);
-            setTextOnField(malariaPWD6Field, report.pw_total_confirmed_malaria_cases_d6);
-            setTextOnField(malariaO5D7Field, report.o5_total_confirmed_malaria_cases_d7);
-            setTextOnField(malariaU5D7Field, report.u5_total_confirmed_malaria_cases_d7);
-            setTextOnField(malariaPWD7Field, report.pw_total_confirmed_malaria_cases_d7);
-        } else {
-            if (dayMaxiOfMonth == 31) {
-                setTextOnField(malariaO5D3Field, report.o5_total_confirmed_malaria_cases_d3);
-                setTextOnField(malariaU5D3Field, report.u5_total_confirmed_malaria_cases_d3);
-                setTextOnField(malariaPWD3Field, report.pw_total_confirmed_malaria_cases_d3);
+        MalariaWeeklyReportData malariaweeklyreportdata = MalariaWeeklyReportData.get();
+        setIntegerOnField(malariaO5D1Field, Integer.valueOf(malariaweeklyreportdata.o5_total_confirmed_malaria_cases_d1));
+        setIntegerOnField(malariaU5D1Field, Integer.valueOf(malariaweeklyreportdata.u5_total_confirmed_malaria_cases_d1));
+        setIntegerOnField(malariaPWD1Field, Integer.valueOf(malariaweeklyreportdata.pw_total_confirmed_malaria_cases_d1));
+        if (dayOfMonth <= 28)
+        {
+            setIntegerOnField(malariaO5D2Field, Integer.valueOf(malariaweeklyreportdata.o5_total_confirmed_malaria_cases_d2));
+            setIntegerOnField(malariaU5D2Field, Integer.valueOf(malariaweeklyreportdata.u5_total_confirmed_malaria_cases_d2));
+            setIntegerOnField(malariaPWD2Field, Integer.valueOf(malariaweeklyreportdata.pw_total_confirmed_malaria_cases_d2));
+            setIntegerOnField(malariaO5D3Field, Integer.valueOf(malariaweeklyreportdata.o5_total_confirmed_malaria_cases_d3));
+            setIntegerOnField(malariaU5D3Field, Integer.valueOf(malariaweeklyreportdata.u5_total_confirmed_malaria_cases_d3));
+            setIntegerOnField(malariaPWD3Field, Integer.valueOf(malariaweeklyreportdata.pw_total_confirmed_malaria_cases_d3));
+            setIntegerOnField(malariaO5D4Field, Integer.valueOf(malariaweeklyreportdata.o5_total_confirmed_malaria_cases_d4));
+            setIntegerOnField(malariaU5D4Field, Integer.valueOf(malariaweeklyreportdata.u5_total_confirmed_malaria_cases_d4));
+            setIntegerOnField(malariaPWD4Field, Integer.valueOf(malariaweeklyreportdata.pw_total_confirmed_malaria_cases_d4));
+            setIntegerOnField(malariaO5D5Field, Integer.valueOf(malariaweeklyreportdata.o5_total_confirmed_malaria_cases_d5));
+            setIntegerOnField(malariaU5D5Field, Integer.valueOf(malariaweeklyreportdata.u5_total_confirmed_malaria_cases_d5));
+            setIntegerOnField(malariaPWD5Field, Integer.valueOf(malariaweeklyreportdata.pw_total_confirmed_malaria_cases_d5));
+            setIntegerOnField(malariaO5D6Field, Integer.valueOf(malariaweeklyreportdata.o5_total_confirmed_malaria_cases_d6));
+            setIntegerOnField(malariaU5D6Field, Integer.valueOf(malariaweeklyreportdata.u5_total_confirmed_malaria_cases_d6));
+            setIntegerOnField(malariaPWD6Field, Integer.valueOf(malariaweeklyreportdata.pw_total_confirmed_malaria_cases_d6));
+            setIntegerOnField(malariaO5D7Field, Integer.valueOf(malariaweeklyreportdata.o5_total_confirmed_malaria_cases_d7));
+            setIntegerOnField(malariaU5D7Field, Integer.valueOf(malariaweeklyreportdata.u5_total_confirmed_malaria_cases_d7));
+            setIntegerOnField(malariaPWD7Field, Integer.valueOf(malariaweeklyreportdata.pw_total_confirmed_malaria_cases_d7));
+        } else
+        {
+            // if (dayMaxiOfMonth != 29);
+            if (dayMaxiOfMonth >= 30)
+            {
+                setIntegerOnField(malariaO5D2Field, Integer.valueOf(malariaweeklyreportdata.o5_total_confirmed_malaria_cases_d2));
+                setIntegerOnField(malariaU5D2Field, Integer.valueOf(malariaweeklyreportdata.u5_total_confirmed_malaria_cases_d2));
+                setIntegerOnField(malariaPWD2Field, Integer.valueOf(malariaweeklyreportdata.pw_total_confirmed_malaria_cases_d2));
+            }
+            if (dayMaxiOfMonth == 31)
+            {
+                setIntegerOnField(malariaO5D3Field, Integer.valueOf(malariaweeklyreportdata.o5_total_confirmed_malaria_cases_d3));
+                setIntegerOnField(malariaU5D3Field, Integer.valueOf(malariaweeklyreportdata.u5_total_confirmed_malaria_cases_d3));
+                setIntegerOnField(malariaPWD3Field, Integer.valueOf(malariaweeklyreportdata.pw_total_confirmed_malaria_cases_d3));
+                return;
             }
         }
     }
-    protected void setupInvalidInputChecks() {
+
+    protected void setupInvalidInputChecks()
+    {
         setAssertPositiveInteger(malariaU5D1Field);
         setAssertPositiveInteger(malariaO5D1Field);
         setAssertPositiveInteger(malariaPWD1Field);
-        setAssertPositiveInteger(malariaU5D2Field);
-        setAssertPositiveInteger(malariaO5D2Field);
-        setAssertPositiveInteger(malariaPWD2Field);
-        if (dayOfMonth <= 28) {
+        if (dayOfMonth <= 28)
+        {
+            setAssertPositiveInteger(malariaU5D2Field);
+            setAssertPositiveInteger(malariaO5D2Field);
+            setAssertPositiveInteger(malariaPWD2Field);
             setAssertPositiveInteger(malariaU5D3Field);
             setAssertPositiveInteger(malariaO5D3Field);
             setAssertPositiveInteger(malariaPWD3Field);
@@ -272,15 +359,24 @@ public class MalariaWeeklyReport extends CheckedFormActivity {
             setAssertPositiveInteger(malariaU5D7Field);
             setAssertPositiveInteger(malariaO5D7Field);
             setAssertPositiveInteger(malariaPWD7Field);
-        } else {
-            if (dayMaxiOfMonth == 31) {
+        } else
+        {
+            if (dayMaxiOfMonth != 29);
+            if (dayMaxiOfMonth >= 30)
+            {
+                setAssertPositiveInteger(malariaU5D2Field);
+                setAssertPositiveInteger(malariaO5D2Field);
+                setAssertPositiveInteger(malariaPWD2Field);
+            }
+            if (dayMaxiOfMonth == 31)
+            {
                 setAssertPositiveInteger(malariaU5D3Field);
                 setAssertPositiveInteger(malariaO5D3Field);
                 setAssertPositiveInteger(malariaPWD3Field);
+                return;
             }
         }
     }
-    
     protected boolean ensureDataCoherence() {
         return true;
     }
