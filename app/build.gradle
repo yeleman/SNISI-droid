@@ -8,7 +8,7 @@ android {
         applicationId "com.yeleman.snisidroid"
         minSdkVersion 10
         targetSdkVersion 21
-        versionCode 20
+        versionCode 24
         versionName "6.0"
     }
 

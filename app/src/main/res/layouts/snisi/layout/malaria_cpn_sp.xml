@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:layout_width="match_parent"
-              android:layout_height="match_parent"
-              android:orientation="vertical">
-
-    <TextView
+<ScrollView
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+  	xmlns:android="http://schemas.android.com/apk/res/android">
+  	<LinearLayout
+  		android:orientation="vertical"
+  		android:layout_width="fill_parent"
+  		android:layout_height="fill_parent"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+	<TextView
         style="@style/textViewLabel"
         android:id="@+id/sp1Label"
         android:text="@string/malaria_total_anc1_sp1" />
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
         <EditText
             style="@style/editNumberText"
             android:nextFocusRight="@+id/malariaTotalMalariaCasesField"
@@ -19,7 +19,6 @@
             android:id="@+id/anc1Field"
             android:imeOptions="actionNext"
             android:hint="@string/malaria_total_anc_1"/>
-    </LinearLayout>
         <EditText
             style="@style/editNumberText"
             android:nextFocusRight="@+id/malariaTotalMalariaCasesField"
@@ -40,4 +39,5 @@
             android:text="@string/malaria_monthly_save"
             android:id="@+id/saveButton"
             android:layout_marginTop="10dp" />
-    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>

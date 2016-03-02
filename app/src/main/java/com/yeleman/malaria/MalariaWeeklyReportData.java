@@ -71,26 +71,26 @@ public class MalariaWeeklyReportData extends ReportData {
     }
 
     public String buildSMSText() {
-        return Constants.stringFromReport(u5_total_confirmed_malaria_cases_d1) + Constants.SPACER +
-               Constants.stringFromReport(o5_total_confirmed_malaria_cases_d1) + Constants.SPACER +
-               Constants.stringFromReport(pw_total_confirmed_malaria_cases_d1) + Constants.SHARP_SPACER +
-               Constants.stringFromReport(u5_total_confirmed_malaria_cases_d2) + Constants.SPACER +
-               Constants.stringFromReport(o5_total_confirmed_malaria_cases_d2) + Constants.SPACER +
-               Constants.stringFromReport(pw_total_confirmed_malaria_cases_d2) + Constants.SHARP_SPACER +
-               Constants.stringFromReport(u5_total_confirmed_malaria_cases_d3) + Constants.SPACER +
-               Constants.stringFromReport(o5_total_confirmed_malaria_cases_d3) + Constants.SPACER +
-               Constants.stringFromReport(pw_total_confirmed_malaria_cases_d3) + Constants.SHARP_SPACER +
-               Constants.stringFromReport(u5_total_confirmed_malaria_cases_d4) + Constants.SPACER +
-               Constants.stringFromReport(o5_total_confirmed_malaria_cases_d4) + Constants.SPACER +
-               Constants.stringFromReport(pw_total_confirmed_malaria_cases_d4) + Constants.SHARP_SPACER +
-               Constants.stringFromReport(u5_total_confirmed_malaria_cases_d5) + Constants.SPACER +
-               Constants.stringFromReport(o5_total_confirmed_malaria_cases_d5) + Constants.SPACER +
-               Constants.stringFromReport(pw_total_confirmed_malaria_cases_d5) + Constants.SHARP_SPACER +
-               Constants.stringFromReport(u5_total_confirmed_malaria_cases_d6) + Constants.SPACER +
-               Constants.stringFromReport(o5_total_confirmed_malaria_cases_d6) + Constants.SPACER +
-               Constants.stringFromReport(pw_total_confirmed_malaria_cases_d6) + Constants.SHARP_SPACER +
-               Constants.stringFromReport(u5_total_confirmed_malaria_cases_d7) + Constants.SPACER +
-               Constants.stringFromReport(o5_total_confirmed_malaria_cases_d7) + Constants.SPACER +
-               Constants.stringFromReport(pw_total_confirmed_malaria_cases_d7);
+        return Constants.stringFromInteger(u5_total_confirmed_malaria_cases_d1) + Constants.SPACER +
+               Constants.stringFromInteger(o5_total_confirmed_malaria_cases_d1) + Constants.SPACER +
+               Constants.stringFromInteger(pw_total_confirmed_malaria_cases_d1) + Constants.SHARP_SPACER +
+               Constants.stringFromInteger(u5_total_confirmed_malaria_cases_d2) + Constants.SPACER +
+               Constants.stringFromInteger(o5_total_confirmed_malaria_cases_d2) + Constants.SPACER +
+               Constants.stringFromInteger(pw_total_confirmed_malaria_cases_d2) + Constants.SHARP_SPACER +
+               Constants.stringFromInteger(u5_total_confirmed_malaria_cases_d3) + Constants.SPACER +
+               Constants.stringFromInteger(o5_total_confirmed_malaria_cases_d3) + Constants.SPACER +
+               Constants.stringFromInteger(pw_total_confirmed_malaria_cases_d3) + Constants.SHARP_SPACER +
+               Constants.stringFromInteger(u5_total_confirmed_malaria_cases_d4) + Constants.SPACER +
+               Constants.stringFromInteger(o5_total_confirmed_malaria_cases_d4) + Constants.SPACER +
+               Constants.stringFromInteger(pw_total_confirmed_malaria_cases_d4) + Constants.SHARP_SPACER +
+               Constants.stringFromInteger(u5_total_confirmed_malaria_cases_d5) + Constants.SPACER +
+               Constants.stringFromInteger(o5_total_confirmed_malaria_cases_d5) + Constants.SPACER +
+               Constants.stringFromInteger(pw_total_confirmed_malaria_cases_d5) + Constants.SHARP_SPACER +
+               Constants.stringFromInteger(u5_total_confirmed_malaria_cases_d6) + Constants.SPACER +
+               Constants.stringFromInteger(o5_total_confirmed_malaria_cases_d6) + Constants.SPACER +
+               Constants.stringFromInteger(pw_total_confirmed_malaria_cases_d6) + Constants.SHARP_SPACER +
+               Constants.stringFromInteger(u5_total_confirmed_malaria_cases_d7) + Constants.SPACER +
+               Constants.stringFromInteger(o5_total_confirmed_malaria_cases_d7) + Constants.SPACER +
+               Constants.stringFromInteger(pw_total_confirmed_malaria_cases_d7);
     }
 }
