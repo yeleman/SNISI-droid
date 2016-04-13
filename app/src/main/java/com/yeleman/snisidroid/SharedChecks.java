@@ -5,14 +5,7 @@
 
 package com.yeleman.snisidroid;
 
-import java.util.Vector;
-import java.util.GregorianCalendar;
-import java.util.Calendar;
-
-import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
-import android.widget.DatePicker;
 
 
 public class SharedChecks {

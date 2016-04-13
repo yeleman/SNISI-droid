@@ -3,18 +3,14 @@ package com.yeleman.nutrition;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import com.yeleman.snisidroid.CheckedFormActivity;
 import com.yeleman.snisidroid.Constants;
 import com.yeleman.snisidroid.R;
 
-import java.lang.reflect.Field;
-import java.sql.Struct;
 
 public class NutritionURENASO59Report extends NutritionURENForm implements NutritionURENFormIface {
 

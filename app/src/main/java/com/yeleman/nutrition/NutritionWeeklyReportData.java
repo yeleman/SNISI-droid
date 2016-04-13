@@ -2,13 +2,7 @@ package com.yeleman.nutrition;
 
 import android.util.Log;
 
-import com.orm.SugarRecord;
-import com.orm.query.Select;
-import static com.orm.SugarRecord.save;
-
 import com.orm.dsl.Ignore;
-import com.orm.dsl.Table;
-
 import com.yeleman.snisidroid.Constants;
 import com.yeleman.snisidroid.ReportData;
 

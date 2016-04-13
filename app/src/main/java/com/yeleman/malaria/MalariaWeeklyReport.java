@@ -15,7 +15,6 @@ import com.yeleman.snisidroid.R;
 import java.util.Arrays;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-import java.util.List;
 import java.util.Locale;
 
 
@@ -127,8 +126,6 @@ public class MalariaWeeklyReport extends CheckedFormActivity {
         cal.add(Calendar.DAY_OF_YEAR, -j);
         dayOfMonth = cal.get(Calendar.DAY_OF_MONTH);
         dayMaxiOfMonth = cal.getActualMaximum(Calendar.DAY_OF_MONTH);
-        Log.d(TAG, String.valueOf(dayMaxiOfMonth));
-
         periodLabel = (TextView) findViewById(R.id.periodLabel);
         periodLabel.setText(String.format("Semaine du %s %s",
                 getPeriodFromWeekNumber(dayOfMonth, dayMaxiOfMonth),
@@ -272,14 +269,12 @@ public class MalariaWeeklyReport extends CheckedFormActivity {
             malariaweeklyreportdata.pw_total_confirmed_malaria_cases_d7 = integerFromField(malariaPWD7Field);
 
         } else {
-            if (dayMaxiOfMonth >= 30)
-            {
+            if (dayMaxiOfMonth >= 30) {
                 malariaweeklyreportdata.o5_total_confirmed_malaria_cases_d2 = integerFromField(malariaO5D2Field);
                 malariaweeklyreportdata.u5_total_confirmed_malaria_cases_d2 = integerFromField(malariaU5D2Field);
                 malariaweeklyreportdata.pw_total_confirmed_malaria_cases_d2 = integerFromField(malariaPWD2Field);
             }
-            if (dayMaxiOfMonth == 31)
-            {
+            if (dayMaxiOfMonth == 31) {
                 malariaweeklyreportdata.o5_total_confirmed_malaria_cases_d3 = integerFromField(malariaO5D3Field);
                 malariaweeklyreportdata.u5_total_confirmed_malaria_cases_d3 = integerFromField(malariaU5D3Field);
                 malariaweeklyreportdata.pw_total_confirmed_malaria_cases_d3 = integerFromField(malariaPWD3Field);

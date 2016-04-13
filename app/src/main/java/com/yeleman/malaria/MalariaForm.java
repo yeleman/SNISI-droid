@@ -8,8 +8,6 @@ import android.widget.TextView;
 import com.yeleman.snisidroid.CheckedFormActivity;
 import com.yeleman.snisidroid.Constants;
 
-import org.w3c.dom.Text;
-
 /**
  * Created by fad on 08/12/14.
  */

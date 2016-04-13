@@ -55,7 +55,7 @@ public class ChangePassword extends CheckedFormActivity {
 
         // Add Input Validation Checks
         setupInvalidInputChecks();
-        
+
         // Prefill username from Preferences
         SharedPreferences sharedPrefs = PreferenceManager.getDefaultSharedPreferences(this);
         String username = sharedPrefs.getString("username", null);
@@ -73,7 +73,7 @@ public class ChangePassword extends CheckedFormActivity {
             }
         });
     }
-   
+
 	protected String buildSMSText() {
 		// passwd username oldpassword newpassword
 		return String.format(Constants.SMS_CHANGE_PASSWRD,

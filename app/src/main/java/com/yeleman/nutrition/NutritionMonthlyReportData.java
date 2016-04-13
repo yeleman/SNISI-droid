@@ -2,8 +2,6 @@ package com.yeleman.nutrition;
 
 import com.yeleman.snisidroid.Constants;
 
-import android.content.SharedPreferences;
-import android.preference.PreferenceManager;
 import android.util.Log;
 import com.orm.dsl.Ignore;
 import com.yeleman.snisidroid.ReportData;

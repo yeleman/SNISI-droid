@@ -12,8 +12,6 @@ import com.yeleman.snisidroid.CheckedFormActivity;
 import com.yeleman.snisidroid.Constants;
 import com.yeleman.snisidroid.R;
 
-import com.yeleman.snisidroid.Constants;
-
 /**
  * Created by fad on 29/10/14.
  */

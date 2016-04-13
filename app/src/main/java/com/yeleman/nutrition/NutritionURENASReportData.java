@@ -6,6 +6,7 @@ import android.util.Log;
 import com.orm.dsl.Ignore;
 import com.yeleman.snisidroid.ReportData;
 
+
 public class NutritionURENASReportData extends ReportData {
 
     @Ignore
